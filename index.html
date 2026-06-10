@@ -98,10 +98,7 @@
       <label>Deal / Stock # <input type="text" id="f-num" list="stock-list" placeholder="e.g. 4821" autocomplete="off"></label>
     </div>
     <datalist id="stock-list"></datalist>
-    <div class="grid2 vin-grid">
-      <label>VIN <span class="hint-inline">auto-decodes the vehicle</span> <input type="text" id="f-vin" maxlength="17" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="optional"></label>
-      <button class="btn" id="f-scan" type="button" hidden>📷 Scan</button>
-    </div>
+    <label>VIN <span class="hint-inline">auto-decodes the vehicle</span> <input type="text" id="f-vin" maxlength="17" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="optional"></label>
     <div class="hint" id="f-vehicle" data-v=""></div>
     <label class="lbl">Deal type</label>
     <div class="seg" id="f-type">
@@ -147,16 +144,6 @@
       <button class="btn" id="cb-cancel">Cancel</button>
       <button class="btn primary" id="cb-save">Save Chargeback</button>
     </div>
-  </div>
-</div>
-
-<!-- VIN scan modal -->
-<div class="modal-wrap" id="scan-modal" hidden>
-  <div class="modal">
-    <h3>Scan VIN Barcode</h3>
-    <video id="scan-video" playsinline muted></video>
-    <p class="hint">Point at the barcode on the door-jamb sticker or the buyer's order.</p>
-    <div class="btn-row"><button class="btn" id="scan-cancel">Cancel</button></div>
   </div>
 </div>
 

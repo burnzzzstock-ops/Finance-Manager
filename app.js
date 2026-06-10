@@ -251,50 +251,6 @@ function showVehicle(text, val) {
   el.dataset.v = val !== undefined ? val : (text || '');
 }
 
-/* ---- VIN barcode scanner (Chrome/Android; button hidden where unsupported) ---- */
-
-let scanStream = null, scanTimer = null;
-
-function vinFromCode(raw) {
-  let s = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, '');
-  if (s.length === 18 && s[0] === 'I') s = s.slice(1); // Code 39 import-character prefix
-  return VIN_RE.test(s) ? s : null;
-}
-
-async function startScan() {
-  try {
-    const det = new window.BarcodeDetector({ formats: ['code_39', 'code_128', 'qr_code', 'data_matrix'] });
-    scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-    const v = $('#scan-video');
-    v.srcObject = scanStream;
-    await v.play();
-    $('#scan-modal').hidden = false;
-    scanTimer = setInterval(async () => {
-      try {
-        for (const c of await det.detect(v)) {
-          const vin = vinFromCode(c.rawValue);
-          if (vin) {
-            stopScan();
-            $('#f-vin').value = vin;
-            $('#f-vin').dispatchEvent(new Event('input'));
-            return;
-          }
-        }
-      } catch { /* keep scanning */ }
-    }, 350);
-  } catch (e) {
-    stopScan();
-    alert('Camera not available: ' + (e.message || e));
-  }
-}
-
-function stopScan() {
-  clearInterval(scanTimer);
-  scanTimer = null;
-  if (scanStream) { scanStream.getTracks().forEach(t => t.stop()); scanStream = null; }
-  $('#scan-modal').hidden = true;
-}
-
 /* ============ metrics ============ */
 
 // How many "products" a line counts as toward PPD. Bundles (Complete Protection,
@@ -1048,7 +1004,7 @@ $('#deal-cancel').addEventListener('click', () => { $('#deal-modal').hidden = tr
 $('#cb-save').addEventListener('click', saveCB);
 $('#cb-cancel').addEventListener('click', () => { $('#cb-modal').hidden = true; });
 $$('.modal-wrap').forEach(w => w.addEventListener('click', e => {
-  if (e.target === w) { if (w.id === 'scan-modal') stopScan(); else w.hidden = true; }
+  if (e.target === w) w.hidden = true;
 }));
 
 // stock # picked/typed → fill VIN, new/used, vehicle from inventory
@@ -1081,13 +1037,6 @@ $('#f-vin').addEventListener('input', async () => {
     if (id === vinReqId) showVehicle(hit?.name || '');
   }
 });
-
-// VIN barcode scanning (only where the browser supports it)
-if ('BarcodeDetector' in window && navigator.mediaDevices?.getUserMedia) {
-  $('#f-scan').hidden = false;
-}
-$('#f-scan').addEventListener('click', startScan);
-$('#scan-cancel').addEventListener('click', stopScan);
 
 // inventory import
 $('#btn-inv-import').addEventListener('click', () => {
