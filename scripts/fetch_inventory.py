@@ -126,44 +126,75 @@ def pdf_pages_text(data):
     return pages
 
 
-def vehicles_from_pdf_text(pages, default_cond=''):
-    """Line-oriented harvest for report PDFs (e.g. DealerTrack Inventory Analysis Detail).
+MAKE_FIX = {
+    'CHEV': 'Chevrolet', 'CHEVY': 'Chevrolet', 'CADI': 'Cadillac', 'CHRY': 'Chrysler',
+    'MERC': 'Mercedes', 'MERZ': 'Mercedes', 'VOLK': 'Volkswagen', 'VW': 'Volkswagen',
+    'LINC': 'Lincoln', 'TOYT': 'Toyota', 'NISS': 'Nissan', 'HYUN': 'Hyundai',
+    'MITS': 'Mitsubishi', 'INFI': 'Infiniti', 'PONT': 'Pontiac', 'OLDS': 'Oldsmobile',
+    'BUIC': 'Buick', 'SUBA': 'Subaru', 'MAZD': 'Mazda', 'LEXS': 'Lexus', 'LEXU': 'Lexus',
+}
+MAKE_ACRONYM = {'BMW', 'GMC', 'KIA', 'RAM', 'MINI', 'FIAT', 'AUDI', 'JEEP'}
 
-    Any line containing a VIN is treated as a vehicle row; stock number is taken
-    from the tokens before the model year, the vehicle description from tokens
-    between the year and the VIN/amount columns.
+
+def fix_make(m):
+    u = m.upper()
+    if u in MAKE_FIX:
+        return MAKE_FIX[u]
+    if u in MAKE_ACRONYM:
+        return u
+    return m.title()
+
+
+def _expand_year(yy):
+    """DealerTrack prints 2-digit model years: 00-29 -> 2000s, 30-99 -> 1900s."""
+    if not (len(yy) == 2 and yy.isdigit()):
+        return ''
+    n = int(yy)
+    return str(2000 + n) if n < 30 else str(1900 + n)
+
+
+def vehicles_from_pdf_text(pages, default_cond=''):
+    """Parse a DealerTrack IN3130R "Inventory Analysis Detail" report.
+
+    Row layout:  [*]Stock#  VIN  YY  MAKE  <description...>  Cost  List  Age  Miles
+    The report also carries an "All New" / "All Used" banner that identifies it.
     """
+    blob = '\n'.join(pages)
+    if not default_cond:
+        if re.search(r'\ball\s+used\b', blob, re.I):
+            default_cond = 'used'
+        elif re.search(r'\ball\s+new\b', blob, re.I):
+            default_cond = 'new'
+
     vehicles = {}
     for text in pages:
         for line in text.splitlines():
-            upper = line.upper()
-            m = VIN_FIND.search(upper)
+            m = VIN_FIND.search(line.upper())
             if not m:
                 continue
             vin = m.group(1)
+            if not VIN_RE.match(vin):
+                continue
             toks = line.split()
-            vin_i = next((i for i, t in enumerate(toks) if vin in t.upper()), len(toks))
-            pre = toks[:vin_i]
-            year = next((t for t in pre if YEAR_T.match(t)), '')
-            year_i = pre.index(year) if year else len(pre)
-            stock = ''
-            for t in pre[:year_i]:
-                tu = t.upper().strip('#:*')
-                if tu and re.fullmatch(r'[A-Z0-9-]{2,9}', tu) and any(ch.isdigit() for ch in tu):
-                    stock = tu
+            vi = next((i for i, t in enumerate(toks) if vin in t.upper()), None)
+            if vi is None:
+                continue
+            stock = toks[vi - 1].lstrip('*').upper().strip('#:') if vi >= 1 else ''
+            after = toks[vi + 1:]
+            year = _expand_year(after[0]) if after else ''
+            make = fix_make(after[1]) if len(after) > 1 else ''
+            desc = []
+            for t in after[2:]:
+                if re.fullmatch(r'\d{3,}', t):   # first cost-sized integer = numeric columns begin
                     break
-            name_toks = []
-            for t in pre[year_i + 1:]:
-                if MONEY_T.match(t):
+                if t.lower() in ('total', 'per'):
                     break
-                if re.search(r'[A-Za-z]', t):
-                    name_toks.append(t)
-                if len(name_toks) >= 5:
-                    break
-            row_cond = to_cond(' '.join(re.findall(r'\b(NEW|USED|PRE-?OWNED|CPO|CERTIFIED)\b', upper)))
-            name = ' '.join([year] + name_toks).strip()
+                desc.append(t)
+            while desc and not re.search(r'[A-Za-z0-9]', desc[-1]):
+                desc.pop()
+            name = ' '.join(x for x in ([year, make] + desc) if x).strip()
             vehicles[vin] = {'vin': vin, 'stock': stock, 'name': name,
-                             'year': year, 'cond': row_cond or default_cond}
+                             'year': year, 'cond': default_cond}
     return list(vehicles.values())
 
 

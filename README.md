@@ -56,14 +56,17 @@ One-time setup:
    - `IMAP_USER` — the Gmail address
    - `IMAP_PASSWORD` — the app password
    - `IMAP_HOST` — only if not Gmail
-4. **Variables** (same page, **Variables** tab) — these tell the job which email is which:
-   - `INV_SUBJECT_NEW` — a distinctive word/phrase from the **new** report's subject line
-   - `INV_SUBJECT_USED` — same for the **used** report
-   - `INV_FROM` — optional, the sender address, to ignore unrelated mail
+4. **Variables** (same page, **Variables** tab):
+   - `INV_FROM` — recommended: the sender address of the reports (e.g. the DMSREPORTS
+     address), so unrelated mail is ignored.
+   - `INV_SUBJECT_NEW` / `INV_SUBJECT_USED` — only needed if the reports can't self-identify.
 
-   If you skip the subject variables, the job still tries to guess new vs. used from the
-   subject and filename (words like "new", "used", "pre-owned", "CPO") — but setting them
-   removes all doubt.
+   New vs. used is detected automatically: DealerTrack "Inventory Analysis Detail" PDFs carry
+   an **"All New" / "All Used"** banner, which the parser reads directly. Subject/filename
+   keywords and an average-model-year tiebreaker are fallbacks if that banner is ever absent.
+
+Supported attachment formats: **PDF** (DealerTrack IN3130R inventory reports), plus Excel
+(`.xlsx`) and CSV.
 5. Test it: **Actions → Inventory sync → Run workflow**. A green run means `inventory.json`
    updated and the app will pick it up on next open.
 
