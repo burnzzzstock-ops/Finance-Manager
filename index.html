@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>F&I Scoreboard</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1>F&amp;I Scoreboard</h1>
+    <input type="month" id="month-picker" aria-label="Month">
+  </div>
+  <nav class="tabs">
+    <button class="tab active" data-view="dashboard">Dashboard</button>
+    <button class="tab" data-view="deals">Deals</button>
+    <button class="tab" data-view="pay">Pay</button>
+    <button class="tab" data-view="settings">Settings</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-dashboard" class="view active">
+    <div id="backup-nudge"></div>
+    <div id="dash"></div>
+  </section>
+
+  <section id="view-deals" class="view">
+    <div class="section-head">
+      <h2>Deals</h2>
+      <button class="btn primary" id="btn-new-deal">+ Log Deal</button>
+    </div>
+    <div id="deals-list"></div>
+    <div class="section-head">
+      <h2>Chargebacks</h2>
+      <button class="btn" id="btn-new-cb">+ Chargeback</button>
+    </div>
+    <div id="cbs-list"></div>
+  </section>
+
+  <section id="view-pay" class="view">
+    <h2>Month-to-Date Pay</h2>
+    <div id="pay-breakdown"></div>
+    <h2>What You Need</h2>
+    <div id="pay-targets"></div>
+    <h2>Pay Plan</h2>
+    <p class="hint">Set this once to match your plan. Tiers are based on monthly net back-end gross (after chargebacks).</p>
+    <div id="plan-editor"></div>
+  </section>
+
+  <section id="view-settings" class="view">
+    <h2>Products</h2>
+    <p class="hint">These show up as one-tap buttons when you log a deal. Default $ prefills the profit so entry stays fast.</p>
+    <div id="settings-products"></div>
+    <h2>Lenders</h2>
+    <div id="settings-lenders"></div>
+    <h2>Backup &amp; Data</h2>
+    <p class="hint">Your data lives only in this browser — it is never uploaded anywhere. Export a backup regularly, and use Import to move to a new phone or computer.</p>
+    <div class="btn-row">
+      <button class="btn primary" id="btn-export-json">Export Backup (JSON)</button>
+      <button class="btn" id="btn-import-json">Import Backup</button>
+      <button class="btn" id="btn-export-csv">Export Deals (CSV)</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn danger" id="btn-clear">Erase All Data</button>
+    </div>
+    <p class="hint" id="backup-status"></p>
+    <input type="file" id="import-file" accept=".json,application/json" hidden>
+  </section>
+</main>
+
+<button class="fab" id="fab-new-deal" title="Log a deal">+</button>
+
+<!-- Deal modal -->
+<div class="modal-wrap" id="deal-modal" hidden>
+  <div class="modal">
+    <h3 id="deal-modal-title">Log Deal</h3>
+    <div class="grid2">
+      <label>Date <input type="date" id="f-date"></label>
+      <label>Deal / Stock # <input type="text" id="f-num" placeholder="e.g. 4821" autocomplete="off"></label>
+    </div>
+    <label class="lbl">Deal type</label>
+    <div class="seg" id="f-type">
+      <button data-val="finance" class="active">Finance</button>
+      <button data-val="lease">Lease</button>
+      <button data-val="cash">Cash</button>
+    </div>
+    <label class="lbl">Vehicle</label>
+    <div class="seg" id="f-cond">
+      <button data-val="new" class="active">New</button>
+      <button data-val="used">Used</button>
+    </div>
+    <div class="grid2" id="f-lender-row">
+      <label>Lender <select id="f-lender"></select></label>
+      <label>Reserve / Flat ($) <input type="number" id="f-reserve" inputmode="decimal" placeholder="0"></label>
+    </div>
+    <label class="lbl">Products sold <span class="hint-inline">tap to toggle, adjust $ if needed</span></label>
+    <div id="f-products"></div>
+    <label>Note (no customer info) <input type="text" id="f-note" placeholder="optional" autocomplete="off"></label>
+    <div class="modal-total" id="f-total"></div>
+    <div class="btn-row">
+      <button class="btn" id="deal-cancel">Cancel</button>
+      <button class="btn primary" id="deal-save">Save Deal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Chargeback modal -->
+<div class="modal-wrap" id="cb-modal" hidden>
+  <div class="modal">
+    <h3>Chargeback</h3>
+    <div class="grid2">
+      <label>Date <input type="date" id="c-date"></label>
+      <label>Deal / Stock # <input type="text" id="c-num" autocomplete="off"></label>
+    </div>
+    <div class="grid2">
+      <label>Product <input type="text" id="c-prod" list="product-names" autocomplete="off"></label>
+      <label>Amount ($) <input type="number" id="c-amt" inputmode="decimal" placeholder="0"></label>
+    </div>
+    <datalist id="product-names"></datalist>
+    <label>Note <input type="text" id="c-note" placeholder="optional" autocomplete="off"></label>
+    <div class="btn-row">
+      <button class="btn" id="cb-cancel">Cancel</button>
+      <button class="btn primary" id="cb-save">Save Chargeback</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
