@@ -7,17 +7,21 @@ const LS_KEY = 'fi-scoreboard-v1';
 const DEFAULT_DATA = {
   settings: {
     products: [
-      { name: 'VSC / ESP',       amt: 1000, active: true },
-      { name: 'GAP',             amt: 600,  active: true },
-      { name: 'Tire & Wheel',    amt: 450,  active: true },
-      { name: 'Maintenance',     amt: 350,  active: true },
-      { name: 'Appearance',      amt: 300,  active: true },
-      { name: 'Key Replacement', amt: 250,  active: true }
+      { name: 'VSC / ESP',          amt: 1000, active: true, count: 1 },
+      { name: 'GAP',                amt: 600,  active: true, count: 1 },
+      { name: 'Complete Protection', amt: 1200, active: true, count: 5 },
+      { name: 'Express 5',          amt: 1000, active: true, count: 5 },
+      { name: 'Express 4',          amt: 800,  active: true, count: 5 },
+      { name: 'Tire & Wheel',       amt: 450,  active: true, count: 1 },
+      { name: 'Maintenance',        amt: 350,  active: true, count: 1 },
+      { name: 'Appearance',         amt: 300,  active: true, count: 1 },
+      { name: 'Key Replacement',    amt: 250,  active: true, count: 1 }
     ],
     lenders: ['Ford Credit', 'Chase', 'Capital One', 'Ally', 'Wells Fargo', 'Credit Union', 'Other'],
     payPlan: {
       mode: 'matrix',
       reserveRate: 10,
+      holdbackPct: 14,                      // 14% off the top of product + reserve; paid on the rest
       matrix: {
         pvrBasis: 'total',                    // PVR = (products + reserve) / units; or 'products'
         cols: [0, 1151, 1251, 1351, 1451],    // PVR column breakpoints ($)
@@ -293,6 +297,15 @@ function stopScan() {
 
 /* ============ metrics ============ */
 
+// How many "products" a line counts as toward PPD. Bundles (Complete Protection,
+// Express 4/5) count as 5. A weight stored on the deal line wins; otherwise the
+// current product setting decides, so re-weighting applies retroactively.
+function prodWeight(p) {
+  if (p.count != null && +p.count > 0) return +p.count;
+  const s = data.settings.products.find(x => x.name === p.name);
+  return s && +s.count > 0 ? +s.count : 1;
+}
+
 function calcMonth(m) {
   const deals = data.deals.filter(d => d.date.startsWith(m));
   const cbs = data.chargebacks.filter(c => c.date.startsWith(m));
@@ -307,9 +320,9 @@ function calcMonth(m) {
     if (d.lender && d.type !== 'cash') lenderMix[d.lender] = (lenderMix[d.lender] || 0) + 1;
     for (const p of (d.products || [])) {
       productGross += +p.amt || 0;
-      prodCount++;
+      prodCount += prodWeight(p);
       const s = prodStats[p.name] || (prodStats[p.name] = { count: 0, gross: 0 });
-      s.count++;
+      s.count++;                 // deals containing it — drives penetration %
       s.gross += +p.amt || 0;
     }
   }
@@ -429,14 +442,17 @@ function calcPayMatrix(M, plan) {
   const mb = plan.matrixBonus || {};
   const inCorner = ri === mx.rows.length - 1 && ci === mx.cols.length - 1;
   const bonusEarned = M.units > 0 && inCorner && vsc.pen >= (mb.vscPen ?? 55);
-  const prodNet = Math.max(M.productGross - M.cbAmt, 0);
+  // 14% chargeback hold off the top of product + reserve; commissioned on the rest.
+  const hold = (plan.holdbackPct ?? 0) / 100;
+  const prodNet = M.productGross * (1 - hold);
+  const reserveNet = M.reserve * (1 - hold);
   const prodRate = rate + (bonusEarned ? (mb.extra ?? 2) : 0);
   const productPay = prodNet * prodRate / 100;
   const reserveRate = plan.reserveRate ?? 10;
-  const reservePay = M.reserve * reserveRate / 100;
+  const reservePay = reserveNet * reserveRate / 100;
   return {
     M, mode: 'matrix', rate, prodRate, reserveRate, pvr, ri, ci, inCorner,
-    vsc, bonusEarned, prodNet, productPay, reservePay,
+    vsc, bonusEarned, holdPct: plan.holdbackPct ?? 0, prodNet, reserveNet, productPay, reservePay,
     total: productPay + reservePay,
     rateLabel: `${prodRate}% products + ${reserveRate}% reserve`
   };
@@ -632,10 +648,11 @@ function renderPayMatrix(P, plan) {
   const mx = plan.matrix;
   const mb = plan.matrixBonus || {};
 
+  const holdNote = P.holdPct ? ` (after ${P.holdPct}% hold)` : '';
   $('#pay-breakdown').innerHTML = `
-    <div class="pay-line"><span>Product gross${P.M.cbAmt ? ` − ${fmt$(P.M.cbAmt)} chargebacks` : ''} (${P.M.units} units)</span><b>${fmt$(P.prodNet)}</b></div>
+    <div class="pay-line"><span>Product gross ${fmt$(P.M.productGross)} → commissionable${holdNote}</span><b>${fmt$(P.prodNet)}</b></div>
     <div class="pay-line"><span>Products @ ${P.prodRate}%${P.bonusEarned ? ` (incl. +${mb.extra ?? 2}% bonus)` : ''}</span><b>${fmt$(P.productPay)}</b></div>
-    <div class="pay-line"><span>Reserve ${fmt$(P.M.reserve)} @ ${P.reserveRate}% flat</span><b>${fmt$(P.reservePay)}</b></div>
+    <div class="pay-line"><span>Reserve ${fmt$(P.M.reserve)}${holdNote} @ ${P.reserveRate}% flat</span><b>${fmt$(P.reservePay)}</b></div>
     <div class="pay-line total"><span>Estimated pay MTD</span><b>${fmt$(P.total)}</b></div>`;
 
   // targets
@@ -687,6 +704,9 @@ function renderPayMatrix(P, plan) {
 
   $('#plan-editor').innerHTML = `
     ${modeSelectRow(plan.mode)}
+    <div class="edit-row"><span class="hint-inline">Chargeback hold</span>
+      <input class="amt" type="number" data-mx="holdbackPct" value="${plan.holdbackPct ?? 0}" step="0.5">
+      <span class="hint-inline">% off the top of product + reserve</span></div>
     <div class="edit-row"><span class="hint-inline">Reserve pays</span>
       <input class="amt" type="number" data-mx="reserveRate" value="${plan.reserveRate ?? 10}" step="0.5">
       <span class="hint-inline">% flat &nbsp;·&nbsp; PVR basis</span>
@@ -774,6 +794,8 @@ function renderSettings() {
       <input type="text" value="${esc(p.name)}" data-set="prod" data-i="${i}" data-f="name">
       <span class="hint-inline">default $</span>
       <input class="amt" type="number" inputmode="numeric" value="${+p.amt || 0}" data-set="prod" data-i="${i}" data-f="amt">
+      <span class="hint-inline">counts as</span>
+      <input class="amt" style="max-width:60px" type="number" inputmode="numeric" value="${+p.count || 1}" data-set="prod" data-i="${i}" data-f="count" title="products toward PPD">
       <label class="check-row" style="margin:0"><input type="checkbox" ${p.active ? 'checked' : ''} data-set="prod" data-i="${i}" data-f="active"> show</label>
       <button class="del" data-set="delprod" data-i="${i}" title="Remove">✕</button>
     </div>`).join('');
@@ -839,14 +861,15 @@ function openDealModal(deal) {
   }
 
   // product rows: active settings products + anything already on the deal
-  const rows = data.settings.products.filter(p => p.active).map(p => ({ name: p.name, def: p.amt }));
+  const rows = data.settings.products.filter(p => p.active).map(p => ({ name: p.name, def: p.amt, count: +p.count || 1 }));
   for (const p of (deal?.products || [])) {
-    if (!rows.some(r => r.name === p.name)) rows.push({ name: p.name, def: p.amt });
+    if (!rows.some(r => r.name === p.name)) rows.push({ name: p.name, def: p.amt, count: prodWeight(p) });
   }
   $('#f-products').innerHTML = rows.map(r => {
     const on = deal?.products?.find(p => p.name === r.name);
-    return `<div class="prod-row ${on ? 'on' : ''}" data-name="${esc(r.name)}" data-def="${r.def}">
-      <span class="tick">✓</span><span class="name">${esc(r.name)}</span>
+    const cnt = r.count > 1 ? `<span class="cntbadge">×${r.count}</span>` : '';
+    return `<div class="prod-row ${on ? 'on' : ''}" data-name="${esc(r.name)}" data-def="${r.def}" data-count="${r.count}">
+      <span class="tick">✓</span><span class="name">${esc(r.name)}${cnt}</span>
       <input type="number" inputmode="numeric" value="${on ? +on.amt : ''}" placeholder="${r.def}" onclick="event.stopPropagation()">
     </div>`;
   }).join('');
@@ -873,7 +896,8 @@ function saveDeal() {
   const type = segVal('#f-type');
   const products = $$('#f-products .prod-row.on').map(r => ({
     name: r.dataset.name,
-    amt: +(r.querySelector('input').value || r.dataset.def) || 0
+    amt: +(r.querySelector('input').value || r.dataset.def) || 0,
+    count: +r.dataset.count || 1
   }));
   const deal = {
     id: editingDealId || uid(),
@@ -1120,6 +1144,7 @@ $('#view-pay').addEventListener('change', e => {
     const mx = plan.matrix;
     if (mxk === 'mode') plan.mode = el.value;
     else if (mxk === 'reserveRate') plan.reserveRate = +el.value || 0;
+    else if (mxk === 'holdbackPct') plan.holdbackPct = +el.value || 0;
     else if (mxk === 'pvrBasis') mx.pvrBasis = el.value;
     else if (mxk === 'col') mx.cols[+el.dataset.j] = +el.value || 0;
     else if (mxk === 'row') mx.rows[+el.dataset.i] = +el.value || 0;
@@ -1146,7 +1171,7 @@ $('#view-settings').addEventListener('click', e => {
   if (!el || el.tagName === 'INPUT') return;
   const s = data.settings;
   const i = +el.dataset.i;
-  if (el.dataset.set === 'addprod') s.products.push({ name: 'New Product', amt: 0, active: true });
+  if (el.dataset.set === 'addprod') s.products.push({ name: 'New Product', amt: 0, active: true, count: 1 });
   else if (el.dataset.set === 'delprod' && confirm('Remove this product? Past deals keep it; it just leaves the quick-entry list.')) s.products.splice(i, 1);
   else if (el.dataset.set === 'dellender') s.lenders.splice(i, 1);
   else if (el.dataset.set === 'addlender') {
@@ -1161,6 +1186,7 @@ $('#view-settings').addEventListener('change', e => {
   const p = data.settings.products[+el.dataset.i];
   if (el.dataset.f === 'name') p.name = el.value.trim() || p.name;
   if (el.dataset.f === 'amt') p.amt = +el.value || 0;
+  if (el.dataset.f === 'count') p.count = Math.max(1, +el.value || 1);
   if (el.dataset.f === 'active') p.active = el.checked;
   save(); renderSettings(); renderDashboard(); renderPay();
 });

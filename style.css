@@ -220,6 +220,7 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 }
 .mx th .mxin { width: 64px; }
 .tbl td.cur { background: #14224a; box-shadow: inset 0 0 0 2px var(--accent); }
+.cntbadge { background: var(--accent2); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
 
 .nudge {
   background: #2a2310; border: 1px solid #5c4d1a; color: var(--amber);
