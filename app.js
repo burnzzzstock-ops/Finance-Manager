@@ -271,16 +271,23 @@ function calcMonth(m) {
   const units = deals.length;
   let productGross = 0, reserve = 0, prodCount = 0;
   const prodStats = {}, lenderMix = {}, lenderStats = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
+  const condStats = { new: { units: 0, gross: 0, prodCount: 0 }, used: { units: 0, gross: 0, prodCount: 0 } };
 
   for (const d of deals) {
     reserve += +d.reserve || 0;
     typeCount[d.type] = (typeCount[d.type] || 0) + 1;
     condCount[d.cond] = (condCount[d.cond] || 0) + 1;
+    const cs = condStats[d.cond] || (condStats[d.cond] = { units: 0, gross: 0, prodCount: 0 });
+    cs.units++;
+    cs.gross += +d.reserve || 0;
     let dealProd = 0;
     for (const p of (d.products || [])) {
       productGross += +p.amt || 0;
       dealProd += +p.amt || 0;
-      prodCount += prodWeight(p);
+      const w = prodWeight(p);
+      prodCount += w;
+      cs.prodCount += w;
+      cs.gross += +p.amt || 0;
       const s = prodStats[p.name] || (prodStats[p.name] = { count: 0, gross: 0 });
       s.count++;                 // deals containing it — drives penetration %
       s.gross += +p.amt || 0;
@@ -301,7 +308,7 @@ function calcMonth(m) {
     cbAmt, cbCount: cbs.length, net: gross - cbAmt,
     pvr: units ? gross / units : 0,
     ppd: units ? prodCount / units : 0,
-    prodCount, prodStats, lenderMix, lenderStats, typeCount, condCount
+    prodCount, prodStats, lenderMix, lenderStats, typeCount, condCount, condStats
   };
 }
 
@@ -488,6 +495,15 @@ function renderDashboard() {
   const typeSub = `${M.typeCount.finance || 0} fin · ${M.typeCount.lease || 0} lease · ${M.typeCount.cash || 0} cash`;
   const condSub = `${M.condCount.new || 0} new · ${M.condCount.used || 0} used`;
 
+  // penetration of a product family by deal-count
+  const penOf = re => {
+    let c = 0;
+    for (const [name, s] of Object.entries(M.prodStats)) if (re.test(name)) c += s.count;
+    return { count: c, pen: M.units ? c / M.units * 100 : 0 };
+  };
+  const vscP = penOf(/vsc|esp|service\s*contract/i);
+  const gapP = penOf(/gap/i);
+
   let html = `<div class="stats">
     ${statCard('Back Gross', fmt$(M.gross), paceSub, 'hero good')}
     ${statCard('Est. Pay MTD', fmt$(P.total), P.rateLabel, 'hero')}
@@ -495,19 +511,54 @@ function renderDashboard() {
     ${statCard('PVR', fmt$(M.pvr), condSub)}
     ${statCard('Products/Deal', (Math.round(M.ppd * 100) / 100).toFixed(2), M.prodCount + ' products')}
     ${statCard('Reserve', fmt$(M.reserve))}
-    ${statCard('Chargebacks', M.cbAmt ? '-' + fmt$(M.cbAmt).replace('-', '') : '$0', M.cbCount + ' this month', M.cbAmt ? 'bad' : '')}
-    ${statCard('Net Gross', fmt$(M.net), 'after chargebacks')}
+    ${statCard('VSC %', fmtPct(vscP.pen), `${vscP.count} of ${M.units}`, vscP.pen >= 55 ? 'good' : '')}
+    ${statCard('GAP %', fmtPct(gapP.pen), `${gapP.count} of ${M.units}`)}
+    ${statCard('Net Gross', fmt$(M.net), `${fmt$(M.productGross)} prod + ${fmt$(M.reserve)} res`)}
   </div>`;
 
-  // product penetration table
+  // weight (products-counted-as) for a product name, from settings or deal lines
+  const weightOf = name => {
+    const sp = data.settings.products.find(p => p.name === name);
+    if (sp && +sp.count > 0) return +sp.count;
+    for (const d of data.deals) for (const p of (d.products || [])) if (p.name === name && +p.count > 0) return +p.count;
+    return 1;
+  };
+
+  // product table — ×5 bundles collapse into one "Bundle Product" row
   const names = [...new Set([...data.settings.products.filter(p => p.active).map(p => p.name), ...Object.keys(M.prodStats)])];
   if (names.length && M.units) {
-    html += `<h2>Product Penetration</h2><table class="tbl"><tr><th>Product</th><th class="num">Sold</th><th class="num">Pen %</th><th class="num">Gross</th></tr>`;
-    for (const n of names.sort((a, b) => ((M.prodStats[b]?.gross) || 0) - ((M.prodStats[a]?.gross) || 0))) {
+    const disp = {};
+    for (const n of names) {
+      const w = weightOf(n);
       const s = M.prodStats[n] || { count: 0, gross: 0 };
-      const pen = s.count / M.units * 100;
-      html += `<tr><td>${esc(n)}<div class="bar"><i style="width:${Math.min(pen, 100)}%"></i></div></td>
-        <td class="num">${s.count}</td><td class="num">${fmtPct(pen)}</td><td class="num">${fmt$(s.gross)}</td></tr>`;
+      const key = w > 1 ? 'Bundle Product' : n;
+      const r = disp[key] || (disp[key] = { count: 0, gross: 0, weight: 1, bundle: w > 1 });
+      r.count += s.count;
+      r.gross += s.gross;
+      if (w > 1) r.weight = w;
+    }
+    html += `<h2>Product Breakdown</h2><div class="scrollx"><table class="tbl"><tr>
+      <th>Product</th><th class="num">Sold</th><th class="num">Pen %</th><th class="num">Avg $</th><th class="num">Gross</th></tr>`;
+    for (const [name, r] of Object.entries(disp).sort((a, b) => b[1].gross - a[1].gross)) {
+      const pen = r.count / M.units * 100;
+      const avg = r.count ? r.gross / r.count : 0;
+      const badge = r.bundle ? `<span class="cntbadge">×${r.weight}</span>` : '';
+      html += `<tr><td>${esc(name)}${badge}<div class="bar"><i style="width:${Math.min(pen, 100)}%"></i></div></td>
+        <td class="num">${r.count}</td><td class="num">${fmtPct(pen)}</td>
+        <td class="num">${r.count ? fmt$(avg) : '—'}</td><td class="num">${fmt$(r.gross)}</td></tr>`;
+    }
+    html += `</table></div>`;
+  }
+
+  // new vs used split
+  if (M.units) {
+    html += `<h2>New vs Used</h2><table class="tbl"><tr>
+      <th></th><th class="num">Units</th><th class="num">PVR</th><th class="num">Products/Deal</th></tr>`;
+    for (const cond of ['new', 'used']) {
+      const cs = M.condStats[cond];
+      if (!cs || !cs.units) continue;
+      html += `<tr><td>${cond[0].toUpperCase() + cond.slice(1)}</td><td class="num">${cs.units}</td>
+        <td class="num">${fmt$(cs.gross / cs.units)}</td><td class="num">${(cs.prodCount / cs.units).toFixed(2)}</td></tr>`;
     }
     html += `</table>`;
   }
