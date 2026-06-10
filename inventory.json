@@ -1,0 +1,1400 @@
+{
+ "updated": "2026-06-10T18:18:10+00:00",
+ "source": "REPORT.PDF + REPORT.PDF",
+ "count": 199,
+ "vehicles": [
+  {
+   "vin": "1FMDE6BH7SLB48183",
+   "stock": "BR25313",
+   "name": "2025 Ford BRONCO BASE 4 DOOR 4X4 RUB",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE0RR3TLA57557",
+   "stock": "BR26107",
+   "name": "2026 Ford BRONCO RAPTOR 4 DOOR ADVAN",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH6TLA91756",
+   "stock": "BR26151",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH5TLA91702",
+   "stock": "BR26153",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH1TLA91793",
+   "stock": "BR26167",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BP1TLA98301",
+   "stock": "BR26168",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BPXTLA96885",
+   "stock": "BR26174",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BH4TLB05637",
+   "stock": "BR26199",
+   "name": "2026 Ford BADLANDS 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE8BH7TLB05945",
+   "stock": "BR26204",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH3TLB21988",
+   "stock": "BR26221",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE8BP9TLB15453",
+   "stock": "BR26225",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE8BH9TLB20483",
+   "stock": "BR26226",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9GN7SRE41311",
+   "stock": "BS25105",
+   "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN1SRF06693",
+   "stock": "BS25179",
+   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 SH",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN8SRF78314",
+   "stock": "BS25333",
+   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 99",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN7TRE35890",
+   "stock": "BS26120",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN2TRE74547",
+   "stock": "BS26179",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9CN5TRE91129",
+   "stock": "BS26222",
+   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H88SEA57749",
+   "stock": "EN25224",
+   "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H82TEA20102",
+   "stock": "EN26049",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 GLAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H80TEA19952",
+   "stock": "EN26074",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 DARK",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1M88TEA31501",
+   "stock": "EN26092",
+   "name": "2026 Ford EXPEDITION PLATINUM 4X4 GL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1M80TEA30584",
+   "stock": "EN26109",
+   "name": "2026 Ford EXPEDITION PLATINUM 4X4 ST",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H82TEA23243",
+   "stock": "EN26115",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 SPAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1P8XTEA38266",
+   "stock": "EN26122",
+   "name": "2026 Ford EXPEDITION KING RANCH 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1RG8TEA48475",
+   "stock": "EN26154",
+   "name": "2026 Ford EXPEDITION TREMOR 4X4 AGAT",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H85TEA31868",
+   "stock": "EN26161",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 AGAT",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H83TEA49513",
+   "stock": "EN26178",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 GLAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H82TEA41337",
+   "stock": "EN26205",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 AGAT",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJK1H80TEA43786",
+   "stock": "EN26206",
+   "name": "2026 Ford EXPEDITION ACTIVE 4X2 SPAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK8GC5SGA59490",
+   "stock": "ER25008",
+   "name": "2025 Ford EXPLORER ST 4WD CARBONIZED",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7HH3TGA69092",
+   "stock": "ER26026",
+   "name": "2026 Ford EXPLORER PLATINUM RWD STAR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK8JC8TGA88010",
+   "stock": "ER26041",
+   "name": "2026 Ford EXPLORER TREMOR 4WD SPACE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7DHXTGB33442",
+   "stock": "ER26121",
+   "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK8JC6TGB52416",
+   "stock": "ER26132",
+   "name": "2026 Ford EXPLORER TREMOR 4WD AGATE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7DH7TGB80590",
+   "stock": "ER26187",
+   "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7HH6TGC14836",
+   "stock": "ER26211",
+   "name": "2026 Ford EXPLORER PLATINUM RWD SPAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7DH3TGB48994",
+   "stock": "ER26224",
+   "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW7L82SFC54280",
+   "stock": "FT25299",
+   "name": "2025 Ford F-150 PLATINUM 4WD SUPERCR",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L50SKF19882",
+   "stock": "FT25314",
+   "name": "2025 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L58SFC06180",
+   "stock": "FT25325",
+   "name": "2025 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW7L86SFC72653",
+   "stock": "FT25346",
+   "name": "2025 Ford F-150 PLATINUM 4WD SUPERCR",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L81TKD20383",
+   "stock": "FT26027",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L82TFA06052",
+   "stock": "FT26050",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3LD9TFA20239",
+   "stock": "FT26056",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2L52TFA30108",
+   "stock": "FT26058",
+   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L83TKD20087",
+   "stock": "FT26067",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5LD4TFA32441",
+   "stock": "FT26079",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3LD7TFA46239",
+   "stock": "FT26090",
+   "name": "2026 Ford F-150 HYBR XLT 4WD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2L53TFA39898",
+   "stock": "FT26098",
+   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW6L87TFA85742",
+   "stock": "FT26110",
+   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5LD4TFA78934",
+   "stock": "FT26119",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L53TKD77058",
+   "stock": "FT26124",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2LP1TFA26200",
+   "stock": "FT26125",
+   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L58TKD76732",
+   "stock": "FT26140",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L5XTKD80812",
+   "stock": "FT26142",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L5XTFA25250",
+   "stock": "FT26146",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2LP0TFA64209",
+   "stock": "FT26148",
+   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L54TFA97366",
+   "stock": "FT26157",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L58TKD80831",
+   "stock": "FT26160",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW1RG5TFB06492",
+   "stock": "FT26162",
+   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L89TFB06763",
+   "stock": "FT26163",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L87TFB09080",
+   "stock": "FT26164",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L80TKE22032",
+   "stock": "FT26169",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW7LD5TFB15419",
+   "stock": "FT26172",
+   "name": "2026 Ford F-150 PLATINUM 4WD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L84TKE18890",
+   "stock": "FT26173",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L82TKE27202",
+   "stock": "FT26175",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L84TKE28125",
+   "stock": "FT26176",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L84TFB15080",
+   "stock": "FT26180",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW6L85TFA90955",
+   "stock": "FT26193",
+   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L8XTFB25502",
+   "stock": "FT26194",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L84TKE28688",
+   "stock": "FT26196",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L81TKE18734",
+   "stock": "FT26198",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L80TFB25850",
+   "stock": "FT26202",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L50TFB30200",
+   "stock": "FT26203",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEX1K81TKE24189",
+   "stock": "FT26212",
+   "name": "2026 Ford F150 4X2 SUPERCAB XL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW1RJ6TFB27587",
+   "stock": "FT26219",
+   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L50TFB35868",
+   "stock": "FT26220",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW3LP9TKE32416",
+   "stock": "FT26228",
+   "name": "2026 Ford F150 4X4 SUPERCREW XLT - 1",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTCW8TAXSRB67547",
+   "stock": "MA25285",
+   "name": "2025 Ford MAVERICK LOBO STANDARD AWD",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTCW8TA3TRA09939",
+   "stock": "MA26015",
+   "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8BA1TRA07138",
+   "stock": "MA26018",
+   "name": "2026 Ford MAVERICK XL AWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTCW8TA3TRA23940",
+   "stock": "MA26022",
+   "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8SA6TRA42824",
+   "stock": "MA26052",
+   "name": "2026 Ford MAVERICK LARIAT AWD SUPERC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H3XTRA83367",
+   "stock": "MA26143",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H31TRA97612",
+   "stock": "MA26214",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8TH4S5120577",
+   "stock": "MU25162",
+   "name": "2025 Ford MUSTANG ECOBOOST FASTBACK",
+   "year": "2025",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8CF0T5405423",
+   "stock": "MU26046",
+   "name": "2026 Ford MUSTANG GT PREMIUM FASTBAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4KH1TLE07219",
+   "stock": "RA26080",
+   "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4KH5TLE13962",
+   "stock": "RA26111",
+   "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4LR1TLE23301",
+   "stock": "RA26184",
+   "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4BH5TLE25531",
+   "stock": "RA26188",
+   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT7W2AT7TEC19630",
+   "stock": "SD26000",
+   "name": "2026 Ford SUPER DUTY XL 2WD CREW CAB",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT7W2BT7TED54217",
+   "stock": "SD26029",
+   "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT5TED51322",
+   "stock": "SD26040",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT8TED63531",
+   "stock": "SD26078",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT1TEE10818",
+   "stock": "SD26093",
+   "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W3BM1TEE18853",
+   "stock": "SD26123",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM0TEE42491",
+   "stock": "SD26135",
+   "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM5TEE49291",
+   "stock": "SD26155",
+   "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM6TED98531",
+   "stock": "SD26165",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W4DM0TEE64113",
+   "stock": "SD26171",
+   "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT5TEE70150",
+   "stock": "SD26197",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BN5TEE61997",
+   "stock": "SD26200",
+   "name": "2026 Ford F250 4X4 T CREW CAB PICKUP",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT6TEE69671",
+   "stock": "SD26201",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BT2TEE63009",
+   "stock": "SD26207",
+   "name": "2026 Ford SUPER DUTY XL 4WD CREW CAB",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W3BM1TEE87056",
+   "stock": "SD26213",
+   "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BMXTEE85042",
+   "stock": "SD26218",
+   "name": "2026 Ford SUPER DUTY TREMOR 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FBAX2CG8TKB14295",
+   "stock": "TR26195",
+   "name": "2026 Ford TRANSIT PA T-350 148\" MED",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FBAX2YG7TKB38872",
+   "stock": "TR26227",
+   "name": "2026 Ford TRANSIT PA T-350 148\" LOW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1V2ER2CA6KC543686",
+   "stock": "BR25268B",
+   "name": "2019 Volkswagen ATLAS SUV",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNSCHKC9GR291441",
+   "stock": "BR25345A",
+   "name": "2016 Chevrolet SUBURBAN SUV",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "5FNYG2H70SB044693",
+   "stock": "BR25352A",
+   "name": "2025 Hond PILOT SUV",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMUK7HH9TGA66732",
+   "stock": "BR25352B",
+   "name": "2026 Ford EXPLORER SUV BLACK",
+   "year": "2026",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMDE8BH3RLA70152",
+   "stock": "BR26144A",
+   "name": "2024 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4PJLLB1KD339212",
+   "stock": "BR26158A",
+   "name": "2019 JEEP CHEROKEE SUV",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6HJTAGXNL169825",
+   "stock": "BS25182A",
+   "name": "2022 JEEP GLADIATOR TRUCK",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "2T2ZZMCA6HC051752",
+   "stock": "BS25222A",
+   "name": "2017 Lexus RX",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1KT8LEA79054",
+   "stock": "EN24227A",
+   "name": "2020 Ford EXPEDITION SUV STAR WHITE",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1GKS1CKJ1JR388743",
+   "stock": "EN25207A",
+   "name": "2018 GMC YUKON",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "5TDGZRAH1MS530235",
+   "stock": "EN25324A",
+   "name": "2021 Toyo HIGHLANDER",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FM5K7D89EGB57237",
+   "stock": "EN26134A",
+   "name": "2014 Ford EXPLORER SUV",
+   "year": "2014",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1CP2JKF19303",
+   "stock": "EN26166A",
+   "name": "2018 Ford F-150",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1HTXMEA15462",
+   "stock": "EN26186A",
+   "name": "2021 Ford EXPEDITION SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJK1HT1MEA10558",
+   "stock": "ER26095A",
+   "name": "2021 Ford EXPEDITION XLT 4X2 MAGNETI",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FM5K7D88HGE18443",
+   "stock": "ER26185A",
+   "name": "2017 Ford EXPLORER XLT FWD",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTER4KH9RLE26237",
+   "stock": "ER26209A",
+   "name": "2024 Ford RANGER TRUCK SHADOW BLACK",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1EG9HFB61620",
+   "stock": "FT25109A",
+   "name": "2017 Ford F-150",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6JJTAG4RL103813",
+   "stock": "FT25219A",
+   "name": "2024 JEEP GLADIATOR TRUCK",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1GTP9EEL4MZ406854",
+   "stock": "FT25340A",
+   "name": "2021 GMC SIERRA",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E84NFC22414",
+   "stock": "FT25354A",
+   "name": "2022 Ford F-150 TRUCK",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1GTU9DED7MZ117182",
+   "stock": "FT26019A",
+   "name": "2021 GMC SIERRA",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1GTUUHEL0RZ375595",
+   "stock": "FT26037A",
+   "name": "2024 GMC SIERRA",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT8W2BM0RED04216",
+   "stock": "FT26054A",
+   "name": "2024 Ford F-250 TRUCK OXFORD WHITE 9",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "3MW69FF03P8D11509",
+   "stock": "FT26064B",
+   "name": "2023 BMW 330I SEDAN",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1E4XKKE56892",
+   "stock": "FT26086A",
+   "name": "2019 Ford F-150",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "KMHLM4DGXSU078339",
+   "stock": "FT26112A",
+   "name": "2025 Hyundai ELANTRA SEDAN",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "3C6UR5FL7RG145526",
+   "stock": "FT26114A",
+   "name": "2024 RAM",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6SRFJT8NN470448",
+   "stock": "FT26116A",
+   "name": "2022 RAM",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW5L5XSKD01010",
+   "stock": "FT26130A",
+   "name": "2025 Ford F-150 TRUCK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNSCCKD8MR238799",
+   "stock": "FT26136B",
+   "name": "2021 Chevrolet SUBURBAN SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6RD6KT3CS156927",
+   "stock": "FT26136C",
+   "name": "2012 RAM",
+   "year": "2012",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMEU15N0PLA95491",
+   "stock": "FT80033C",
+   "name": "1993 Ford BRONCO 2DR XLT WHITE",
+   "year": "1993",
+   "cond": "used"
+  },
+  {
+   "vin": "1G11B5SA0GF103145",
+   "stock": "MA25274A",
+   "name": "2016 Chevrolet MALIBU LIM SEDAN WHITE",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "4S4WMAED5M3447200",
+   "stock": "MA26189A",
+   "name": "2021 Subaru ASCENT",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E5XMKE33077",
+   "stock": "MA26216A",
+   "name": "2021 Ford F-150 XL 4WD SUPERCREW 5.5",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "5FPYK3F84NB036110",
+   "stock": "ME26217A",
+   "name": "2022 Hond RIDGELINE TRUCK",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "3FTTW8A30SRB33086",
+   "stock": "ME26217B",
+   "name": "2025 Ford MAVERICK TRUCK CARBONIZED",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTMF1CP5LKD36590",
+   "stock": "MU25086B",
+   "name": "2020 Ford F-150 TRUCK OXFORD WHITE 9",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1FA6P8CF2H5213315",
+   "stock": "MU26023A",
+   "name": "2017 Ford MUSTANG",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1FATP8UH2M5103300",
+   "stock": "MU26208A",
+   "name": "2021 Ford MUSTANG ECOBOOST PREMIUM C",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "3GYFNBE34CS603714",
+   "stock": "MU26215A",
+   "name": "2012 Cadillac SRX SUV RED",
+   "year": "2012",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT7W2BT5GEB38081",
+   "stock": "P6824",
+   "name": "2016 Ford SUPER DUTY 4WD CREW CAB 15",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "SALWZ2FE2HA129578",
+   "stock": "P8091B",
+   "name": "2017 Land RANGE ROVE",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "3FA6P0HD3KR146737",
+   "stock": "P8100A",
+   "name": "2019 Ford FUSION SEDAN 99D",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMPJ8KA2RJ835288",
+   "stock": "P8104",
+   "name": "2024 Lincoln NAUTILUS RESERVE AWD WHITE",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "JM3TCBAY6P0651509",
+   "stock": "P8105A",
+   "name": "2023 Mazda CX-9 SUV",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1E59JFC31122",
+   "stock": "P8106A",
+   "name": "2018 Ford F-150 TRUCK",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1E45KKD42251",
+   "stock": "P8107A",
+   "name": "2019 Ford F-150 TRUCK WHITE",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1GCUYDED4MZ422934",
+   "stock": "P8108A",
+   "name": "2021 Chevrolet SILVERADO TRUCK",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW5LD4RFB77617",
+   "stock": "P8109",
+   "name": "2024 Ford F-150 HYBR LARIAT 4WD SUPE",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMSK8FH8PGB22763",
+   "stock": "P8115",
+   "name": "2023 Ford EXPLORER LIMITED 4WD BLACK",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT8W2BM2REE69488",
+   "stock": "P8116",
+   "name": "2024 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "3MVDMBDM9PM502896",
+   "stock": "P8122",
+   "name": "2023 Mazda CX-30 2.5 S PREMIUM PACKAG",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU9GN5SUA99395",
+   "stock": "P8125",
+   "name": "2025 Ford ESCAPE ACTIVE AWD GRAY 99N",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1GKS2EKL1RR227878",
+   "stock": "P8127",
+   "name": "2024 GMC YUKON 4WD 4DR DENALI ULTIMA",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1K8XREA47551",
+   "stock": "P8128",
+   "name": "2024 Ford EXPEDITION LIMITED 4X2 WHI",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5TDGZRAH4NS097172",
+   "stock": "P8131A",
+   "name": "2022 Toyo HIGHLANDER SUV WHITE",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMJJ2LG7SEL00638",
+   "stock": "P8133",
+   "name": "2025 Lincoln NAVIGATOR RESERVE 4X4 WHIT",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1EF7EKE50722",
+   "stock": "P8134A",
+   "name": "2014 Ford F-150",
+   "year": "2014",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW5L53SFB54103",
+   "stock": "P8139",
+   "name": "2025 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1AL1ESXSC335517",
+   "stock": "P8144",
+   "name": "2025 Infiniti QX60 PURE AWD BLACK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMDE7BH8SLA83575",
+   "stock": "P8145",
+   "name": "2025 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1V2HR2CA4SC525751",
+   "stock": "P8146",
+   "name": "2025 Volkswagen ATLAS 2.0T SE W/TECHNOLOGY",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT7W2BT0LEE65921",
+   "stock": "P8147",
+   "name": "2020 Ford F250 PICKUP TRUCK BLUE",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMUK8KH7SGB39514",
+   "stock": "P8148",
+   "name": "2025 Ford EXPLORER ST-LINE 4WD BLACK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1BT3CBXPC824378",
+   "stock": "P8149",
+   "name": "2023 Nissan ROGUE AWD SL WHITE",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMCJ2DH2MUL03925",
+   "stock": "P8150",
+   "name": "2021 Lincoln CORSAIR SUV WHITE",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4BJWFG1HL650205",
+   "stock": "P8151",
+   "name": "2017 JEEP WRANGLER U RUBICON 4X4 SUV",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU0H6XNUA46215",
+   "stock": "P8152",
+   "name": "2022 Ford ESCAPE SEL FWD SILVER",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E86PFD28642",
+   "stock": "P8153",
+   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E85PKE60007",
+   "stock": "P8154",
+   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E83PFD19140",
+   "stock": "P8155",
+   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "3C4NJDCB0NT148117",
+   "stock": "P8156",
+   "name": "2022 JEEP COMPASS HIGH ALTITUDE 4X4",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4JJXN65PW650909",
+   "stock": "P8157",
+   "name": "2023 JEEP WRANGLER 4 4X4 BLACK ECX",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "3N1AB8BV2SY335200",
+   "stock": "P8158",
+   "name": "2025 Nissan SENTRA S CVT BLACK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMCJ1D97NUL15377",
+   "stock": "P8159",
+   "name": "2022 Lincoln CORSAIR SUV WHITE",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "5LM5J7XC1SGL00550",
+   "stock": "P8160",
+   "name": "2025 Lincoln AVIATOR RESERVE AWD SUV BL",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "2C4RC1BG8GR295587",
+   "stock": "RA25139A",
+   "name": "2016 Chrysler TOWN & COU MINIVAN GRAY",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1ED28T82C562715",
+   "stock": "RA25139B",
+   "name": "2002 Nissan XTERRA SUV SILVER",
+   "year": "2002",
+   "cond": "used"
+  },
+  {
+   "vin": "3GNAXLEX1KS632323",
+   "stock": "RA26191A",
+   "name": "2019 Chevrolet EQUINOX RED",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTER1EH5LLA64490",
+   "stock": "RA26223A",
+   "name": "2020 Ford RANGER OTHER",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT7W2BT6MEC57494",
+   "stock": "SD25368A",
+   "name": "2021 Ford F-250 TRUCK",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1ED1PFA91703",
+   "stock": "SD26048B",
+   "name": "2023 Ford F-150 LIMITED 4WD SUPERCRE",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1N6BD0CT9JN732857",
+   "stock": "SD26048C",
+   "name": "2018 Nissan FRONTIER PICKUP",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "1FA6P8SJ0L5505379",
+   "stock": "SD26085A",
+   "name": "2020 Ford SHELBY GT5 COUPE SHADOW BL",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW6LD2TFA18463",
+   "stock": "SD26091A",
+   "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
+   "year": "2026",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1ET7DFD19495",
+   "stock": "SD26097B",
+   "name": "2013 Ford F-150 TRUCK",
+   "year": "2013",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT8W3BT7HEB56464",
+   "stock": "SD2X234A",
+   "name": "2017 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2017",
+   "cond": "used"
+  }
+ ]
+}
