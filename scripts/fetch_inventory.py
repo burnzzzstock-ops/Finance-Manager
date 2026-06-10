@@ -15,6 +15,7 @@ Env vars:
 import csv
 import email
 import email.header
+import hashlib
 import imaplib
 import io
 import json
@@ -22,8 +23,12 @@ import os
 import re
 import sys
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 VIN_RE = re.compile(r'^[A-HJ-NPR-Z0-9]{17}$')
+VIN_FIND = re.compile(r'\b([A-HJ-NPR-Z0-9]{17})\b')
+MONEY_T = re.compile(r'^[$\-()0-9,.%]+$')
+YEAR_T = re.compile(r'^(19|20)\d{2}$')
 OUT_PATH = os.path.join(os.path.dirname(__file__), '..', 'inventory.json')
 
 COLMAP = {
@@ -112,6 +117,56 @@ def parse_rows(rows, default_cond=''):
     return list(vehicles.values())
 
 
+def pdf_pages_text(data):
+    import pdfplumber
+    pages = []
+    with pdfplumber.open(io.BytesIO(data)) as pdf:
+        for page in pdf.pages:
+            pages.append(page.extract_text() or '')
+    return pages
+
+
+def vehicles_from_pdf_text(pages, default_cond=''):
+    """Line-oriented harvest for report PDFs (e.g. DealerTrack Inventory Analysis Detail).
+
+    Any line containing a VIN is treated as a vehicle row; stock number is taken
+    from the tokens before the model year, the vehicle description from tokens
+    between the year and the VIN/amount columns.
+    """
+    vehicles = {}
+    for text in pages:
+        for line in text.splitlines():
+            upper = line.upper()
+            m = VIN_FIND.search(upper)
+            if not m:
+                continue
+            vin = m.group(1)
+            toks = line.split()
+            vin_i = next((i for i, t in enumerate(toks) if vin in t.upper()), len(toks))
+            pre = toks[:vin_i]
+            year = next((t for t in pre if YEAR_T.match(t)), '')
+            year_i = pre.index(year) if year else len(pre)
+            stock = ''
+            for t in pre[:year_i]:
+                tu = t.upper().strip('#:*')
+                if tu and re.fullmatch(r'[A-Z0-9-]{2,9}', tu) and any(ch.isdigit() for ch in tu):
+                    stock = tu
+                    break
+            name_toks = []
+            for t in pre[year_i + 1:]:
+                if MONEY_T.match(t):
+                    break
+                if re.search(r'[A-Za-z]', t):
+                    name_toks.append(t)
+                if len(name_toks) >= 5:
+                    break
+            row_cond = to_cond(' '.join(re.findall(r'\b(NEW|USED|PRE-?OWNED|CPO|CERTIFIED)\b', upper)))
+            name = ' '.join([year] + name_toks).strip()
+            vehicles[vin] = {'vin': vin, 'stock': stock, 'name': name,
+                             'year': year, 'cond': row_cond or default_cond}
+    return list(vehicles.values())
+
+
 def classify(*texts):
     """Decide whether a report is the new or used one, from subject + filename."""
     blob = ' '.join(t for t in texts if t).lower()
@@ -151,38 +206,59 @@ def collect_reports():
     msg_ids = ids[0].split()
     print(f'{len(msg_ids)} candidate message(s) since {since}')
 
-    # Newest first; keep the first spreadsheet we see for each of new/used,
-    # plus an untagged fallback if a report's category can't be determined.
-    found = {}      # cond -> (fn, data)
-    fallback = []   # [(fn, data)] for reports we couldn't classify
+    # Newest first. Keep the first report seen for each of new/used; reports whose
+    # category can't be told from subject/filename go to the unclassified pool
+    # (DealerTrack sends both as "REPORT.PDF" under one subject).
+    found = {}     # cond -> (fn, data)
+    pool = []      # [(day, fn, data)] unclassified
+    seen = set()   # attachment content hashes, so the same file isn't taken twice
     for msgid in reversed(msg_ids):
         _, msgdata = box.fetch(msgid, '(RFC822)')
         msg = email.message_from_bytes(msgdata[0][1])
         subject = str(email.header.make_header(email.header.decode_header(msg.get('Subject', ''))))
+        try:
+            day = parsedate_to_datetime(msg.get('Date')).date()
+        except Exception:
+            day = None
         for part in msg.walk():
             fn = (part.get_filename() or '').strip()
-            if not fn.lower().endswith(('.xlsx', '.xls', '.csv', '.txt')):
+            if not fn.lower().endswith(('.xlsx', '.xls', '.csv', '.txt', '.pdf')):
                 continue
             data = part.get_payload(decode=True)
             if not data:
                 continue
+            h = hashlib.sha1(data).hexdigest()
+            if h in seen:
+                continue
+            seen.add(h)
             cond = classify(subject, fn)
-            tag = cond or '?'
             label = {'new': 'NEW', 'used': 'USED'}.get(cond, 'unclassified')
-            print(f'  [{label}] "{fn}" ({len(data)} bytes) — subject: {subject!r}')
+            print(f'  [{label}] "{fn}" ({len(data)} bytes, {day}) — subject: {subject!r}')
             if cond and cond not in found:
                 found[cond] = (fn, data)
             elif not cond:
-                fallback.append((fn, data))
+                pool.append((day, fn, data))
     box.logout()
 
-    # If only one report type was identifiable but there are unclassified ones,
-    # treat the newest unclassified as the missing category isn't safe — leave it
-    # to the data's own new/used column (default_cond='').
-    return found, fallback
+    # Only the most recent day's unclassified reports matter (yesterday's pair
+    # would otherwise sneak in alongside today's).
+    days = [d for d, _, _ in pool if d is not None]
+    if days:
+        newest = max(days)
+        pool = [(d, fn, data) for d, fn, data in pool if d == newest]
+    return found, [(fn, data) for _, fn, data in pool]
 
 
 def parse_attachment(fn, data, default_cond):
+    if fn.lower().endswith('.pdf') or data[:4] == b'%PDF':
+        try:
+            v = vehicles_from_pdf_text(pdf_pages_text(data), default_cond)
+            print(f'  parsed PDF "{fn}": {len(v)} vehicles '
+                  f'(default cond: {default_cond or "from data"})')
+            return v
+        except Exception as e:
+            print(f'  could not parse PDF "{fn}": {e}', file=sys.stderr)
+            return []
     parsers = (rows_from_xlsx, rows_from_csv) if fn.lower().endswith(('.xlsx', '.xls')) \
         else (rows_from_csv, rows_from_xlsx)
     last_err = None
@@ -199,31 +275,59 @@ def parse_attachment(fn, data, default_cond):
     return []
 
 
+def avg_year(vehicles):
+    years = [int(v['year']) for v in vehicles if v['year'].isdigit()]
+    return sum(years) / len(years) if years else 0
+
+
 def main():
-    found, fallback = collect_reports()
-    if not found and not fallback:
-        print('No inventory email with a spreadsheet attachment found in the last 2 days. '
+    found, pool = collect_reports()
+    if not found and not pool:
+        print('No inventory email with a report attachment found in the last 2 days. '
               'Check that both reports are arriving and the INV_FROM filter (if set) matches.',
               file=sys.stderr)
         sys.exit(1)
 
-    reports = []  # (fn, data, default_cond)
+    reports = []  # {fn, cond, vehicles}
     for cond in ('new', 'used'):
         if cond in found:
-            reports.append((*found[cond], cond))
-    if not found:
-        # Couldn't classify any — fall back to letting each file's data decide.
-        for fn, data in fallback:
-            reports.append((fn, data, ''))
-        print('WARNING: could not tell new vs used reports apart from subject/filename. '
-              'Set INV_SUBJECT_NEW / INV_SUBJECT_USED variables to fix this.', file=sys.stderr)
+            fn, data = found[cond]
+            reports.append({'fn': fn, 'cond': cond, 'vehicles': parse_attachment(fn, data, cond)})
+    for fn, data in pool:
+        reports.append({'fn': fn, 'cond': '', 'vehicles': parse_attachment(fn, data, '')})
+
+    # Unclassified reports: first let the rows speak (a report whose rows are
+    # uniformly marked one way takes that condition for its unmarked rows too)…
+    for r in reports:
+        if r['cond']:
+            continue
+        conds = {v['cond'] for v in r['vehicles'] if v['cond']}
+        if len(conds) == 1:
+            r['cond'] = conds.pop()
+            print(f'  "{r["fn"]}" classified as {r["cond"]} from its own rows')
+
+    # …then break a two-way tie by average model year (used stock averages older).
+    unknown = [r for r in reports if not r['cond'] and r['vehicles']]
+    if len(unknown) == 2:
+        a, b = sorted(unknown, key=lambda r: avg_year(r['vehicles']))
+        if avg_year(a['vehicles']) and avg_year(b['vehicles']) - avg_year(a['vehicles']) >= 0.7:
+            a['cond'], b['cond'] = 'used', 'new'
+            print(f'  classified by avg model year: "{b["fn"]}" -> new '
+                  f'({avg_year(b["vehicles"]):.1f}), "{a["fn"]}" -> used '
+                  f'({avg_year(a["vehicles"]):.1f})')
+        else:
+            print('WARNING: could not tell the two reports apart (similar model years, '
+                  'no new/used markings). Vehicles keep whatever their rows say.',
+                  file=sys.stderr)
 
     merged = {}
     sources = []
-    for fn, data, cond in reports:
-        for v in parse_attachment(fn, data, cond):
-            merged[v['vin']] = v  # later (used) reports can't clobber earlier ones by VIN
-        sources.append(fn)
+    for r in reports:
+        for v in r['vehicles']:
+            if r['cond'] and not v['cond']:
+                v = dict(v, cond=r['cond'])
+            merged[v['vin']] = v
+        sources.append(r['fn'])
     vehicles = list(merged.values())
     if not vehicles:
         print('Reports were found but no valid VINs parsed out of them.', file=sys.stderr)

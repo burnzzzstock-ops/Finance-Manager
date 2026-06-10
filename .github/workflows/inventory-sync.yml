@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: pip install openpyxl
+      - run: pip install openpyxl pdfplumber
 
       - name: Fetch inventory from email
         env:
