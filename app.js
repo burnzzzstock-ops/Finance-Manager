@@ -29,7 +29,7 @@ const DEFAULT_DATA = {
           [13, 14, 15, 16, 17]
         ]
       },
-      matrixBonus: { extra: 2, ppdMin: 1.76, vscPen: 55 },
+      matrixBonus: { extra: 2, vscPen: 55 },   // requires the top-right (max-rate) cell + VSC pen
       retro: true,
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
@@ -427,14 +427,15 @@ function calcPayMatrix(M, plan) {
   const rate = (mx.rates[ri] || [])[ci] ?? 0;
   const vsc = vscStats(M);
   const mb = plan.matrixBonus || {};
-  const bonusEarned = M.units > 0 && M.ppd >= (mb.ppdMin ?? 1.76) && vsc.pen >= (mb.vscPen ?? 55);
+  const inCorner = ri === mx.rows.length - 1 && ci === mx.cols.length - 1;
+  const bonusEarned = M.units > 0 && inCorner && vsc.pen >= (mb.vscPen ?? 55);
   const prodNet = Math.max(M.productGross - M.cbAmt, 0);
   const prodRate = rate + (bonusEarned ? (mb.extra ?? 2) : 0);
   const productPay = prodNet * prodRate / 100;
   const reserveRate = plan.reserveRate ?? 10;
   const reservePay = M.reserve * reserveRate / 100;
   return {
-    M, mode: 'matrix', rate, prodRate, reserveRate, pvr, ri, ci,
+    M, mode: 'matrix', rate, prodRate, reserveRate, pvr, ri, ci, inCorner,
     vsc, bonusEarned, prodNet, productPay, reservePay,
     total: productPay + reservePay,
     rateLabel: `${prodRate}% products + ${reserveRate}% reserve`
@@ -650,16 +651,18 @@ function renderPayMatrix(P, plan) {
       t += `<div class="target">Next PPD row (<b>+1%</b>): <b>${need}</b> more product${need > 1 ? 's' : ''} across your existing units. Worth ≈ <b>+${fmt$(P.prodNet * 0.01)}</b>.</div>`;
     }
     if (P.bonusEarned) {
-      t += `<div class="target done">✓ +${mb.extra ?? 2}% product bonus earned (PPD ≥ ${mb.ppdMin ?? 1.76} and VSC ≥ ${mb.vscPen ?? 55}%)</div>`;
+      t += `<div class="target done">✓ +${mb.extra ?? 2}% product bonus earned (top cell + VSC ≥ ${mb.vscPen ?? 55}%)</div>`;
     } else {
       const bits = [];
-      if (P.M.ppd < (mb.ppdMin ?? 1.76)) bits.push(`PPD ${P.M.ppd.toFixed(2)} → ${mb.ppdMin ?? 1.76}`);
+      const topPpd = mx.rows[mx.rows.length - 1], topPvr = mx.cols[mx.cols.length - 1];
+      if (P.ri < mx.rows.length - 1) bits.push(`PPD ${P.M.ppd.toFixed(2)} → ${topPpd}`);
+      if (P.ci < mx.cols.length - 1) bits.push(`PVR ${fmt$(P.pvr)} → ${fmt$(topPvr)}`);
       const tp = (mb.vscPen ?? 55) / 100;
       if (P.vsc.pen < (mb.vscPen ?? 55) && tp < 1) {
         const k = Math.max(1, Math.ceil((tp * P.M.units - P.vsc.count) / (1 - tp)));
         bits.push(`VSC ${fmtPct(P.vsc.pen)} → ${mb.vscPen ?? 55}% (sell it on the next ${k} straight)`);
       }
-      t += `<div class="target"><b>+${mb.extra ?? 2}% product bonus</b>: ${bits.join(' · ') || 'almost there'} — worth ≈ <b>+${fmt$(P.prodNet * (mb.extra ?? 2) / 100)}</b> on the month.</div>`;
+      t += `<div class="target"><b>+${mb.extra ?? 2}% bonus (needs the ${(mx.rates[mx.rates.length - 1] || []).slice(-1)[0] ?? ''}% corner cell)</b>: ${bits.join(' · ') || 'almost there'} — worth ≈ <b>+${fmt$(P.prodNet * (mb.extra ?? 2) / 100)}</b> on the month.</div>`;
     }
   } else {
     t = `<div class="empty">Log deals and this becomes your target board: which cell you're in, and exactly what moves you up a percent.</div>`;
@@ -695,9 +698,7 @@ function renderPayMatrix(P, plan) {
     <p class="hint">Column headers = PVR breakpoints, row headers = products-per-deal breakpoints. Your current cell is highlighted.</p>
     <div class="edit-row"><span class="hint-inline">Bonus: +</span>
       <input class="amt" type="number" data-mx="bex" value="${mb.extra ?? 2}" step="0.5">
-      <span class="hint-inline">% on products when PPD ≥</span>
-      <input class="amt" type="number" data-mx="bppd" value="${mb.ppdMin ?? 1.76}" step="0.01">
-      <span class="hint-inline">and VSC ≥</span>
+      <span class="hint-inline">% on products when in the top-right cell and VSC ≥</span>
       <input class="amt" type="number" data-mx="bvsc" value="${mb.vscPen ?? 55}">
       <span class="hint-inline">%</span></div>`;
 }
@@ -1124,7 +1125,6 @@ $('#view-pay').addEventListener('change', e => {
     else if (mxk === 'row') mx.rows[+el.dataset.i] = +el.value || 0;
     else if (mxk === 'rate') mx.rates[+el.dataset.i][+el.dataset.j] = +el.value || 0;
     else if (mxk === 'bex') (plan.matrixBonus ??= {}).extra = +el.value || 0;
-    else if (mxk === 'bppd') (plan.matrixBonus ??= {}).ppdMin = +el.value || 0;
     else if (mxk === 'bvsc') (plan.matrixBonus ??= {}).vscPen = +el.value || 0;
     save(); renderPay(); renderDashboard();
     return;
