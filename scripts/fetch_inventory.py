@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-"""Pull the newest inventory email attachment (xlsx/csv) and write inventory.json.
+"""Pull the daily new + used inventory emails (xlsx/csv) and write inventory.json.
 
-Reads the configured IMAP inbox, finds the most recent message (last 4 days)
-with a spreadsheet attachment — optionally filtered by sender/subject — parses
-it with flexible column matching, and writes inventory.json for the app.
+Reads the configured IMAP inbox, finds the newest "new inventory" report and the
+newest "used inventory" report (last 2 days), tags each report's vehicles new/used
+accordingly, parses with flexible column matching, merges, and writes inventory.json.
 
 Env vars:
-  IMAP_USER, IMAP_PASSWORD  (required; Gmail needs an App Password)
-  IMAP_HOST                 (default imap.gmail.com)
-  INV_FROM, INV_SUBJECT     (optional filters to find the right email)
+  IMAP_USER, IMAP_PASSWORD            (required; Gmail needs an App Password)
+  IMAP_HOST                           (default imap.gmail.com)
+  INV_FROM                            (optional: sender to filter on)
+  INV_SUBJECT_NEW, INV_SUBJECT_USED   (optional: subject text identifying each report;
+                                       otherwise new/used is guessed from subject+filename)
 """
 import csv
 import email
+import email.header
 import imaplib
 import io
 import json
@@ -67,7 +70,7 @@ def to_cond(raw):
     return ''
 
 
-def parse_rows(rows):
+def parse_rows(rows, default_cond=''):
     header_i, cols = None, {}
     for i, row in enumerate(rows[:15]):
         if any(norm_header(c) == 'vin' for c in row):
@@ -97,18 +100,36 @@ def parse_rows(rows):
             stock = re.sub(r'\.0$', '', get('stock'))
             name = ' '.join(x for x in (year, make, get('model'), get('trim')) if x)
             vehicles[vin] = {'vin': vin, 'stock': stock, 'name': name,
-                             'year': year, 'cond': to_cond(get('cond'))}
+                             'year': year, 'cond': to_cond(get('cond')) or default_cond}
     else:
         # No recognizable header: harvest anything that looks like a VIN
         for row in rows:
             for c in row:
                 s = str(c or '').strip().upper()
                 if VIN_RE.match(s):
-                    vehicles[s] = {'vin': s, 'stock': '', 'name': '', 'year': '', 'cond': ''}
+                    vehicles[s] = {'vin': s, 'stock': '', 'name': '',
+                                   'year': '', 'cond': default_cond}
     return list(vehicles.values())
 
 
-def newest_attachment():
+def classify(*texts):
+    """Decide whether a report is the new or used one, from subject + filename."""
+    blob = ' '.join(t for t in texts if t).lower()
+    new_sub = (os.environ.get('INV_SUBJECT_NEW') or '').lower()
+    used_sub = (os.environ.get('INV_SUBJECT_USED') or '').lower()
+    if used_sub and used_sub in blob:
+        return 'used'
+    if new_sub and new_sub in blob:
+        return 'new'
+    if re.search(r'\b(used|pre-?owned|preowned|cpo|certified)\b', blob):
+        return 'used'
+    if re.search(r'\bnew\b', blob):
+        return 'new'
+    return ''
+
+
+def collect_reports():
+    """Return the newest 'new' report and newest 'used' report as {cond: (fn, data)}."""
     host = os.environ.get('IMAP_HOST') or 'imap.gmail.com'
     user = os.environ.get('IMAP_USER')
     pw = os.environ.get('IMAP_PASSWORD')
@@ -121,58 +142,97 @@ def newest_attachment():
     box.login(user, pw)
     box.select('INBOX', readonly=True)
 
-    since = (datetime.now(timezone.utc) - timedelta(days=4)).strftime('%d-%b-%Y')
+    since = (datetime.now(timezone.utc) - timedelta(days=2)).strftime('%d-%b-%Y')
     crit = ['SINCE', since]
     if os.environ.get('INV_FROM'):
         crit += ['FROM', os.environ['INV_FROM']]
-    if os.environ.get('INV_SUBJECT'):
-        crit += ['SUBJECT', os.environ['INV_SUBJECT']]
 
     _, ids = box.search(None, *crit)
     msg_ids = ids[0].split()
-    print(f'{len(msg_ids)} candidate message(s) in the last 4 days')
-    for msgid in reversed(msg_ids):  # newest first
+    print(f'{len(msg_ids)} candidate message(s) since {since}')
+
+    # Newest first; keep the first spreadsheet we see for each of new/used,
+    # plus an untagged fallback if a report's category can't be determined.
+    found = {}      # cond -> (fn, data)
+    fallback = []   # [(fn, data)] for reports we couldn't classify
+    for msgid in reversed(msg_ids):
         _, msgdata = box.fetch(msgid, '(RFC822)')
         msg = email.message_from_bytes(msgdata[0][1])
+        subject = str(email.header.make_header(email.header.decode_header(msg.get('Subject', ''))))
         for part in msg.walk():
             fn = (part.get_filename() or '').strip()
-            if fn.lower().endswith(('.xlsx', '.xls', '.csv', '.txt')):
-                data = part.get_payload(decode=True)
-                if data:
-                    print(f'Using attachment "{fn}" ({len(data)} bytes) '
-                          f'from message dated {msg.get("Date", "?")}')
-                    return fn, data
-    return None, None
+            if not fn.lower().endswith(('.xlsx', '.xls', '.csv', '.txt')):
+                continue
+            data = part.get_payload(decode=True)
+            if not data:
+                continue
+            cond = classify(subject, fn)
+            tag = cond or '?'
+            label = {'new': 'NEW', 'used': 'USED'}.get(cond, 'unclassified')
+            print(f'  [{label}] "{fn}" ({len(data)} bytes) — subject: {subject!r}')
+            if cond and cond not in found:
+                found[cond] = (fn, data)
+            elif not cond:
+                fallback.append((fn, data))
+    box.logout()
+
+    # If only one report type was identifiable but there are unclassified ones,
+    # treat the newest unclassified as the missing category isn't safe — leave it
+    # to the data's own new/used column (default_cond='').
+    return found, fallback
 
 
-def main():
-    fn, data = newest_attachment()
-    if not data:
-        print('No inventory email with a spreadsheet attachment found in the last 4 days. '
-              'Check the INV_FROM / INV_SUBJECT filters and that the report is arriving.',
-              file=sys.stderr)
-        sys.exit(1)
-
-    if fn.lower().endswith('.xlsx'):
-        parsers = (rows_from_xlsx, rows_from_csv)
-    else:
-        parsers = (rows_from_csv, rows_from_xlsx)
-    rows, last_err = None, None
+def parse_attachment(fn, data, default_cond):
+    parsers = (rows_from_xlsx, rows_from_csv) if fn.lower().endswith(('.xlsx', '.xls')) \
+        else (rows_from_csv, rows_from_xlsx)
+    last_err = None
     for p in parsers:
         try:
             rows = p(data)
-            break
-        except Exception as e:  # try the other format
+            v = parse_rows(rows, default_cond)
+            print(f'  parsed "{fn}": {len(rows)} rows -> {len(v)} vehicles '
+                  f'(default cond: {default_cond or "from data"})')
+            return v
+        except Exception as e:
             last_err = e
-    if rows is None:
-        print(f'Could not parse "{fn}": {last_err}', file=sys.stderr)
+    print(f'  could not parse "{fn}": {last_err}', file=sys.stderr)
+    return []
+
+
+def main():
+    found, fallback = collect_reports()
+    if not found and not fallback:
+        print('No inventory email with a spreadsheet attachment found in the last 2 days. '
+              'Check that both reports are arriving and the INV_FROM filter (if set) matches.',
+              file=sys.stderr)
         sys.exit(1)
 
-    vehicles = parse_rows(rows)
+    reports = []  # (fn, data, default_cond)
+    for cond in ('new', 'used'):
+        if cond in found:
+            reports.append((*found[cond], cond))
+    if not found:
+        # Couldn't classify any — fall back to letting each file's data decide.
+        for fn, data in fallback:
+            reports.append((fn, data, ''))
+        print('WARNING: could not tell new vs used reports apart from subject/filename. '
+              'Set INV_SUBJECT_NEW / INV_SUBJECT_USED variables to fix this.', file=sys.stderr)
+
+    merged = {}
+    sources = []
+    for fn, data, cond in reports:
+        for v in parse_attachment(fn, data, cond):
+            merged[v['vin']] = v  # later (used) reports can't clobber earlier ones by VIN
+        sources.append(fn)
+    vehicles = list(merged.values())
     if not vehicles:
-        print(f'Parsed "{fn}" ({len(rows)} rows) but found no valid VINs.', file=sys.stderr)
+        print('Reports were found but no valid VINs parsed out of them.', file=sys.stderr)
         sys.exit(1)
     vehicles.sort(key=lambda v: (v['cond'], v['stock'] or v['vin']))
+    n_new = sum(1 for v in vehicles if v['cond'] == 'new')
+    n_used = sum(1 for v in vehicles if v['cond'] == 'used')
+    print(f'Merged {len(vehicles)} vehicles ({n_new} new, {n_used} used) from: {", ".join(sources)}')
+    fn = ' + '.join(sources)
 
     # Skip the write (and the commit) when the vehicle list hasn't changed
     try:

@@ -25,7 +25,8 @@ jobs:
           IMAP_USER: ${{ secrets.IMAP_USER }}
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
           INV_FROM: ${{ vars.INV_FROM }}
-          INV_SUBJECT: ${{ vars.INV_SUBJECT }}
+          INV_SUBJECT_NEW: ${{ vars.INV_SUBJECT_NEW }}
+          INV_SUBJECT_USED: ${{ vars.INV_SUBJECT_USED }}
         run: python scripts/fetch_inventory.py
 
       - name: Commit if changed

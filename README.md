@@ -40,29 +40,38 @@ own browser** (localStorage) and is never uploaded anywhere.
 
 ### Automatic daily inventory feed (recommended)
 
-Have a daily inventory report (Excel or CSV attachment) emailed to a Gmail inbox, and a
-scheduled job in this repo ingests it every morning — the app updates itself, zero touch.
+Two reports — **new** and **used** — get emailed to a Gmail inbox at midnight daily, and a
+scheduled job in this repo ingests both every morning, merges them, and the app updates itself.
+Zero touch after setup.
 
 One-time setup:
 
-1. **Inbox**: use a dedicated free Gmail for this (recommended — e.g. `yourname.invfeed@gmail.com`)
-   or your own. Schedule the dealership's daily inventory report to be emailed there as an
-   `.xlsx` or `.csv` attachment.
+1. **Inbox**: use a dedicated free Gmail for this (recommended — e.g. `yourname.invfeed@gmail.com`).
+   Schedule the dealership's **new** and **used** inventory reports to be emailed there daily as
+   `.xlsx` or `.csv` attachments.
 2. **App password**: in that Google account, turn on 2-Step Verification, then create an
    **App Password** (Google Account → Security → App passwords). Never share this in chat or
-   email — it goes only into GitHub Secrets:
-3. **Secrets**: in this repo → **Settings → Secrets and variables → Actions**, add:
+   email — it goes only into GitHub Secrets.
+3. **Secrets**: in this repo → **Settings → Secrets and variables → Actions → Secrets**, add:
    - `IMAP_USER` — the Gmail address
    - `IMAP_PASSWORD` — the app password
    - `IMAP_HOST` — only if not Gmail
-4. Optional but smart, under the **Variables** tab: `INV_FROM` (sender of the report email)
-   and/or `INV_SUBJECT` (a word from its subject) so the job grabs the right email.
-5. Test it: **Actions → Inventory sync → Run workflow**. Green run = `inventory.json` updates
-   and the app picks it up on next open.
+4. **Variables** (same page, **Variables** tab) — these tell the job which email is which:
+   - `INV_SUBJECT_NEW` — a distinctive word/phrase from the **new** report's subject line
+   - `INV_SUBJECT_USED` — same for the **used** report
+   - `INV_FROM` — optional, the sender address, to ignore unrelated mail
 
-The job runs daily at ~6:30am Central, finds the newest report in the inbox (last 4 days),
-parses it with flexible column matching (Stock #, VIN, Year, Make, Model, Trim, New/Used —
-any reasonable header names), and commits the result only when inventory actually changed.
+   If you skip the subject variables, the job still tries to guess new vs. used from the
+   subject and filename (words like "new", "used", "pre-owned", "CPO") — but setting them
+   removes all doubt.
+5. Test it: **Actions → Inventory sync → Run workflow**. A green run means `inventory.json`
+   updated and the app will pick it up on next open.
+
+The job runs daily at ~6:30am Central — well after the midnight emails land. It finds the
+newest new report and newest used report (last 2 days), tags each report's vehicles
+accordingly, parses with flexible column matching (Stock #, VIN, Year, Make, Model, Trim,
+New/Used — any reasonable header names), merges them, and commits only when inventory
+actually changed.
 
 ### Manual fallbacks
 
