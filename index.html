@@ -57,6 +57,18 @@
     <div id="settings-products"></div>
     <h2>Lenders</h2>
     <div id="settings-lenders"></div>
+    <h2>Inventory Autocomplete</h2>
+    <p class="hint" id="inv-status"></p>
+    <p class="hint">One-time setup on a computer: drag this link to your bookmarks bar →
+      <a id="bookmarklet" href="#">➕ Grab Astro Ford Inventory</a>.
+      Then open the <a href="https://www.astroford.com/inventory/new" target="_blank" rel="noopener">astroford.com inventory</a> pages,
+      click the bookmark on each (new and used), come back here and paste:</p>
+    <textarea id="inv-paste" rows="3" placeholder="Paste the copied inventory here, then hit Import"></textarea>
+    <div class="btn-row">
+      <button class="btn primary" id="btn-inv-import">Import / Merge Inventory</button>
+      <button class="btn danger" id="btn-inv-clear">Clear Inventory</button>
+    </div>
+
     <h2>Backup &amp; Data</h2>
     <p class="hint">Your data lives only in this browser — it is never uploaded anywhere. Export a backup regularly, and use Import to move to a new phone or computer.</p>
     <div class="btn-row">
@@ -80,8 +92,14 @@
     <h3 id="deal-modal-title">Log Deal</h3>
     <div class="grid2">
       <label>Date <input type="date" id="f-date"></label>
-      <label>Deal / Stock # <input type="text" id="f-num" placeholder="e.g. 4821" autocomplete="off"></label>
+      <label>Deal / Stock # <input type="text" id="f-num" list="stock-list" placeholder="e.g. 4821" autocomplete="off"></label>
     </div>
+    <datalist id="stock-list"></datalist>
+    <div class="grid2 vin-grid">
+      <label>VIN <span class="hint-inline">auto-decodes the vehicle</span> <input type="text" id="f-vin" maxlength="17" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="optional"></label>
+      <button class="btn" id="f-scan" type="button" hidden>📷 Scan</button>
+    </div>
+    <div class="hint" id="f-vehicle" data-v=""></div>
     <label class="lbl">Deal type</label>
     <div class="seg" id="f-type">
       <button data-val="finance" class="active">Finance</button>
@@ -126,6 +144,16 @@
       <button class="btn" id="cb-cancel">Cancel</button>
       <button class="btn primary" id="cb-save">Save Chargeback</button>
     </div>
+  </div>
+</div>
+
+<!-- VIN scan modal -->
+<div class="modal-wrap" id="scan-modal" hidden>
+  <div class="modal">
+    <h3>Scan VIN Barcode</h3>
+    <video id="scan-video" playsinline muted></video>
+    <p class="hint">Point at the barcode on the door-jamb sticker or the buyer's order.</p>
+    <div class="btn-row"><button class="btn" id="scan-cancel">Cancel</button></div>
   </div>
 </div>
 

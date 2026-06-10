@@ -31,6 +31,22 @@ own browser** (localStorage) and is never uploaded anywhere.
   in the month they land.
 - **Settings** → edit your product list and default profits, your lender list, and backups.
 
+## Less typing: VIN decode + inventory autocomplete
+
+- **VIN decode** — type a VIN in the deal form (or tap 📷 Scan on Android/Chrome and point at
+  the door-jamb barcode) and the vehicle auto-fills via the free federal NHTSA decoder.
+- **Stock # autocomplete** — load your store's live inventory once and the stock # field
+  suggests real units, auto-filling VIN, new/used, and vehicle:
+  1. On a computer, open the app → **Settings → Inventory Autocomplete**
+  2. Drag the **➕ Grab Astro Ford Inventory** link to your bookmarks bar
+  3. Open astroford.com's new (and used) inventory pages and click the bookmark on each —
+     it copies every vehicle on the page
+  4. Back in the app, paste into the Inventory box and hit **Import / Merge**
+
+  Re-run whenever you want fresher stock (takes ~30 seconds). It has to work this way because
+  the dealer site sits behind Akamai bot protection that blocks all server/datacenter traffic —
+  your own browser is the only thing allowed in, so the bookmark does the harvesting there.
+
 ## Keep your data safe
 
 - Data lives in the browser you logged it in. **Settings → Export Backup (JSON)** regularly.

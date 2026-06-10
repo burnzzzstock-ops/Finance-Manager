@@ -204,6 +204,15 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 }
 .chip button { background: none; border: none; color: var(--red); cursor: pointer; font-size: 14px; padding: 0; }
 
+.view textarea {
+  width: 100%; background: var(--bg); color: var(--text);
+  border: 1px solid var(--line); border-radius: 9px;
+  padding: 10px 11px; font-size: 14px; font-family: inherit;
+}
+.vin-grid { grid-template-columns: 1fr auto; align-items: end; }
+#f-vehicle { min-height: 18px; margin: 6px 2px 0; color: var(--green); }
+#scan-video { width: 100%; min-height: 220px; border-radius: 10px; background: #000; }
+
 .nudge {
   background: #2a2310; border: 1px solid #5c4d1a; color: var(--amber);
   border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px;

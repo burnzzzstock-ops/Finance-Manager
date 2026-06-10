@@ -20,10 +20,12 @@ const DEFAULT_DATA = {
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
     },
-    lastBackup: null
+    lastBackup: null,
+    lastInvSync: null
   },
-  deals: [],       // {id, date, num, type, cond, lender, reserve, products:[{name, amt}], note}
-  chargebacks: []  // {id, date, num, product, amt, note}
+  deals: [],       // {id, date, num, type, cond, lender, reserve, products:[{name, amt}], vin, vehicle, note}
+  chargebacks: [], // {id, date, num, product, amt, note}
+  inventory: []    // {vin, stock, name, year, cond} — synced from the dealer site via bookmarklet
 };
 
 function loadData() {
@@ -35,7 +37,8 @@ function loadData() {
     return {
       settings: { ...base.settings, ...(d.settings || {}), payPlan: { ...base.settings.payPlan, ...((d.settings || {}).payPlan || {}) } },
       deals: Array.isArray(d.deals) ? d.deals : [],
-      chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : []
+      chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
+      inventory: Array.isArray(d.inventory) ? d.inventory : []
     };
   } catch {
     return structuredClone(DEFAULT_DATA);
@@ -59,6 +62,117 @@ const monthLabel = m => new Date(m + '-15T12:00:00').toLocaleString('en-US', { m
 const dateLabel = d => new Date(d + 'T12:00:00').toLocaleString('en-US', { month: 'short', day: 'numeric' });
 
 const state = { month: todayStr().slice(0, 7) };
+
+/* ============ inventory + VIN ============ */
+
+const VIN_RE = /^[A-HJ-NPR-Z0-9]{17}$/;
+const titleCase = s => String(s).toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
+
+function invLookup(q) {
+  q = String(q || '').trim().toUpperCase();
+  if (!q) return null;
+  return data.inventory.find(v => (v.stock || '').toUpperCase() === q)
+    || (q.length >= 6 ? data.inventory.find(v => v.vin.endsWith(q)) : null)
+    || null;
+}
+
+function importInventory(text) {
+  let arr = null;
+  try {
+    const d = JSON.parse(text.trim());
+    arr = Array.isArray(d) ? d : (d.fiInv || d.inv || d.inventory || null);
+  } catch { /* fall through */ }
+  if (!arr || !arr.length) { alert('Could not read that — paste exactly what the bookmark copied.'); return false; }
+  const byVin = new Map(data.inventory.map(v => [v.vin, v]));
+  let added = 0, updated = 0;
+  for (const r of arr) {
+    const vin = String(r.vin || '').toUpperCase();
+    if (!VIN_RE.test(vin)) continue;
+    const item = {
+      vin,
+      stock: String(r.stock || '').trim(),
+      name: String(r.name || '').trim(),
+      year: String(r.year || '').slice(0, 4),
+      cond: r.cond === 'used' ? 'used' : 'new'
+    };
+    if (byVin.has(vin)) { Object.assign(byVin.get(vin), item); updated++; }
+    else { data.inventory.push(item); byVin.set(vin, item); added++; }
+  }
+  data.settings.lastInvSync = Date.now();
+  save();
+  renderSettings();
+  alert(`Inventory updated: ${added} added, ${updated} refreshed. ${data.inventory.length} vehicles on file.`);
+  return true;
+}
+
+// Runs on the dealer site in the user's browser (their IP gets in; datacenter IPs are
+// blocked by Akamai, so this is the sync path). Harvests JSON-LD vehicle data and
+// data-vin attributes from the inventory page and copies them to the clipboard.
+const BOOKMARKLET = "javascript:" + encodeURIComponent("(function(){var out=[],seen={};function add(v){if(v&&v.vin&&/^[A-HJ-NPR-Z0-9]{17}$/.test(v.vin)&&!seen[v.vin]){seen[v.vin]=1;out.push(v);}}document.querySelectorAll('script[type=\"application/ld+json\"]').forEach(function(s){try{var d=JSON.parse(s.textContent);(Array.isArray(d)?d:(d['@graph']||[d])).forEach(function(v){if(!v)return;if(v.offers&&v.offers.itemOffered){v=Object.assign({},v.offers.itemOffered,v);}var vin=String(v.vehicleIdentificationNumber||v.vin||'').toUpperCase();if(!vin)return;var cond=String(v.itemCondition||'')+' '+String(v.name||'')+' '+location.pathname;add({vin:vin,stock:String(v.sku||v.mpn||''),name:String(v.name||''),year:String(v.vehicleModelDate||v.productionDate||''),cond:/used|pre-?owned/i.test(cond)?'used':'new'});});}catch(e){}});document.querySelectorAll('[data-vin]').forEach(function(el){var d=el.dataset;add({vin:String(d.vin||'').toUpperCase(),stock:String(d.stocknumber||d.stockNumber||d.stock||''),name:[d.year,d.make,d.model,d.trim].filter(Boolean).join(' '),year:String(d.year||''),cond:/used|pre-?owned/i.test(String(d.type||d.condition||'')+location.pathname)?'used':'new'});});if(!out.length){alert('No vehicles found on this page. Open a new or used inventory listing page, then click the bookmark again.');return;}var txt=JSON.stringify({fiInv:out});function done(){alert('Copied '+out.length+' vehicles. Paste into F&I Scoreboard > Settings > Inventory.');}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){prompt('Copy this:',txt);});}else{prompt('Copy this:',txt);}})();");
+
+const vinCache = {};
+let vinReqId = 0;
+async function decodeVIN(vin) {
+  vin = vin.toUpperCase();
+  if (vinCache[vin] !== undefined) return vinCache[vin];
+  const r = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/${encodeURIComponent(vin)}?format=json`);
+  const j = await r.json();
+  const x = (j && j.Results && j.Results[0]) || {};
+  const s = [x.ModelYear, x.Make && titleCase(x.Make), x.Model, x.Trim || x.Series]
+    .filter(Boolean).join(' ').trim();
+  vinCache[vin] = s;
+  return s;
+}
+
+function showVehicle(text, val) {
+  const el = $('#f-vehicle');
+  el.textContent = text || '';
+  el.dataset.v = val !== undefined ? val : (text || '');
+}
+
+/* ---- VIN barcode scanner (Chrome/Android; button hidden where unsupported) ---- */
+
+let scanStream = null, scanTimer = null;
+
+function vinFromCode(raw) {
+  let s = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (s.length === 18 && s[0] === 'I') s = s.slice(1); // Code 39 import-character prefix
+  return VIN_RE.test(s) ? s : null;
+}
+
+async function startScan() {
+  try {
+    const det = new window.BarcodeDetector({ formats: ['code_39', 'code_128', 'qr_code', 'data_matrix'] });
+    scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    const v = $('#scan-video');
+    v.srcObject = scanStream;
+    await v.play();
+    $('#scan-modal').hidden = false;
+    scanTimer = setInterval(async () => {
+      try {
+        for (const c of await det.detect(v)) {
+          const vin = vinFromCode(c.rawValue);
+          if (vin) {
+            stopScan();
+            $('#f-vin').value = vin;
+            $('#f-vin').dispatchEvent(new Event('input'));
+            return;
+          }
+        }
+      } catch { /* keep scanning */ }
+    }, 350);
+  } catch (e) {
+    stopScan();
+    alert('Camera not available: ' + (e.message || e));
+  }
+}
+
+function stopScan() {
+  clearInterval(scanTimer);
+  scanTimer = null;
+  if (scanStream) { scanStream.getTracks().forEach(t => t.stop()); scanStream = null; }
+  $('#scan-modal').hidden = true;
+}
 
 /* ============ metrics ============ */
 
@@ -305,6 +419,7 @@ function renderDeals() {
           </div>
           <div class="badges">
             <span class="badge">${d.type}</span><span class="badge">${d.cond}</span>
+            ${d.vehicle ? `<span class="badge">${esc(d.vehicle)}</span>` : ''}
             ${d.lender && d.type !== 'cash' ? `<span class="badge">${esc(d.lender)}</span>` : ''}
             ${res}${prods}
           </div>
@@ -426,6 +541,12 @@ function renderSettings() {
     : `No backup taken yet · ${data.deals.length} deals on file`;
 
   $('#product-names').innerHTML = data.settings.products.map(p => `<option value="${esc(p.name)}">`).join('');
+
+  const ls = data.settings.lastInvSync;
+  $('#inv-status').textContent = data.inventory.length
+    ? `${data.inventory.length} vehicles on file` + (ls ? ` · last synced ${new Date(ls).toLocaleString('en-US', { month: 'short', day: 'numeric' })}` : '')
+    : 'No inventory loaded yet — stock # autocomplete turns on after your first import.';
+  $('#bookmarklet').setAttribute('href', BOOKMARKLET);
 }
 
 function renderBackupNudge() {
@@ -451,8 +572,15 @@ function openDealModal(deal) {
   $('#deal-modal-title').textContent = deal ? 'Edit Deal' : 'Log Deal';
   $('#f-date').value = deal ? deal.date : todayStr();
   $('#f-num').value = deal ? deal.num : '';
+  $('#f-vin').value = deal ? (deal.vin || '') : '';
+  showVehicle(deal?.vehicle || '');
   $('#f-note').value = deal ? (deal.note || '') : '';
   $('#f-reserve').value = deal && +deal.reserve ? +deal.reserve : '';
+
+  $('#stock-list').innerHTML = data.inventory
+    .filter(v => v.stock || v.vin)
+    .map(v => `<option value="${esc(v.stock || v.vin.slice(-8))}">${esc(v.name || (v.year + ' ' + v.cond))}</option>`)
+    .join('');
   setSeg('#f-type', deal ? deal.type : 'finance');
   setSeg('#f-cond', deal ? deal.cond : 'new');
 
@@ -508,6 +636,8 @@ function saveDeal() {
     lender: type === 'cash' ? '' : $('#f-lender').value,
     reserve: type === 'cash' ? 0 : (+$('#f-reserve').value || 0),
     products,
+    vin: $('#f-vin').value.trim().toUpperCase(),
+    vehicle: $('#f-vehicle').dataset.v || '',
     note: $('#f-note').value.trim()
   };
   if (editingDealId) {
@@ -577,7 +707,8 @@ function importJSON(file) {
       data = {
         settings: { ...structuredClone(DEFAULT_DATA.settings), ...d.settings },
         deals: d.deals,
-        chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : []
+        chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
+        inventory: Array.isArray(d.inventory) ? d.inventory : []
       };
       save();
       renderAll();
@@ -590,13 +721,13 @@ function importJSON(file) {
 }
 
 function exportCSV() {
-  const head = ['Date', 'Deal #', 'Type', 'New/Used', 'Lender', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
+  const head = ['Date', 'Deal #', 'VIN', 'Vehicle', 'Type', 'New/Used', 'Lender', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
   const q = s => `"${String(s ?? '').replace(/"/g, '""')}"`;
   const rows = data.deals
     .slice()
     .sort((a, b) => a.date.localeCompare(b.date))
     .map(d => [
-      d.date, d.num, d.type, d.cond, d.lender, +d.reserve || 0,
+      d.date, d.num, d.vin || '', d.vehicle || '', d.type, d.cond, d.lender, +d.reserve || 0,
       (d.products || []).map(p => `${p.name}: ${+p.amt || 0}`).join('; '),
       (d.products || []).reduce((a, p) => a + (+p.amt || 0), 0),
       dealTotal(d), d.note
@@ -644,7 +775,58 @@ $('#deal-save').addEventListener('click', saveDeal);
 $('#deal-cancel').addEventListener('click', () => { $('#deal-modal').hidden = true; });
 $('#cb-save').addEventListener('click', saveCB);
 $('#cb-cancel').addEventListener('click', () => { $('#cb-modal').hidden = true; });
-$$('.modal-wrap').forEach(w => w.addEventListener('click', e => { if (e.target === w) w.hidden = true; }));
+$$('.modal-wrap').forEach(w => w.addEventListener('click', e => {
+  if (e.target === w) { if (w.id === 'scan-modal') stopScan(); else w.hidden = true; }
+}));
+
+// stock # picked/typed → fill VIN, new/used, vehicle from inventory
+$('#f-num').addEventListener('change', () => {
+  const hit = invLookup($('#f-num').value);
+  if (!hit) return;
+  setSeg('#f-cond', hit.cond);
+  if (hit.name) showVehicle(hit.name);
+  if (hit.vin && $('#f-vin').value.trim().toUpperCase() !== hit.vin) {
+    $('#f-vin').value = hit.vin;
+    $('#f-vin').dispatchEvent(new Event('input'));
+  }
+});
+
+// VIN typed/scanned → match inventory + decode via NHTSA
+$('#f-vin').addEventListener('input', async () => {
+  const vin = $('#f-vin').value.trim().toUpperCase();
+  if (!VIN_RE.test(vin)) { if (!vin) showVehicle(''); return; }
+  const hit = data.inventory.find(v => v.vin === vin);
+  if (hit) {
+    setSeg('#f-cond', hit.cond);
+    if (hit.stock && !$('#f-num').value.trim()) $('#f-num').value = hit.stock;
+  }
+  showVehicle('Decoding VIN…', hit?.name || '');
+  const id = ++vinReqId;
+  try {
+    const s = await decodeVIN(vin);
+    if (id === vinReqId) showVehicle(s || hit?.name || '');
+  } catch {
+    if (id === vinReqId) showVehicle(hit?.name || '');
+  }
+});
+
+// VIN barcode scanning (only where the browser supports it)
+if ('BarcodeDetector' in window && navigator.mediaDevices?.getUserMedia) {
+  $('#f-scan').hidden = false;
+}
+$('#f-scan').addEventListener('click', startScan);
+$('#scan-cancel').addEventListener('click', stopScan);
+
+// inventory import
+$('#btn-inv-import').addEventListener('click', () => {
+  if (importInventory($('#inv-paste').value)) $('#inv-paste').value = '';
+});
+$('#btn-inv-clear').addEventListener('click', () => {
+  if (data.inventory.length && confirm(`Remove all ${data.inventory.length} vehicles from autocomplete? (Your deals are not affected.)`)) {
+    data.inventory = [];
+    save(); renderSettings();
+  }
+});
 
 // deal list actions
 $('#deals-list').addEventListener('click', e => {
