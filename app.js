@@ -630,7 +630,6 @@ function renderDeals() {
           ${d.note ? `<div class="deal-note">${esc(d.note)}</div>` : ''}
           <div class="deal-actions">
             <button class="btn sm" data-act="edit">Edit</button>
-            <button class="btn sm" data-act="cb">Chargeback</button>
             <button class="btn sm danger" data-act="del">Delete</button>
           </div>
         </div>`;
@@ -1167,7 +1166,6 @@ $('#deals-list').addEventListener('click', e => {
   const deal = data.deals.find(d => d.id === id);
   if (!deal) return;
   if (btn.dataset.act === 'edit') openDealModal(deal);
-  if (btn.dataset.act === 'cb') openCBModal(deal.num);
   if (btn.dataset.act === 'del' && confirm(`Delete deal #${deal.num || '—'}? This can't be undone.`)) {
     data.deals = data.deals.filter(d => d.id !== id);
     save(); renderAll();
