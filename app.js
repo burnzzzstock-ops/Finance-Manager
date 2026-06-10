@@ -39,7 +39,10 @@ const DEFAULT_DATA = {
       bonuses: []
     },
     lastBackup: null,
-    lastInvSync: null
+    lastInvSync: null,
+    autoBackup: true,        // silently download a backup as you log deals
+    lastAutoBackup: null,
+    opsSinceBackup: 0
   },
   deals: [],       // {id, date, num, type, cond, lender, reserve, products:[{name, amt}], vin, vehicle, note}
   chargebacks: [], // {id, date, num, product, amt, note}
@@ -765,6 +768,7 @@ function renderSettings() {
   $('#backup-status').textContent = lb
     ? `Last backup: ${new Date(lb).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} · ${data.deals.length} deals, ${data.chargebacks.length} chargebacks on file`
     : `No backup taken yet · ${data.deals.length} deals on file`;
+  $('#auto-backup').checked = data.settings.autoBackup !== false;
 
   $('#product-names').innerHTML = data.settings.products.map(p => `<option value="${esc(p.name)}">`).join('');
 
@@ -874,7 +878,7 @@ function saveDeal() {
   } else {
     data.deals.push(deal);
   }
-  save();
+  maybeAutoBackup();
   $('#deal-modal').hidden = true;
   state.month = deal.date.slice(0, 7);
   renderAll();
@@ -902,7 +906,7 @@ function saveCB() {
     amt,
     note: $('#c-note').value.trim()
   });
-  save();
+  maybeAutoBackup();
   $('#cb-modal').hidden = true;
   state.month = ($('#c-date').value || todayStr()).slice(0, 7);
   renderAll();
@@ -920,9 +924,46 @@ function download(filename, text, type) {
 
 function exportJSON() {
   data.settings.lastBackup = Date.now();
+  data.settings.lastAutoBackup = Date.now();
+  data.settings.opsSinceBackup = 0;
   save();
   download(`fi-scoreboard-backup-${todayStr()}.json`, JSON.stringify(data, null, 2));
   renderAll();
+}
+
+// Auto-backup: silently download a snapshot during a save (a user gesture, so the
+// browser allows the download) once 3 ops have piled up or it's a new day.
+function maybeAutoBackup() {
+  const s = data.settings;
+  if (!s.autoBackup) { save(); return; }
+  s.opsSinceBackup = (s.opsSinceBackup || 0) + 1;
+  const last = s.lastAutoBackup ? new Date(s.lastAutoBackup) : null;
+  const newDay = !last || last.toDateString() !== new Date().toDateString();
+  if (s.opsSinceBackup >= 3 || newDay) {
+    s.lastAutoBackup = Date.now();
+    s.lastBackup = Date.now();
+    s.opsSinceBackup = 0;
+    save();
+    const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+    download(`fi-scoreboard-auto-${stamp}.json`, JSON.stringify(data, null, 2));
+    toast('Backup saved to your Downloads');
+  } else {
+    save();
+  }
+}
+
+let toastTimer = null;
+function toast(msg) {
+  let el = $('#toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'toast';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
 }
 
 function importJSON(file) {
@@ -1142,6 +1183,11 @@ $('#view-settings').addEventListener('change', e => {
 
 // backup buttons
 $('#btn-export-json').addEventListener('click', exportJSON);
+$('#auto-backup').addEventListener('change', e => {
+  data.settings.autoBackup = e.target.checked;
+  save();
+  if (e.target.checked) toast('Auto-backup on — saves as you log deals');
+});
 $('#btn-export-csv').addEventListener('click', exportCSV);
 $('#btn-import-json').addEventListener('click', () => $('#import-file').click());
 $('#import-file').addEventListener('change', e => {
