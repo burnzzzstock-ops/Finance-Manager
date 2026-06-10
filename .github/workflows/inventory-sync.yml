@@ -1,0 +1,41 @@
+name: Inventory sync
+on:
+  schedule:
+    - cron: '30 12 * * *'   # daily, ~6:30am Central
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install openpyxl
+
+      - name: Fetch inventory from email
+        env:
+          IMAP_HOST: ${{ secrets.IMAP_HOST }}
+          IMAP_USER: ${{ secrets.IMAP_USER }}
+          IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
+          INV_FROM: ${{ vars.INV_FROM }}
+          INV_SUBJECT: ${{ vars.INV_SUBJECT }}
+        run: python scripts/fetch_inventory.py
+
+      - name: Commit if changed
+        run: |
+          if git status --porcelain inventory.json | grep -q .; then
+            git config user.name "inventory-sync"
+            git config user.email "actions@users.noreply.github.com"
+            git add inventory.json
+            git commit -m "Update inventory ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "Inventory unchanged — no commit."
+          fi

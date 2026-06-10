@@ -35,17 +35,43 @@ own browser** (localStorage) and is never uploaded anywhere.
 
 - **VIN decode** — type a VIN in the deal form (or tap 📷 Scan on Android/Chrome and point at
   the door-jamb barcode) and the vehicle auto-fills via the free federal NHTSA decoder.
-- **Stock # autocomplete** — load your store's live inventory once and the stock # field
-  suggests real units, auto-filling VIN, new/used, and vehicle:
-  1. On a computer, open the app → **Settings → Inventory Autocomplete**
-  2. Drag the **➕ Grab Astro Ford Inventory** link to your bookmarks bar
-  3. Open astroford.com's new (and used) inventory pages and click the bookmark on each —
-     it copies every vehicle on the page
-  4. Back in the app, paste into the Inventory box and hit **Import / Merge**
+- **Stock # autocomplete** — the app knows your live inventory, so the stock # field suggests
+  real units and auto-fills VIN, new/used, and vehicle.
 
-  Re-run whenever you want fresher stock (takes ~30 seconds). It has to work this way because
-  the dealer site sits behind Akamai bot protection that blocks all server/datacenter traffic —
-  your own browser is the only thing allowed in, so the bookmark does the harvesting there.
+### Automatic daily inventory feed (recommended)
+
+Have a daily inventory report (Excel or CSV attachment) emailed to a Gmail inbox, and a
+scheduled job in this repo ingests it every morning — the app updates itself, zero touch.
+
+One-time setup:
+
+1. **Inbox**: use a dedicated free Gmail for this (recommended — e.g. `yourname.invfeed@gmail.com`)
+   or your own. Schedule the dealership's daily inventory report to be emailed there as an
+   `.xlsx` or `.csv` attachment.
+2. **App password**: in that Google account, turn on 2-Step Verification, then create an
+   **App Password** (Google Account → Security → App passwords). Never share this in chat or
+   email — it goes only into GitHub Secrets:
+3. **Secrets**: in this repo → **Settings → Secrets and variables → Actions**, add:
+   - `IMAP_USER` — the Gmail address
+   - `IMAP_PASSWORD` — the app password
+   - `IMAP_HOST` — only if not Gmail
+4. Optional but smart, under the **Variables** tab: `INV_FROM` (sender of the report email)
+   and/or `INV_SUBJECT` (a word from its subject) so the job grabs the right email.
+5. Test it: **Actions → Inventory sync → Run workflow**. Green run = `inventory.json` updates
+   and the app picks it up on next open.
+
+The job runs daily at ~6:30am Central, finds the newest report in the inbox (last 4 days),
+parses it with flexible column matching (Stock #, VIN, Year, Make, Model, Trim, New/Used —
+any reasonable header names), and commits the result only when inventory actually changed.
+
+### Manual fallbacks
+
+- **Paste**: copy rows straight out of an Excel/CSV inventory report and paste them into
+  **Settings → Inventory Autocomplete → Import / Merge** (a VIN column is the only requirement).
+- **Bookmarklet**: drag **➕ Grab Astro Ford Inventory** (in Settings) to your bookmarks bar,
+  click it while on astroford.com's inventory pages, paste the result into the app. This exists
+  because the dealer site's bot protection blocks all server-side fetching — only a real
+  browser gets in.
 
 ## Keep your data safe
 

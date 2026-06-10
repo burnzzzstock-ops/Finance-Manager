@@ -76,33 +76,128 @@ function invLookup(q) {
     || null;
 }
 
+function normInvItem(r) {
+  const vin = String(r.vin || '').toUpperCase();
+  if (!VIN_RE.test(vin)) return null;
+  return {
+    vin,
+    stock: String(r.stock || '').trim(),
+    name: String(r.name || '').trim(),
+    year: String(r.year || '').slice(0, 4),
+    cond: r.cond === 'used' ? 'used' : (r.cond === 'new' ? 'new' : '')
+  };
+}
+
+const toCond = s => {
+  s = String(s || '').toLowerCase();
+  if (!s) return '';
+  if (/used|pre|cpo|certified|^u$/.test(s)) return 'used';
+  if (/new|^n$/.test(s)) return 'new';
+  return '';
+};
+
+// Accepts bookmarklet JSON, a backup file's inventory, or CSV/TSV pasted
+// straight out of an Excel inventory report.
+function parsePastedInventory(text) {
+  text = String(text || '').trim();
+  if (!text) return null;
+  if (text[0] === '{' || text[0] === '[') {
+    try {
+      const d = JSON.parse(text);
+      return Array.isArray(d) ? d : (d.fiInv || d.inv || d.inventory || d.vehicles || null);
+    } catch { return null; }
+  }
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+  if (lines.length < 2) return null;
+  const delim = (lines[0].match(/\t/g) || []).length >= (lines[0].match(/,/g) || []).length ? '\t' : ',';
+  const splitLine = line => {
+    const out = []; let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (inQ) {
+        if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else inQ = false; }
+        else cur += ch;
+      } else if (ch === '"') inQ = true;
+      else if (ch === delim) { out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+    out.push(cur);
+    return out;
+  };
+  const CMAP = {
+    vin: 'vin', stock: 'stock', stocknumber: 'stock', stockno: 'stock', stocknum: 'stock', stk: 'stock',
+    year: 'year', modelyear: 'year', yr: 'year', make: 'make', model: 'model',
+    trim: 'trim', series: 'trim', type: 'cond', newused: 'cond', condition: 'cond',
+    nu: 'cond', vehicletype: 'cond', inventorytype: 'cond', status: 'cond'
+  };
+  const normH = h => String(h || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  let cols = null, start = 0;
+  for (let i = 0; i < Math.min(lines.length, 10); i++) {
+    const cells = splitLine(lines[i]);
+    if (cells.some(c => normH(c) === 'vin')) {
+      cols = {};
+      cells.forEach((c, j) => { const k = CMAP[normH(c)]; if (k && !(k in cols)) cols[k] = j; });
+      start = i + 1;
+      break;
+    }
+  }
+  if (!cols) return null;
+  const out = [];
+  for (let i = start; i < lines.length; i++) {
+    const cells = splitLine(lines[i]);
+    const get = k => (k in cols && cols[k] < cells.length) ? String(cells[cols[k]]).trim() : '';
+    const year = get('year').replace(/\D/g, '').slice(0, 4);
+    let make = get('make');
+    if (make === make.toUpperCase()) make = titleCase(make);
+    out.push({
+      vin: get('vin').toUpperCase().replace(/\s/g, ''),
+      stock: get('stock').replace(/\.0$/, ''),
+      name: [year, make, get('model'), get('trim')].filter(Boolean).join(' '),
+      year,
+      cond: toCond(get('cond'))
+    });
+  }
+  return out;
+}
+
 function importInventory(text) {
-  let arr = null;
-  try {
-    const d = JSON.parse(text.trim());
-    arr = Array.isArray(d) ? d : (d.fiInv || d.inv || d.inventory || null);
-  } catch { /* fall through */ }
-  if (!arr || !arr.length) { alert('Could not read that — paste exactly what the bookmark copied.'); return false; }
+  const arr = parsePastedInventory(text);
+  if (!arr || !arr.length) {
+    alert('Could not read that — paste what the bookmark copied, or rows copied from an Excel/CSV inventory report (with a VIN column).');
+    return false;
+  }
   const byVin = new Map(data.inventory.map(v => [v.vin, v]));
   let added = 0, updated = 0;
   for (const r of arr) {
-    const vin = String(r.vin || '').toUpperCase();
-    if (!VIN_RE.test(vin)) continue;
-    const item = {
-      vin,
-      stock: String(r.stock || '').trim(),
-      name: String(r.name || '').trim(),
-      year: String(r.year || '').slice(0, 4),
-      cond: r.cond === 'used' ? 'used' : 'new'
-    };
-    if (byVin.has(vin)) { Object.assign(byVin.get(vin), item); updated++; }
-    else { data.inventory.push(item); byVin.set(vin, item); added++; }
+    const item = normInvItem(r);
+    if (!item) continue;
+    if (byVin.has(item.vin)) { Object.assign(byVin.get(item.vin), item); updated++; }
+    else { data.inventory.push(item); byVin.set(item.vin, item); added++; }
   }
+  if (!added && !updated) { alert('No valid 17-character VINs found in that paste.'); return false; }
   data.settings.lastInvSync = Date.now();
   save();
   renderSettings();
   alert(`Inventory updated: ${added} added, ${updated} refreshed. ${data.inventory.length} vehicles on file.`);
   return true;
+}
+
+// Pull the latest feed committed by the daily email sync (inventory.json).
+// The feed is a full snapshot, so it replaces the local list when it changes.
+async function refreshInventoryFromRepo() {
+  try {
+    const r = await fetch('inventory.json', { cache: 'no-cache' });
+    if (!r.ok) return;
+    const j = await r.json();
+    const vehicles = (j.vehicles || []).map(normInvItem).filter(Boolean);
+    if (!vehicles.length) return;
+    const ts = Date.parse(j.updated) || Date.now();
+    if (ts === data.settings.lastInvSync && vehicles.length === data.inventory.length) return;
+    data.inventory = vehicles;
+    data.settings.lastInvSync = ts;
+    save();
+    renderSettings();
+  } catch { /* offline or feed not set up yet — that's fine */ }
 }
 
 // Runs on the dealer site in the user's browser (their IP gets in; datacenter IPs are
@@ -579,7 +674,7 @@ function openDealModal(deal) {
 
   $('#stock-list').innerHTML = data.inventory
     .filter(v => v.stock || v.vin)
-    .map(v => `<option value="${esc(v.stock || v.vin.slice(-8))}">${esc(v.name || (v.year + ' ' + v.cond))}</option>`)
+    .map(v => `<option value="${esc(v.stock || v.vin.slice(-8))}">${esc(v.name || [v.year, v.cond].filter(Boolean).join(' ') || v.vin)}</option>`)
     .join('');
   setSeg('#f-type', deal ? deal.type : 'finance');
   setSeg('#f-cond', deal ? deal.cond : 'new');
@@ -783,7 +878,7 @@ $$('.modal-wrap').forEach(w => w.addEventListener('click', e => {
 $('#f-num').addEventListener('change', () => {
   const hit = invLookup($('#f-num').value);
   if (!hit) return;
-  setSeg('#f-cond', hit.cond);
+  if (hit.cond) setSeg('#f-cond', hit.cond);
   if (hit.name) showVehicle(hit.name);
   if (hit.vin && $('#f-vin').value.trim().toUpperCase() !== hit.vin) {
     $('#f-vin').value = hit.vin;
@@ -797,7 +892,7 @@ $('#f-vin').addEventListener('input', async () => {
   if (!VIN_RE.test(vin)) { if (!vin) showVehicle(''); return; }
   const hit = data.inventory.find(v => v.vin === vin);
   if (hit) {
-    setSeg('#f-cond', hit.cond);
+    if (hit.cond) setSeg('#f-cond', hit.cond);
     if (hit.stock && !$('#f-num').value.trim()) $('#f-num').value = hit.stock;
   }
   showVehicle('Decoding VIN…', hit?.name || '');
@@ -920,3 +1015,4 @@ $('#btn-clear').addEventListener('click', () => {
 
 /* ============ boot ============ */
 renderAll();
+refreshInventoryFromRepo();
