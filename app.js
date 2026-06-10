@@ -513,6 +513,8 @@ function renderDashboard() {
     ${statCard('Reserve', fmt$(M.reserve))}
     ${statCard('VSC %', fmtPct(vscP.pen), `${vscP.count} of ${M.units}`, vscP.pen >= 55 ? 'good' : '')}
     ${statCard('GAP %', fmtPct(gapP.pen), `${gapP.count} of ${M.units}`)}
+    ${statCard('Finance %', fmtPct(M.units ? (M.typeCount.finance || 0) / M.units * 100 : 0),
+      `${fmtPct(M.units ? (M.typeCount.cash || 0) / M.units * 100 : 0)} cash` + (M.typeCount.lease ? ` · ${fmtPct((M.typeCount.lease || 0) / M.units * 100)} lease` : ''))}
     ${statCard('Net Gross', fmt$(M.net), `${fmt$(M.productGross)} prod + ${fmt$(M.reserve)} res`)}
   </div>`;
 
