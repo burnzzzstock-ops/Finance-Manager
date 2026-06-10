@@ -270,19 +270,27 @@ function calcMonth(m) {
   const cbs = data.chargebacks.filter(c => c.date.startsWith(m));
   const units = deals.length;
   let productGross = 0, reserve = 0, prodCount = 0;
-  const prodStats = {}, lenderMix = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
+  const prodStats = {}, lenderMix = {}, lenderStats = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
 
   for (const d of deals) {
     reserve += +d.reserve || 0;
     typeCount[d.type] = (typeCount[d.type] || 0) + 1;
     condCount[d.cond] = (condCount[d.cond] || 0) + 1;
-    if (d.lender && d.type !== 'cash') lenderMix[d.lender] = (lenderMix[d.lender] || 0) + 1;
+    let dealProd = 0;
     for (const p of (d.products || [])) {
       productGross += +p.amt || 0;
+      dealProd += +p.amt || 0;
       prodCount += prodWeight(p);
       const s = prodStats[p.name] || (prodStats[p.name] = { count: 0, gross: 0 });
       s.count++;                 // deals containing it — drives penetration %
       s.gross += +p.amt || 0;
+    }
+    if (d.lender && d.type !== 'cash') {
+      lenderMix[d.lender] = (lenderMix[d.lender] || 0) + 1;
+      const L = lenderStats[d.lender] || (lenderStats[d.lender] = { count: 0, reserve: 0, product: 0 });
+      L.count++;
+      L.reserve += +d.reserve || 0;
+      L.product += dealProd;
     }
   }
 
@@ -293,7 +301,7 @@ function calcMonth(m) {
     cbAmt, cbCount: cbs.length, net: gross - cbAmt,
     pvr: units ? gross / units : 0,
     ppd: units ? prodCount / units : 0,
-    prodCount, prodStats, lenderMix, typeCount, condCount
+    prodCount, prodStats, lenderMix, lenderStats, typeCount, condCount
   };
 }
 
@@ -504,15 +512,25 @@ function renderDashboard() {
     html += `</table>`;
   }
 
-  // lender mix
-  const lenders = Object.entries(M.lenderMix).sort((a, b) => b[1] - a[1]);
+  // lender performance — deals, share, avg reserve, avg back gross per lender
+  const lenders = Object.entries(M.lenderStats).sort((a, b) => (b[1].reserve + b[1].product) - (a[1].reserve + a[1].product));
   if (lenders.length) {
-    html += `<h2>Lender Mix</h2><table class="tbl"><tr><th>Lender</th><th class="num">Deals</th><th class="num">Share</th></tr>`;
-    const fin = lenders.reduce((a, x) => a + x[1], 0);
-    for (const [name, count] of lenders) {
-      html += `<tr><td>${esc(name)}</td><td class="num">${count}</td><td class="num">${fmtPct(count / fin * 100)}</td></tr>`;
+    const fin = lenders.reduce((a, [, s]) => a + s.count, 0);
+    html += `<h2>Lender Performance</h2><div class="scrollx"><table class="tbl"><tr>
+      <th>Lender</th><th class="num">Deals</th><th class="num">Share</th>
+      <th class="num">Avg Reserve</th><th class="num">Avg Back</th></tr>`;
+    for (const [name, s] of lenders) {
+      const avgRes = s.count ? s.reserve / s.count : 0;
+      const avgBack = s.count ? (s.reserve + s.product) / s.count : 0;
+      html += `<tr><td>${esc(name)}</td><td class="num">${s.count}</td><td class="num">${fmtPct(s.count / fin * 100)}</td>
+        <td class="num">${fmt$(avgRes)}</td><td class="num">${fmt$(avgBack)}</td></tr>`;
     }
-    html += `</table>`;
+    // weighted totals row
+    const tRes = lenders.reduce((a, [, s]) => a + s.reserve, 0);
+    const tProd = lenders.reduce((a, [, s]) => a + s.product, 0);
+    html += `<tr class="totrow"><td><b>All financed</b></td><td class="num"><b>${fin}</b></td><td class="num">—</td>
+      <td class="num"><b>${fmt$(fin ? tRes / fin : 0)}</b></td><td class="num"><b>${fmt$(fin ? (tRes + tProd) / fin : 0)}</b></td></tr>`;
+    html += `</table></div>`;
   }
 
   // 6-month history
