@@ -213,6 +213,14 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 #f-vehicle { min-height: 18px; margin: 6px 2px 0; color: var(--green); }
 #scan-video { width: 100%; min-height: 220px; border-radius: 10px; background: #000; }
 
+.scrollx { overflow-x: auto; }
+.mx .mxin {
+  width: 58px; margin: 0; padding: 4px 6px; font-size: 13px; text-align: right;
+  background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
+}
+.mx th .mxin { width: 64px; }
+.tbl td.cur { background: #14224a; box-shadow: inset 0 0 0 2px var(--accent); }
+
 .nudge {
   background: #2a2310; border: 1px solid #5c4d1a; color: var(--amber);
   border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px;

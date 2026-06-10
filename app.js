@@ -16,6 +16,20 @@ const DEFAULT_DATA = {
     ],
     lenders: ['Ford Credit', 'Chase', 'Capital One', 'Ally', 'Wells Fargo', 'Credit Union', 'Other'],
     payPlan: {
+      mode: 'matrix',
+      reserveRate: 10,
+      matrix: {
+        pvrBasis: 'total',                    // PVR = (products + reserve) / units; or 'products'
+        cols: [0, 1151, 1251, 1351, 1451],    // PVR column breakpoints ($)
+        rows: [0, 0.76, 1.26, 1.76],          // products-per-deal row breakpoints
+        rates: [
+          [9, 10, 11, 12, 13],
+          [11, 12, 13, 14, 15],
+          [12, 13, 14, 15, 16],
+          [13, 14, 15, 16, 17]
+        ]
+      },
+      matrixBonus: { extra: 2, ppdMin: 1.76, vscPen: 55 },
       retro: true,
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
@@ -34,8 +48,16 @@ function loadData() {
     if (!raw) return structuredClone(DEFAULT_DATA);
     const d = JSON.parse(raw);
     const base = structuredClone(DEFAULT_DATA);
+    const sp = (d.settings || {}).payPlan || {};
     return {
-      settings: { ...base.settings, ...(d.settings || {}), payPlan: { ...base.settings.payPlan, ...((d.settings || {}).payPlan || {}) } },
+      settings: {
+        ...base.settings, ...(d.settings || {}),
+        payPlan: {
+          ...base.settings.payPlan, ...sp,
+          matrix: { ...base.settings.payPlan.matrix, ...(sp.matrix || {}) },
+          matrixBonus: { ...base.settings.payPlan.matrixBonus, ...(sp.matrixBonus || {}) }
+        }
+      },
       deals: Array.isArray(d.deals) ? d.deals : [],
       chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
       inventory: Array.isArray(d.inventory) ? d.inventory : []
@@ -383,10 +405,49 @@ function bonusStatus(b, M) {
   return { cur, threshold, earned, gapText };
 }
 
+function vscStats(M) {
+  let count = 0;
+  for (const [name, s] of Object.entries(M.prodStats)) {
+    if (/vsc|esp|service/i.test(name)) count += s.count;
+  }
+  return { count, pen: M.units ? count / M.units * 100 : 0 };
+}
+
+const idxFor = (breaks, v) => {
+  let i = 0;
+  breaks.forEach((b, j) => { if (v >= b) i = j; });
+  return i;
+};
+
+function calcPayMatrix(M, plan) {
+  const mx = plan.matrix;
+  const pvr = M.units ? (mx.pvrBasis === 'products' ? M.productGross : M.gross) / M.units : 0;
+  const ri = idxFor(mx.rows, M.ppd);
+  const ci = idxFor(mx.cols, pvr);
+  const rate = (mx.rates[ri] || [])[ci] ?? 0;
+  const vsc = vscStats(M);
+  const mb = plan.matrixBonus || {};
+  const bonusEarned = M.units > 0 && M.ppd >= (mb.ppdMin ?? 1.76) && vsc.pen >= (mb.vscPen ?? 55);
+  const prodNet = Math.max(M.productGross - M.cbAmt, 0);
+  const prodRate = rate + (bonusEarned ? (mb.extra ?? 2) : 0);
+  const productPay = prodNet * prodRate / 100;
+  const reserveRate = plan.reserveRate ?? 10;
+  const reservePay = M.reserve * reserveRate / 100;
+  return {
+    M, mode: 'matrix', rate, prodRate, reserveRate, pvr, ri, ci,
+    vsc, bonusEarned, prodNet, productPay, reservePay,
+    total: productPay + reservePay,
+    rateLabel: `${prodRate}% products + ${reserveRate}% reserve`
+  };
+}
+
 function calcPay(m) {
   const M = calcMonth(m);
+  const plan = data.settings.payPlan;
+  if (plan.mode !== 'tiers') return calcPayMatrix(M, plan);
+
   const base = basePay(M.net);
-  const bonuses = (data.settings.payPlan.bonuses || []).map(b => ({ b, ...bonusStatus(b, M) }));
+  const bonuses = (plan.bonuses || []).map(b => ({ b, ...bonusStatus(b, M) }));
   const earnedSum = bonuses.filter(x => x.earned).reduce((a, x) => a + (+x.b.amount || 0), 0);
 
   let next = null;
@@ -396,10 +457,13 @@ function calcPay(m) {
     next = {
       min: nt.min, rate: nt.rate,
       gap: nt.min - M.net,
-      jump: data.settings.payPlan.retro !== false ? nt.min * (nt.rate - base.tier.rate) / 100 : 0
+      jump: plan.retro !== false ? nt.min * (nt.rate - base.tier.rate) / 100 : 0
     };
   }
-  return { M, base, bonuses, earnedSum, total: base.pay + earnedSum, next };
+  return {
+    M, mode: 'tiers', base, bonuses, earnedSum, total: base.pay + earnedSum, next,
+    rateLabel: base.tier.rate + '% tier' + (earnedSum ? ' + bonuses' : '')
+  };
 }
 
 /* ============ rendering ============ */
@@ -442,7 +506,7 @@ function renderDashboard() {
 
   let html = `<div class="stats">
     ${statCard('Back Gross', fmt$(M.gross), paceSub, 'hero good')}
-    ${statCard('Est. Pay MTD', fmt$(P.total), P.base.tier.rate + '% tier' + (P.earnedSum ? ' + bonuses' : ''), 'hero')}
+    ${statCard('Est. Pay MTD', fmt$(P.total), P.rateLabel, 'hero')}
     ${statCard('Units', M.units, typeSub)}
     ${statCard('PVR', fmt$(M.pvr), condSub)}
     ${statCard('Products/Deal', (Math.round(M.ppd * 100) / 100).toFixed(2), M.prodCount + ' products')}
@@ -548,10 +612,97 @@ function renderDeals() {
   }
 }
 
+function modeSelectRow(mode) {
+  return `<div class="edit-row"><span class="hint-inline">Plan type</span>
+    <select data-mx="mode">
+      <option value="matrix" ${mode !== 'tiers' ? 'selected' : ''}>PVR × PPD matrix</option>
+      <option value="tiers" ${mode === 'tiers' ? 'selected' : ''}>Simple gross tiers</option>
+    </select></div>`;
+}
+
 function renderPay() {
   const P = calcPay(state.month);
   const plan = data.settings.payPlan;
+  if (P.mode === 'matrix') renderPayMatrix(P, plan);
+  else renderPayTiers(P, plan);
+}
 
+function renderPayMatrix(P, plan) {
+  const mx = plan.matrix;
+  const mb = plan.matrixBonus || {};
+
+  $('#pay-breakdown').innerHTML = `
+    <div class="pay-line"><span>Product gross${P.M.cbAmt ? ` − ${fmt$(P.M.cbAmt)} chargebacks` : ''} (${P.M.units} units)</span><b>${fmt$(P.prodNet)}</b></div>
+    <div class="pay-line"><span>Products @ ${P.prodRate}%${P.bonusEarned ? ` (incl. +${mb.extra ?? 2}% bonus)` : ''}</span><b>${fmt$(P.productPay)}</b></div>
+    <div class="pay-line"><span>Reserve ${fmt$(P.M.reserve)} @ ${P.reserveRate}% flat</span><b>${fmt$(P.reservePay)}</b></div>
+    <div class="pay-line total"><span>Estimated pay MTD</span><b>${fmt$(P.total)}</b></div>`;
+
+  // targets
+  let t = '';
+  if (P.M.units) {
+    t += `<div class="target done">Current cell: <b>${P.rate}%</b> — PVR <b>${fmt$(P.pvr)}</b>, PPD <b>${P.M.ppd.toFixed(2)}</b>, VSC <b>${fmtPct(P.vsc.pen)}</b>.</div>`;
+    if (P.ci < mx.cols.length - 1) {
+      const gap = mx.cols[P.ci + 1] - P.pvr;
+      t += `<div class="target">Next PVR column (<b>+1%</b> on all product gross): lift PVR by <b>${fmt$(gap)}</b> — ≈ <b>${fmt$(gap * P.M.units)}</b> more back gross at ${P.M.units} units. Worth ≈ <b>+${fmt$(P.prodNet * 0.01)}</b> right now.</div>`;
+    }
+    if (P.ri < mx.rows.length - 1) {
+      const need = Math.max(1, Math.ceil(mx.rows[P.ri + 1] * P.M.units - P.M.prodCount));
+      t += `<div class="target">Next PPD row (<b>+1%</b>): <b>${need}</b> more product${need > 1 ? 's' : ''} across your existing units. Worth ≈ <b>+${fmt$(P.prodNet * 0.01)}</b>.</div>`;
+    }
+    if (P.bonusEarned) {
+      t += `<div class="target done">✓ +${mb.extra ?? 2}% product bonus earned (PPD ≥ ${mb.ppdMin ?? 1.76} and VSC ≥ ${mb.vscPen ?? 55}%)</div>`;
+    } else {
+      const bits = [];
+      if (P.M.ppd < (mb.ppdMin ?? 1.76)) bits.push(`PPD ${P.M.ppd.toFixed(2)} → ${mb.ppdMin ?? 1.76}`);
+      const tp = (mb.vscPen ?? 55) / 100;
+      if (P.vsc.pen < (mb.vscPen ?? 55) && tp < 1) {
+        const k = Math.max(1, Math.ceil((tp * P.M.units - P.vsc.count) / (1 - tp)));
+        bits.push(`VSC ${fmtPct(P.vsc.pen)} → ${mb.vscPen ?? 55}% (sell it on the next ${k} straight)`);
+      }
+      t += `<div class="target"><b>+${mb.extra ?? 2}% product bonus</b>: ${bits.join(' · ') || 'almost there'} — worth ≈ <b>+${fmt$(P.prodNet * (mb.extra ?? 2) / 100)}</b> on the month.</div>`;
+    }
+  } else {
+    t = `<div class="empty">Log deals and this becomes your target board: which cell you're in, and exactly what moves you up a percent.</div>`;
+  }
+  $('#pay-targets').innerHTML = t;
+
+  // editor: thresholds + rate grid (current cell highlighted)
+  let grid = `<div class="scrollx"><table class="tbl mx"><tr><th>PPD \\ PVR</th>`;
+  mx.cols.forEach((c, j) => {
+    grid += `<th class="num">$<input class="mxin" data-mx="col" data-j="${j}" type="number" value="${c}" ${j === 0 ? 'disabled' : ''}></th>`;
+  });
+  grid += `</tr>`;
+  mx.rows.forEach((r, i) => {
+    grid += `<tr><td><input class="mxin" data-mx="row" data-i="${i}" type="number" step="0.01" value="${r}" ${i === 0 ? 'disabled' : ''}></td>`;
+    mx.cols.forEach((c, j) => {
+      const cur = i === P.ri && j === P.ci && P.M.units;
+      grid += `<td class="num ${cur ? 'cur' : ''}"><input class="mxin" data-mx="rate" data-i="${i}" data-j="${j}" type="number" step="0.5" value="${(mx.rates[i] || [])[j] ?? 0}">%</td>`;
+    });
+    grid += `</tr>`;
+  });
+  grid += `</table></div>`;
+
+  $('#plan-editor').innerHTML = `
+    ${modeSelectRow(plan.mode)}
+    <div class="edit-row"><span class="hint-inline">Reserve pays</span>
+      <input class="amt" type="number" data-mx="reserveRate" value="${plan.reserveRate ?? 10}" step="0.5">
+      <span class="hint-inline">% flat &nbsp;·&nbsp; PVR basis</span>
+      <select data-mx="pvrBasis">
+        <option value="total" ${mx.pvrBasis !== 'products' ? 'selected' : ''}>Products + reserve</option>
+        <option value="products" ${mx.pvrBasis === 'products' ? 'selected' : ''}>Products only</option>
+      </select></div>
+    ${grid}
+    <p class="hint">Column headers = PVR breakpoints, row headers = products-per-deal breakpoints. Your current cell is highlighted.</p>
+    <div class="edit-row"><span class="hint-inline">Bonus: +</span>
+      <input class="amt" type="number" data-mx="bex" value="${mb.extra ?? 2}" step="0.5">
+      <span class="hint-inline">% on products when PPD ≥</span>
+      <input class="amt" type="number" data-mx="bppd" value="${mb.ppdMin ?? 1.76}" step="0.01">
+      <span class="hint-inline">and VSC ≥</span>
+      <input class="amt" type="number" data-mx="bvsc" value="${mb.vscPen ?? 55}">
+      <span class="hint-inline">%</span></div>`;
+}
+
+function renderPayTiers(P, plan) {
   // breakdown
   let html = `
     <div class="pay-line"><span>Net back gross (${P.M.units} units)</span><b>${fmt$(P.M.net)}</b></div>
@@ -607,6 +758,7 @@ function renderPay() {
     </div>`).join('');
 
   $('#plan-editor').innerHTML = `
+    ${modeSelectRow(plan.mode)}
     ${tiers}
     <div class="btn-row"><button class="btn sm" data-plan="addtier">+ Add Tier</button></div>
     <label class="check-row"><input type="checkbox" id="plan-retro" ${plan.retro !== false ? 'checked' : ''}> Tiers are retroactive to dollar one (most F&amp;I plans are)</label>
@@ -962,6 +1114,21 @@ $('#view-pay').addEventListener('click', e => {
 $('#view-pay').addEventListener('change', e => {
   const el = e.target;
   const plan = data.settings.payPlan;
+  const mxk = el.dataset.mx;
+  if (mxk) {
+    const mx = plan.matrix;
+    if (mxk === 'mode') plan.mode = el.value;
+    else if (mxk === 'reserveRate') plan.reserveRate = +el.value || 0;
+    else if (mxk === 'pvrBasis') mx.pvrBasis = el.value;
+    else if (mxk === 'col') mx.cols[+el.dataset.j] = +el.value || 0;
+    else if (mxk === 'row') mx.rows[+el.dataset.i] = +el.value || 0;
+    else if (mxk === 'rate') mx.rates[+el.dataset.i][+el.dataset.j] = +el.value || 0;
+    else if (mxk === 'bex') (plan.matrixBonus ??= {}).extra = +el.value || 0;
+    else if (mxk === 'bppd') (plan.matrixBonus ??= {}).ppdMin = +el.value || 0;
+    else if (mxk === 'bvsc') (plan.matrixBonus ??= {}).vscPen = +el.value || 0;
+    save(); renderPay(); renderDashboard();
+    return;
+  }
   if (el.id === 'plan-retro') { plan.retro = el.checked; }
   else if (el.dataset.plan === 'tier') { plan.tiers[+el.dataset.i][el.dataset.f] = +el.value || 0; }
   else if (el.dataset.plan === 'bonus') {
