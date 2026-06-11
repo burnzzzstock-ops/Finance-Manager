@@ -231,6 +231,20 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 }
 #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* Team view (read-only teammate file) */
+.team-banner {
+  position: sticky; top: 0; z-index: 25;
+  background: var(--amber); color: #4a3300;
+  padding: 9px 16px; font-size: 14px; text-align: center;
+}
+.team-banner .btn { margin-left: 10px; background: #fff; border-color: #e8c890; color: #4a3300; }
+.teamview .fab,
+.teamview #btn-new-deal,
+.teamview #btn-new-cb,
+.teamview .deal-actions,
+.teamview #backup-nudge,
+.teamview .tab[data-view="settings"] { display: none !important; }
+
 .nudge {
   background: #fff3d6; border: 1px solid #f7dca0; color: #9a6300;
   border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px;

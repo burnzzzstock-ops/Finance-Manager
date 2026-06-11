@@ -2,7 +2,10 @@
 
 /* ============ storage ============ */
 
-const LS_KEY = 'fi-scoreboard-v1';
+// Profile support: ?u=jr on the URL gives a teammate a fully separate data
+// store under the same site (and labels their backups).
+const PROFILE = (new URLSearchParams(location.search).get('u') || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 12);
+const LS_KEY = 'fi-scoreboard-v1' + (PROFILE ? '-' + PROFILE : '');
 
 const DEFAULT_DATA = {
   settings: {
@@ -49,33 +52,61 @@ const DEFAULT_DATA = {
   inventory: []    // {vin, stock, name, year, cond} — synced from the dealer site via bookmarklet
 };
 
+function mergeData(d) {
+  const base = structuredClone(DEFAULT_DATA);
+  const sp = (d.settings || {}).payPlan || {};
+  return {
+    settings: {
+      ...base.settings, ...(d.settings || {}),
+      payPlan: {
+        ...base.settings.payPlan, ...sp,
+        matrix: { ...base.settings.payPlan.matrix, ...(sp.matrix || {}) },
+        matrixBonus: { ...base.settings.payPlan.matrixBonus, ...(sp.matrixBonus || {}) }
+      }
+    },
+    deals: Array.isArray(d.deals) ? d.deals : [],
+    chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
+    inventory: Array.isArray(d.inventory) ? d.inventory : []
+  };
+}
+
 function loadData() {
   try {
     const raw = localStorage.getItem(LS_KEY);
     if (!raw) return structuredClone(DEFAULT_DATA);
-    const d = JSON.parse(raw);
-    const base = structuredClone(DEFAULT_DATA);
-    const sp = (d.settings || {}).payPlan || {};
-    return {
-      settings: {
-        ...base.settings, ...(d.settings || {}),
-        payPlan: {
-          ...base.settings.payPlan, ...sp,
-          matrix: { ...base.settings.payPlan.matrix, ...(sp.matrix || {}) },
-          matrixBonus: { ...base.settings.payPlan.matrixBonus, ...(sp.matrixBonus || {}) }
-        }
-      },
-      deals: Array.isArray(d.deals) ? d.deals : [],
-      chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
-      inventory: Array.isArray(d.inventory) ? d.inventory : []
-    };
+    return mergeData(JSON.parse(raw));
   } catch {
     return structuredClone(DEFAULT_DATA);
   }
 }
 
 let data = loadData();
-const save = () => localStorage.setItem(LS_KEY, JSON.stringify(data));
+// While viewing a teammate's file, nothing writes to this device's storage.
+let teamView = null;   // label of the file being viewed, or null
+let myData = null;     // own data, parked during team view
+const save = () => { if (!teamView) localStorage.setItem(LS_KEY, JSON.stringify(data)); };
+
+function enterTeamView(d, label) {
+  myData = data;
+  data = mergeData(d);
+  teamView = label;
+  document.body.classList.add('teamview');
+  const b = $('#team-banner');
+  b.hidden = false;
+  b.innerHTML = `👀 Viewing <b>${esc(label)}</b> — read-only <button class="btn sm" id="exit-team">Back to my data</button>`;
+  $$('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === 'dashboard'));
+  $$('.view').forEach(v => v.classList.toggle('active', v.id === 'view-dashboard'));
+  renderAll();
+}
+
+function exitTeamView() {
+  data = myData;
+  myData = null;
+  teamView = null;
+  document.body.classList.remove('teamview');
+  $('#team-banner').hidden = true;
+  renderAll();
+}
 
 /* ============ helpers ============ */
 
@@ -997,7 +1028,7 @@ function exportJSON() {
   data.settings.lastAutoBackup = Date.now();
   data.settings.opsSinceBackup = 0;
   save();
-  download(`fi-scoreboard-backup-${todayStr()}.json`, JSON.stringify(data, null, 2));
+  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-backup-${todayStr()}.json`, JSON.stringify(data, null, 2));
   renderAll();
 }
 
@@ -1015,7 +1046,7 @@ function maybeAutoBackup() {
     s.opsSinceBackup = 0;
     save();
     const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-    download(`fi-scoreboard-auto-${stamp}.json`, JSON.stringify(data, null, 2));
+    download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, JSON.stringify(data, null, 2));
     toast('Backup saved to your Downloads');
   } else {
     save();
@@ -1270,6 +1301,34 @@ $('#btn-clear').addEventListener('click', () => {
   }
 });
 
+// team view (read-only look at a teammate's backup file)
+$('#btn-team-view').addEventListener('click', () => $('#team-file').click());
+$('#team-file').addEventListener('change', e => {
+  const file = e.target.files[0];
+  e.target.value = '';
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const d = JSON.parse(reader.result);
+      if (!Array.isArray(d.deals) || !d.settings) throw new Error('bad shape');
+      const label = file.name.replace(/^fi-scoreboard-?/, '').replace(/-(auto|backup).*$/, '') || 'teammate';
+      enterTeamView(d, label);
+    } catch {
+      alert("That file doesn't look like an F&I Scoreboard backup.");
+    }
+  };
+  reader.readAsText(file);
+});
+document.addEventListener('click', e => {
+  if (e.target.id === 'exit-team') exitTeamView();
+});
+
 /* ============ boot ============ */
+if (PROFILE) {
+  const label = PROFILE.toUpperCase();
+  document.title = `F&I Scoreboard — ${label}`;
+  document.querySelector('.topbar h1').textContent = `F&I Scoreboard · ${label}`;
+}
 renderAll();
 refreshInventoryFromRepo();

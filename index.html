@@ -23,6 +23,8 @@
   </nav>
 </header>
 
+<div id="team-banner" class="team-banner" hidden></div>
+
 <main>
   <section id="view-dashboard" class="view active">
     <div id="backup-nudge"></div>
@@ -72,6 +74,12 @@
       <button class="btn primary" id="btn-inv-import">Import / Merge Inventory</button>
       <button class="btn danger" id="btn-inv-clear">Clear Inventory</button>
     </div>
+
+    <h2>Team</h2>
+    <p class="hint">Open a teammate's backup file (their auto-backup files work too) as a read-only
+      dashboard. Your own data is untouched, and nothing of yours is shared back.</p>
+    <div class="btn-row"><button class="btn" id="btn-team-view">View Teammate File</button></div>
+    <input type="file" id="team-file" accept=".json,application/json" hidden>
 
     <h2>Backup &amp; Data</h2>
     <p class="hint">Your data lives only in this browser — it is never uploaded anywhere. Use Import to move to a new phone or computer.</p>
