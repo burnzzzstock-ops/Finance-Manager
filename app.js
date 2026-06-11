@@ -21,6 +21,7 @@ const DEFAULT_DATA = {
       { name: 'Key Replacement',    amt: 250,  active: true, count: 1 }
     ],
     lenders: ['Ford Credit', 'Chase', 'Capital One', 'Ally', 'Wells Fargo', 'Credit Union', 'Other'],
+    managers: ['Alex', 'Chris', 'Ian', 'Tito'],
     payPlan: {
       mode: 'matrix',
       reserveRate: 10,
@@ -301,7 +302,7 @@ function calcMonth(m) {
   const cbs = data.chargebacks.filter(c => c.date.startsWith(m));
   const units = deals.length;
   let productGross = 0, reserve = 0, prodCount = 0;
-  const prodStats = {}, lenderMix = {}, lenderStats = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
+  const prodStats = {}, lenderMix = {}, lenderStats = {}, mgrStats = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
   const condStats = { new: { units: 0, gross: 0, prodCount: 0 }, used: { units: 0, gross: 0, prodCount: 0 } };
 
   for (const d of deals) {
@@ -330,6 +331,12 @@ function calcMonth(m) {
       L.reserve += +d.reserve || 0;
       L.product += dealProd;
     }
+    const mgr = d.mgr || 'Unassigned';
+    const G = mgrStats[mgr] || (mgrStats[mgr] = { count: 0, gross: 0, prodCount: 0, vsc: 0 });
+    G.count++;
+    G.gross += dealProd + (+d.reserve || 0);
+    G.prodCount += (d.products || []).reduce((a, p) => a + prodWeight(p), 0);
+    if ((d.products || []).some(p => /vsc|esp/i.test(p.name))) G.vsc++;
   }
 
   const gross = productGross + reserve;
@@ -339,7 +346,7 @@ function calcMonth(m) {
     cbAmt, cbCount: cbs.length, net: gross - cbAmt,
     pvr: units ? gross / units : 0,
     ppd: units ? prodCount / units : 0,
-    prodCount, prodStats, lenderMix, lenderStats, typeCount, condCount, condStats
+    prodCount, prodStats, lenderMix, lenderStats, mgrStats, typeCount, condCount, condStats
   };
 }
 
@@ -596,6 +603,22 @@ function renderDashboard() {
     html += `</table>`;
   }
 
+  // manager tracking — units, share, PVR, PPD, VSC pen per desking manager
+  const mgrs = Object.entries(M.mgrStats).sort((a, b) => b[1].gross - a[1].gross);
+  if (mgrs.length && M.units) {
+    html += `<h2>Manager Tracking</h2><div class="scrollx"><table class="tbl"><tr>
+      <th>Manager</th><th class="num">Deals</th><th class="num">Share</th>
+      <th class="num">PVR</th><th class="num">PPD</th><th class="num">VSC %</th></tr>`;
+    for (const [name, g] of mgrs) {
+      html += `<tr><td>${esc(name)}</td><td class="num">${g.count}</td>
+        <td class="num">${fmtPct(g.count / M.units * 100)}</td>
+        <td class="num">${fmt$(g.gross / g.count)}</td>
+        <td class="num">${(g.prodCount / g.count).toFixed(2)}</td>
+        <td class="num">${fmtPct(g.vsc / g.count * 100)}</td></tr>`;
+    }
+    html += `</table></div>`;
+  }
+
   // lender performance — deals, share, avg reserve, avg back gross per lender
   const lenders = Object.entries(M.lenderStats).sort((a, b) => (b[1].reserve + b[1].product) - (a[1].reserve + a[1].product));
   if (lenders.length) {
@@ -658,6 +681,7 @@ function renderDeals() {
             <span class="badge">${d.type}</span><span class="badge">${d.cond}</span>
             ${d.vehicle ? `<span class="badge">${esc(d.vehicle)}</span>` : ''}
             ${d.lender && d.type !== 'cash' ? `<span class="badge">${esc(d.lender)}</span>` : ''}
+            ${d.mgr ? `<span class="badge">${esc(d.mgr)}</span>` : ''}
             ${res}${prods}
           </div>
           ${d.note ? `<div class="deal-note">${esc(d.note)}</div>` : ''}
@@ -865,6 +889,10 @@ function renderSettings() {
     <div class="chiplist">${data.settings.lenders.map((l, i) => `<span class="chip">${esc(l)}<button data-set="dellender" data-i="${i}">✕</button></span>`).join('')}</div>
     <div class="edit-row"><input type="text" id="new-lender" placeholder="Add a lender"><button class="btn sm" data-set="addlender">Add</button></div>`;
 
+  $('#settings-managers').innerHTML = `
+    <div class="chiplist">${(data.settings.managers || []).map((g, i) => `<span class="chip">${esc(g)}<button data-set="delmgr" data-i="${i}">✕</button></span>`).join('')}</div>
+    <div class="edit-row"><input type="text" id="new-manager" placeholder="Add a manager"><button class="btn sm" data-set="addmgr">Add</button></div>`;
+
   const lb = data.settings.lastBackup;
   $('#backup-status').textContent = lb
     ? `Last backup: ${new Date(lb).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} · ${data.deals.length} deals, ${data.chargebacks.length} chargebacks on file`
@@ -921,6 +949,14 @@ function openDealModal(deal) {
     sel.insertAdjacentHTML('beforeend', `<option selected>${esc(deal.lender)}</option>`);
   }
 
+  const mgrSel = $('#f-mgr');
+  const mgrs = data.settings.managers || [];
+  mgrSel.innerHTML = `<option value="">—</option>` +
+    mgrs.map(g => `<option ${deal && deal.mgr === g ? 'selected' : ''}>${esc(g)}</option>`).join('');
+  if (deal && deal.mgr && !mgrs.includes(deal.mgr)) {
+    mgrSel.insertAdjacentHTML('beforeend', `<option selected>${esc(deal.mgr)}</option>`);
+  }
+
   // product rows: active settings products + anything already on the deal
   const rows = data.settings.products.filter(p => p.active).map(p => ({ name: p.name, def: p.amt, count: +p.count || 1 }));
   for (const p of (deal?.products || [])) {
@@ -967,6 +1003,7 @@ function saveDeal() {
     type,
     cond: segVal('#f-cond'),
     lender: type === 'cash' ? '' : $('#f-lender').value,
+    mgr: $('#f-mgr').value,
     reserve: type === 'cash' ? 0 : (+$('#f-reserve').value || 0),
     products,
     vin: $('#f-vin').value.trim().toUpperCase(),
@@ -1032,25 +1069,19 @@ function exportJSON() {
   renderAll();
 }
 
-// Auto-backup: silently download a snapshot during a save (a user gesture, so the
-// browser allows the download) once 3 ops have piled up or it's a new day.
+// Auto-backup: silently download a snapshot during every deal/chargeback save
+// (a user gesture, so the browser allows the download).
 function maybeAutoBackup() {
+  save();
   const s = data.settings;
-  if (!s.autoBackup) { save(); return; }
-  s.opsSinceBackup = (s.opsSinceBackup || 0) + 1;
-  const last = s.lastAutoBackup ? new Date(s.lastAutoBackup) : null;
-  const newDay = !last || last.toDateString() !== new Date().toDateString();
-  if (s.opsSinceBackup >= 3 || newDay) {
-    s.lastAutoBackup = Date.now();
-    s.lastBackup = Date.now();
-    s.opsSinceBackup = 0;
-    save();
-    const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-    download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, JSON.stringify(data, null, 2));
-    toast('Backup saved to your Downloads');
-  } else {
-    save();
-  }
+  if (!s.autoBackup || teamView) return;
+  s.lastAutoBackup = Date.now();
+  s.lastBackup = Date.now();
+  s.opsSinceBackup = 0;
+  save();
+  const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, JSON.stringify(data, null, 2));
+  toast('Backup saved to your Downloads');
 }
 
 let toastTimer = null;
@@ -1091,13 +1122,13 @@ function importJSON(file) {
 }
 
 function exportCSV() {
-  const head = ['Date', 'Deal #', 'VIN', 'Vehicle', 'Type', 'New/Used', 'Lender', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
+  const head = ['Date', 'Deal #', 'VIN', 'Vehicle', 'Type', 'New/Used', 'Lender', 'Manager', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
   const q = s => `"${String(s ?? '').replace(/"/g, '""')}"`;
   const rows = data.deals
     .slice()
     .sort((a, b) => a.date.localeCompare(b.date))
     .map(d => [
-      d.date, d.num, d.vin || '', d.vehicle || '', d.type, d.cond, d.lender, +d.reserve || 0,
+      d.date, d.num, d.vin || '', d.vehicle || '', d.type, d.cond, d.lender, d.mgr || '', +d.reserve || 0,
       (d.products || []).map(p => `${p.name}: ${+p.amt || 0}`).join('; '),
       (d.products || []).reduce((a, p) => a + (+p.amt || 0), 0),
       dealTotal(d), d.note
@@ -1267,6 +1298,12 @@ $('#view-settings').addEventListener('click', e => {
   else if (el.dataset.set === 'addlender') {
     const v = $('#new-lender').value.trim();
     if (v && !s.lenders.includes(v)) s.lenders.push(v);
+  }
+  else if (el.dataset.set === 'delmgr') (s.managers || []).splice(i, 1);
+  else if (el.dataset.set === 'addmgr') {
+    const v = $('#new-manager').value.trim();
+    s.managers = s.managers || [];
+    if (v && !s.managers.includes(v)) s.managers.push(v);
   } else return;
   save(); renderSettings(); renderPay();
 });

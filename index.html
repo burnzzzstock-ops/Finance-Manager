@@ -60,6 +60,8 @@
     <div id="settings-products"></div>
     <h2>Lenders</h2>
     <div id="settings-lenders"></div>
+    <h2>Managers</h2>
+    <div id="settings-managers"></div>
     <h2>Inventory Autocomplete</h2>
     <p class="hint" id="inv-status"></p>
     <p class="hint">Once the daily inventory email feed is set up (see the README), this updates
@@ -127,7 +129,10 @@
     </div>
     <label class="lbl">Products sold <span class="hint-inline">tap to toggle, adjust $ if needed</span></label>
     <div id="f-products"></div>
-    <label>Note (no customer info) <input type="text" id="f-note" placeholder="optional" autocomplete="off"></label>
+    <div class="grid2">
+      <label>Manager <select id="f-mgr"></select></label>
+      <label>Note (no customer info) <input type="text" id="f-note" placeholder="optional" autocomplete="off"></label>
+    </div>
     <div class="modal-total" id="f-total"></div>
     <div class="btn-row">
       <button class="btn" id="deal-cancel">Cancel</button>
