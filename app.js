@@ -1329,6 +1329,9 @@ if (PROFILE) {
   const label = PROFILE.toUpperCase();
   document.title = `F&I Scoreboard — ${label}`;
   document.querySelector('.topbar h1').textContent = `F&I Scoreboard · ${label}`;
+  document.body.classList.add('theme-fiesta');
+  const tc = document.querySelector('meta[name="theme-color"]');
+  if (tc) tc.setAttribute('content', '#e5147d');
 }
 renderAll();
 refreshInventoryFromRepo();
