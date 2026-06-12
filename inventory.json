@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-10T18:18:10+00:00",
- "source": "REPORT.PDF + REPORT.PDF",
- "count": 199,
+ "updated": "2026-06-12T19:34:25+00:00",
+ "source": "REPORT.PDF + REPORT.PDF + REPORT.PDF + REPORT.PDF",
+ "count": 204,
  "vehicles": [
   {
    "vin": "1FMDE6BH7SLB48183",
@@ -557,6 +557,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW6L81TFB42923",
+   "stock": "FT26230",
+   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TAXSRB67547",
    "stock": "MA25285",
    "name": "2025 Ford MAVERICK LOBO STANDARD AWD",
@@ -620,6 +627,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FA6P8TH5T5128804",
+   "stock": "MU26229",
+   "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTER4KH1TLE07219",
    "stock": "RA26080",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
@@ -644,6 +658,20 @@
    "vin": "1FTER4BH5TLE25531",
    "stock": "RA26188",
    "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4PHXTLE28093",
+   "stock": "RA26231",
+   "name": "2026 Ford RANGER 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4KP0TLE32510",
+   "stock": "RA26232",
+   "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
    "year": "2026",
    "cond": "new"
   },
@@ -1009,6 +1037,13 @@
    "stock": "MA25274A",
    "name": "2016 Chevrolet MALIBU LIM SEDAN WHITE",
    "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "3VVSX7B23NM026187",
+   "stock": "MA26018A",
+   "name": "2022 Volkswagen TAOS",
+   "year": "2022",
    "cond": "used"
   },
   {
