@@ -122,7 +122,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const monthLabel = m => new Date(m + '-15T12:00:00').toLocaleString('en-US', { month: 'short', year: 'numeric' });
 const dateLabel = d => new Date(d + 'T12:00:00').toLocaleString('en-US', { month: 'short', day: 'numeric' });
 
-const state = { month: todayStr().slice(0, 7) };
+const state = { month: todayStr().slice(0, 7), dealSearch: '', dealSort: 'date-desc' };
 
 /* ============ inventory + VIN ============ */
 
@@ -659,20 +659,40 @@ function renderDashboard() {
   el.innerHTML = html;
 }
 
+function dealMatches(d, q) {
+  const hay = [d.num, d.vehicle, d.vin, d.lender, d.mgr, d.type, d.cond, d.note,
+    ...(d.products || []).map(p => p.name)].join(' ').toLowerCase();
+  return q.split(/\s+/).every(t => hay.includes(t));
+}
+
+const DEAL_SORTS = {
+  'date-desc': (a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id),
+  'date-asc':  (a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id),
+  'total-desc': (a, b) => dealTotal(b) - dealTotal(a),
+  'total-asc':  (a, b) => dealTotal(a) - dealTotal(b),
+  'num-asc': (a, b) => (a.num || '~').localeCompare(b.num || '~', undefined, { numeric: true })
+};
+
 function renderDeals() {
   const M = calcMonth(state.month);
   const list = $('#deals-list');
+  const q = state.dealSearch.trim().toLowerCase();
 
-  if (!M.deals.length) {
-    list.innerHTML = `<div class="empty">Nothing logged for ${monthLabel(state.month)}.</div>`;
+  // Searching spans every month; otherwise the list stays scoped to the picked month.
+  let deals = (q ? data.deals.filter(d => dealMatches(d, q)) : M.deals).slice();
+  deals.sort(DEAL_SORTS[state.dealSort] || DEAL_SORTS['date-desc']);
+
+  const ctx = q
+    ? `<div class="list-ctx">${deals.length} match${deals.length === 1 ? '' : 'es'} for “${esc(state.dealSearch.trim())}” across all months</div>`
+    : '';
+
+  if (!deals.length) {
+    list.innerHTML = ctx + `<div class="empty">${q ? 'No deals match that search.' : `Nothing logged for ${monthLabel(state.month)}.`}</div>`;
   } else {
-    list.innerHTML = M.deals
-      .slice()
-      .sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id))
-      .map(d => {
-        const prods = (d.products || []).map(p => `<span class="badge prod">${esc(p.name)} ${fmt$(p.amt)}</span>`).join('');
-        const res = +d.reserve ? `<span class="badge prod">Reserve ${fmt$(d.reserve)}</span>` : '';
-        return `<div class="deal-card" data-id="${d.id}">
+    list.innerHTML = ctx + deals.map(d => {
+      const prods = (d.products || []).map(p => `<span class="badge prod">${esc(p.name)} ${fmt$(p.amt)}</span>`).join('');
+      const res = +d.reserve ? `<span class="badge prod">Reserve ${fmt$(d.reserve)}</span>` : '';
+      return `<div class="deal-card" data-id="${d.id}">
           <div class="deal-top">
             <span><span class="deal-num">#${esc(d.num) || '—'}</span> <span class="deal-date">${dateLabel(d.date)}</span></span>
             <span class="deal-total">${fmt$(dealTotal(d))}</span>
@@ -690,7 +710,7 @@ function renderDeals() {
             <button class="btn sm danger" data-act="del">Delete</button>
           </div>
         </div>`;
-      }).join('');
+    }).join('');
   }
 
   const cbl = $('#cbs-list');
@@ -1223,6 +1243,9 @@ $('#btn-inv-clear').addEventListener('click', () => {
 });
 
 // deal list actions
+$('#deal-search').addEventListener('input', e => { state.dealSearch = e.target.value; renderDeals(); });
+$('#deal-sort').addEventListener('change', e => { state.dealSort = e.target.value; renderDeals(); });
+
 $('#deals-list').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]');
   if (!btn) return;

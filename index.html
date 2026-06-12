@@ -36,6 +36,16 @@
       <h2>Deals</h2>
       <button class="btn primary" id="btn-new-deal">+ Log Deal</button>
     </div>
+    <div class="deal-controls">
+      <input type="search" id="deal-search" placeholder="Search stock #, vehicle, lender, manager…" autocomplete="off">
+      <select id="deal-sort" aria-label="Sort deals">
+        <option value="date-desc">Newest first</option>
+        <option value="date-asc">Oldest first</option>
+        <option value="total-desc">Back gross ↓</option>
+        <option value="total-asc">Back gross ↑</option>
+        <option value="num-asc">Stock # A–Z</option>
+      </select>
+    </div>
     <div id="deals-list"></div>
     <div class="section-head">
       <h2>Chargebacks</h2>
