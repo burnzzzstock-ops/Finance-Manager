@@ -42,7 +42,7 @@ const DEFAULT_DATA = {
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
     },
-    theme: '',               // '', toxic, synthwave, inferno (''=Neon Steel)
+    theme: null,             // null = unset; resolved at boot (profiles default to Pride)
     lastBackup: null,
     lastInvSync: null,
     autoBackup: true,        // silently download a backup as you log deals
@@ -1410,8 +1410,10 @@ const THEMES = [
   { id: '',          name: 'Neon Steel', swatch: ['#0d1117', '#00e5ff', '#2be06b'], bar: '#0d1117' },
   { id: 'toxic',     name: 'Toxic',      swatch: ['#0b0f0a', '#9dff00', '#ffe600'], bar: '#0b0f0a' },
   { id: 'synthwave', name: 'Synthwave',  swatch: ['#150a23', '#ff2d95', '#19e0b4'], bar: '#150a23' },
-  { id: 'inferno',   name: 'Inferno',    swatch: ['#120c08', '#ff6a00', '#ff2e2e'], bar: '#120c08' }
+  { id: 'inferno',   name: 'Inferno',    swatch: ['#120c08', '#ff6a00', '#ff2e2e'], bar: '#120c08' },
+  { id: 'pride',     name: 'Pride',      swatch: ['rainbow'],                        bar: '#750787' }
 ];
+const RAINBOW = 'linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#004dff,#750787)';
 
 function applyTheme(id) {
   THEMES.forEach(t => t.id && document.body.classList.remove('theme-' + t.id));
@@ -1423,11 +1425,15 @@ function applyTheme(id) {
 
 function renderThemes() {
   const cur = data.settings.theme || '';
-  $('#theme-grid').innerHTML = THEMES.map(t => `
-    <div class="theme-card ${t.id === cur ? 'sel' : ''}" data-theme="${t.id}">
-      <span class="swatch">${t.swatch.map(c => `<i style="background:${c}"></i>`).join('')}</span>
+  $('#theme-grid').innerHTML = THEMES.map(t => {
+    const sw = t.swatch[0] === 'rainbow'
+      ? `<i style="width:56px;background:${RAINBOW}"></i>`
+      : t.swatch.map(c => `<i style="background:${c}"></i>`).join('');
+    return `<div class="theme-card ${t.id === cur ? 'sel' : ''}" data-theme="${t.id}">
+      <span class="swatch">${sw}</span>
       <span class="name">${t.name}</span>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 /* ============ boot ============ */
@@ -1436,6 +1442,12 @@ if (PROFILE) {
   document.title = `F&I Scoreboard — ${label}`;
   document.querySelector('.topbar h1').textContent = `F&I Scoreboard · ${label}`;
 }
-applyTheme(data.settings.theme || '');
+// Resolve the default theme once: teammate profiles come up Pride-themed,
+// the main page comes up Neon Steel. Either can be changed in Settings after.
+if (data.settings.theme == null) {
+  data.settings.theme = PROFILE ? 'pride' : '';
+  save();
+}
+applyTheme(data.settings.theme);
 renderAll();
 refreshInventoryFromRepo();

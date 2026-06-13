@@ -29,6 +29,23 @@ body.theme-inferno {
   --text: #ffeadd; --muted: #b5917e; --accent: #ff6a00; --accent2: #d64f00;
   --green: #46d97c; --red: #ff2e2e; --amber: #ffb300; --ink: #1a0c00;
 }
+body.theme-pride {
+  --bg: #fff8fc; --card: #ffffff; --card2: #fbeef6; --line: #f0d4e6;
+  --text: #2a1330; --muted: #8d7795; --accent: #d6249f; --accent2: #a8157a;
+  --green: #1ba84f; --red: #e63946; --amber: #f59e0b; --ink: #ffffff;
+}
+body.theme-pride .topbar {
+  background: linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#004dff,#750787);
+  border-bottom: 3px solid #750787;
+}
+body.theme-pride .topbar h1 { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.4); }
+body.theme-pride .topbar input[type="month"] { background: rgba(255,255,255,.92); color: #2a1330; border-color: #fff; }
+body.theme-pride .stat.hero,
+body.theme-pride .pay-line.total {
+  background: linear-gradient(120deg,#ffd1d6,#ffe9c2,#fbf7bd,#d2f0d2,#cfe0ff,#e6d1ff);
+  border-color: #f0c0e0;
+}
+body.theme-pride .stat.hero .v { text-shadow: none; }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
