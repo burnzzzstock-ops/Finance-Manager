@@ -42,6 +42,7 @@ const DEFAULT_DATA = {
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
     },
+    theme: '',               // '', toxic, synthwave, inferno (''=Neon Steel)
     lastBackup: null,
     lastInvSync: null,
     autoBackup: true,        // silently download a backup as you log deals
@@ -304,11 +305,13 @@ function calcMonth(m) {
   let productGross = 0, reserve = 0, prodCount = 0;
   const prodStats = {}, lenderMix = {}, lenderStats = {}, mgrStats = {}, typeCount = { finance: 0, lease: 0, cash: 0 }, condCount = { new: 0, used: 0 };
   const condStats = { new: { units: 0, gross: 0, prodCount: 0 }, used: { units: 0, gross: 0, prodCount: 0 } };
+  const chanCount = { inperson: 0, remote: 0 };
 
   for (const d of deals) {
     reserve += +d.reserve || 0;
     typeCount[d.type] = (typeCount[d.type] || 0) + 1;
     condCount[d.cond] = (condCount[d.cond] || 0) + 1;
+    chanCount[d.channel === 'remote' ? 'remote' : 'inperson']++;
     const cs = condStats[d.cond] || (condStats[d.cond] = { units: 0, gross: 0, prodCount: 0 });
     cs.units++;
     cs.gross += +d.reserve || 0;
@@ -346,7 +349,7 @@ function calcMonth(m) {
     cbAmt, cbCount: cbs.length, net: gross - cbAmt,
     pvr: units ? gross / units : 0,
     ppd: units ? prodCount / units : 0,
-    prodCount, prodStats, lenderMix, lenderStats, mgrStats, typeCount, condCount, condStats
+    prodCount, prodStats, lenderMix, lenderStats, mgrStats, typeCount, condCount, condStats, chanCount
   };
 }
 
@@ -553,6 +556,8 @@ function renderDashboard() {
     ${statCard('GAP %', fmtPct(gapP.pen), `${gapP.count} of ${M.units}`)}
     ${statCard('Finance %', fmtPct(M.units ? (M.typeCount.finance || 0) / M.units * 100 : 0),
       `${fmtPct(M.units ? (M.typeCount.cash || 0) / M.units * 100 : 0)} cash` + (M.typeCount.lease ? ` · ${fmtPct((M.typeCount.lease || 0) / M.units * 100)} lease` : ''))}
+    ${statCard('Remote %', fmtPct(M.units ? (M.chanCount.remote || 0) / M.units * 100 : 0),
+      `${M.chanCount.remote || 0} remote · ${M.chanCount.inperson || 0} in-person`)}
     ${statCard('Net Gross', fmt$(M.net), `${fmt$(M.productGross)} prod + ${fmt$(M.reserve)} res`)}
   </div>`;
 
@@ -661,6 +666,7 @@ function renderDashboard() {
 
 function dealMatches(d, q) {
   const hay = [d.num, d.vehicle, d.vin, d.lender, d.mgr, d.type, d.cond, d.note,
+    d.channel === 'remote' ? 'remote' : 'in-person',
     ...(d.products || []).map(p => p.name)].join(' ').toLowerCase();
   return q.split(/\s+/).every(t => hay.includes(t));
 }
@@ -702,6 +708,7 @@ function renderDeals() {
             ${d.vehicle ? `<span class="badge">${esc(d.vehicle)}</span>` : ''}
             ${d.lender && d.type !== 'cash' ? `<span class="badge">${esc(d.lender)}</span>` : ''}
             ${d.mgr ? `<span class="badge">${esc(d.mgr)}</span>` : ''}
+            <span class="badge">${d.channel === 'remote' ? 'Remote' : 'In-Person'}</span>
             ${res}${prods}
           </div>
           ${d.note ? `<div class="deal-note">${esc(d.note)}</div>` : ''}
@@ -893,6 +900,7 @@ function renderPayTiers(P, plan) {
 }
 
 function renderSettings() {
+  renderThemes();
   const prods = data.settings.products.map((p, i) => `
     <div class="edit-row">
       <input type="text" value="${esc(p.name)}" data-set="prod" data-i="${i}" data-f="name">
@@ -962,6 +970,7 @@ function openDealModal(deal) {
     .join('');
   setSeg('#f-type', deal ? deal.type : 'finance');
   setSeg('#f-cond', deal ? deal.cond : 'new');
+  setSeg('#f-channel', deal && deal.channel === 'remote' ? 'remote' : 'inperson');
 
   const sel = $('#f-lender');
   sel.innerHTML = data.settings.lenders.map(l => `<option ${deal && deal.lender === l ? 'selected' : ''}>${esc(l)}</option>`).join('');
@@ -1024,6 +1033,7 @@ function saveDeal() {
     cond: segVal('#f-cond'),
     lender: type === 'cash' ? '' : $('#f-lender').value,
     mgr: $('#f-mgr').value,
+    channel: segVal('#f-channel'),
     reserve: type === 'cash' ? 0 : (+$('#f-reserve').value || 0),
     products,
     vin: $('#f-vin').value.trim().toUpperCase(),
@@ -1142,13 +1152,13 @@ function importJSON(file) {
 }
 
 function exportCSV() {
-  const head = ['Date', 'Deal #', 'VIN', 'Vehicle', 'Type', 'New/Used', 'Lender', 'Manager', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
+  const head = ['Date', 'Deal #', 'VIN', 'Vehicle', 'Type', 'New/Used', 'Channel', 'Lender', 'Manager', 'Reserve', 'Products', 'Product Gross', 'Total Back Gross', 'Note'];
   const q = s => `"${String(s ?? '').replace(/"/g, '""')}"`;
   const rows = data.deals
     .slice()
     .sort((a, b) => a.date.localeCompare(b.date))
     .map(d => [
-      d.date, d.num, d.vin || '', d.vehicle || '', d.type, d.cond, d.lender, d.mgr || '', +d.reserve || 0,
+      d.date, d.num, d.vin || '', d.vehicle || '', d.type, d.cond, d.channel === 'remote' ? 'Remote' : 'In-Person', d.lender, d.mgr || '', +d.reserve || 0,
       (d.products || []).map(p => `${p.name}: ${+p.amt || 0}`).join('; '),
       (d.products || []).reduce((a, p) => a + (+p.amt || 0), 0),
       dealTotal(d), d.note
@@ -1175,7 +1185,7 @@ $('#btn-new-deal').addEventListener('click', () => openDealModal());
 $('#btn-new-cb').addEventListener('click', () => openCBModal());
 
 // deal modal internals
-$$('#f-type button, #f-cond button').forEach(b => b.addEventListener('click', () => {
+$$('#f-type button, #f-cond button, #f-channel button').forEach(b => b.addEventListener('click', () => {
   setSeg('#' + b.parentElement.id, b.dataset.val);
   updateLenderVis();
   updateDealTotal();
@@ -1342,6 +1352,16 @@ $('#view-settings').addEventListener('change', e => {
 });
 
 // backup buttons
+$('#theme-grid').addEventListener('click', e => {
+  const card = e.target.closest('.theme-card');
+  if (!card) return;
+  data.settings.theme = card.dataset.theme;
+  save();
+  applyTheme(data.settings.theme);
+  renderThemes();
+  toast('Theme applied');
+});
+
 $('#btn-export-json').addEventListener('click', exportJSON);
 $('#auto-backup').addEventListener('change', e => {
   data.settings.autoBackup = e.target.checked;
@@ -1384,14 +1404,38 @@ document.addEventListener('click', e => {
   if (e.target.id === 'exit-team') exitTeamView();
 });
 
+/* ============ theme ============ */
+
+const THEMES = [
+  { id: '',          name: 'Neon Steel', swatch: ['#0d1117', '#00e5ff', '#2be06b'], bar: '#0d1117' },
+  { id: 'toxic',     name: 'Toxic',      swatch: ['#0b0f0a', '#9dff00', '#ffe600'], bar: '#0b0f0a' },
+  { id: 'synthwave', name: 'Synthwave',  swatch: ['#150a23', '#ff2d95', '#19e0b4'], bar: '#150a23' },
+  { id: 'inferno',   name: 'Inferno',    swatch: ['#120c08', '#ff6a00', '#ff2e2e'], bar: '#120c08' }
+];
+
+function applyTheme(id) {
+  THEMES.forEach(t => t.id && document.body.classList.remove('theme-' + t.id));
+  if (id) document.body.classList.add('theme-' + id);
+  const t = THEMES.find(x => x.id === id) || THEMES[0];
+  const tc = document.querySelector('meta[name="theme-color"]');
+  if (tc) tc.setAttribute('content', t.bar);
+}
+
+function renderThemes() {
+  const cur = data.settings.theme || '';
+  $('#theme-grid').innerHTML = THEMES.map(t => `
+    <div class="theme-card ${t.id === cur ? 'sel' : ''}" data-theme="${t.id}">
+      <span class="swatch">${t.swatch.map(c => `<i style="background:${c}"></i>`).join('')}</span>
+      <span class="name">${t.name}</span>
+    </div>`).join('');
+}
+
 /* ============ boot ============ */
 if (PROFILE) {
   const label = PROFILE.toUpperCase();
   document.title = `F&I Scoreboard — ${label}`;
   document.querySelector('.topbar h1').textContent = `F&I Scoreboard · ${label}`;
-  document.body.classList.add('theme-fiesta');
-  const tc = document.querySelector('meta[name="theme-color"]');
-  if (tc) tc.setAttribute('content', '#e5147d');
 }
+applyTheme(data.settings.theme || '');
 renderAll();
 refreshInventoryFromRepo();

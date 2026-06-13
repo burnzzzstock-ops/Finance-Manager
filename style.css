@@ -1,16 +1,33 @@
+/* Base = "Neon Steel" (default). Other palettes override these vars per body class. */
 :root {
-  --bg: #fff4ec;
-  --card: #ffffff;
-  --card2: #fff0e4;
-  --line: #f6d9c8;
-  --text: #3a2b34;
-  --muted: #a98c8c;
-  --accent: #ff7a4d;
-  --accent2: #f25c2e;
-  --green: #1fb886;
-  --red: #f55070;
-  --amber: #f6a417;
+  --bg: #0d1117;
+  --card: #161c26;
+  --card2: #1e2733;
+  --line: #2d3848;
+  --text: #e8eef6;
+  --muted: #8595a8;
+  --accent: #00e5ff;
+  --accent2: #00a8bd;
+  --green: #2be06b;
+  --red: #ff3b5c;
+  --amber: #ffc83d;
+  --ink: #06121a;        /* text that sits on top of an accent fill */
   --radius: 14px;
+}
+body.theme-toxic {
+  --bg: #0b0f0a; --card: #151b12; --card2: #1d251a; --line: #2e3a25;
+  --text: #e9f5df; --muted: #8ea582; --accent: #9dff00; --accent2: #74c000;
+  --green: #9dff00; --red: #ff4757; --amber: #ffe600; --ink: #0c1500;
+}
+body.theme-synthwave {
+  --bg: #150a23; --card: #1f1133; --card2: #2a1745; --line: #3c2560;
+  --text: #f4e9ff; --muted: #a98fc4; --accent: #ff2d95; --accent2: #c81f74;
+  --green: #19e0b4; --red: #ff5470; --amber: #ffcf3f; --ink: #1a0524;
+}
+body.theme-inferno {
+  --bg: #120c08; --card: #1d130d; --card2: #281a12; --line: #3c281c;
+  --text: #ffeadd; --muted: #b5917e; --accent: #ff6a00; --accent2: #d64f00;
+  --green: #46d97c; --red: #ff2e2e; --amber: #ffb300; --ink: #1a0c00;
 }
 
 * { box-sizing: border-box; }
@@ -24,15 +41,18 @@ body {
 
 .topbar {
   position: sticky; top: 0; z-index: 20;
-  background: linear-gradient(180deg, #ffe7d4, #fff4ec);
-  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--card2), var(--bg));
+  border-bottom: 2px solid var(--accent);
   padding: env(safe-area-inset-top) 0 0;
 }
 .topbar-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 16px 6px;
 }
-.topbar h1 { font-size: 19px; margin: 0; letter-spacing: .3px; }
+.topbar h1 {
+  font-size: 19px; margin: 0; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800;
+  color: var(--accent); text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+}
 .topbar input[type="month"] {
   background: var(--card); color: var(--text);
   border: 1px solid var(--line); border-radius: 8px;
@@ -51,7 +71,8 @@ main { max-width: 760px; margin: 0 auto; padding: 16px; }
 .view { display: none; }
 .view.active { display: block; }
 
-h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
+h2 { font-size: 14px; margin: 22px 0 10px; color: var(--text); text-transform: uppercase; letter-spacing: 1px; }
+h2::before { content: "▍"; color: var(--accent); margin-right: 6px; }
 .hint { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
 .hint-inline { color: var(--muted); font-weight: 400; font-size: 12px; }
 
@@ -75,8 +96,8 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 .stat .s { font-size: 12px; color: var(--muted); margin-top: 2px; }
 .stat.good .v { color: var(--green); }
 .stat.bad .v { color: var(--red); }
-.stat.hero { grid-column: span 2; background: linear-gradient(135deg, #ffe0cc, #ffe6f0); border-color: #ffd2bc; }
-.stat.hero .v { font-size: 28px; }
+.stat.hero { grid-column: span 2; background: linear-gradient(135deg, var(--card2), var(--card)); border-color: var(--accent); }
+.stat.hero .v { font-size: 28px; text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 40%, transparent); }
 
 /* Tables */
 .tbl { width: 100%; border-collapse: collapse; background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
@@ -93,9 +114,9 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
   border: 1px solid var(--line); border-radius: 10px;
   padding: 10px 14px; font-size: 14px; font-weight: 700; cursor: pointer;
 }
-.btn.primary { background: var(--accent); border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 .btn.primary:active { background: var(--accent2); }
-.btn.danger { background: none; border-color: #f7bcc8; color: var(--red); }
+.btn.danger { background: none; border-color: color-mix(in srgb, var(--red) 50%, var(--card)); color: var(--red); }
 .btn.sm { padding: 5px 10px; font-size: 12px; border-radius: 8px; }
 .btn-row { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
 .btn-row .btn { flex: 1; min-width: 130px; }
@@ -103,9 +124,9 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 .fab {
   position: fixed; right: 18px; bottom: 22px; z-index: 30;
   width: 58px; height: 58px; border-radius: 50%;
-  background: var(--accent); color: #fff; border: none;
+  background: var(--accent); color: var(--ink); border: none;
   font-size: 30px; font-weight: 700; cursor: pointer;
-  box-shadow: 0 6px 18px rgba(255, 122, 77, .5);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
 /* Deal cards */
@@ -167,7 +188,7 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
   color: var(--muted); font-weight: 700; font-size: 14px;
   padding: 10px 6px; border-radius: 9px; cursor: pointer;
 }
-.seg button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.seg button.active { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 
 .prod-row {
   display: flex; align-items: center; gap: 10px;
@@ -176,18 +197,18 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 }
 .prod-row .name { flex: 1; font-weight: 700; font-size: 14.5px; color: var(--muted); }
 .prod-row input { width: 110px; margin: 0; padding: 7px 9px; font-size: 15px; text-align: right; display: none; }
-.prod-row.on { border-color: var(--accent); background: #ffe9df; }
+.prod-row.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, var(--card)); }
 .prod-row.on .name { color: var(--text); }
 .prod-row.on input { display: block; }
 .prod-row .tick { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--line); flex: none; text-align: center; line-height: 18px; font-size: 14px; color: transparent; }
-.prod-row.on .tick { background: var(--accent); border-color: var(--accent); color: #fff; }
+.prod-row.on .tick { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 
 .modal-total { text-align: right; font-weight: 800; font-size: 17px; margin-top: 12px; color: var(--green); }
 
 /* Pay view */
 .pay-line { display: flex; justify-content: space-between; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; font-size: 14.5px; }
 .pay-line b { font-variant-numeric: tabular-nums; }
-.pay-line.total { background: linear-gradient(135deg, #ffe0cc, #ffe6f0); border-color: #ffd2bc; font-size: 17px; }
+.pay-line.total { background: linear-gradient(135deg, var(--card2), var(--card)); border-color: var(--accent); font-size: 17px; }
 .pay-line.total b { color: var(--green); font-size: 19px; }
 .target {
   background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--amber);
@@ -223,9 +244,9 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
   background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
 }
 .mx th .mxin { width: 64px; }
-.tbl td.cur { background: #ffe9df; box-shadow: inset 0 0 0 2px var(--accent); }
+.tbl td.cur { background: color-mix(in srgb, var(--accent) 16%, var(--card)); box-shadow: inset 0 0 0 2px var(--accent); }
 .tbl tr.totrow td { background: var(--card2); border-top: 2px solid var(--line); }
-.cntbadge { background: var(--accent2); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
+.cntbadge { background: var(--accent2); color: var(--ink); font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 99px; margin-left: 6px; vertical-align: middle; }
 
 #toast {
   position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%) translateY(12px);
@@ -251,35 +272,19 @@ h2 { font-size: 16px; margin: 22px 0 10px; color: var(--text); }
 .teamview .tab[data-view="settings"] { display: none !important; }
 
 .nudge {
-  background: #fff3d6; border: 1px solid #f7dca0; color: #9a6300;
+  background: color-mix(in srgb, var(--amber) 14%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, var(--card));
+  color: var(--amber);
   border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px;
 }
 
-/* ===== Teammate profile: Fiesta theme (colors only — layout identical) ===== */
-body.theme-fiesta {
-  --bg: #fff7e8;
-  --card: #ffffff;
-  --card2: #fff0cf;
-  --line: #ffd25e;
-  --text: #2e1430;
-  --muted: #b06a86;
-  --accent: #e5147d;
-  --accent2: #b80f63;
-  --green: #1ba84f;
-  --red: #ef3e36;
-  --amber: #f59e0b;
+/* Theme picker swatches in Settings */
+.theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+.theme-card {
+  border: 2px solid var(--line); border-radius: 12px; padding: 12px; cursor: pointer;
+  display: flex; align-items: center; gap: 10px; background: var(--card);
 }
-body.theme-fiesta .topbar {
-  background: linear-gradient(90deg, #e5147d, #f59e0b, #16a34a, #0ea5b7);
-  border-bottom: 3px solid #ffd25e;
-}
-body.theme-fiesta .topbar h1 { color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
-body.theme-fiesta .topbar input[type="month"] { background: rgba(255,255,255,.92); color: #2e1430; border-color: #ffd25e; }
-body.theme-fiesta .tabs { background: #fff7e8; }
-body.theme-fiesta .stat.hero { background: linear-gradient(135deg, #ffe08a, #ff9ec4); border-color: #ffcf5e; }
-body.theme-fiesta .pay-line.total { background: linear-gradient(135deg, #ffe08a, #ff9ec4); border-color: #ffcf5e; }
-body.theme-fiesta .prod-row.on { background: #ffe3f1; }
-body.theme-fiesta .tbl td.cur { background: #ffe3f1; }
-body.theme-fiesta .fab { box-shadow: 0 6px 18px rgba(229, 20, 125, .5); }
-body.theme-fiesta .nudge { background: #fff0cf; border-color: #ffd25e; color: #9a5800; }
-body.theme-fiesta .stat.good .v { color: #0e9f4a; }
+.theme-card.sel { border-color: var(--accent); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 45%, transparent); }
+.theme-card .name { font-weight: 800; font-size: 13.5px; letter-spacing: .5px; text-transform: uppercase; }
+.swatch { display: flex; gap: 4px; }
+.swatch i { width: 16px; height: 26px; border-radius: 4px; display: block; }
