@@ -1,15 +1,8 @@
 {
- "updated": "2026-06-12T19:34:25+00:00",
- "source": "REPORT.PDF + REPORT.PDF + REPORT.PDF + REPORT.PDF",
- "count": 204,
+ "updated": "2026-06-13T17:03:51+00:00",
+ "source": "REPORT.PDF + REPORT.PDF",
+ "count": 197,
  "vehicles": [
-  {
-   "vin": "1FMDE6BH7SLB48183",
-   "stock": "BR25313",
-   "name": "2025 Ford BRONCO BASE 4 DOOR 4X4 RUB",
-   "year": "2025",
-   "cond": "new"
-  },
   {
    "vin": "1FMEE0RR3TLA57557",
    "stock": "BR26107",
@@ -578,23 +571,9 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8BA1TRA07138",
-   "stock": "MA26018",
-   "name": "2026 Ford MAVERICK XL AWD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTCW8TA3TRA23940",
    "stock": "MA26022",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8SA6TRA42824",
-   "stock": "MA26052",
-   "name": "2026 Ford MAVERICK LARIAT AWD SUPERC",
    "year": "2026",
    "cond": "new"
   },
@@ -651,13 +630,6 @@
    "vin": "1FTER4LR1TLE23301",
    "stock": "RA26184",
    "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4BH5TLE25531",
-   "stock": "RA26188",
-   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
    "year": "2026",
    "cond": "new"
   },
@@ -809,6 +781,13 @@
    "cond": "used"
   },
   {
+   "vin": "1GNSCNKD4MR103458",
+   "stock": "BR25313A",
+   "name": "2021 Chevrolet TAHOE SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "1GNSCHKC9GR291441",
    "stock": "BR25345A",
    "name": "2016 Chevrolet SUBURBAN SUV",
@@ -844,9 +823,16 @@
    "cond": "used"
   },
   {
-   "vin": "1C6HJTAGXNL169825",
-   "stock": "BS25182A",
-   "name": "2022 JEEP GLADIATOR TRUCK",
+   "vin": "3LN6L5F99HR643474",
+   "stock": "BR26233A",
+   "name": "2017 Lincoln MKZ",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "3KPA24AD6NE494211",
+   "stock": "BS25182B",
+   "name": "2022 KIA RIO",
    "year": "2022",
    "cond": "used"
   },
@@ -865,24 +851,10 @@
    "cond": "used"
   },
   {
-   "vin": "1GKS1CKJ1JR388743",
-   "stock": "EN25207A",
-   "name": "2018 GMC YUKON",
-   "year": "2018",
-   "cond": "used"
-  },
-  {
    "vin": "5TDGZRAH1MS530235",
    "stock": "EN25324A",
    "name": "2021 Toyo HIGHLANDER",
    "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "1FM5K7D89EGB57237",
-   "stock": "EN26134A",
-   "name": "2014 Ford EXPLORER SUV",
-   "year": "2014",
    "cond": "used"
   },
   {
@@ -904,13 +876,6 @@
    "stock": "ER26095A",
    "name": "2021 Ford EXPEDITION XLT 4X2 MAGNETI",
    "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "1FM5K7D88HGE18443",
-   "stock": "ER26185A",
-   "name": "2017 Ford EXPLORER XLT FWD",
-   "year": "2017",
    "cond": "used"
   },
   {
@@ -1042,7 +1007,7 @@
   {
    "vin": "3VVSX7B23NM026187",
    "stock": "MA26018A",
-   "name": "2022 Volkswagen TAOS",
+   "name": "2022 Volkswagen TAOS SUV",
    "year": "2022",
    "cond": "used"
   },
@@ -1089,13 +1054,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FATP8UH2M5103300",
-   "stock": "MU26208A",
-   "name": "2021 Ford MUSTANG ECOBOOST PREMIUM C",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "3GYFNBE34CS603714",
    "stock": "MU26215A",
    "name": "2012 Cadillac SRX SUV RED",
@@ -1114,13 +1072,6 @@
    "stock": "P8091B",
    "name": "2017 Land RANGE ROVE",
    "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "3FA6P0HD3KR146737",
-   "stock": "P8100A",
-   "name": "2019 Ford FUSION SEDAN 99D",
-   "year": "2019",
    "cond": "used"
   },
   {
@@ -1378,7 +1329,7 @@
   {
    "vin": "1FTER1EH5LLA64490",
    "stock": "RA26223A",
-   "name": "2020 Ford RANGER OTHER",
+   "name": "2020 Ford RANGER",
    "year": "2020",
    "cond": "used"
   },
