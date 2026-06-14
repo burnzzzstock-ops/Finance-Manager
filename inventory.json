@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-13T17:03:51+00:00",
+ "updated": "2026-06-14T17:03:31+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 197,
+ "count": 196,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -382,13 +382,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L5XTKD80812",
-   "stock": "FT26142",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L5XTFA25250",
    "stock": "FT26146",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -461,13 +454,6 @@
   {
    "vin": "1FTFW3L82TKE27202",
    "stock": "FT26175",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L84TKE28125",
-   "stock": "FT26176",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -991,6 +977,13 @@
    "cond": "used"
   },
   {
+   "vin": "1G1FH1R70J0108119",
+   "stock": "FT26176A",
+   "name": "2018 Chevrolet CAMARO",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -1019,9 +1012,9 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E5XMKE33077",
-   "stock": "MA26216A",
-   "name": "2021 Ford F-150 XL 4WD SUPERCREW 5.5",
+   "vin": "1GCGSCEN6M1259722",
+   "stock": "MA26216B",
+   "name": "2021 Chevrolet COLORADO TRUCK",
    "year": "2021",
    "cond": "used"
   },
