@@ -113,6 +113,23 @@ Notes: the passphrase can't be recovered (lose it and the cloud copy is unreadab
 data and backup files are unaffected). The Sync Code contains the database location but not the
 passphrase, so both are needed to connect. Backup files never contain the passphrase.
 
+## Deal-screen intelligence & the action board
+
+All driven by data you already enter — no DMS, API, or portal access.
+
+- **Propensity prompts** — while logging a deal, it reads your own history and nudges:
+  "GAP hit 71% on used SUV finance deals (12/17) — not added." One tap to add.
+- **Live bonus guard** — shows, in real time, which matrix cell the *month* lands in once this
+  deal saves, and exactly what's needed for the +2% corner (PPD / PVR / VSC gaps) and what it's worth.
+- **Funding / CIT tracking** — mark each deal Not submitted → Submitted → Funded, note stips
+  outstanding. The dashboard shows dollars in transit, anything aged past 5 days (red), and
+  stale-stip counts. Deal cards carry a funding badge.
+- **Per-deal compliance checklist** — OFAC, Red Flags, Risk-Based Pricing/adverse action, Reg Z,
+  GLBA privacy, menu-presented, used-car Buyers Guide. No customer data stored — just your ticks.
+- **Money left on the table** — financed deals with no VSC/GAP, quantified in lost gross and pay.
+- **Goal & pace** — set a monthly take-home target (Pay tab); the board shows progress, pace, and
+  how many more deals get you there.
+
 ## Keep your data safe
 
 - Data lives in the browser you logged it in. **Settings → Export Backup (JSON)** regularly.

@@ -42,6 +42,7 @@ const DEFAULT_DATA = {
       tiers: [{ min: 0, rate: 12 }],
       bonuses: []
     },
+    payGoal: 0,              // monthly take-home target for the goal/pace board
     theme: null,             // null = unset; resolved at boot (profiles default to Pride)
     lastBackup: null,
     lastInvSync: null,
@@ -511,6 +512,85 @@ function renderAll() {
   renderBackupNudge();
 }
 
+/* ----- funding (CIT) + compliance helpers ----- */
+function fundDays(d) {
+  if (!d.fund || !d.fund.submitted) return null;
+  return Math.floor((Date.now() - Date.parse(d.fund.submitted + 'T12:00:00')) / 86400000);
+}
+const inTransit = d => d.fund && d.fund.status === 'submitted';
+const isStale = d => inTransit(d) && fundDays(d) != null && fundDays(d) > 5;
+function compRequired(d) { return COMPLIANCE_ITEMS.filter(it => !it.usedOnly || d.cond === 'used'); }
+function compMissing(d) { const c = d.comp || {}; return compRequired(d).some(it => !c[it.k]); }
+function fundBadge(d) {
+  if (d.type === 'cash') return '';
+  const f = d.fund;
+  if (f && f.status === 'funded') return `<span class="badge fund-ok">✓ Funded</span>`;
+  if (f && f.status === 'submitted') {
+    const dd = fundDays(d);
+    return `<span class="badge ${isStale(d) ? 'fund-bad' : 'fund-pend'}">🏦 In transit${dd != null ? ` ${dd}d` : ''}</span>` +
+      (f.stips ? `<span class="badge fund-bad">stips</span>` : '');
+  }
+  return '';
+}
+
+// average realized profit for a product family (this month → all-time → default)
+function avgProfit(re) {
+  let sum = 0, n = 0;
+  for (const d of data.deals) for (const p of (d.products || [])) if (re.test(p.name)) { sum += +p.amt || 0; n++; }
+  if (n) return sum / n;
+  const sp = data.settings.products.find(p => re.test(p.name));
+  return sp ? (+sp.amt || 0) : 0;
+}
+
+// #2 money-left, #4 goal/pace, #5 CIT, compliance — consolidated cockpit
+function actionBoard(M, P) {
+  const plan = data.settings.payPlan;
+  const isCur = state.month === todayStr().slice(0, 7);
+  const rows = [];
+
+  // CIT / in transit (across all months — funding spans the calendar)
+  const transit = data.deals.filter(inTransit);
+  if (transit.length) {
+    const sum = transit.reduce((a, d) => a + dealTotal(d), 0);
+    const stale = transit.filter(isStale).length;
+    rows.push(`<div class="act ${stale ? 'bad' : ''}"><span class="act-l">🏦 In transit</span><b>${fmt$(sum)}</b><span class="act-sub">${transit.length} deal${transit.length > 1 ? 's' : ''}${stale ? ` · ${stale} aged >5d` : ''}</span></div>`);
+  }
+  const stips = data.deals.filter(d => d.fund && d.fund.stips && d.fund.status !== 'funded');
+  if (stips.length) rows.push(`<div class="act bad"><span class="act-l">📋 Stips outstanding</span><b>${stips.length}</b><span class="act-sub">clear before funding</span></div>`);
+
+  // compliance gaps — only nudge for the current live month
+  if (isCur) {
+    const gaps = M.deals.filter(compMissing);
+    if (gaps.length) rows.push(`<div class="act warn"><span class="act-l">🛡️ Compliance</span><b>${gaps.length}</b><span class="act-sub">deal${gaps.length > 1 ? 's' : ''} missing a tick</span></div>`);
+  }
+
+  // money left on the table (selected month, financed deals)
+  const fin = M.deals.filter(d => d.type !== 'cash');
+  const noVSC = fin.filter(d => !(d.products || []).some(p => /vsc|esp/i.test(p.name)));
+  const noGAP = fin.filter(d => !(d.products || []).some(p => /gap/i.test(p.name)));
+  const lostGross = noVSC.length * avgProfit(/vsc|esp/i) + noGAP.length * avgProfit(/gap/i);
+  if (lostGross > 0) {
+    const rate = (P.prodRate || P.rate || 0) / 100, hold = 1 - (plan.holdbackPct || 0) / 100;
+    const lostPay = lostGross * rate * hold;
+    rows.push(`<div class="act"><span class="act-l">💸 Left on table</span><b>${fmt$(lostGross)}</b><span class="act-sub">${noVSC.length} no-VSC · ${noGAP.length} no-GAP · ≈ ${fmt$(lostPay)} pay</span></div>`);
+  }
+
+  // goal & pace (current month only)
+  const goal = +data.settings.payGoal || 0;
+  if (goal > 0 && isCur && M.units) {
+    const now = new Date();
+    const daysIn = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    const pace = P.total / now.getDate() * daysIn;
+    const toGo = goal - P.total;
+    const payPer = P.total / M.units;
+    const dealsNeeded = toGo > 0 && payPer > 0 ? Math.ceil(toGo / payPer) : 0;
+    const sub = toGo <= 0 ? '✓ goal hit' : `${fmt$(toGo)} to go · ≈ ${dealsNeeded} more deal${dealsNeeded > 1 ? 's' : ''} · pace ${fmt$(pace)}`;
+    rows.push(`<div class="act ${toGo <= 0 ? 'good' : ''}"><span class="act-l">🎯 Goal ${fmt$(goal)}</span><b>${fmtPct(Math.min(P.total / goal * 100, 999))}</b><span class="act-sub">${sub}</span></div>`);
+  }
+
+  return rows.length ? `<div class="actboard">${rows.join('')}</div>` : '';
+}
+
 function statCard(label, value, sub, cls) {
   return `<div class="stat ${cls || ''}"><div class="l">${label}</div><div class="v">${value}</div>${sub ? `<div class="s">${sub}</div>` : ''}</div>`;
 }
@@ -562,6 +642,8 @@ function renderDashboard() {
       `${M.chanCount.remote || 0} remote · ${M.chanCount.inperson || 0} in-person`)}
     ${statCard('Net Gross', fmt$(M.net), `${fmt$(M.productGross)} prod + ${fmt$(M.reserve)} res`)}
   </div>`;
+
+  html += actionBoard(M, P);
 
   // weight (products-counted-as) for a product name, from settings or deal lines
   const weightOf = name => {
@@ -711,6 +793,7 @@ function renderDeals() {
             ${d.lender && d.type !== 'cash' ? `<span class="badge">${esc(d.lender)}</span>` : ''}
             ${d.mgr ? `<span class="badge">${esc(d.mgr)}</span>` : ''}
             <span class="badge">${d.channel === 'remote' ? 'Remote' : 'In-Person'}</span>
+            ${fundBadge(d)}
             ${res}${prods}
           </div>
           ${d.note ? `<div class="deal-note">${esc(d.note)}</div>` : ''}
@@ -753,6 +836,7 @@ function modeSelectRow(mode) {
 function renderPay() {
   const P = calcPay(state.month);
   const plan = data.settings.payPlan;
+  $('#pay-goal').value = +data.settings.payGoal || '';
   if (P.mode === 'matrix') renderPayMatrix(P, plan);
   else renderPayTiers(P, plan);
 }
@@ -952,6 +1036,42 @@ function renderBackupNudge() {
 
 let editingDealId = null;
 
+const COMPLIANCE_ITEMS = [
+  { k: 'ofac', label: 'OFAC / SDN screened' },
+  { k: 'redflags', label: 'Red Flags ID verified' },
+  { k: 'rbp', label: 'Risk-Based Pricing / adverse action' },
+  { k: 'regz', label: 'Reg Z (TIL) disclosures' },
+  { k: 'privacy', label: 'GLBA privacy notice' },
+  { k: 'menu', label: 'Menu presented (100%)' },
+  { k: 'buyers', label: 'Used-car Buyers Guide', usedOnly: true }
+];
+
+function vehClass(name) {
+  name = (name || '').toLowerCase();
+  if (/f-?[1-4]50|super\s*duty|ranger|maverick|silverado|sierra|\bram\b|tacoma|tundra|truck|pickup/.test(name)) return 'truck';
+  if (/explorer|escape|bronco|expedition|edge|equinox|suburban|tahoe|traverse|navigator|mach-?e|territory|highlander|pilot|telluride|\bsuv\b|crossover/.test(name)) return 'SUV';
+  return 'car';
+}
+
+// Conditional attach rate for a product family within the tightest segment that
+// has enough history (min 5). Returns {pen,n,total,label,addName} or null.
+function propensity(re, type, cond, cls) {
+  const tiers = [
+    { test: d => d.type === type && d.cond === cond && vehClass(d.vehicle) === cls, label: `${cond} ${cls} ${type} deals` },
+    { test: d => d.type === type && d.cond === cond, label: `${cond} ${type} deals` },
+    { test: d => d.cond === cond, label: `${cond} deals` },
+    { test: () => true, label: `your deals` }
+  ];
+  for (const t of tiers) {
+    const ds = data.deals.filter(d => d.id !== editingDealId && t.test(d));
+    if (ds.length >= 5) {
+      const hit = ds.filter(d => (d.products || []).some(p => re.test(p.name)));
+      return { pen: hit.length / ds.length, n: hit.length, total: ds.length, label: t.label };
+    }
+  }
+  return null;
+}
+
 function segVal(sel) { return $(sel).querySelector('.active')?.dataset.val; }
 function setSeg(sel, val) {
   $$(sel + ' button').forEach(b => b.classList.toggle('active', b.dataset.val === val));
@@ -1003,10 +1123,33 @@ function openDealModal(deal) {
     </div>`;
   }).join('');
 
+  // funding status
+  const f = deal?.fund || {};
+  setSeg('#f-fund', f.status || 'pending');
+  $('#f-fund-date').value = f.submitted || '';
+  $('#f-stips').checked = !!f.stips;
+
+  // compliance checklist
+  const c = deal?.comp || {};
+  $('#f-compliance').innerHTML = COMPLIANCE_ITEMS.map(it =>
+    `<label data-usedonly="${it.usedOnly ? 1 : 0}"><input type="checkbox" data-comp="${it.k}" ${c[it.k] ? 'checked' : ''}> ${it.label}</label>`).join('');
+
   updateLenderVis();
+  updateFundVis();
+  updateCompVis();
   updateDealTotal();
+  updateDealIntel();
   $('#deal-modal').hidden = false;
   if (!deal) setTimeout(() => $('#f-num').focus(), 50);
+}
+
+function updateFundVis() {
+  $('#f-fund-detail').style.display = segVal('#f-fund') === 'pending' ? 'none' : 'grid';
+  if (segVal('#f-fund') !== 'pending' && !$('#f-fund-date').value) $('#f-fund-date').value = todayStr();
+}
+function updateCompVis() {
+  const used = segVal('#f-cond') === 'used';
+  $$('#f-compliance label[data-usedonly="1"]').forEach(l => l.style.display = used ? 'flex' : 'none');
 }
 
 function updateLenderVis() {
@@ -1019,6 +1162,79 @@ function updateDealTotal() {
     t += +(r.querySelector('input').value || r.dataset.def) || 0;
   });
   $('#f-total').textContent = 'Back gross: ' + fmt$(t);
+}
+
+// Build the in-progress deal from the open modal (for live intel).
+function draftDeal() {
+  const type = segVal('#f-type');
+  return {
+    id: '__draft__', date: $('#f-date').value || todayStr(), type,
+    cond: segVal('#f-cond'), channel: segVal('#f-channel'),
+    reserve: type === 'cash' ? 0 : (+$('#f-reserve').value || 0),
+    vehicle: $('#f-vehicle').dataset.v || '', lender: '', mgr: '',
+    products: $$('#f-products .prod-row.on').map(r => ({
+      name: r.dataset.name, amt: +(r.querySelector('input').value || r.dataset.def) || 0, count: +r.dataset.count || 1
+    }))
+  };
+}
+
+// #1 propensity prompts + #3 live bonus-corner guard, refreshed on any change.
+function updateDealIntel() {
+  const type = segVal('#f-type'), cond = segVal('#f-cond');
+  const cls = vehClass($('#f-vehicle').dataset.v || '');
+  const onRows = $$('#f-products .prod-row.on');
+  const names = onRows.map(r => r.dataset.name.toLowerCase());
+  const has = re => names.some(n => re.test(n));
+
+  const prompts = [];
+  const consider = [
+    { re: /vsc|esp/i, name: 'VSC', show: true },
+    { re: /gap/i, name: 'GAP', show: type !== 'cash' }
+  ];
+  for (const c of consider) {
+    if (!c.show || has(c.re)) continue;
+    const p = propensity(c.re, type, cond, cls);
+    if (p && p.pen >= 0.4) {
+      const target = data.settings.products.find(x => x.active && c.re.test(x.name));
+      const addBtn = target ? `<button class="btn sm add" data-addprod="${esc(target.name)}">+ Add</button>` : '';
+      prompts.push(`<div class="prompt"><span><b>${esc(c.name)}</b> hit <b>${fmtPct(p.pen * 100)}</b> on ${esc(p.label)} (${p.n}/${p.total}) — not added.</span>${addBtn}</div>`);
+    }
+  }
+  const box = $('#f-propensity');
+  box.hidden = !prompts.length;
+  box.innerHTML = prompts.join('');
+
+  updateBonusGuard();
+}
+
+function updateBonusGuard() {
+  const box = $('#f-bonusguard');
+  const plan = data.settings.payPlan;
+  if (plan.mode === 'tiers') { box.hidden = true; return; }
+  const draft = draftDeal();
+  const m = draft.date.slice(0, 7);
+  const orig = data.deals;
+  data.deals = orig.filter(d => d.id !== editingDealId).concat([draft]);
+  let M, P;
+  try { M = calcMonth(m); P = calcPayMatrix(M, plan); } finally { data.deals = orig; }
+  if (!M.units) { box.hidden = true; return; }
+  const mx = plan.matrix, mb = plan.matrixBonus || {};
+  let cls, msg;
+  if (P.bonusEarned) {
+    cls = 'good';
+    msg = `✓ With this deal the month sits in the <b>${P.prodRate}%</b> corner (PPD ${M.ppd.toFixed(2)}, PVR ${fmt$(M.pvr)}, VSC ${fmtPct(P.vsc.pen)}). Hold VSC ≥ ${mb.vscPen ?? 55}%.`;
+  } else {
+    cls = 'warn';
+    const needs = [];
+    if (P.ri < mx.rows.length - 1) needs.push(`PPD ${M.ppd.toFixed(2)} → ${mx.rows[mx.rows.length - 1]}`);
+    if (P.ci < mx.cols.length - 1) needs.push(`PVR ${fmt$(M.pvr)} → ${fmt$(mx.cols[mx.cols.length - 1])}`);
+    if (P.vsc.pen < (mb.vscPen ?? 55)) needs.push(`VSC ${fmtPct(P.vsc.pen)} → ${mb.vscPen ?? 55}%`);
+    const worth = P.prodNet * ((mb.extra ?? 2) / 100);
+    msg = `Month would be in the <b>${P.prodRate}%</b> cell. For the +${mb.extra ?? 2}% corner (≈ <b>+${fmt$(worth)}</b>): ${needs.join(' · ') || 'almost there'}.`;
+  }
+  box.hidden = false;
+  box.className = 'guard-box ' + cls;
+  box.innerHTML = msg;
 }
 
 function saveDeal() {
@@ -1041,7 +1257,9 @@ function saveDeal() {
     products,
     vin: $('#f-vin').value.trim().toUpperCase(),
     vehicle: $('#f-vehicle').dataset.v || '',
-    note: $('#f-note').value.trim()
+    note: $('#f-note').value.trim(),
+    fund: { status: segVal('#f-fund'), submitted: $('#f-fund-date').value || '', stips: $('#f-stips').checked },
+    comp: Object.fromEntries(COMPLIANCE_ITEMS.map(it => [it.k, $(`#f-compliance input[data-comp="${it.k}"]`).checked]))
   };
   if (editingDealId) {
     const i = data.deals.findIndex(d => d.id === editingDealId);
@@ -1327,9 +1545,16 @@ $('#btn-new-cb').addEventListener('click', () => openCBModal());
 $$('#f-type button, #f-cond button, #f-channel button').forEach(b => b.addEventListener('click', () => {
   setSeg('#' + b.parentElement.id, b.dataset.val);
   updateLenderVis();
+  updateCompVis();
   updateDealTotal();
+  updateDealIntel();
+}));
+$$('#f-fund button').forEach(b => b.addEventListener('click', () => {
+  setSeg('#f-fund', b.dataset.val);
+  updateFundVis();
 }));
 $('#f-products').addEventListener('click', e => {
+  if (e.target.closest('button[data-addprod]')) return;   // handled below
   const row = e.target.closest('.prod-row');
   if (!row || e.target.tagName === 'INPUT') return;
   row.classList.toggle('on');
@@ -1338,9 +1563,23 @@ $('#f-products').addEventListener('click', e => {
     if (!inp.value) inp.value = row.dataset.def;
   }
   updateDealTotal();
+  updateDealIntel();
 });
-$('#f-products').addEventListener('input', updateDealTotal);
-$('#f-reserve').addEventListener('input', updateDealTotal);
+$('#f-products').addEventListener('input', () => { updateDealTotal(); updateDealIntel(); });
+$('#f-reserve').addEventListener('input', () => { updateDealTotal(); updateBonusGuard(); });
+// propensity "+ Add" buttons toggle the matching product row on
+$('#f-propensity').addEventListener('click', e => {
+  const b = e.target.closest('button[data-addprod]');
+  if (!b) return;
+  const row = $$('#f-products .prod-row').find(r => r.dataset.name === b.dataset.addprod);
+  if (row && !row.classList.contains('on')) {
+    row.classList.add('on');
+    const inp = row.querySelector('input');
+    if (!inp.value) inp.value = row.dataset.def;
+  }
+  updateDealTotal();
+  updateDealIntel();
+});
 $('#deal-save').addEventListener('click', saveDeal);
 $('#deal-cancel').addEventListener('click', () => { $('#deal-modal').hidden = true; });
 $('#cb-save').addEventListener('click', saveCB);
@@ -1353,12 +1592,13 @@ $$('.modal-wrap').forEach(w => w.addEventListener('click', e => {
 $('#f-num').addEventListener('change', () => {
   const hit = invLookup($('#f-num').value);
   if (!hit) return;
-  if (hit.cond) setSeg('#f-cond', hit.cond);
+  if (hit.cond) { setSeg('#f-cond', hit.cond); updateCompVis(); }
   if (hit.name) showVehicle(hit.name);
   if (hit.vin && $('#f-vin').value.trim().toUpperCase() !== hit.vin) {
     $('#f-vin').value = hit.vin;
     $('#f-vin').dispatchEvent(new Event('input'));
   }
+  updateDealIntel();
 });
 
 // VIN typed/scanned → match inventory + decode via NHTSA
@@ -1367,16 +1607,17 @@ $('#f-vin').addEventListener('input', async () => {
   if (!VIN_RE.test(vin)) { if (!vin) showVehicle(''); return; }
   const hit = data.inventory.find(v => v.vin === vin);
   if (hit) {
-    if (hit.cond) setSeg('#f-cond', hit.cond);
+    if (hit.cond) { setSeg('#f-cond', hit.cond); updateCompVis(); }
     if (hit.stock && !$('#f-num').value.trim()) $('#f-num').value = hit.stock;
   }
   showVehicle('Decoding VIN…', hit?.name || '');
+  updateDealIntel();
   const id = ++vinReqId;
   try {
     const s = await decodeVIN(vin);
-    if (id === vinReqId) showVehicle(s || hit?.name || '');
+    if (id === vinReqId) { showVehicle(s || hit?.name || ''); updateDealIntel(); }
   } catch {
-    if (id === vinReqId) showVehicle(hit?.name || '');
+    if (id === vinReqId) { showVehicle(hit?.name || ''); updateDealIntel(); }
   }
 });
 
@@ -1432,6 +1673,7 @@ $('#view-pay').addEventListener('click', e => {
 $('#view-pay').addEventListener('change', e => {
   const el = e.target;
   const plan = data.settings.payPlan;
+  if (el.id === 'pay-goal') { data.settings.payGoal = +el.value || 0; save(); renderDashboard(); return; }
   const mxk = el.dataset.mx;
   if (mxk) {
     const mx = plan.matrix;

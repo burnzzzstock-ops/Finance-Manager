@@ -58,6 +58,8 @@
     <h2>Month-to-Date Pay</h2>
     <div id="pay-breakdown"></div>
     <h2>What You Need</h2>
+    <div class="edit-row"><span class="hint-inline">Monthly take-home goal $</span>
+      <input class="amt" type="number" inputmode="numeric" id="pay-goal" placeholder="0"></div>
     <div id="pay-targets"></div>
     <h2>Pay Plan</h2>
     <p class="hint">Set this once to match your plan — either a PVR × products-per-deal matrix or simple gross tiers. Chargebacks net against your commissionable gross.</p>
@@ -153,11 +155,28 @@
     </div>
     <label class="lbl">Products sold <span class="hint-inline">tap to toggle, adjust $ if needed</span></label>
     <div id="f-products"></div>
+    <div id="f-propensity" class="prompt-box" hidden></div>
     <div class="grid2">
       <label>Manager <select id="f-mgr"></select></label>
       <label>Note (no customer info) <input type="text" id="f-note" placeholder="optional" autocomplete="off"></label>
     </div>
+
+    <label class="lbl">Funding <span class="hint-inline">track it to the bank</span></label>
+    <div class="seg" id="f-fund">
+      <button data-val="pending" class="active">Not submitted</button>
+      <button data-val="submitted">Submitted</button>
+      <button data-val="funded">Funded</button>
+    </div>
+    <div class="grid2" id="f-fund-detail">
+      <label>Submitted <input type="date" id="f-fund-date"></label>
+      <label class="check-row" style="align-self:end"><input type="checkbox" id="f-stips"> Stips outstanding</label>
+    </div>
+
+    <label class="lbl">Compliance <span class="hint-inline">tick what's done — no customer info stored</span></label>
+    <div id="f-compliance" class="comp-grid"></div>
+
     <div class="modal-total" id="f-total"></div>
+    <div id="f-bonusguard" class="guard-box" hidden></div>
     <div class="btn-row">
       <button class="btn" id="deal-cancel">Cancel</button>
       <button class="btn primary" id="deal-save">Save Deal</button>

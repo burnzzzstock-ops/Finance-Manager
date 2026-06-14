@@ -222,6 +222,42 @@ h2::before { content: "▍"; color: var(--accent); margin-right: 6px; }
 
 .modal-total { text-align: right; font-weight: 800; font-size: 17px; margin-top: 12px; color: var(--green); }
 
+.prompt-box { margin: 8px 0 2px; display: flex; flex-direction: column; gap: 6px; }
+.prompt {
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+  border: 1px solid var(--accent); border-radius: 10px;
+  padding: 8px 11px; font-size: 13px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+}
+.prompt b { color: var(--accent); }
+.prompt .add { flex: none; }
+.guard-box { margin-top: 10px; border-radius: 10px; padding: 10px 12px; font-size: 13px; border: 1px solid var(--line); background: var(--card2); }
+.guard-box.good { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card)); }
+.guard-box.warn { border-color: var(--amber); background: color-mix(in srgb, var(--amber) 12%, var(--card)); }
+.guard-box b { color: var(--text); }
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
+.comp-grid label { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text); margin: 3px 0; font-weight: 500; }
+.comp-grid input { width: auto; margin: 0; }
+
+/* Dashboard action board */
+.actboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0 4px; }
+@media (min-width: 560px) { .actboard { grid-template-columns: repeat(3, 1fr); } }
+.act {
+  background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--muted);
+  border-radius: 10px; padding: 8px 11px; display: flex; flex-direction: column;
+}
+.act .act-l { font-size: 12px; color: var(--muted); font-weight: 700; }
+.act b { font-size: 18px; font-weight: 800; margin: 1px 0; }
+.act .act-sub { font-size: 11px; color: var(--muted); }
+.act.bad { border-left-color: var(--red); }
+.act.bad b { color: var(--red); }
+.act.warn { border-left-color: var(--amber); }
+.act.good { border-left-color: var(--green); }
+.act.good b { color: var(--green); }
+
+.badge.fund-ok { color: var(--green); border-color: color-mix(in srgb, var(--green) 45%, var(--line)); }
+.badge.fund-pend { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 45%, var(--line)); }
+.badge.fund-bad { color: var(--red); border-color: color-mix(in srgb, var(--red) 45%, var(--line)); }
+
 /* Pay view */
 .pay-line { display: flex; justify-content: space-between; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; font-size: 14.5px; }
 .pay-line b { font-variant-numeric: tabular-nums; }
