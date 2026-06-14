@@ -588,7 +588,7 @@ function actionBoard(M, P) {
     rows.push(`<div class="act ${toGo <= 0 ? 'good' : ''}"><span class="act-l">🎯 Goal ${fmt$(goal)}</span><b>${fmtPct(Math.min(P.total / goal * 100, 999))}</b><span class="act-sub">${sub}</span></div>`);
   }
 
-  return rows.length ? `<div class="actboard">${rows.join('')}</div>` : '';
+  return rows.length ? `<h2>Action Items</h2><div class="actboard">${rows.join('')}</div>` : '';
 }
 
 function statCard(label, value, sub, cls) {
