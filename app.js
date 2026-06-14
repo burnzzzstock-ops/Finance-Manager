@@ -47,7 +47,8 @@ const DEFAULT_DATA = {
     lastInvSync: null,
     autoBackup: true,        // silently download a backup as you log deals
     lastAutoBackup: null,
-    opsSinceBackup: 0
+    opsSinceBackup: 0,
+    sync: { enabled: false, url: '', id: '', pass: '', lastSync: 0 }
   },
   deals: [],       // {id, date, num, type, cond, lender, reserve, products:[{name, amt}], vin, vehicle, note}
   chargebacks: [], // {id, date, num, product, amt, note}
@@ -64,7 +65,8 @@ function mergeData(d) {
         ...base.settings.payPlan, ...sp,
         matrix: { ...base.settings.payPlan.matrix, ...(sp.matrix || {}) },
         matrixBonus: { ...base.settings.payPlan.matrixBonus, ...(sp.matrixBonus || {}) }
-      }
+      },
+      sync: { ...base.settings.sync, ...((d.settings || {}).sync || {}) }
     },
     deals: Array.isArray(d.deals) ? d.deals : [],
     chargebacks: Array.isArray(d.chargebacks) ? d.chargebacks : [],
@@ -86,7 +88,7 @@ let data = loadData();
 // While viewing a teammate's file, nothing writes to this device's storage.
 let teamView = null;   // label of the file being viewed, or null
 let myData = null;     // own data, parked during team view
-const save = () => { if (!teamView) localStorage.setItem(LS_KEY, JSON.stringify(data)); };
+const save = () => { if (teamView) return; localStorage.setItem(LS_KEY, JSON.stringify(data)); syncSoon(); };
 
 function enterTeamView(d, label) {
   myData = data;
@@ -901,6 +903,7 @@ function renderPayTiers(P, plan) {
 
 function renderSettings() {
   renderThemes();
+  renderSyncBox();
   const prods = data.settings.products.map((p, i) => `
     <div class="edit-row">
       <input type="text" value="${esc(p.name)}" data-set="prod" data-i="${i}" data-f="name">
@@ -1080,6 +1083,135 @@ function saveCB() {
   renderAll();
 }
 
+/* ============ encrypted cloud sync ============ */
+
+const _enc = new TextEncoder(), _dec = new TextDecoder();
+function _b64(buf) { let s = ''; const b = new Uint8Array(buf); for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(s); }
+function _ub64(str) { const bin = atob(str); const a = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return a; }
+
+async function _deriveKey(pass, salt) {
+  const base = await crypto.subtle.importKey('raw', _enc.encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 150000, hash: 'SHA-256' },
+    base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function encryptData(obj, pass) {
+  const salt = crypto.getRandomValues(new Uint8Array(16)), iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await _deriveKey(pass, salt);
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, _enc.encode(JSON.stringify(obj)));
+  return { v: 1, salt: _b64(salt), iv: _b64(iv), ct: _b64(ct) };
+}
+async function decryptData(env, pass) {
+  const key = await _deriveKey(pass, _ub64(env.salt));
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: _ub64(env.iv) }, key, _ub64(env.ct));
+  return JSON.parse(_dec.decode(pt));
+}
+
+// Sync code packs the store location (NOT the passphrase) so another device
+// needs the code + your passphrase to connect.
+const makeSyncCode = (url, id) => btoa(url.replace(/\/+$/, '') + '|' + id).replace(/=+$/, '');
+function parseSyncCode(code) {
+  try { const [url, id] = atob(code.trim()).split('|'); return url && id ? { url, id } : null; }
+  catch { return null; }
+}
+const randomId = () => _b64(crypto.getRandomValues(new Uint8Array(12))).replace(/[^a-zA-Z0-9]/g, '').slice(0, 16);
+
+// Firebase Realtime Database REST: PUT/GET a JSON node. CORS-enabled, free.
+const _node = (url, id) => `${url.replace(/\/+$/, '')}/fiscoreboard/${id}.json`;
+async function storePut(url, id, env) {
+  const r = await fetch(_node(url, id), { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(env) });
+  if (!r.ok) throw new Error('write ' + r.status);
+}
+async function storeGet(url, id) {
+  const r = await fetch(_node(url, id), { cache: 'no-store' });
+  if (!r.ok) throw new Error('read ' + r.status);
+  return r.json();   // null if the node doesn't exist yet
+}
+
+let syncTimer = null, syncBusy = false, applyingRemote = false;
+const syncReady = () => { const s = data.settings.sync; return !!(s && s.enabled && s.pass && s.url && s.id); };
+function syncSoon() {
+  if (teamView || !syncReady()) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(syncPush, 1500);
+}
+function syncStatusText() {
+  const s = data.settings.sync;
+  if (!syncReady()) return (s && s.enabled) ? 'Reconnect needed — re-enter your passphrase below.' : 'Off — your data stays on this device only.';
+  return s.lastSync ? `On · last synced ${new Date(s.lastSync).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}` : 'On · not synced yet';
+}
+
+async function syncPush() {
+  const s = data.settings.sync;
+  if (teamView || !syncReady() || syncBusy || applyingRemote) return;
+  syncBusy = true;
+  try {
+    const settings = { ...data.settings, sync: undefined };
+    const payload = { deals: data.deals, chargebacks: data.chargebacks, inventory: data.inventory, settings, updatedAt: Date.now() };
+    await storePut(s.url, s.id, await encryptData(payload, s.pass));
+    s.lastSync = payload.updatedAt;
+    localStorage.setItem(LS_KEY, JSON.stringify(data));   // persist without re-triggering sync
+    renderSyncBox();
+  } catch (e) {
+    toast('Cloud sync failed — saved locally'); renderSyncBox(e.message);
+  } finally { syncBusy = false; }
+}
+
+async function syncPull(opts = {}) {
+  const s = data.settings.sync;
+  if (!syncReady()) return;
+  const env = await storeGet(s.url, s.id);
+  if (!env) { if (opts.initial) await syncPush(); return; }
+  const payload = await decryptData(env, s.pass);   // throws on wrong passphrase
+  if (!payload || !Array.isArray(payload.deals)) throw new Error('unreadable');
+  if (opts.force || (payload.updatedAt || 0) > (s.lastSync || 0)) {
+    applyingRemote = true;
+    data.deals = payload.deals;
+    data.chargebacks = Array.isArray(payload.chargebacks) ? payload.chargebacks : [];
+    if (Array.isArray(payload.inventory) && payload.inventory.length) data.inventory = payload.inventory;
+    data.settings = { ...payload.settings, sync: { ...s, lastSync: payload.updatedAt } };
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+    applyingRemote = false;
+    applyTheme(data.settings.theme || '');
+    renderAll();
+  }
+}
+
+function renderSyncBox(err) {
+  $('#sync-status').textContent = syncStatusText();
+  const s = data.settings.sync || {};
+  const box = $('#sync-box');
+  const errLine = err ? `<p class="hint" style="color:var(--red)">${esc(err)}</p>` : '';
+  if (!window.crypto || !crypto.subtle) {
+    box.innerHTML = `<p class="hint" style="color:var(--red)">Encryption isn't available in this browser/context, so cloud sync is disabled here.</p>`;
+    return;
+  }
+  if (s.enabled && s.pass) {
+    box.innerHTML = `
+      <div class="sync-code"><span>Your sync code</span><code>${esc(makeSyncCode(s.url, s.id))}</code></div>
+      <p class="hint">On another device: open this app → Settings → Cloud Sync → <b>Connect</b>, paste this code and your passphrase.</p>
+      <div class="btn-row">
+        <button class="btn" data-sync="now">Sync now</button>
+        <button class="btn" data-sync="copy">Copy code</button>
+        <button class="btn danger" data-sync="off">Turn off</button>
+      </div>${errLine}`;
+  } else {
+    const prefill = s.url && s.id ? makeSyncCode(s.url, s.id) : '';
+    box.innerHTML = `
+      <div class="sync-setup">
+        <b>Set up on your main device</b>
+        <label>Firebase database URL <input id="sync-url" placeholder="https://yourproject-default-rtdb.firebaseio.com" autocomplete="off"></label>
+        <label>Passphrase <span class="hint-inline">remember it — it can't be recovered</span> <input id="sync-pass" type="password" autocomplete="new-password"></label>
+        <div class="btn-row"><button class="btn primary" data-sync="start">Start syncing</button></div>
+      </div>
+      <div class="sync-setup">
+        <b>${prefill ? 'Re-enter your passphrase to reconnect' : 'Already syncing? Connect this device'}</b>
+        <label>Sync code <input id="sync-code" autocomplete="off" value="${esc(prefill)}"></label>
+        <label>Passphrase <input id="sync-pass2" type="password" autocomplete="current-password"></label>
+        <div class="btn-row"><button class="btn" data-sync="connect">Connect</button></div>
+      </div>${errLine}`;
+  }
+}
+
 /* ============ backup / export ============ */
 
 function download(filename, text, type) {
@@ -1090,12 +1222,19 @@ function download(filename, text, type) {
   URL.revokeObjectURL(a.href);
 }
 
+// Backup JSON with the sync passphrase redacted so it never lands in a file.
+function backupJSON() {
+  const c = JSON.parse(JSON.stringify(data));
+  if (c.settings && c.settings.sync) c.settings.sync.pass = '';
+  return JSON.stringify(c, null, 2);
+}
+
 function exportJSON() {
   data.settings.lastBackup = Date.now();
   data.settings.lastAutoBackup = Date.now();
   data.settings.opsSinceBackup = 0;
   save();
-  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-backup-${todayStr()}.json`, JSON.stringify(data, null, 2));
+  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-backup-${todayStr()}.json`, backupJSON());
   renderAll();
 }
 
@@ -1110,7 +1249,7 @@ function maybeAutoBackup() {
   s.opsSinceBackup = 0;
   save();
   const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, JSON.stringify(data, null, 2));
+  download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, backupJSON());
   toast('Backup saved to your Downloads');
 }
 
@@ -1352,6 +1491,46 @@ $('#view-settings').addEventListener('change', e => {
 });
 
 // backup buttons
+$('#sync-box').addEventListener('click', async e => {
+  const b = e.target.closest('[data-sync]');
+  if (!b) return;
+  const act = b.dataset.sync, s = data.settings.sync;
+  if (act === 'start') {
+    const url = $('#sync-url').value.trim(), pass = $('#sync-pass').value;
+    if (!/^https:\/\/.+firebaseio\.com/i.test(url)) return alert('Paste your Firebase Realtime Database URL — it ends in firebaseio.com.');
+    if (pass.length < 6) return alert('Use a passphrase of at least 6 characters.');
+    data.settings.sync = { enabled: true, url, id: randomId(), pass, lastSync: 0 };
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+    b.textContent = 'Starting…';
+    try { await syncPush(); toast('Cloud sync is on'); }
+    catch (err) { data.settings.sync.enabled = false; localStorage.setItem(LS_KEY, JSON.stringify(data)); return renderSyncBox('Could not reach the cloud store — check the URL and that the database exists.'); }
+    renderSyncBox();
+  } else if (act === 'connect') {
+    const parsed = parseSyncCode($('#sync-code').value), pass = $('#sync-pass2').value;
+    if (!parsed) return alert("That sync code doesn't look right.");
+    if (!pass) return alert('Enter your passphrase.');
+    data.settings.sync = { enabled: true, url: parsed.url, id: parsed.id, pass, lastSync: 0 };
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+    b.textContent = 'Connecting…';
+    try { await syncPull({ force: true }); toast('Connected — your data pulled in'); renderSettings(); }
+    catch (err) {
+      data.settings.sync.enabled = false; localStorage.setItem(LS_KEY, JSON.stringify(data));
+      renderSyncBox(/decrypt|unreadable|operation-specific/i.test(err.message || '') ? 'Wrong passphrase, or no data at that code yet.' : 'Connect failed: ' + err.message);
+    }
+  } else if (act === 'now') {
+    b.textContent = 'Syncing…';
+    try { await syncPush(); await syncPull(); toast('Synced'); } catch (_) {}
+    renderSyncBox();
+  } else if (act === 'copy') {
+    navigator.clipboard?.writeText(makeSyncCode(s.url, s.id)).then(() => toast('Sync code copied'));
+  } else if (act === 'off') {
+    if (confirm('Turn off cloud sync on this device? Your data stays here; the cloud copy is left untouched.')) {
+      data.settings.sync = { enabled: false, url: '', id: '', pass: '', lastSync: 0 };
+      save(); renderSyncBox();
+    }
+  }
+});
+
 $('#theme-grid').addEventListener('click', e => {
   const card = e.target.closest('.theme-card');
   if (!card) return;
@@ -1451,3 +1630,6 @@ if (data.settings.theme == null) {
 applyTheme(data.settings.theme);
 renderAll();
 refreshInventoryFromRepo();
+if (!teamView && syncReady()) {
+  syncPull().catch(() => toast('Cloud sync: could not pull (offline or wrong passphrase)'));
+}

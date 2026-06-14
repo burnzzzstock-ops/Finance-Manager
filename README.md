@@ -85,6 +85,34 @@ actually changed.
   because the dealer site's bot protection blocks all server-side fetching — only a real
   browser gets in.
 
+## Cloud sync across devices (optional, end-to-end encrypted)
+
+Your data is **encrypted on your device** with your passphrase before it's sent anywhere, so the
+cloud only ever stores unreadable ciphertext. The free store is Firebase Realtime Database.
+
+**One-time setup (~2 minutes), on your main device:**
+
+1. Go to [console.firebase.google.com](https://console.firebase.google.com) → **Add project**
+   (name it anything, you can skip Google Analytics).
+2. In the left menu: **Build → Realtime Database → Create Database**. Pick a location, then choose
+   **Start in test mode** → Enable.
+3. (Recommended, so it never locks) Open the **Rules** tab and set:
+   ```json
+   { "rules": { "fiscoreboard": { ".read": true, ".write": true } } }
+   ```
+   Publish. Your data under there is encrypted, so open rules only expose ciphertext.
+4. Copy the database URL shown at the top of the Data tab — it looks like
+   `https://yourproject-default-rtdb.firebaseio.com`.
+5. In the app: **Settings → Cloud Sync**, paste that URL, pick a passphrase, tap **Start syncing**.
+   You'll get a **Sync Code**.
+
+**On any other device:** open the app → **Settings → Cloud Sync → Connect**, paste the Sync Code
+and the same passphrase. Done — it pulls your data and stays in sync from then on.
+
+Notes: the passphrase can't be recovered (lose it and the cloud copy is unreadable — your local
+data and backup files are unaffected). The Sync Code contains the database location but not the
+passphrase, so both are needed to connect. Backup files never contain the passphrase.
+
 ## Keep your data safe
 
 - Data lives in the browser you logged it in. **Settings → Export Backup (JSON)** regularly.

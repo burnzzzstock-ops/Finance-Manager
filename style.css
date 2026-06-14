@@ -295,6 +295,13 @@ h2::before { content: "▍"; color: var(--accent); margin-right: 6px; }
   border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 14px;
 }
 
+.sync-setup { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.sync-setup b { display: block; margin-bottom: 4px; font-size: 13.5px; color: var(--text); }
+.sync-setup label { display: block; font-size: 13px; color: var(--muted); margin: 8px 0 2px; }
+.sync-code { background: var(--card); border: 1px solid var(--accent); border-radius: 12px; padding: 10px 14px; margin-bottom: 10px; }
+.sync-code span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+.sync-code code { display: block; font-size: 13px; word-break: break-all; color: var(--accent); margin-top: 3px; }
+
 /* Theme picker swatches in Settings */
 .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
 .theme-card {
