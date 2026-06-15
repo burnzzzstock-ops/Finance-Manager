@@ -1456,19 +1456,22 @@ function exportJSON() {
   renderAll();
 }
 
-// Auto-backup: silently download a snapshot during every deal/chargeback save
-// (a user gesture, so the browser allows the download).
+// Auto-backup: one independent file fallback per day (first save of a new day).
+// Cloud sync is the live copy; this is the readable escape hatch (lost passphrase /
+// Firebase outage), so once a day is plenty — no Downloads pile-up.
 function maybeAutoBackup() {
   save();
   const s = data.settings;
   if (!s.autoBackup || teamView) return;
+  const last = s.lastAutoBackup ? new Date(s.lastAutoBackup) : null;
+  if (last && last.toDateString() === new Date().toDateString()) return;   // already backed up today
   s.lastAutoBackup = Date.now();
   s.lastBackup = Date.now();
   s.opsSinceBackup = 0;
   save();
-  const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
+  const stamp = todayStr();
   download(`fi-scoreboard${PROFILE ? '-' + PROFILE : ''}-auto-${stamp}.json`, backupJSON());
-  toast('Backup saved to your Downloads');
+  toast('Daily backup saved to your Downloads');
 }
 
 let toastTimer = null;
