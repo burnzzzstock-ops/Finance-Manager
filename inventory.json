@@ -1,5 +1,5 @@
 {
- "updated": "2026-06-14T17:03:31+00:00",
+ "updated": "2026-06-16T22:01:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 196,
  "vehicles": [
@@ -942,10 +942,10 @@
    "cond": "used"
   },
   {
-   "vin": "3C6UR5FL7RG145526",
-   "stock": "FT26114A",
-   "name": "2024 RAM",
-   "year": "2024",
+   "vin": "1GCUDGE88PZ307077",
+   "stock": "FT26114B",
+   "name": "2023 Chevrolet SILVERADO TRUCK",
+   "year": "2023",
    "cond": "used"
   },
   {
