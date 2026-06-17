@@ -1,5 +1,5 @@
 {
- "updated": "2026-06-16T22:01:46+00:00",
+ "updated": "2026-06-17T20:34:58+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 196,
  "vehicles": [
@@ -13,13 +13,6 @@
   {
    "vin": "1FMDE7BH6TLA91756",
    "stock": "BR26151",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE7BH5TLA91702",
-   "stock": "BR26153",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
@@ -655,13 +648,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BT8TED63531",
-   "stock": "SD26078",
-   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BT1TEE10818",
    "stock": "SD26093",
    "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
@@ -802,6 +788,13 @@
    "cond": "used"
   },
   {
+   "vin": "1G1FB1RX7G0174192",
+   "stock": "BR26153A",
+   "name": "2016 Chevrolet CAMARO COUPE",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
    "vin": "1C4PJLLB1KD339212",
    "stock": "BR26158A",
    "name": "2019 JEEP CHEROKEE SUV",
@@ -811,7 +804,7 @@
   {
    "vin": "3LN6L5F99HR643474",
    "stock": "BR26233A",
-   "name": "2017 Lincoln MKZ",
+   "name": "2017 Lincoln MKZ SUV",
    "year": "2017",
    "cond": "used"
   },
@@ -1345,6 +1338,13 @@
    "stock": "SD26048C",
    "name": "2018 Nissan FRONTIER PICKUP",
    "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4PJXEG0RW264677",
+   "stock": "SD26078A",
+   "name": "2024 JEEP WRANGLER",
+   "year": "2024",
    "cond": "used"
   },
   {
