@@ -1,5 +1,5 @@
 {
- "updated": "2026-06-17T20:34:58+00:00",
+ "updated": "2026-06-18T21:26:38+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 196,
  "vehicles": [
@@ -116,6 +116,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FMCR9BN6TRE88712",
+   "stock": "BS26235",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 OR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FMJU1H88SEA57749",
    "stock": "EN25224",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
@@ -161,13 +168,6 @@
    "vin": "1FMJU1P8XTEA38266",
    "stock": "EN26122",
    "name": "2026 Ford EXPEDITION KING RANCH 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1RG8TEA48475",
-   "stock": "EN26154",
-   "name": "2026 Ford EXPEDITION TREMOR 4X4 AGAT",
    "year": "2026",
    "cond": "new"
   },
@@ -231,13 +231,6 @@
    "vin": "1FMWK8JC6TGB52416",
    "stock": "ER26132",
    "name": "2026 Ford EXPLORER TREMOR 4WD AGATE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMUK7DH7TGB80590",
-   "stock": "ER26187",
-   "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
    "year": "2026",
    "cond": "new"
   },
@@ -567,6 +560,13 @@
    "vin": "3FTTW8H31TRA97612",
    "stock": "MA26214",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8A35TRB16656",
+   "stock": "MA26234",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -1334,10 +1334,10 @@
    "cond": "used"
   },
   {
-   "vin": "1N6BD0CT9JN732857",
-   "stock": "SD26048C",
-   "name": "2018 Nissan FRONTIER PICKUP",
-   "year": "2018",
+   "vin": "1G4HR54K24U156326",
+   "stock": "SD26048D",
+   "name": "2004 Buick LESABRE SEDAN",
+   "year": "2004",
    "cond": "used"
   },
   {
