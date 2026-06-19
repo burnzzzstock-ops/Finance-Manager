@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-18T21:26:38+00:00",
+ "updated": "2026-06-19T18:25:45+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 196,
+ "count": 195,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -648,6 +648,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FT8W2BT6TED76505",
+   "stock": "SD26085",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FT8W2BT1TEE10818",
    "stock": "SD26093",
    "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
@@ -897,13 +904,6 @@
    "stock": "FT26019A",
    "name": "2021 GMC SIERRA",
    "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "1GTUUHEL0RZ375595",
-   "stock": "FT26037A",
-   "name": "2024 GMC SIERRA",
-   "year": "2024",
    "cond": "used"
   },
   {
@@ -1345,13 +1345,6 @@
    "stock": "SD26078A",
    "name": "2024 JEEP WRANGLER",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FA6P8SJ0L5505379",
-   "stock": "SD26085A",
-   "name": "2020 Ford SHELBY GT5 COUPE SHADOW BL",
-   "year": "2020",
    "cond": "used"
   },
   {
