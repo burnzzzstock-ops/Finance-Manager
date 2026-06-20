@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-19T18:25:45+00:00",
+ "updated": "2026-06-20T17:53:08+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 195,
+ "count": 197,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -74,6 +74,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FMDE4DH5TLB04783",
+   "stock": "BR26238",
+   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH0TLB15808",
+   "stock": "BR26239",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9GN7SRE41311",
    "stock": "BS25105",
    "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
@@ -120,6 +134,13 @@
    "stock": "BS26235",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 OR",
    "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9GN7SRF70357",
+   "stock": "BS26240",
+   "name": "2025 Ford BRONCO SPO HERITAGE 4X4 RO",
+   "year": "2025",
    "cond": "new"
   },
   {
@@ -291,13 +312,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3LD9TFA20239",
-   "stock": "FT26056",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW2L52TFA30108",
    "stock": "FT26058",
    "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
@@ -333,23 +347,9 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6L87TFA85742",
-   "stock": "FT26110",
-   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5LD4TFA78934",
    "stock": "FT26119",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L53TKD77058",
-   "stock": "FT26124",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -427,13 +427,6 @@
    "vin": "1FTFW7LD5TFB15419",
    "stock": "FT26172",
    "name": "2026 Ford F-150 PLATINUM 4WD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L84TKE18890",
-   "stock": "FT26173",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -529,6 +522,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5L87TFB10178",
+   "stock": "FT26237",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TAXSRB67547",
    "stock": "MA25285",
    "name": "2025 Ford MAVERICK LOBO STANDARD AWD",
@@ -546,13 +546,6 @@
    "vin": "3FTCW8TA3TRA23940",
    "stock": "MA26022",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H3XTRA83367",
-   "stock": "MA26143",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -788,10 +781,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMDE8BH3RLA70152",
-   "stock": "BR26144A",
-   "name": "2024 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2024",
+   "vin": "1N4AL2EPXDC199372",
+   "stock": "BR26144B",
+   "name": "2013 Nissan ALTIMA",
+   "year": "2013",
    "cond": "used"
   },
   {
@@ -914,6 +907,13 @@
    "cond": "used"
   },
   {
+   "vin": "3FA6P0K93FR103767",
+   "stock": "FT26056A",
+   "name": "2015 Ford FUSION",
+   "year": "2015",
+   "cond": "used"
+  },
+  {
    "vin": "3MW69FF03P8D11509",
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
@@ -925,6 +925,13 @@
    "stock": "FT26086A",
    "name": "2019 Ford F-150",
    "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E83NFB89549",
+   "stock": "FT26110A",
+   "name": "2022 Ford F-150 TRUCK BLACK 3.5L CYC",
+   "year": "2022",
    "cond": "used"
   },
   {
@@ -995,6 +1002,13 @@
    "stock": "MA26018A",
    "name": "2022 Volkswagen TAOS SUV",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "5GAKRBKD3FJ324803",
+   "stock": "MA26143A",
+   "name": "2015 Buick ENCLAVE SUV BLACK",
+   "year": "2015",
    "cond": "used"
   },
   {
