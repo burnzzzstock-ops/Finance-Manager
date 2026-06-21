@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-20T17:53:08+00:00",
+ "updated": "2026-06-21T18:08:43+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 197,
+ "count": 193,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -134,13 +134,6 @@
    "stock": "BS26235",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 OR",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9GN7SRF70357",
-   "stock": "BS26240",
-   "name": "2025 Ford BRONCO SPO HERITAGE 4X4 RO",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -371,13 +364,6 @@
    "vin": "1FTFW3L5XTFA25250",
    "stock": "FT26146",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEW2LP0TFA64209",
-   "stock": "FT26148",
-   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -851,13 +837,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FMJK1HT1MEA10558",
-   "stock": "ER26095A",
-   "name": "2021 Ford EXPEDITION XLT 4X2 MAGNETI",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "1FTER4KH9RLE26237",
    "stock": "ER26209A",
    "name": "2024 Ford RANGER TRUCK SHADOW BLACK",
@@ -869,13 +848,6 @@
    "stock": "FT25109A",
    "name": "2017 Ford F-150",
    "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "1C6JJTAG4RL103813",
-   "stock": "FT25219A",
-   "name": "2024 JEEP GLADIATOR TRUCK",
-   "year": "2024",
    "cond": "used"
   },
   {
