@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-21T18:08:43+00:00",
+ "updated": "2026-06-23T19:30:49+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 193,
+ "count": 191,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -1054,13 +1054,6 @@
    "cond": "used"
   },
   {
-   "vin": "JM3TCBAY6P0651509",
-   "stock": "P8105A",
-   "name": "2023 Mazda CX-9 SUV",
-   "year": "2023",
-   "cond": "used"
-  },
-  {
    "vin": "1FTEW1E59JFC31122",
    "stock": "P8106A",
    "name": "2018 Ford F-150 TRUCK",
@@ -1096,10 +1089,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FT8W2BM2REE69488",
-   "stock": "P8116",
-   "name": "2024 Ford SUPER DUTY KING RANCH 4WD",
-   "year": "2024",
+   "vin": "5TDGZRBH5LS517937",
+   "stock": "P8116B",
+   "name": "2020 Toyo HIGHLANDER SUV",
+   "year": "2020",
    "cond": "used"
   },
   {
@@ -1142,13 +1135,6 @@
    "stock": "P8133",
    "name": "2025 Lincoln NAVIGATOR RESERVE 4X4 WHIT",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW1EF7EKE50722",
-   "stock": "P8134A",
-   "name": "2014 Ford F-150",
-   "year": "2014",
    "cond": "used"
   },
   {
