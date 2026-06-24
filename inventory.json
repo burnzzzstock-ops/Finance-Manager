@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-23T19:30:49+00:00",
+ "updated": "2026-06-24T18:24:23+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 191,
+ "count": 190,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -1016,13 +1016,6 @@
    "stock": "MU25086B",
    "name": "2020 Ford F-150 TRUCK OXFORD WHITE 9",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "1FA6P8CF2H5213315",
-   "stock": "MU26023A",
-   "name": "2017 Ford MUSTANG",
-   "year": "2017",
    "cond": "used"
   },
   {
