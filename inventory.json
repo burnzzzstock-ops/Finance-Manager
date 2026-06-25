@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-24T18:24:23+00:00",
+ "updated": "2026-06-25T19:28:53+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 190,
+ "count": 189,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -1012,13 +1012,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTMF1CP5LKD36590",
-   "stock": "MU25086B",
-   "name": "2020 Ford F-150 TRUCK OXFORD WHITE 9",
-   "year": "2020",
-   "cond": "used"
-  },
-  {
    "vin": "3GYFNBE34CS603714",
    "stock": "MU26215A",
    "name": "2012 Cadillac SRX SUV RED",
@@ -1110,10 +1103,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMJU1K8XREA47551",
-   "stock": "P8128",
-   "name": "2024 Ford EXPEDITION LIMITED 4X2 WHI",
-   "year": "2024",
+   "vin": "5UXTR7C57KLR46972",
+   "stock": "P8128A",
+   "name": "2019 BMW X3 SUV",
+   "year": "2019",
    "cond": "used"
   },
   {
@@ -1180,10 +1173,10 @@
    "cond": "used"
   },
   {
-   "vin": "5LMCJ2DH2MUL03925",
-   "stock": "P8150",
-   "name": "2021 Lincoln CORSAIR SUV WHITE",
-   "year": "2021",
+   "vin": "1FMCU0JD0HUA19490",
+   "stock": "P8150A",
+   "name": "2017 Ford ESCAPE SUV MAGNETIC METALL",
+   "year": "2017",
    "cond": "used"
   },
   {
