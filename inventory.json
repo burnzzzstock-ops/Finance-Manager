@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-25T19:28:53+00:00",
+ "updated": "2026-06-26T18:16:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 189,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -189,13 +189,6 @@
    "vin": "1FMJU1H85TEA31868",
    "stock": "EN26161",
    "name": "2026 Ford EXPEDITION ACTIVE 4X2 AGAT",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1H83TEA49513",
-   "stock": "EN26178",
-   "name": "2026 Ford EXPEDITION ACTIVE 4X2 GLAC",
    "year": "2026",
    "cond": "new"
   },
@@ -774,13 +767,6 @@
    "cond": "used"
   },
   {
-   "vin": "1G1FB1RX7G0174192",
-   "stock": "BR26153A",
-   "name": "2016 Chevrolet CAMARO COUPE",
-   "year": "2016",
-   "cond": "used"
-  },
-  {
    "vin": "1C4PJLLB1KD339212",
    "stock": "BR26158A",
    "name": "2019 JEEP CHEROKEE SUV",
@@ -802,13 +788,6 @@
    "cond": "used"
   },
   {
-   "vin": "2T2ZZMCA6HC051752",
-   "stock": "BS25222A",
-   "name": "2017 Lexus RX",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1FMJU1KT8LEA79054",
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
@@ -823,10 +802,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTEW1CP2JKF19303",
-   "stock": "EN26166A",
-   "name": "2018 Ford F-150",
-   "year": "2018",
+   "vin": "1FTFW1EF9HKC78276",
+   "stock": "EN26178A",
+   "name": "2017 Ford F-150 MOD 5.0L-4V DOHC SE",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -841,13 +820,6 @@
    "stock": "ER26209A",
    "name": "2024 Ford RANGER TRUCK SHADOW BLACK",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1EG9HFB61620",
-   "stock": "FT25109A",
-   "name": "2017 Ford F-150",
-   "year": "2017",
    "cond": "used"
   },
   {
@@ -872,13 +844,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FT8W2BM0RED04216",
-   "stock": "FT26054A",
-   "name": "2024 Ford F-250 TRUCK OXFORD WHITE 9",
-   "year": "2024",
-   "cond": "used"
-  },
-  {
    "vin": "3FA6P0K93FR103767",
    "stock": "FT26056A",
    "name": "2015 Ford FUSION",
@@ -890,13 +855,6 @@
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1E4XKKE56892",
-   "stock": "FT26086A",
-   "name": "2019 Ford F-150",
-   "year": "2019",
    "cond": "used"
   },
   {
@@ -963,13 +921,6 @@
    "cond": "used"
   },
   {
-   "vin": "1G11B5SA0GF103145",
-   "stock": "MA25274A",
-   "name": "2016 Chevrolet MALIBU LIM SEDAN WHITE",
-   "year": "2016",
-   "cond": "used"
-  },
-  {
    "vin": "3VVSX7B23NM026187",
    "stock": "MA26018A",
    "name": "2022 Volkswagen TAOS SUV",
@@ -1012,13 +963,6 @@
    "cond": "used"
   },
   {
-   "vin": "3GYFNBE34CS603714",
-   "stock": "MU26215A",
-   "name": "2012 Cadillac SRX SUV RED",
-   "year": "2012",
-   "cond": "used"
-  },
-  {
    "vin": "1FT7W2BT5GEB38081",
    "stock": "P6824",
    "name": "2016 Ford SUPER DUTY 4WD CREW CAB 15",
@@ -1044,13 +988,6 @@
    "stock": "P8106A",
    "name": "2018 Ford F-150 TRUCK",
    "year": "2018",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1E45KKD42251",
-   "stock": "P8107A",
-   "name": "2019 Ford F-150 TRUCK WHITE",
-   "year": "2019",
    "cond": "used"
   },
   {
@@ -1138,10 +1075,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMDE7BH8SLA83575",
-   "stock": "P8145",
-   "name": "2025 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2025",
+   "vin": "KL4CJASB4HB033480",
+   "stock": "P8145A",
+   "name": "2017 Buick ENCORE SUV",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -1229,10 +1166,10 @@
    "cond": "used"
   },
   {
-   "vin": "3N1AB8BV2SY335200",
-   "stock": "P8158",
-   "name": "2025 Nissan SENTRA S CVT BLACK",
-   "year": "2025",
+   "vin": "3FADP4BJ2FM122882",
+   "stock": "P8158A",
+   "name": "2015 Ford FIESTA SEDAN WHITE 99J",
+   "year": "2015",
    "cond": "used"
   },
   {
@@ -1247,13 +1184,6 @@
    "stock": "P8160",
    "name": "2025 Lincoln AVIATOR RESERVE AWD SUV BL",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "2C4RC1BG8GR295587",
-   "stock": "RA25139A",
-   "name": "2016 Chrysler TOWN & COU MINIVAN GRAY",
-   "year": "2016",
    "cond": "used"
   },
   {
@@ -1292,13 +1222,6 @@
    "cond": "used"
   },
   {
-   "vin": "1G4HR54K24U156326",
-   "stock": "SD26048D",
-   "name": "2004 Buick LESABRE SEDAN",
-   "year": "2004",
-   "cond": "used"
-  },
-  {
    "vin": "1C4PJXEG0RW264677",
    "stock": "SD26078A",
    "name": "2024 JEEP WRANGLER",
@@ -1310,13 +1233,6 @@
    "stock": "SD26091A",
    "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
    "year": "2026",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW1ET7DFD19495",
-   "stock": "SD26097B",
-   "name": "2013 Ford F-150 TRUCK",
-   "year": "2013",
    "cond": "used"
   },
   {
