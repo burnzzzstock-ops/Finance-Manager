@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-26T18:16:46+00:00",
+ "updated": "2026-06-27T16:41:08+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 176,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -550,13 +550,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FA6P8CF0T5405423",
-   "stock": "MU26046",
-   "name": "2026 Ford MUSTANG GT PREMIUM FASTBAC",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FA6P8TH5T5128804",
    "stock": "MU26229",
    "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
@@ -830,10 +823,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E84NFC22414",
-   "stock": "FT25354A",
-   "name": "2022 Ford F-150 TRUCK",
-   "year": "2022",
+   "vin": "1FTEW1C5XJKF66593",
+   "stock": "FT25354B",
+   "name": "2018 Ford F-150 PLATINUM 2WD SUPERCR",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -956,9 +949,9 @@
    "cond": "used"
   },
   {
-   "vin": "3FTTW8A30SRB33086",
-   "stock": "ME26217B",
-   "name": "2025 Ford MAVERICK TRUCK CARBONIZED",
+   "vin": "3KPFT4DE3SE038797",
+   "stock": "MU26046A",
+   "name": "2025 KIA K4",
    "year": "2025",
    "cond": "used"
   },
@@ -1019,10 +1012,10 @@
    "cond": "used"
   },
   {
-   "vin": "3MVDMBDM9PM502896",
-   "stock": "P8122",
-   "name": "2023 Mazda CX-30 2.5 S PREMIUM PACKAG",
-   "year": "2023",
+   "vin": "1FMDE8BH8RLA88954",
+   "stock": "P8122A",
+   "name": "2024 Ford BRONCO",
+   "year": "2024",
    "cond": "used"
   },
   {
