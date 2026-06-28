@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-27T16:41:08+00:00",
+ "updated": "2026-06-28T16:45:41+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 176,
+ "count": 174,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -417,13 +417,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L84TFB15080",
-   "stock": "FT26180",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW6L85TFA90955",
    "stock": "FT26193",
    "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
@@ -785,13 +778,6 @@
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "5TDGZRAH1MS530235",
-   "stock": "EN25324A",
-   "name": "2021 Toyo HIGHLANDER",
-   "year": "2021",
    "cond": "used"
   },
   {
