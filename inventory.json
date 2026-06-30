@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-28T16:45:41+00:00",
+ "updated": "2026-06-30T18:25:25+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 174,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -84,6 +84,13 @@
    "vin": "1FMDE7BH0TLB15808",
    "stock": "BR26239",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE6BH0TLB01594",
+   "stock": "BR26247",
+   "name": "2026 Ford BRONCO BASE 4 DOOR 4X4 OXF",
    "year": "2026",
    "cond": "new"
   },
@@ -211,13 +218,6 @@
    "stock": "ER25008",
    "name": "2025 Ford EXPLORER ST 4WD CARBONIZED",
    "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMUK7HH3TGA69092",
-   "stock": "ER26026",
-   "name": "2026 Ford EXPLORER PLATINUM RWD STAR",
-   "year": "2026",
    "cond": "new"
   },
   {
@@ -496,6 +496,13 @@
   {
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L56TKE15040",
+   "stock": "FT26248",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
@@ -1152,16 +1159,30 @@
    "cond": "used"
   },
   {
-   "vin": "5LMCJ1D97NUL15377",
-   "stock": "P8159",
-   "name": "2022 Lincoln CORSAIR SUV WHITE",
-   "year": "2022",
+   "vin": "1FATP8FF5F5367321",
+   "stock": "P8159A",
+   "name": "2015 Ford MUSTANG",
+   "year": "2015",
    "cond": "used"
   },
   {
    "vin": "5LM5J7XC1SGL00550",
    "stock": "P8160",
    "name": "2025 Lincoln AVIATOR RESERVE AWD SUV BL",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1M83SEA33820",
+   "stock": "P8161",
+   "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "5LM5J7XC3SGL27927",
+   "stock": "P8162",
+   "name": "2025 Lincoln AVIATOR RESERVE AWD GRAY 9",
    "year": "2025",
    "cond": "used"
   },
