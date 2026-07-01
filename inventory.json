@@ -1,7 +1,7 @@
 {
- "updated": "2026-06-30T18:25:25+00:00",
+ "updated": "2026-07-01T19:22:37+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 175,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -417,13 +417,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6L85TFA90955",
-   "stock": "FT26193",
-   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L8XTFB25502",
    "stock": "FT26194",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -496,13 +489,6 @@
   {
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L56TKE15040",
-   "stock": "FT26248",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
@@ -588,13 +574,6 @@
    "vin": "1FTER4KP0TLE32510",
    "stock": "RA26232",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FT7W2AT7TEC19630",
-   "stock": "SD26000",
-   "name": "2026 Ford SUPER DUTY XL 2WD CREW CAB",
    "year": "2026",
    "cond": "new"
   },
@@ -900,6 +879,20 @@
    "cond": "used"
   },
   {
+   "vin": "1FTEW1CMXDFC76679",
+   "stock": "FT26193A",
+   "name": "2013 Ford F-150 TRUCK GRAY",
+   "year": "2013",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1CG0GFC72056",
+   "stock": "FT26248A",
+   "name": "2016 Ford F-150 2WD SUPERCREW 145\" L",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -1198,13 +1191,6 @@
    "stock": "RA26191A",
    "name": "2019 Chevrolet EQUINOX RED",
    "year": "2019",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTER1EH5LLA64490",
-   "stock": "RA26223A",
-   "name": "2020 Ford RANGER",
-   "year": "2020",
    "cond": "used"
   },
   {
