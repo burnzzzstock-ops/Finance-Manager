@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-01T19:22:37+00:00",
+ "updated": "2026-07-02T18:20:29+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 175,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -88,6 +88,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE4DP4TLB34899",
+   "stock": "BR26243",
+   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FMDE6BH0TLB01594",
    "stock": "BR26247",
    "name": "2026 Ford BRONCO BASE 4 DOOR 4X4 OXF",
@@ -144,6 +151,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FMCR9BN2TRE98833",
+   "stock": "BS26242",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 AZ",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FMJU1H88SEA57749",
    "stock": "EN25224",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
@@ -182,13 +196,6 @@
    "vin": "1FMJU1H82TEA23243",
    "stock": "EN26115",
    "name": "2026 Ford EXPEDITION ACTIVE 4X2 SPAC",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1P8XTEA38266",
-   "stock": "EN26122",
-   "name": "2026 Ford EXPEDITION KING RANCH 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -252,6 +259,13 @@
    "vin": "1FMUK7DH3TGB48994",
    "stock": "ER26224",
    "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK8JH3TGC45221",
+   "stock": "ER26241",
+   "name": "2026 Ford EXPLORER TREMOR 4WD AVALAN",
    "year": "2026",
    "cond": "new"
   },
@@ -347,13 +361,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3L58TKD76732",
-   "stock": "FT26140",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L5XTFA25250",
    "stock": "FT26146",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -424,13 +431,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3L84TKE28688",
-   "stock": "FT26196",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L81TKE18734",
    "stock": "FT26198",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -490,6 +490,13 @@
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP0TFA97244",
+   "stock": "FT26251",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -574,6 +581,20 @@
    "vin": "1FTER4KP0TLE32510",
    "stock": "RA26232",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4HP6TLE30025",
+   "stock": "RA26244",
+   "name": "2026 Ford RANGER XLT 4WD SUPERCREW 5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4BH7TLE42377",
+   "stock": "RA26245",
+   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
    "year": "2026",
    "cond": "new"
   },
@@ -1092,13 +1113,6 @@
    "vin": "1FMCU0JD0HUA19490",
    "stock": "P8150A",
    "name": "2017 Ford ESCAPE SUV MAGNETIC METALL",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "1C4BJWFG1HL650205",
-   "stock": "P8151",
-   "name": "2017 JEEP WRANGLER U RUBICON 4X4 SUV",
    "year": "2017",
    "cond": "used"
   },
