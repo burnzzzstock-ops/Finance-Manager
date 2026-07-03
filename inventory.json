@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-02T18:20:29+00:00",
+ "updated": "2026-07-03T17:06:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 179,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -162,13 +162,6 @@
    "stock": "EN25224",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
    "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1H82TEA20102",
-   "stock": "EN26049",
-   "name": "2026 Ford EXPEDITION ACTIVE 4X2 GLAC",
-   "year": "2026",
    "cond": "new"
   },
   {
@@ -501,10 +494,10 @@
    "cond": "new"
   },
   {
-   "vin": "3FTCW8TAXSRB67547",
-   "stock": "MA25285",
-   "name": "2025 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2025",
+   "vin": "1FTFW1RG9TFB51192",
+   "stock": "FT26254",
+   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2026",
    "cond": "new"
   },
   {
@@ -532,6 +525,27 @@
    "vin": "3FTTW8A35TRB16656",
    "stock": "MA26234",
    "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H35TRB28196",
+   "stock": "MA26252",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8A34TRB35084",
+   "stock": "MA26253",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTCW8TA4TRB36425",
+   "stock": "MA26255",
+   "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
    "year": "2026",
    "cond": "new"
   },
@@ -767,17 +781,17 @@
    "cond": "used"
   },
   {
-   "vin": "3LN6L5F99HR643474",
-   "stock": "BR26233A",
-   "name": "2017 Lincoln MKZ SUV",
-   "year": "2017",
+   "vin": "1FMSK7DH4RGA77031",
+   "stock": "BS25182C",
+   "name": "2024 Ford EXPLORER SUV STONE BLUE ME",
+   "year": "2024",
    "cond": "used"
   },
   {
-   "vin": "3KPA24AD6NE494211",
-   "stock": "BS25182B",
-   "name": "2022 KIA RIO",
-   "year": "2022",
+   "vin": "3GNAL3EK4ES623877",
+   "stock": "BS26256A",
+   "name": "2014 Chevrolet CAPTIVA SP SUV",
+   "year": "2014",
    "cond": "used"
   },
   {
@@ -921,6 +935,13 @@
    "cond": "used"
   },
   {
+   "vin": "3FTTW8E34NRA18327",
+   "stock": "MA25285A",
+   "name": "2022 Ford MAVERICK",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "3VVSX7B23NM026187",
    "stock": "MA26018A",
    "name": "2022 Volkswagen TAOS SUV",
@@ -974,13 +995,6 @@
    "stock": "P8091B",
    "name": "2017 Land RANGE ROVE",
    "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "5LMPJ8KA2RJ835288",
-   "stock": "P8104",
-   "name": "2024 Lincoln NAUTILUS RESERVE AWD WHITE",
-   "year": "2024",
    "cond": "used"
   },
   {
