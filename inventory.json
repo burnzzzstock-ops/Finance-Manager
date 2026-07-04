@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-03T17:06:46+00:00",
+ "updated": "2026-07-04T16:15:33+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 179,
  "vehicles": [
@@ -21,13 +21,6 @@
    "vin": "1FMDE7BH1TLA91793",
    "stock": "BR26167",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE9BP1TLA98301",
-   "stock": "BR26168",
-   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
    "year": "2026",
    "cond": "new"
   },
@@ -203,13 +196,6 @@
    "vin": "1FMJU1H82TEA41337",
    "stock": "EN26205",
    "name": "2026 Ford EXPEDITION ACTIVE 4X2 AGAT",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJK1H80TEA43786",
-   "stock": "EN26206",
-   "name": "2026 Ford EXPEDITION ACTIVE 4X2 SPAC",
    "year": "2026",
    "cond": "new"
   },
@@ -781,6 +767,13 @@
    "cond": "used"
   },
   {
+   "vin": "5N1DR3DH8RC280041",
+   "stock": "BR26168A",
+   "name": "2024 Nissan PATHFINDER SUV",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
    "vin": "1FMSK7DH4RGA77031",
    "stock": "BS25182C",
    "name": "2024 Ford EXPLORER SUV STONE BLUE ME",
@@ -813,6 +806,13 @@
    "stock": "EN26186A",
    "name": "2021 Ford EXPEDITION SUV",
    "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNSCBKC3JR108166",
+   "stock": "EN26206A",
+   "name": "2018 Chevrolet TAHOE",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -1040,13 +1040,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FMCU9GN5SUA99395",
-   "stock": "P8125",
-   "name": "2025 Ford ESCAPE ACTIVE AWD GRAY 99N",
-   "year": "2025",
-   "cond": "used"
-  },
-  {
    "vin": "1GKS2EKL1RR227878",
    "stock": "P8127",
    "name": "2024 GMC YUKON 4WD 4DR DENALI ULTIMA",
@@ -1121,6 +1114,13 @@
    "stock": "P8149",
    "name": "2023 Nissan ROGUE AWD SL WHITE",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU9G64NUA60696",
+   "stock": "P8149A",
+   "name": "2022 Ford ESCAPE WHITE",
+   "year": "2022",
    "cond": "used"
   },
   {
