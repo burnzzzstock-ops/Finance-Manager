@@ -124,8 +124,6 @@ All driven by data you already enter — no DMS, API, or portal access.
 - **Funding / CIT tracking** — mark each deal Not submitted → Submitted → Funded, note stips
   outstanding. The dashboard shows dollars in transit, anything aged past 5 days (red), and
   stale-stip counts. Deal cards carry a funding badge.
-- **Per-deal compliance checklist** — OFAC, Red Flags, Risk-Based Pricing/adverse action, Reg Z,
-  GLBA privacy, menu-presented, used-car Buyers Guide. No customer data stored — just your ticks.
 - **Money left on the table** — financed deals with no VSC/GAP, quantified in lost gross and pay.
 - **Goal & pace** — set a monthly take-home target (Pay tab); the board shows progress, pace, and
   how many more deals get you there.

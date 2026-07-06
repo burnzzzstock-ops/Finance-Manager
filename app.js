@@ -512,15 +512,13 @@ function renderAll() {
   renderBackupNudge();
 }
 
-/* ----- funding (CIT) + compliance helpers ----- */
+/* ----- funding (CIT) helpers ----- */
 function fundDays(d) {
   if (!d.fund || !d.fund.submitted) return null;
   return Math.floor((Date.now() - Date.parse(d.fund.submitted + 'T12:00:00')) / 86400000);
 }
 const inTransit = d => d.fund && d.fund.status === 'submitted';
 const isStale = d => inTransit(d) && fundDays(d) != null && fundDays(d) > 5;
-function compRequired(d) { return COMPLIANCE_ITEMS.filter(it => !it.usedOnly || d.cond === 'used'); }
-function compMissing(d) { const c = d.comp || {}; return compRequired(d).some(it => !c[it.k]); }
 function fundBadge(d) {
   if (d.type === 'cash') return '';
   const f = d.fund;
@@ -542,7 +540,7 @@ function avgProfit(re) {
   return sp ? (+sp.amt || 0) : 0;
 }
 
-// #2 money-left, #4 goal/pace, #5 CIT, compliance — consolidated cockpit
+// #2 money-left, #4 goal/pace, #5 CIT — consolidated cockpit
 function actionBoard(M, P) {
   const plan = data.settings.payPlan;
   const isCur = state.month === todayStr().slice(0, 7);
@@ -557,12 +555,6 @@ function actionBoard(M, P) {
   }
   const stips = data.deals.filter(d => d.fund && d.fund.stips && d.fund.status !== 'funded');
   if (stips.length) rows.push(`<div class="act bad"><span class="act-l">📋 Stips outstanding</span><b>${stips.length}</b><span class="act-sub">clear before funding</span></div>`);
-
-  // compliance gaps — only nudge for the current live month
-  if (isCur) {
-    const gaps = M.deals.filter(compMissing);
-    if (gaps.length) rows.push(`<div class="act warn"><span class="act-l">🛡️ Compliance</span><b>${gaps.length}</b><span class="act-sub">deal${gaps.length > 1 ? 's' : ''} missing a tick</span></div>`);
-  }
 
   // money left on the table (selected month, financed deals)
   const fin = M.deals.filter(d => d.type !== 'cash');
@@ -1036,16 +1028,6 @@ function renderBackupNudge() {
 
 let editingDealId = null;
 
-const COMPLIANCE_ITEMS = [
-  { k: 'ofac', label: 'OFAC / SDN screened' },
-  { k: 'redflags', label: 'Red Flags ID verified' },
-  { k: 'rbp', label: 'Risk-Based Pricing / adverse action' },
-  { k: 'regz', label: 'Reg Z (TIL) disclosures' },
-  { k: 'privacy', label: 'GLBA privacy notice' },
-  { k: 'menu', label: 'Menu presented (100%)' },
-  { k: 'buyers', label: 'Used-car Buyers Guide', usedOnly: true }
-];
-
 function vehClass(name) {
   name = (name || '').toLowerCase();
   if (/f-?[1-4]50|super\s*duty|ranger|maverick|silverado|sierra|\bram\b|tacoma|tundra|truck|pickup/.test(name)) return 'truck';
@@ -1129,14 +1111,8 @@ function openDealModal(deal) {
   $('#f-fund-date').value = f.submitted || '';
   $('#f-stips').checked = !!f.stips;
 
-  // compliance checklist
-  const c = deal?.comp || {};
-  $('#f-compliance').innerHTML = COMPLIANCE_ITEMS.map(it =>
-    `<label data-usedonly="${it.usedOnly ? 1 : 0}"><input type="checkbox" data-comp="${it.k}" ${c[it.k] ? 'checked' : ''}> ${it.label}</label>`).join('');
-
   updateLenderVis();
   updateFundVis();
-  updateCompVis();
   updateDealTotal();
   updateDealIntel();
   $('#deal-modal').hidden = false;
@@ -1146,10 +1122,6 @@ function openDealModal(deal) {
 function updateFundVis() {
   $('#f-fund-detail').style.display = segVal('#f-fund') === 'pending' ? 'none' : 'grid';
   if (segVal('#f-fund') !== 'pending' && !$('#f-fund-date').value) $('#f-fund-date').value = todayStr();
-}
-function updateCompVis() {
-  const used = segVal('#f-cond') === 'used';
-  $$('#f-compliance label[data-usedonly="1"]').forEach(l => l.style.display = used ? 'flex' : 'none');
 }
 
 function updateLenderVis() {
@@ -1258,8 +1230,7 @@ function saveDeal() {
     vin: $('#f-vin').value.trim().toUpperCase(),
     vehicle: $('#f-vehicle').dataset.v || '',
     note: $('#f-note').value.trim(),
-    fund: { status: segVal('#f-fund'), submitted: $('#f-fund-date').value || '', stips: $('#f-stips').checked },
-    comp: Object.fromEntries(COMPLIANCE_ITEMS.map(it => [it.k, $(`#f-compliance input[data-comp="${it.k}"]`).checked]))
+    fund: { status: segVal('#f-fund'), submitted: $('#f-fund-date').value || '', stips: $('#f-stips').checked }
   };
   if (editingDealId) {
     const i = data.deals.findIndex(d => d.id === editingDealId);
@@ -1548,7 +1519,6 @@ $('#btn-new-cb').addEventListener('click', () => openCBModal());
 $$('#f-type button, #f-cond button, #f-channel button').forEach(b => b.addEventListener('click', () => {
   setSeg('#' + b.parentElement.id, b.dataset.val);
   updateLenderVis();
-  updateCompVis();
   updateDealTotal();
   updateDealIntel();
 }));
@@ -1595,7 +1565,7 @@ $$('.modal-wrap').forEach(w => w.addEventListener('click', e => {
 $('#f-num').addEventListener('change', () => {
   const hit = invLookup($('#f-num').value);
   if (!hit) return;
-  if (hit.cond) { setSeg('#f-cond', hit.cond); updateCompVis(); }
+  if (hit.cond) setSeg('#f-cond', hit.cond);
   if (hit.name) showVehicle(hit.name);
   if (hit.vin && $('#f-vin').value.trim().toUpperCase() !== hit.vin) {
     $('#f-vin').value = hit.vin;
@@ -1610,7 +1580,7 @@ $('#f-vin').addEventListener('input', async () => {
   if (!VIN_RE.test(vin)) { if (!vin) showVehicle(''); return; }
   const hit = data.inventory.find(v => v.vin === vin);
   if (hit) {
-    if (hit.cond) { setSeg('#f-cond', hit.cond); updateCompVis(); }
+    if (hit.cond) setSeg('#f-cond', hit.cond);
     if (hit.stock && !$('#f-num').value.trim()) $('#f-num').value = hit.stock;
   }
   showVehicle('Decoding VIN…', hit?.name || '');

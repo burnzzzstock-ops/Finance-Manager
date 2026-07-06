@@ -243,9 +243,6 @@ h2::before { content: "▍"; color: var(--accent); margin-right: 6px; }
 .guard-box.good { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card)); }
 .guard-box.warn { border-color: var(--amber); background: color-mix(in srgb, var(--amber) 12%, var(--card)); }
 .guard-box b { color: var(--text); }
-.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
-.comp-grid label { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text); margin: 3px 0; font-weight: 500; }
-.comp-grid input { width: auto; margin: 0; }
 
 /* Dashboard action board */
 .actboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0 4px; }
