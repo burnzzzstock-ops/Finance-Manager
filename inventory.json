@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-04T16:15:33+00:00",
+ "updated": "2026-07-07T19:22:48+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 179,
+ "count": 178,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -760,13 +760,6 @@
    "cond": "used"
   },
   {
-   "vin": "1C4PJLLB1KD339212",
-   "stock": "BR26158A",
-   "name": "2019 JEEP CHEROKEE SUV",
-   "year": "2019",
-   "cond": "used"
-  },
-  {
    "vin": "5N1DR3DH8RC280041",
    "stock": "BR26168A",
    "name": "2024 Nissan PATHFINDER SUV",
@@ -858,10 +851,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E83NFB89549",
-   "stock": "FT26110A",
-   "name": "2022 Ford F-150 TRUCK BLACK 3.5L CYC",
-   "year": "2022",
+   "vin": "1FT7W2BT8JEC26484",
+   "stock": "FT26110B",
+   "name": "2018 Ford SUPER DUTY",
+   "year": "2018",
    "cond": "used"
   },
   {
