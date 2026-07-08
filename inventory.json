@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-07T19:22:48+00:00",
+ "updated": "2026-07-08T14:55:55+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 178,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -739,10 +739,10 @@
    "cond": "used"
   },
   {
-   "vin": "5FNYG2H70SB044693",
+   "vin": "3GCUKFED3TG317054",
    "stock": "BR25352A",
-   "name": "2025 Hond PILOT SUV",
-   "year": "2025",
+   "name": "2026 Chevrolet SILVERADO 4WD CREW CAB",
+   "year": "2026",
    "cond": "used"
   },
   {
@@ -949,13 +949,6 @@
    "cond": "used"
   },
   {
-   "vin": "4S4WMAED5M3447200",
-   "stock": "MA26189A",
-   "name": "2021 Subaru ASCENT",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "1GCGSCEN6M1259722",
    "stock": "MA26216B",
    "name": "2021 Chevrolet COLORADO TRUCK",
@@ -1033,6 +1026,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FMCU9G64NUA60696",
+   "stock": "P8125A",
+   "name": "2022 Ford ESCAPE WHITE",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "1GKS2EKL1RR227878",
    "stock": "P8127",
    "name": "2024 GMC YUKON 4WD 4DR DENALI ULTIMA",
@@ -1107,13 +1107,6 @@
    "stock": "P8149",
    "name": "2023 Nissan ROGUE AWD SL WHITE",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1FMCU9G64NUA60696",
-   "stock": "P8149A",
-   "name": "2022 Ford ESCAPE WHITE",
-   "year": "2022",
    "cond": "used"
   },
   {
