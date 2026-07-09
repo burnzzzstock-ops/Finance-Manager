@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-08T14:55:55+00:00",
+ "updated": "2026-07-09T15:40:42+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 182,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -95,6 +95,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE8BH4TLB37269",
+   "stock": "BR26257",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9GN7SRE41311",
    "stock": "BS25105",
    "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
@@ -147,6 +154,13 @@
    "vin": "3FMCR9BN2TRE98833",
    "stock": "BS26242",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 AZ",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9CN8TRF06240",
+   "stock": "BS26262",
+   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -536,6 +550,20 @@
    "cond": "new"
   },
   {
+   "vin": "3FTTW8A36TRB31960",
+   "stock": "MA26260",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8J30TRB26561",
+   "stock": "MA26261",
+   "name": "2026 Ford MAVERICK H XLT AWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FA6P8TH4S5120577",
    "stock": "MU25162",
    "name": "2025 Ford MUSTANG ECOBOOST FASTBACK",
@@ -594,6 +622,20 @@
   {
    "vin": "1FTER4BH7TLE42377",
    "stock": "RA26245",
+   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4GH5TLE36666",
+   "stock": "RA26258",
+   "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4BH0TLE45931",
+   "stock": "RA26259",
    "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
    "year": "2026",
    "cond": "new"
@@ -1183,13 +1225,6 @@
    "vin": "1FMJU1M83SEA33820",
    "stock": "P8161",
    "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
-   "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "5LM5J7XC3SGL27927",
-   "stock": "P8162",
-   "name": "2025 Lincoln AVIATOR RESERVE AWD GRAY 9",
    "year": "2025",
    "cond": "used"
   },
