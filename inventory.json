@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-09T15:40:42+00:00",
+ "updated": "2026-07-10T15:12:09+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 182,
  "vehicles": [
@@ -599,13 +599,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTER4PHXTLE28093",
-   "stock": "RA26231",
-   "name": "2026 Ford RANGER 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTER4KP0TLE32510",
    "stock": "RA26232",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
@@ -1180,9 +1173,9 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E83PFD19140",
-   "stock": "P8155",
-   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "vin": "KNDPUCAG3P7074529",
+   "stock": "P8155A",
+   "name": "2023 KIA SPORTAGE H SUV",
    "year": "2023",
    "cond": "used"
   },
@@ -1240,6 +1233,13 @@
    "stock": "RA26191A",
    "name": "2019 Chevrolet EQUINOX RED",
    "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1FAHP2F88FG174234",
+   "stock": "RA26231A",
+   "name": "2015 Ford TAURUS SEDAN WHITE PLATINU",
+   "year": "2015",
    "cond": "used"
   },
   {
