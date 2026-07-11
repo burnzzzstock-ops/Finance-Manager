@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-10T15:12:09+00:00",
+ "updated": "2026-07-11T14:01:10+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 182,
  "vehicles": [
@@ -273,13 +273,6 @@
    "vin": "1FTFW3L50SKF19882",
    "stock": "FT25314",
    "name": "2025 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L58SFC06180",
-   "stock": "FT25325",
-   "name": "2025 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2025",
    "cond": "new"
   },
@@ -775,16 +768,16 @@
   },
   {
    "vin": "3GCUKFED3TG317054",
-   "stock": "BR25352A",
+   "stock": "BR25352C",
    "name": "2026 Chevrolet SILVERADO 4WD CREW CAB",
    "year": "2026",
    "cond": "used"
   },
   {
-   "vin": "1FMUK7HH9TGA66732",
-   "stock": "BR25352B",
-   "name": "2026 Ford EXPLORER SUV BLACK",
-   "year": "2026",
+   "vin": "1FMSK7DH3MGC47369",
+   "stock": "BR25352D",
+   "name": "2021 Ford EXPLORER",
+   "year": "2021",
    "cond": "used"
   },
   {
@@ -802,10 +795,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMSK7DH4RGA77031",
-   "stock": "BS25182C",
-   "name": "2024 Ford EXPLORER SUV STONE BLUE ME",
-   "year": "2024",
+   "vin": "1FM5K7B8XHGB37666",
+   "stock": "BS25182D",
+   "name": "2017 Ford EXPLORER SUV",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -862,13 +855,6 @@
    "stock": "FT25354B",
    "name": "2018 Ford F-150 PLATINUM 2WD SUPERCR",
    "year": "2018",
-   "cond": "used"
-  },
-  {
-   "vin": "1GTU9DED7MZ117182",
-   "stock": "FT26019A",
-   "name": "2021 GMC SIERRA",
-   "year": "2021",
    "cond": "used"
   },
   {
@@ -1159,13 +1145,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E86PFD28642",
-   "stock": "P8153",
-   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2023",
-   "cond": "used"
-  },
-  {
    "vin": "1FTFW1E85PKE60007",
    "stock": "P8154",
    "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -1219,6 +1198,27 @@
    "stock": "P8161",
    "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMCJ2CAXSUL01826",
+   "stock": "P8163",
+   "name": "2025 Lincoln CORSAIR RESERVE FWD WHITE",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW3L53RKD25793",
+   "stock": "P8164",
+   "name": "2024 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E89PKF67867",
+   "stock": "P8165",
+   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2023",
    "cond": "used"
   },
   {
