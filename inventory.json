@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-11T14:01:10+00:00",
+ "updated": "2026-07-12T14:03:59+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 182,
  "vehicles": [
@@ -396,13 +396,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW7LD5TFB15419",
-   "stock": "FT26172",
-   "name": "2026 Ford F-150 PLATINUM 4WD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L82TKE27202",
    "stock": "FT26175",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -554,13 +547,6 @@
    "stock": "MA26261",
    "name": "2026 Ford MAVERICK H XLT AWD SUPERCR",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FA6P8TH4S5120577",
-   "stock": "MU25162",
-   "name": "2025 Ford MUSTANG ECOBOOST FASTBACK",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -921,6 +907,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW1ED4NFA06169",
+   "stock": "FT26172A",
+   "name": "2022 Ford F-150 STAR WHITE METALLIC",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "1G1FH1R70J0108119",
    "stock": "FT26176A",
    "name": "2018 Chevrolet CAMARO",
@@ -981,6 +974,13 @@
    "stock": "ME26217A",
    "name": "2022 Hond RIDGELINE TRUCK",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "3GKALMEV8LL190388",
+   "stock": "MU25162A",
+   "name": "2020 GMC TERRAIN",
+   "year": "2020",
    "cond": "used"
   },
   {
