@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-12T14:03:59+00:00",
+ "updated": "2026-07-14T14:24:21+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 182,
  "vehicles": [
@@ -802,13 +802,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1EF9HKC78276",
-   "stock": "EN26178A",
-   "name": "2017 Ford F-150 MOD 5.0L-4V DOHC SE",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1FMJU1HTXMEA15462",
    "stock": "EN26186A",
    "name": "2021 Ford EXPEDITION SUV",
@@ -907,10 +900,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1ED4NFA06169",
-   "stock": "FT26172A",
-   "name": "2022 Ford F-150 STAR WHITE METALLIC",
-   "year": "2022",
+   "vin": "1FTFW1ET7EKE78963",
+   "stock": "FT26172B",
+   "name": "2014 Ford F-150",
+   "year": "2014",
    "cond": "used"
   },
   {
@@ -1219,6 +1212,13 @@
    "stock": "P8165",
    "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "5LMCJ1CA0RUL20163",
+   "stock": "P8166",
+   "name": "2024 Lincoln CORSAIR PREMIERE FWD WHITE",
+   "year": "2024",
    "cond": "used"
   },
   {
