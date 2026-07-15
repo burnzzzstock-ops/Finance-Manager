@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-14T14:24:21+00:00",
+ "updated": "2026-07-15T14:20:18+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 182,
  "vehicles": [
@@ -102,6 +102,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE4DP3TLB37471",
+   "stock": "BR26263",
+   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9GN7SRE41311",
    "stock": "BS25105",
    "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
@@ -112,13 +119,6 @@
    "vin": "3FMCR9BN1SRF06693",
    "stock": "BS25179",
    "name": "2025 Ford BRONCO SPO BIG BEND 4X4 SH",
-   "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN8SRF78314",
-   "stock": "BS25333",
-   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 99",
    "year": "2025",
    "cond": "new"
   },
@@ -788,6 +788,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTZF1723YNA93405",
+   "stock": "BS25333A",
+   "name": "2000 Ford F-150 BLACK",
+   "year": "2000",
+   "cond": "used"
+  },
+  {
    "vin": "3GNAL3EK4ES623877",
    "stock": "BS26256A",
    "name": "2014 Chevrolet CAPTIVA SP SUV",
@@ -1002,13 +1009,6 @@
    "stock": "P8106A",
    "name": "2018 Ford F-150 TRUCK",
    "year": "2018",
-   "cond": "used"
-  },
-  {
-   "vin": "1GCUYDED4MZ422934",
-   "stock": "P8108A",
-   "name": "2021 Chevrolet SILVERADO TRUCK",
-   "year": "2021",
    "cond": "used"
   },
   {
