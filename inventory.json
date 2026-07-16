@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-15T14:20:18+00:00",
+ "updated": "2026-07-16T14:33:07+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 182,
+ "count": 180,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -459,13 +459,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6L81TFB42923",
-   "stock": "FT26230",
-   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -788,13 +781,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTZF1723YNA93405",
-   "stock": "BS25333A",
-   "name": "2000 Ford F-150 BLACK",
-   "year": "2000",
-   "cond": "used"
-  },
-  {
    "vin": "3GNAL3EK4ES623877",
    "stock": "BS26256A",
    "name": "2014 Chevrolet CAPTIVA SP SUV",
@@ -1019,10 +1005,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMSK8FH8PGB22763",
-   "stock": "P8115",
-   "name": "2023 Ford EXPLORER LIMITED 4WD BLACK",
-   "year": "2023",
+   "vin": "2LMPJ6LR5JBL13926",
+   "stock": "P8115A",
+   "name": "2018 Lincoln MKX SUV",
+   "year": "2018",
    "cond": "used"
   },
   {
