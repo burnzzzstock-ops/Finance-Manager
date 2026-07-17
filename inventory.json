@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-16T14:33:07+00:00",
+ "updated": "2026-07-17T14:12:12+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 180,
  "vehicles": [
@@ -260,13 +260,6 @@
    "stock": "ER26241",
    "name": "2026 Ford EXPLORER TREMOR 4WD AVALAN",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW7L82SFC54280",
-   "stock": "FT25299",
-   "name": "2025 Ford F-150 PLATINUM 4WD SUPERCR",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -1205,6 +1198,13 @@
    "stock": "P8166",
    "name": "2024 Lincoln CORSAIR PREMIERE FWD WHITE",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "3FMCR9BN4SRF02234",
+   "stock": "P8167",
+   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 TA",
+   "year": "2025",
    "cond": "used"
   },
   {
