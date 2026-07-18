@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-17T14:12:12+00:00",
+ "updated": "2026-07-18T13:57:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 180,
+ "count": 186,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -42,13 +42,6 @@
    "vin": "1FMDE8BH7TLB05945",
    "stock": "BR26204",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE7BH3TLB21988",
-   "stock": "BR26221",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -169,13 +162,6 @@
    "stock": "EN25224",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
    "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1H80TEA19952",
-   "stock": "EN26074",
-   "name": "2026 Ford EXPEDITION ACTIVE 4X2 DARK",
-   "year": "2026",
    "cond": "new"
   },
   {
@@ -473,6 +459,34 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP4TKF03176",
+   "stock": "FT26265",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTMF1L51TKE74352",
+   "stock": "FT26268",
+   "name": "2026 Ford F150 4X4 REGULAR CAB XL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP4TKF03274",
+   "stock": "FT26269",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP5TFB36894",
+   "stock": "FT26271",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -532,6 +546,27 @@
    "vin": "3FTTW8J30TRB26561",
    "stock": "MA26261",
    "name": "2026 Ford MAVERICK H XLT AWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H37TRB29673",
+   "stock": "MA26266",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H33TRB32070",
+   "stock": "MA26267",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H30TRB29708",
+   "stock": "MA26270",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -1208,6 +1243,20 @@
    "cond": "used"
   },
   {
+   "vin": "1FT7W2BT1KEE09288",
+   "stock": "P8168",
+   "name": "2019 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNERGRS7SJ155352",
+   "stock": "P8169",
+   "name": "2025 Chevrolet TRAVERSE FWD 4DR LT W/1LT",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
    "vin": "5N1ED28T82C562715",
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
@@ -1229,10 +1278,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FT7W2BT6MEC57494",
-   "stock": "SD25368A",
-   "name": "2021 Ford F-250 TRUCK",
-   "year": "2021",
+   "vin": "1FTFW1CT4CFC87753",
+   "stock": "SD25368B",
+   "name": "2012 Ford F-150 TRUCK",
+   "year": "2012",
    "cond": "used"
   },
   {
@@ -1240,13 +1289,6 @@
    "stock": "SD26048B",
    "name": "2023 Ford F-150 LIMITED 4WD SUPERCRE",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1C4PJXEG0RW264677",
-   "stock": "SD26078A",
-   "name": "2024 JEEP WRANGLER",
-   "year": "2024",
    "cond": "used"
   },
   {
