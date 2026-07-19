@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-18T13:57:34+00:00",
+ "updated": "2026-07-19T14:01:43+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 186,
  "vehicles": [
@@ -252,13 +252,6 @@
    "vin": "1FTFW3L50SKF19882",
    "stock": "FT25314",
    "name": "2025 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW7L86SFC72653",
-   "stock": "FT25346",
-   "name": "2025 Ford F-150 PLATINUM 4WD SUPERCR",
    "year": "2025",
    "cond": "new"
   },
@@ -704,13 +697,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BN5TEE61997",
-   "stock": "SD26200",
-   "name": "2026 Ford F250 4X4 T CREW CAB PICKUP",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BT6TEE69671",
    "stock": "SD26201",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
@@ -848,6 +834,13 @@
    "stock": "FT25340A",
    "name": "2021 GMC SIERRA",
    "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1E55LFB13040",
+   "stock": "FT25346A",
+   "name": "2020 Ford F-150 TRUCK",
+   "year": "2020",
    "cond": "used"
   },
   {
@@ -1296,6 +1289,13 @@
    "stock": "SD26091A",
    "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
    "year": "2026",
+   "cond": "used"
+  },
+  {
+   "vin": "3N1AB7AP6KY205823",
+   "stock": "SD26200A",
+   "name": "2019 Nissan SENTRA SEDAN",
+   "year": "2019",
    "cond": "used"
   },
   {
