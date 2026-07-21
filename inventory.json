@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-19T14:01:43+00:00",
+ "updated": "2026-07-21T14:34:26+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 186,
+ "count": 183,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -641,13 +641,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BT6TED76505",
-   "stock": "SD26085",
-   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BT1TEE10818",
    "stock": "SD26093",
    "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
@@ -679,13 +672,6 @@
    "vin": "1FT8W2BM6TED98531",
    "stock": "SD26165",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FT8W4DM0TEE64113",
-   "stock": "SD26171",
-   "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
    "year": "2026",
    "cond": "new"
   },
@@ -830,13 +816,6 @@
    "cond": "used"
   },
   {
-   "vin": "1GTP9EEL4MZ406854",
-   "stock": "FT25340A",
-   "name": "2021 GMC SIERRA",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "1FTEW1E55LFB13040",
    "stock": "FT25346A",
    "name": "2020 Ford F-150 TRUCK",
@@ -918,13 +897,6 @@
    "stock": "FT26172B",
    "name": "2014 Ford F-150",
    "year": "2014",
-   "cond": "used"
-  },
-  {
-   "vin": "1G1FH1R70J0108119",
-   "stock": "FT26176A",
-   "name": "2018 Chevrolet CAMARO",
-   "year": "2018",
    "cond": "used"
   },
   {
@@ -1040,10 +1012,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMDE8BH8RLA88954",
-   "stock": "P8122A",
-   "name": "2024 Ford BRONCO",
-   "year": "2024",
+   "vin": "JN8AZ2NEXF9083195",
+   "stock": "P8122B",
+   "name": "2015 Infiniti QX80 SUV",
+   "year": "2015",
    "cond": "used"
   },
   {
@@ -1135,13 +1107,6 @@
    "stock": "P8150A",
    "name": "2017 Ford ESCAPE SUV MAGNETIC METALL",
    "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "1FMCU0H6XNUA46215",
-   "stock": "P8152",
-   "name": "2022 Ford ESCAPE SEL FWD SILVER",
-   "year": "2022",
    "cond": "used"
   },
   {
@@ -1285,10 +1250,24 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW3LD4RFA99523",
+   "stock": "SD26085B",
+   "name": "2024 Ford F-150 BLACK",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
    "vin": "1FTFW6LD2TFA18463",
    "stock": "SD26091A",
    "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
    "year": "2026",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT8W3DT4LEE19192",
+   "stock": "SD26171A",
+   "name": "2020 Ford SUPER DUTY",
+   "year": "2020",
    "cond": "used"
   },
   {
