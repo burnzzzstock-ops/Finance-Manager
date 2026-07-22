@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-21T14:34:26+00:00",
+ "updated": "2026-07-22T14:34:14+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 183,
  "vehicles": [
@@ -340,13 +340,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW1RG5TFB06492",
-   "stock": "FT26162",
-   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L89TFB06763",
    "stock": "FT26163",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -476,6 +469,13 @@
    "vin": "1FTEW2KP5TFB36894",
    "stock": "FT26271",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW6LD5TFB31663",
+   "stock": "FT26272",
+   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
    "year": "2026",
    "cond": "new"
   },
@@ -816,13 +816,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTEW1E55LFB13040",
-   "stock": "FT25346A",
-   "name": "2020 Ford F-150 TRUCK",
-   "year": "2020",
-   "cond": "used"
-  },
-  {
    "vin": "1FTEW1C5XJKF66593",
    "stock": "FT25354B",
    "name": "2018 Ford F-150 PLATINUM 2WD SUPERCR",
@@ -890,6 +883,13 @@
    "stock": "FT26136C",
    "name": "2012 RAM",
    "year": "2012",
+   "cond": "used"
+  },
+  {
+   "vin": "3GCUKREC9HG223096",
+   "stock": "FT26162A",
+   "name": "2017 Chevrolet SILVERADO TRUCK",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -1251,7 +1251,7 @@
   },
   {
    "vin": "1FTFW3LD4RFA99523",
-   "stock": "SD26085B",
+   "stock": "SD26085A",
    "name": "2024 Ford F-150 BLACK",
    "year": "2024",
    "cond": "used"
