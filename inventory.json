@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-22T14:34:14+00:00",
+ "updated": "2026-07-23T14:41:21+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 183,
+ "count": 182,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -427,13 +427,6 @@
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEW2KP0TFA97244",
-   "stock": "FT26251",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -914,6 +907,13 @@
    "cond": "used"
   },
   {
+   "vin": "3FMCR9C62MRA31291",
+   "stock": "FT26251A",
+   "name": "2021 Ford BRONCO SPO SUV AREA 51",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -939,13 +939,6 @@
    "stock": "MA26143A",
    "name": "2015 Buick ENCLAVE SUV BLACK",
    "year": "2015",
-   "cond": "used"
-  },
-  {
-   "vin": "1GCGSCEN6M1259722",
-   "stock": "MA26216B",
-   "name": "2021 Chevrolet COLORADO TRUCK",
-   "year": "2021",
    "cond": "used"
   },
   {
