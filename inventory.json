@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-23T14:41:21+00:00",
+ "updated": "2026-07-24T14:20:50+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 182,
+ "count": 179,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -389,13 +389,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L50TFB30200",
-   "stock": "FT26203",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEX1K81TKE24189",
    "stock": "FT26212",
    "name": "2026 Ford F150 4X2 SUPERCAB XL",
@@ -553,13 +546,6 @@
    "vin": "3FTTW8H30TRB29708",
    "stock": "MA26270",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FA6P8TH5T5128804",
-   "stock": "MU26229",
-   "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
    "year": "2026",
    "cond": "new"
   },
@@ -855,13 +841,6 @@
    "stock": "FT26116A",
    "name": "2022 RAM",
    "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW5L5XSKD01010",
-   "stock": "FT26130A",
-   "name": "2025 Ford F-150 TRUCK",
-   "year": "2025",
    "cond": "used"
   },
   {
