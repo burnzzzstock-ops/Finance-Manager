@@ -1,19 +1,12 @@
 {
- "updated": "2026-07-24T14:20:50+00:00",
+ "updated": "2026-07-25T14:10:16+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 179,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
    "stock": "BR26107",
    "name": "2026 Ford BRONCO RAPTOR 4 DOOR ADVAN",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE7BH6TLA91756",
-   "stock": "BR26151",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -459,13 +452,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6LD5TFB31663",
-   "stock": "FT26272",
-   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -788,10 +774,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTER4KH9RLE26237",
-   "stock": "ER26209A",
-   "name": "2024 Ford RANGER TRUCK SHADOW BLACK",
-   "year": "2024",
+   "vin": "1FMUK7DH8TGB09270",
+   "stock": "ER26209B",
+   "name": "2026 Ford EXPLORER SUV",
+   "year": "2026",
    "cond": "used"
   },
   {
@@ -893,6 +879,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW6LD4SFB59386",
+   "stock": "FT272A",
+   "name": "2025 Ford F-150 TRUCK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -981,13 +974,6 @@
    "stock": "P8116B",
    "name": "2020 Toyo HIGHLANDER SUV",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "JN8AZ2NEXF9083195",
-   "stock": "P8122B",
-   "name": "2015 Infiniti QX80 SUV",
-   "year": "2015",
    "cond": "used"
   },
   {
