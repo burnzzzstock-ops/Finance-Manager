@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-25T14:10:16+00:00",
+ "updated": "2026-07-26T14:08:49+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 176,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -627,13 +627,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BM5TEE49291",
-   "stock": "SD26155",
-   "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BM6TED98531",
    "stock": "SD26165",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
@@ -1033,10 +1026,10 @@
    "cond": "used"
   },
   {
-   "vin": "1V2HR2CA4SC525751",
-   "stock": "P8146",
-   "name": "2025 Volkswagen ATLAS 2.0T SE W/TECHNOLOGY",
-   "year": "2025",
+   "vin": "1GNSCHKC6KR335503",
+   "stock": "P8146A",
+   "name": "2019 Chevrolet SUBURBAN SUV",
+   "year": "2019",
    "cond": "used"
   },
   {
