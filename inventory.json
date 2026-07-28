@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-26T14:08:49+00:00",
+ "updated": "2026-07-28T14:59:31+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 176,
+ "count": 174,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -34,13 +34,6 @@
   {
    "vin": "1FMDE8BH7TLB05945",
    "stock": "BR26204",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE8BP9TLB15453",
-   "stock": "BR26225",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
@@ -403,13 +396,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW3LP9TKE32416",
-   "stock": "FT26228",
-   "name": "2026 Ford F150 4X4 SUPERCREW XLT - 1",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L87TFB10178",
    "stock": "FT26237",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -462,13 +448,6 @@
    "vin": "3FTCW8TA3TRA23940",
    "stock": "MA26022",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H31TRA97612",
-   "stock": "MA26214",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -873,7 +852,7 @@
   },
   {
    "vin": "1FTFW6LD4SFB59386",
-   "stock": "FT272A",
+   "stock": "FT26272A",
    "name": "2025 Ford F-150 TRUCK",
    "year": "2025",
    "cond": "used"
@@ -904,6 +883,13 @@
    "stock": "MA26143A",
    "name": "2015 Buick ENCLAVE SUV BLACK",
    "year": "2015",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4PJXAN9RW134756",
+   "stock": "MA26214A",
+   "name": "2024 JEEP WRANGLER SUV",
+   "year": "2024",
    "cond": "used"
   },
   {
