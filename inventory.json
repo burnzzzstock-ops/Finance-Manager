@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-28T14:59:31+00:00",
+ "updated": "2026-07-29T14:41:52+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 174,
+ "count": 175,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -361,13 +361,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3L81TKE18734",
-   "stock": "FT26198",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L80TFB25850",
    "stock": "FT26202",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -434,6 +427,13 @@
    "vin": "1FTEW2KP5TFB36894",
    "stock": "FT26271",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L52TFA75883",
+   "stock": "FT26282",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -525,13 +525,6 @@
    "vin": "1FTER4KH5TLE13962",
    "stock": "RA26111",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4LR1TLE23301",
-   "stock": "RA26184",
-   "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
    "year": "2026",
    "cond": "new"
   },
@@ -1152,10 +1145,24 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW1E5XMFA02117",
+   "stock": "P8170",
+   "name": "2021 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "5N1ED28T82C562715",
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
    "year": "2002",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E55PFA78011",
+   "stock": "RA26184A",
+   "name": "2023 Ford F-150 TRUCK",
+   "year": "2023",
    "cond": "used"
   },
   {
