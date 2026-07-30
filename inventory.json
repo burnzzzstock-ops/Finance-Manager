@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-29T14:41:52+00:00",
+ "updated": "2026-07-30T14:41:52+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 175,
+ "count": 180,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -88,6 +88,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE7BH8TLB31680",
+   "stock": "BR26277",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE7BHXTLB32202",
+   "stock": "BR26278",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9GN7SRE41311",
    "stock": "BS25105",
    "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
@@ -140,6 +154,13 @@
    "vin": "3FMCR9CN8TRF06240",
    "stock": "BS26262",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN5TRF13728",
+   "stock": "BS26275",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
    "year": "2026",
    "cond": "new"
   },
@@ -431,6 +452,27 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5L50TFB96410",
+   "stock": "FT26276",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW6LD4TFB84337",
+   "stock": "FT26280",
+   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW3K8XTKE99732",
+   "stock": "FT26281",
+   "name": "2026 Ford F-150 XLT 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTFW3L52TFA75883",
    "stock": "FT26282",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -511,6 +553,20 @@
    "vin": "3FTTW8H30TRB29708",
    "stock": "MA26270",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H36TRB43466",
+   "stock": "MA26279",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8TH0T5129438",
+   "stock": "MU26273",
+   "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
    "year": "2026",
    "cond": "new"
   },
@@ -935,13 +991,6 @@
    "cond": "used"
   },
   {
-   "vin": "2LMPJ6LR5JBL13926",
-   "stock": "P8115A",
-   "name": "2018 Lincoln MKX SUV",
-   "year": "2018",
-   "cond": "used"
-  },
-  {
    "vin": "5TDGZRBH5LS517937",
    "stock": "P8116B",
    "name": "2020 Toyo HIGHLANDER SUV",
@@ -1180,13 +1229,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1CT4CFC87753",
-   "stock": "SD25368B",
-   "name": "2012 Ford F-150 TRUCK",
-   "year": "2012",
-   "cond": "used"
-  },
-  {
    "vin": "1FTFW1ED1PFA91703",
    "stock": "SD26048B",
    "name": "2023 Ford F-150 LIMITED 4WD SUPERCRE",
@@ -1205,13 +1247,6 @@
    "stock": "SD26091A",
    "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
    "year": "2026",
-   "cond": "used"
-  },
-  {
-   "vin": "1FT8W3DT4LEE19192",
-   "stock": "SD26171A",
-   "name": "2020 Ford SUPER DUTY",
-   "year": "2020",
    "cond": "used"
   },
   {
