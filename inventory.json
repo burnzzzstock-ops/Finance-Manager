@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-30T14:41:52+00:00",
+ "updated": "2026-07-31T14:58:54+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 180,
  "vehicles": [
@@ -182,13 +182,6 @@
    "vin": "1FMJU1M80TEA30584",
    "stock": "EN26109",
    "name": "2026 Ford EXPEDITION PLATINUM 4X4 ST",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1H82TEA23243",
-   "stock": "EN26115",
-   "name": "2026 Ford EXPEDITION ACTIVE 4X2 SPAC",
    "year": "2026",
    "cond": "new"
   },
@@ -778,6 +771,13 @@
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
    "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNS5CRD9SR177489",
+   "stock": "EN26115A",
+   "name": "2025 Chevrolet SUBURBAN SUV WHITE",
+   "year": "2025",
    "cond": "used"
   },
   {
