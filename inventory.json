@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-31T14:58:54+00:00",
+ "updated": "2026-08-01T14:06:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 180,
+ "count": 172,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -753,20 +753,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FM5K7B8XHGB37666",
-   "stock": "BS25182D",
-   "name": "2017 Ford EXPLORER SUV",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "3GNAL3EK4ES623877",
-   "stock": "BS26256A",
-   "name": "2014 Chevrolet CAPTIVA SP SUV",
-   "year": "2014",
-   "cond": "used"
-  },
-  {
    "vin": "1FMJU1KT8LEA79054",
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
@@ -858,13 +844,6 @@
    "cond": "used"
   },
   {
-   "vin": "1C6RD6KT3CS156927",
-   "stock": "FT26136C",
-   "name": "2012 RAM",
-   "year": "2012",
-   "cond": "used"
-  },
-  {
    "vin": "3GCUKREC9HG223096",
    "stock": "FT26162A",
    "name": "2017 Chevrolet SILVERADO TRUCK",
@@ -928,24 +907,10 @@
    "cond": "used"
   },
   {
-   "vin": "5GAKRBKD3FJ324803",
-   "stock": "MA26143A",
-   "name": "2015 Buick ENCLAVE SUV BLACK",
-   "year": "2015",
-   "cond": "used"
-  },
-  {
    "vin": "1C4PJXAN9RW134756",
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "5FPYK3F84NB036110",
-   "stock": "ME26217A",
-   "name": "2022 Hond RIDGELINE TRUCK",
-   "year": "2022",
    "cond": "used"
   },
   {
@@ -967,20 +932,6 @@
    "stock": "P6824",
    "name": "2016 Ford SUPER DUTY 4WD CREW CAB 15",
    "year": "2016",
-   "cond": "used"
-  },
-  {
-   "vin": "SALWZ2FE2HA129578",
-   "stock": "P8091B",
-   "name": "2017 Land RANGE ROVE",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1E59JFC31122",
-   "stock": "P8106A",
-   "name": "2018 Ford F-150 TRUCK",
-   "year": "2018",
    "cond": "used"
   },
   {
@@ -1061,10 +1012,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FT7W2BT0LEE65921",
-   "stock": "P8147",
-   "name": "2020 Ford F250 PICKUP TRUCK BLUE",
-   "year": "2020",
+   "vin": "1FTEW1EP7GFB80987",
+   "stock": "P8147A",
+   "name": "2016 Ford F-150",
+   "year": "2016",
    "cond": "used"
   },
   {
@@ -1079,13 +1030,6 @@
    "stock": "P8149",
    "name": "2023 Nissan ROGUE AWD SL WHITE",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1FMCU0JD0HUA19490",
-   "stock": "P8150A",
-   "name": "2017 Ford ESCAPE SUV MAGNETIC METALL",
-   "year": "2017",
    "cond": "used"
   },
   {
@@ -1201,6 +1145,13 @@
    "cond": "used"
   },
   {
+   "vin": "5LMCJ2D91NUL34643",
+   "stock": "P8171",
+   "name": "2022 Lincoln CORSAIR RESERVE AWD WHITE",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "5N1ED28T82C562715",
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
@@ -1219,13 +1170,6 @@
    "stock": "RA26191A",
    "name": "2019 Chevrolet EQUINOX RED",
    "year": "2019",
-   "cond": "used"
-  },
-  {
-   "vin": "1FAHP2F88FG174234",
-   "stock": "RA26231A",
-   "name": "2015 Ford TAURUS SEDAN WHITE PLATINU",
-   "year": "2015",
    "cond": "used"
   },
   {
