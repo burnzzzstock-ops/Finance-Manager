@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01T14:06:46+00:00",
+ "updated": "2026-08-02T14:08:11+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 172,
  "vehicles": [
@@ -746,10 +746,10 @@
    "cond": "used"
   },
   {
-   "vin": "5N1DR3DH8RC280041",
-   "stock": "BR26168A",
-   "name": "2024 Nissan PATHFINDER SUV",
-   "year": "2024",
+   "vin": "1FMUK7DH7SGC03624",
+   "stock": "BR26168C",
+   "name": "2025 Ford EXPLORER SUV",
+   "year": "2025",
    "cond": "used"
   },
   {
@@ -1138,10 +1138,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E5XMFA02117",
-   "stock": "P8170",
-   "name": "2021 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2021",
+   "vin": "1FTFX1EFXDKE32839",
+   "stock": "P8170A",
+   "name": "2013 Ford F-150 TRUCK BLACK",
+   "year": "2013",
    "cond": "used"
   },
   {
