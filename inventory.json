@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-02T14:08:11+00:00",
+ "updated": "2026-08-04T15:01:28+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 172,
+ "count": 180,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -97,6 +97,13 @@
   {
    "vin": "1FMEE7BHXTLB32202",
    "stock": "BR26278",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BHXTLA58663",
+   "stock": "BR26290",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
@@ -473,6 +480,41 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW6L85TFB93275",
+   "stock": "FT26283",
+   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW5K81TFB99968",
+   "stock": "FT26285",
+   "name": "2026 Ford F150 4X2 SUPERCREW LARIAT-",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L89TKE96111",
+   "stock": "FT26287",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L88TFC02467",
+   "stock": "FT26288",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L81TKE90243",
+   "stock": "FT26289",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -613,6 +655,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTER4LR1TLE42771",
+   "stock": "RA26286",
+   "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FT7W2BT7TED54217",
    "stock": "SD26029",
    "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
@@ -686,6 +735,13 @@
    "vin": "1FT8W2BMXTEE85042",
    "stock": "SD26218",
    "name": "2026 Ford SUPER DUTY TREMOR 4WD CREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W3DM6TEF49175",
+   "stock": "SD26284",
+   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
    "year": "2026",
    "cond": "new"
   },
@@ -809,10 +865,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FT7W2BT8JEC26484",
-   "stock": "FT26110B",
-   "name": "2018 Ford SUPER DUTY",
-   "year": "2018",
+   "vin": "1FTFW3LD2RFA31821",
+   "stock": "FT26110C",
+   "name": "2024 Ford F-150 TRUCK WHITE 99D",
+   "year": "2024",
    "cond": "used"
   },
   {
@@ -998,10 +1054,10 @@
    "cond": "used"
   },
   {
-   "vin": "KL4CJASB4HB033480",
-   "stock": "P8145A",
-   "name": "2017 Buick ENCORE SUV",
-   "year": "2017",
+   "vin": "KNDPC3A26D7489377",
+   "stock": "P8145B",
+   "name": "2013 KIA SPORTAGE SUV",
+   "year": "2013",
    "cond": "used"
   },
   {
@@ -1082,10 +1138,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMJU1M83SEA33820",
-   "stock": "P8161",
-   "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
-   "year": "2025",
+   "vin": "1FTEW1C55JKE63579",
+   "stock": "P8161A",
+   "name": "2018 Ford F-150 TRUCK",
+   "year": "2018",
    "cond": "used"
   },
   {
