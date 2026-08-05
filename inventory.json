@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-04T15:01:28+00:00",
+ "updated": "2026-08-05T14:54:59+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 180,
+ "count": 179,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -529,13 +529,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8A35TRB16656",
-   "stock": "MA26234",
-   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTTW8H35TRB28196",
    "stock": "MA26252",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
@@ -803,7 +796,7 @@
   },
   {
    "vin": "1FMUK7DH7SGC03624",
-   "stock": "BR26168C",
+   "stock": "BR26168B",
    "name": "2025 Ford EXPLORER SUV",
    "year": "2025",
    "cond": "used"
@@ -967,6 +960,13 @@
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1DR2MN4JC629491",
+   "stock": "MA26234A",
+   "name": "2018 Nissan PATHFINDER SUV",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -1191,13 +1191,6 @@
    "stock": "P8169",
    "name": "2025 Chevrolet TRAVERSE FWD 4DR LT W/1LT",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFX1EFXDKE32839",
-   "stock": "P8170A",
-   "name": "2013 Ford F-150 TRUCK BLACK",
-   "year": "2013",
    "cond": "used"
   },
   {
