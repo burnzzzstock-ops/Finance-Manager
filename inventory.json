@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-05T14:54:59+00:00",
+ "updated": "2026-08-06T14:53:30+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 179,
+ "count": 177,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -207,13 +207,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FMWK8GC5SGA59490",
-   "stock": "ER25008",
-   "name": "2025 Ford EXPLORER ST 4WD CARBONIZED",
-   "year": "2025",
-   "cond": "new"
-  },
-  {
    "vin": "1FMWK8JC8TGA88010",
    "stock": "ER26041",
    "name": "2026 Ford EXPLORER TREMOR 4WD SPACE",
@@ -224,13 +217,6 @@
    "vin": "1FMUK7DHXTGB33442",
    "stock": "ER26121",
    "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMWK8JC6TGB52416",
-   "stock": "ER26132",
-   "name": "2026 Ford EXPLORER TREMOR 4WD AGATE",
    "year": "2026",
    "cond": "new"
   },
@@ -525,6 +511,13 @@
    "vin": "3FTCW8TA3TRA23940",
    "stock": "MA26022",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8A35TRB16656",
+   "stock": "MA26234",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -830,6 +823,13 @@
    "cond": "used"
   },
   {
+   "vin": "5LMCJ2CA3PUL22203",
+   "stock": "ER25008A",
+   "name": "2023 Lincoln CORSAIR SUV",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
    "vin": "1FMUK7DH8TGB09270",
    "stock": "ER26209B",
    "name": "2026 Ford EXPLORER SUV",
@@ -960,13 +960,6 @@
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "5N1DR2MN4JC629491",
-   "stock": "MA26234A",
-   "name": "2018 Nissan PATHFINDER SUV",
-   "year": "2018",
    "cond": "used"
   },
   {
@@ -1107,13 +1100,6 @@
    "stock": "P8156",
    "name": "2022 JEEP COMPASS HIGH ALTITUDE 4X4",
    "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "1C4JJXN65PW650909",
-   "stock": "P8157",
-   "name": "2023 JEEP WRANGLER 4 4X4 BLACK ECX",
-   "year": "2023",
    "cond": "used"
   },
   {
