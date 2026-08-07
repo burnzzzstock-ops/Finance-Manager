@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-06T14:53:30+00:00",
+ "updated": "2026-08-07T13:49:33+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 180,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -34,13 +34,6 @@
   {
    "vin": "1FMDE8BH7TLB05945",
    "stock": "BR26204",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE8BH9TLB20483",
-   "stock": "BR26226",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
@@ -169,13 +162,6 @@
    "stock": "BS26275",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1H88SEA57749",
-   "stock": "EN25224",
-   "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -321,13 +307,6 @@
   {
    "vin": "1FTFW3L54TFA97366",
    "stock": "FT26157",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L58TKD80831",
-   "stock": "FT26160",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -515,13 +494,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8A35TRB16656",
-   "stock": "MA26234",
-   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTTW8H35TRB28196",
    "stock": "MA26252",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
@@ -623,13 +595,6 @@
    "vin": "1FTER4BH7TLE42377",
    "stock": "RA26245",
    "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4GH5TLE36666",
-   "stock": "RA26258",
-   "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
    "year": "2026",
    "cond": "new"
   },
@@ -823,6 +788,13 @@
    "cond": "used"
   },
   {
+   "vin": "5GAERBKW9LJ187344",
+   "stock": "EN27000A",
+   "name": "2020 Buick ENCLAVE SUV",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
    "vin": "5LMCJ2CA3PUL22203",
    "stock": "ER25008A",
    "name": "2023 Lincoln CORSAIR SUV",
@@ -960,6 +932,13 @@
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1DR2MN4JC629491",
+   "stock": "MA26234A",
+   "name": "2018 Nissan PATHFINDER SUV",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -1187,6 +1166,41 @@
    "cond": "used"
   },
   {
+   "vin": "1FT8W2BT5REC21999",
+   "stock": "P8172",
+   "name": "2024 Ford SUPER DUTY XLT 4WD CREW CA",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5XYP64GC4SG690157",
+   "stock": "P8173",
+   "name": "2025 KIA TELLURIDE S FWD WHITE",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1GC4YREY5RF144196",
+   "stock": "P8174",
+   "name": "2024 Chevrolet SILVERADO 4WD CREW CAB",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5NMJF3AE1NH115499",
+   "stock": "P8175",
+   "name": "2022 Hyundai TUCSON SEL SUV GRAY",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4JJXP62PW613121",
+   "stock": "P8176",
+   "name": "2023 JEEP WRANGLER 4 SAHARA HIGH ALT",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
    "vin": "5N1ED28T82C562715",
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
@@ -1205,6 +1219,13 @@
    "stock": "RA26191A",
    "name": "2019 Chevrolet EQUINOX RED",
    "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4PJXAG2RW160908",
+   "stock": "RA26258A",
+   "name": "2024 JEEP WRANGLER SUV GRAY",
+   "year": "2024",
    "cond": "used"
   },
   {
