@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-07T13:49:33+00:00",
+ "updated": "2026-08-08T13:26:40+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 180,
+ "count": 178,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -214,13 +214,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FMUK7DH3TGB48994",
-   "stock": "ER26224",
-   "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FMUK8JH3TGC45221",
    "stock": "ER26241",
    "name": "2026 Ford EXPLORER TREMOR 4WD AVALAN",
@@ -405,13 +398,6 @@
   {
    "vin": "1FTEW2KP4TKF03274",
    "stock": "FT26269",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEW2KP5TFB36894",
-   "stock": "FT26271",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -809,6 +795,13 @@
    "cond": "used"
   },
   {
+   "vin": "2FMPK3K94LBA72842",
+   "stock": "ER26224A",
+   "name": "2020 Ford EDGE",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
    "vin": "1FTEW1C5XJKF66593",
    "stock": "FT25354B",
    "name": "2018 Ford F-150 PLATINUM 2WD SUPERCR",
@@ -1085,13 +1078,6 @@
    "vin": "3FADP4BJ2FM122882",
    "stock": "P8158A",
    "name": "2015 Ford FIESTA SEDAN WHITE 99J",
-   "year": "2015",
-   "cond": "used"
-  },
-  {
-   "vin": "1FATP8FF5F5367321",
-   "stock": "P8159A",
-   "name": "2015 Ford MUSTANG",
    "year": "2015",
    "cond": "used"
   },
