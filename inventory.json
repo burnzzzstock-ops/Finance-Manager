@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-12T13:57:39+00:00",
+ "updated": "2026-08-13T13:57:18+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 177,
+ "count": 173,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -105,13 +105,6 @@
    "vin": "3FMCR9GN7SRE41311",
    "stock": "BS25105",
    "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
-   "year": "2025",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN1SRF06693",
-   "stock": "BS25179",
-   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 SH",
    "year": "2025",
    "cond": "new"
   },
@@ -221,13 +214,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3L81TKD20383",
-   "stock": "FT26027",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5L82TFA06052",
    "stock": "FT26050",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -238,13 +224,6 @@
    "vin": "1FTEW2L52TFA30108",
    "stock": "FT26058",
    "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L83TKD20087",
-   "stock": "FT26067",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -459,6 +438,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW7L86TFB79777",
+   "stock": "FT26294",
+   "name": "2026 Ford F-150 PLATINUM 4WD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -536,13 +522,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8S37TRB19847",
-   "stock": "MA26293",
-   "name": "2026 Ford MAVERICK H LARIAT AWD SUPE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FA6P8TH0T5129438",
    "stock": "MU26273",
    "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
@@ -559,13 +538,6 @@
   {
    "vin": "1FTER4KH5TLE13962",
    "stock": "RA26111",
-   "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4KP0TLE32510",
-   "stock": "RA26232",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
    "year": "2026",
    "cond": "new"
@@ -746,6 +718,13 @@
    "cond": "used"
   },
   {
+   "vin": "3FMCR9C63PRD07966",
+   "stock": "BS25179A",
+   "name": "2023 Ford BRONCO SPO SUV OTHER",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
    "vin": "1FMJU1KT8LEA79054",
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
@@ -827,13 +806,6 @@
    "stock": "FT26110C",
    "name": "2024 Ford F-150 TRUCK WHITE 99D",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "KMHLM4DGXSU078339",
-   "stock": "FT26112A",
-   "name": "2025 Hyundai ELANTRA SEDAN",
-   "year": "2025",
    "cond": "used"
   },
   {
