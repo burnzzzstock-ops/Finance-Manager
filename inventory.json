@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-13T13:57:18+00:00",
+ "updated": "2026-08-14T13:53:32+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 173,
+ "count": 172,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -99,13 +99,6 @@
    "stock": "BR26290",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9GN7SRE41311",
-   "stock": "BS25105",
-   "name": "2025 Ford BRONCO SPO HERITAGE 4X4 SH",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -662,13 +655,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FBAX2YG7TKB38872",
-   "stock": "TR26227",
-   "name": "2026 Ford TRANSIT PA T-350 148\" LOW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1V2ER2CA6KC543686",
    "stock": "BR25268B",
    "name": "2019 Volkswagen ATLAS SUV",
@@ -718,9 +704,16 @@
    "cond": "used"
   },
   {
+   "vin": "KNDETCA29N7293748",
+   "stock": "BS25105A",
+   "name": "2022 KIA SELTOS SUV BLACK",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "3FMCR9C63PRD07966",
    "stock": "BS25179A",
-   "name": "2023 Ford BRONCO SPO SUV OTHER",
+   "name": "2023 Ford BRONCO SPO SUV",
    "year": "2023",
    "cond": "used"
   },
