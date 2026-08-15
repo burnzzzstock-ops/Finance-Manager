@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-14T13:53:32+00:00",
+ "updated": "2026-08-15T13:08:01+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 172,
+ "count": 184,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -102,6 +102,27 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE9BP7TLB43662",
+   "stock": "BR26301",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BP7TLB43600",
+   "stock": "BR26302",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE7BH1TLB52611",
+   "stock": "BR26303",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9BN7TRE35890",
    "stock": "BS26120",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
@@ -197,6 +218,13 @@
    "stock": "ER26211",
    "name": "2026 Ford EXPLORER PLATINUM RWD SPAC",
    "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK8JH5VGA14727",
+   "stock": "ER27001",
+   "name": "2027 Ford EXPLORER TREMOR 4WD AVALAN",
+   "year": "2027",
    "cond": "new"
   },
   {
@@ -438,6 +466,34 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW3L85TFC01924",
+   "stock": "FT26297",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW4L87TFB93878",
+   "stock": "FT26298",
+   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW4L85TFB93989",
+   "stock": "FT26299",
+   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L83TFC00545",
+   "stock": "FT26300",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -645,6 +701,13 @@
    "stock": "SD26284",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
    "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W3BM8VEC19639",
+   "stock": "SD27002",
+   "name": "2027 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2027",
    "cond": "new"
   },
   {
@@ -1142,6 +1205,27 @@
    "stock": "P8177",
    "name": "2017 Ford F-150 XLT 2WD REG CAB 6.5'",
    "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1GC1KNEY6SF173032",
+   "stock": "P8178",
+   "name": "2025 Chevrolet SILVERADO 4WD CREW CAB",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1EP1PKF36387",
+   "stock": "P8179",
+   "name": "2023 Ford F-150 XL 4WD SUPERCREW 5.5",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4RJJBG0P8891004",
+   "stock": "P8180",
+   "name": "2023 JEEP GRAND CHER SUV LIMITED 4X2",
+   "year": "2023",
    "cond": "used"
   },
   {
