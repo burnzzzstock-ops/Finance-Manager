@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-15T13:08:01+00:00",
+ "updated": "2026-08-16T13:09:51+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 184,
  "vehicles": [
@@ -35,13 +35,6 @@
    "vin": "1FMDE8BH7TLB05945",
    "stock": "BR26204",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE4DH5TLB04783",
-   "stock": "BR26238",
-   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
    "year": "2026",
    "cond": "new"
   },
@@ -764,6 +757,13 @@
    "stock": "BR26168B",
    "name": "2025 Ford EXPLORER SUV",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FA6P8CF0K5103578",
+   "stock": "BR26238A",
+   "name": "2019 Ford MUSTANG",
+   "year": "2019",
    "cond": "used"
   },
   {
