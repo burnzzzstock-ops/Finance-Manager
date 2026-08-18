@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-16T13:09:51+00:00",
+ "updated": "2026-08-18T13:23:22+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 184,
+ "count": 185,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -543,13 +543,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8H33TRB32070",
-   "stock": "MA26267",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTTW8H30TRB29708",
    "stock": "MA26270",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
@@ -953,6 +946,20 @@
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "3C3CFFKRXHT586395",
+   "stock": "MA26267A",
+   "name": "2017 FIAT",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6JJTAG5LL212790",
+   "stock": "MA26267B",
+   "name": "2020 JEEP GLADIATOR TRUCK",
+   "year": "2020",
    "cond": "used"
   },
   {
