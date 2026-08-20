@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-18T13:23:22+00:00",
+ "updated": "2026-08-20T13:27:06+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 185,
+ "count": 184,
  "vehicles": [
   {
    "vin": "1FMEE0RR3TLA57557",
@@ -581,20 +581,6 @@
    "vin": "1FTER4HP6TLE30025",
    "stock": "RA26244",
    "name": "2026 Ford RANGER XLT 4WD SUPERCREW 5",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4BH7TLE42377",
-   "stock": "RA26245",
-   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4BH0TLE45931",
-   "stock": "RA26259",
-   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
    "year": "2026",
    "cond": "new"
   },
@@ -1208,13 +1194,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTMF1C84HFA70746",
-   "stock": "P8177",
-   "name": "2017 Ford F-150 XLT 2WD REG CAB 6.5'",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1GC1KNEY6SF173032",
    "stock": "P8178",
    "name": "2025 Chevrolet SILVERADO 4WD CREW CAB",
@@ -1232,6 +1211,13 @@
    "vin": "1C4RJJBG0P8891004",
    "stock": "P8180",
    "name": "2023 JEEP GRAND CHER SUV LIMITED 4X2",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNSCSKD5PR400290",
+   "stock": "P8181",
+   "name": "2023 Chevrolet TAHOE 2WD 4DR PREMIER GRAY",
    "year": "2023",
    "cond": "used"
   },
@@ -1254,6 +1240,13 @@
    "stock": "RA26191A",
    "name": "2019 Chevrolet EQUINOX RED",
    "year": "2019",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT7W2BT3JEB63164",
+   "stock": "RA26245A",
+   "name": "2018 Ford F-250 TRUCK",
+   "year": "2018",
    "cond": "used"
   },
   {
