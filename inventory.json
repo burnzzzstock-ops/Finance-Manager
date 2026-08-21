@@ -1,15 +1,8 @@
 {
- "updated": "2026-08-20T13:27:06+00:00",
+ "updated": "2026-08-21T13:26:13+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 184,
+ "count": 191,
  "vehicles": [
-  {
-   "vin": "1FMEE0RR3TLA57557",
-   "stock": "BR26107",
-   "name": "2026 Ford BRONCO RAPTOR 4 DOOR ADVAN",
-   "year": "2026",
-   "cond": "new"
-  },
   {
    "vin": "1FMDE7BH1TLA91793",
    "stock": "BR26167",
@@ -116,6 +109,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FMDE7BH2TLB51418",
+   "stock": "BR26308",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE8BP3TLB51574",
+   "stock": "BR26312",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9BN7TRE35890",
    "stock": "BS26120",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
@@ -161,6 +168,27 @@
    "vin": "3FMCR9BN5TRF13728",
    "stock": "BS26275",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN3TRF12559",
+   "stock": "BS26305",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9CN3TRF14438",
+   "stock": "BS26309",
+   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9BN0TRF26452",
+   "stock": "BS26314",
+   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SH",
    "year": "2026",
    "cond": "new"
   },
@@ -218,13 +246,6 @@
    "stock": "ER27001",
    "name": "2027 Ford EXPLORER TREMOR 4WD AVALAN",
    "year": "2027",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L50SKF19882",
-   "stock": "FT25314",
-   "name": "2025 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2025",
    "cond": "new"
   },
   {
@@ -487,6 +508,41 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW6L87TFC17740",
+   "stock": "FT26306",
+   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2LP4TKE81663",
+   "stock": "FT26307",
+   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L52TKE48444",
+   "stock": "FT26310",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEX1K88TKF10440",
+   "stock": "FT26311",
+   "name": "2026 Ford F150 4X2 SUPERCAB XL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEX1K88TKF10454",
+   "stock": "FT26315",
+   "name": "2026 Ford F150 4X2 SUPERCAB XL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -552,6 +608,13 @@
   {
    "vin": "3FTTW8H36TRB43466",
    "stock": "MA26279",
+   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H31TRB65407",
+   "stock": "MA26313",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
@@ -725,6 +788,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FMEE4DPXSLA60581",
+   "stock": "BR26107A",
+   "name": "2025 Ford BRONCO SUV",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
    "vin": "1N4AL2EPXDC199372",
    "stock": "BR26144B",
    "name": "2013 Nissan ALTIMA",
@@ -834,13 +904,6 @@
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW3LD2RFA31821",
-   "stock": "FT26110C",
-   "name": "2024 Ford F-150 TRUCK WHITE 99D",
-   "year": "2024",
    "cond": "used"
   },
   {
@@ -1110,13 +1173,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW3L53RKD25793",
-   "stock": "P8164",
-   "name": "2024 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2024",
-   "cond": "used"
-  },
-  {
    "vin": "1FTFW1E89PKF67867",
    "stock": "P8165",
    "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -1149,13 +1205,6 @@
    "stock": "P8169",
    "name": "2025 Chevrolet TRAVERSE FWD 4DR LT W/1LT",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "5LMCJ2D91NUL34643",
-   "stock": "P8171",
-   "name": "2022 Lincoln CORSAIR RESERVE AWD WHITE",
-   "year": "2022",
    "cond": "used"
   },
   {
@@ -1229,10 +1278,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E55PFA78011",
-   "stock": "RA26184A",
-   "name": "2023 Ford F-150 TRUCK",
-   "year": "2023",
+   "vin": "1GT120C83EF120833",
+   "stock": "RA26184C",
+   "name": "2014 GMC SIERRA",
+   "year": "2014",
    "cond": "used"
   },
   {
@@ -1271,10 +1320,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW6LD2TFA18463",
-   "stock": "SD26091A",
-   "name": "2026 Ford F-150 TRUCK STAR WHITE MET",
-   "year": "2026",
+   "vin": "1FTFW1ED5MFB24293",
+   "stock": "SD26091B",
+   "name": "2021 Ford F-150 TRUCK KODIAK BROWN M",
+   "year": "2021",
    "cond": "used"
   },
   {
