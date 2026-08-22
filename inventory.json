@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-21T13:26:13+00:00",
+ "updated": "2026-08-22T13:09:25+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 191,
+ "count": 185,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -382,13 +382,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW2KP4TKF03176",
-   "stock": "FT26265",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTMF1L51TKE74352",
    "stock": "FT26268",
    "name": "2026 Ford F150 4X4 REGULAR CAB XL",
@@ -760,13 +753,6 @@
    "cond": "used"
   },
   {
-   "vin": "1GNSCNKD4MR103458",
-   "stock": "BR25313A",
-   "name": "2021 Chevrolet TAHOE SUV",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "1GNSCHKC9GR291441",
    "stock": "BR25345A",
    "name": "2016 Chevrolet SUBURBAN SUV",
@@ -921,31 +907,10 @@
    "cond": "used"
   },
   {
-   "vin": "1GNSCCKD8MR238799",
-   "stock": "FT26136B",
-   "name": "2021 Chevrolet SUBURBAN SUV",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
    "vin": "3GCUKREC9HG223096",
    "stock": "FT26162A",
    "name": "2017 Chevrolet SILVERADO TRUCK",
    "year": "2017",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW1ET7EKE78963",
-   "stock": "FT26172B",
-   "name": "2014 Ford F-150",
-   "year": "2014",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1CMXDFC76679",
-   "stock": "FT26193A",
-   "name": "2013 Ford F-150 TRUCK GRAY",
-   "year": "2013",
    "cond": "used"
   },
   {
@@ -974,13 +939,6 @@
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
    "year": "1993",
-   "cond": "used"
-  },
-  {
-   "vin": "3FTTW8E34NRA18327",
-   "stock": "MA25285A",
-   "name": "2022 Ford MAVERICK",
-   "year": "2022",
    "cond": "used"
   },
   {
@@ -1061,13 +1019,6 @@
    "cond": "used"
   },
   {
-   "vin": "5UXTR7C57KLR46972",
-   "stock": "P8128A",
-   "name": "2019 BMW X3 SUV",
-   "year": "2019",
-   "cond": "used"
-  },
-  {
    "vin": "5TDGZRAH4NS097172",
    "stock": "P8131A",
    "name": "2022 Toyo HIGHLANDER SUV WHITE",
@@ -1093,13 +1044,6 @@
    "stock": "P8144",
    "name": "2025 Infiniti QX60 PURE AWD BLACK",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "KNDPC3A26D7489377",
-   "stock": "P8145B",
-   "name": "2013 KIA SPORTAGE SUV",
-   "year": "2013",
    "cond": "used"
   },
   {
@@ -1268,6 +1212,20 @@
    "stock": "P8181",
    "name": "2023 Chevrolet TAHOE 2WD 4DR PREMIER GRAY",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1V2FR2CA4PC514411",
+   "stock": "P8182",
+   "name": "2023 Volkswagen ATLAS 3.6L V6 SEL PREMIUM",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1M88SEA28807",
+   "stock": "P8183",
+   "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
+   "year": "2025",
    "cond": "used"
   },
   {
