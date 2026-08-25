@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-22T13:09:25+00:00",
+ "updated": "2026-08-25T13:28:19+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 185,
  "vehicles": [
@@ -557,13 +557,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8A34TRB35084",
-   "stock": "MA26253",
-   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -869,6 +862,13 @@
    "stock": "ER26241A",
    "name": "2023 Ford EXPLORER SUV",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "WA1AWBF16RD012250",
+   "stock": "FT25314A",
+   "name": "2024 AUDI SQ8",
+   "year": "2024",
    "cond": "used"
   },
   {
@@ -1278,10 +1278,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1ED5MFB24293",
-   "stock": "SD26091B",
-   "name": "2021 Ford F-150 TRUCK KODIAK BROWN M",
-   "year": "2021",
+   "vin": "1FMSK7DH5PGA48019",
+   "stock": "SD26091C",
+   "name": "2023 Ford EXPLORER TRUCK",
+   "year": "2023",
    "cond": "used"
   },
   {
