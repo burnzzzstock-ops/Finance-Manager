@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-25T13:28:19+00:00",
+ "updated": "2026-08-26T13:34:45+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 185,
+ "count": 183,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -277,13 +277,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW2L53TFA39898",
-   "stock": "FT26098",
-   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW5LD4TFA78934",
    "stock": "FT26119",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -294,13 +287,6 @@
    "vin": "1FTEW2LP1TFA26200",
    "stock": "FT26125",
    "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L5XTFA25250",
-   "stock": "FT26146",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -385,13 +371,6 @@
    "vin": "1FTMF1L51TKE74352",
    "stock": "FT26268",
    "name": "2026 Ford F150 4X4 REGULAR CAB XL",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEW2KP4TKF03274",
-   "stock": "FT26269",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -890,6 +869,13 @@
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "3GTUUGEL4RG221918",
+   "stock": "FT26098A",
+   "name": "2024 GMC SIERRA",
+   "year": "2024",
    "cond": "used"
   },
   {
