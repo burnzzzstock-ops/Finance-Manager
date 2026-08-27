@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-26T13:34:45+00:00",
+ "updated": "2026-08-27T22:29:17+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 183,
  "vehicles": [
@@ -49,13 +49,6 @@
    "vin": "1FMDE6BH0TLB01594",
    "stock": "BR26247",
    "name": "2026 Ford BRONCO BASE 4 DOOR 4X4 OXF",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE8BH4TLB37269",
-   "stock": "BR26257",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
   },
@@ -126,13 +119,6 @@
    "vin": "3FMCR9BN7TRE35890",
    "stock": "BS26120",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN2TRE74547",
-   "stock": "BS26179",
-   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
    "year": "2026",
    "cond": "new"
   },
@@ -515,6 +501,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP1TKE61114",
+   "stock": "FT26317",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -774,6 +767,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FMDE5BH6PLB95206",
+   "stock": "BR26257A",
+   "name": "2023 Ford BRONCO SUV GREY",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
    "vin": "KNDETCA29N7293748",
    "stock": "BS25105A",
    "name": "2022 KIA SELTOS SUV BLACK",
@@ -785,6 +785,13 @@
    "stock": "BS25179A",
    "name": "2023 Ford BRONCO SPO SUV",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "SALWR2EF1GA109363",
+   "stock": "BS26179A",
+   "name": "2016 Land RANGE ROVE",
+   "year": "2016",
    "cond": "used"
   },
   {
@@ -883,13 +890,6 @@
    "stock": "FT26114B",
    "name": "2023 Chevrolet SILVERADO TRUCK",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "1C6SRFJT8NN470448",
-   "stock": "FT26116A",
-   "name": "2022 RAM",
-   "year": "2022",
    "cond": "used"
   },
   {
@@ -1117,10 +1117,10 @@
    "cond": "used"
   },
   {
-   "vin": "3FMCR9BN4SRF02234",
-   "stock": "P8167",
-   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 TA",
-   "year": "2025",
+   "vin": "2GKALMEK2H6343672",
+   "stock": "P8167A",
+   "name": "2017 GMC TERRAIN SUV",
+   "year": "2017",
    "cond": "used"
   },
   {
