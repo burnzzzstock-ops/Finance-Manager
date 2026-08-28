@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-27T22:29:17+00:00",
+ "updated": "2026-08-28T22:32:02+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 183,
+ "count": 186,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -732,10 +732,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMSK7DH3MGC47369",
-   "stock": "BR25352D",
-   "name": "2021 Ford EXPLORER",
-   "year": "2021",
+   "vin": "1FMCU0GD9HUC55725",
+   "stock": "BR25352F",
+   "name": "2017 Ford ESCAPE SUV GRAY",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -1040,13 +1040,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTEW1EP7GFB80987",
-   "stock": "P8147A",
-   "name": "2016 Ford F-150",
-   "year": "2016",
-   "cond": "used"
-  },
-  {
    "vin": "1FMUK8KH7SGB39514",
    "stock": "P8148",
    "name": "2025 Ford EXPLORER ST-LINE 4WD BLACK",
@@ -1215,6 +1208,34 @@
    "cond": "used"
   },
   {
+   "vin": "WDDSJ4EB6JN532712",
+   "stock": "P8184",
+   "name": "2018 Mercedes CLA CLA",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "JTHB51FFXJ5002871",
+   "stock": "P8185",
+   "name": "2018 Lexus LS",
+   "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "3TMAZ5CN4PM216651",
+   "stock": "P8186",
+   "name": "2023 Toyo TACOMA 2WD SR5 DOUBLE CAB",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "KNAG64J76S5361297",
+   "stock": "P8187",
+   "name": "2025 KIA K5 GT-LINE GT-LINE AUTO AWD",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
    "vin": "5N1ED28T82C562715",
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
@@ -1266,7 +1287,7 @@
   {
    "vin": "1FMSK7DH5PGA48019",
    "stock": "SD26091C",
-   "name": "2023 Ford EXPLORER TRUCK",
+   "name": "2023 Ford EXPLORER SUV",
    "year": "2023",
    "cond": "used"
   },
