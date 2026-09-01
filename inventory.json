@@ -1,7 +1,7 @@
 {
- "updated": "2026-08-29T16:50:14+00:00",
+ "updated": "2026-09-01T16:49:51+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 200,
+ "count": 196,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -147,13 +147,6 @@
    "vin": "3FMCR9BN6TRE88712",
    "stock": "BS26235",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 OR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN2TRE98833",
-   "stock": "BS26242",
-   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 AZ",
    "year": "2026",
    "cond": "new"
   },
@@ -322,13 +315,6 @@
    "vin": "1FTFW3L82TKE27202",
    "stock": "FT26175",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L8XTFB25502",
-   "stock": "FT26194",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -886,6 +872,13 @@
    "cond": "used"
   },
   {
+   "vin": "3FMCR9A67MRB33513",
+   "stock": "BS26242A",
+   "name": "2021 Ford BRONCO SPO SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "1FMJU1KT8LEA79054",
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
@@ -1019,6 +1012,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW1ED8NFA60459",
+   "stock": "FT26328A",
+   "name": "2022 Ford F-150 BLACK 3.5L V6",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -1040,23 +1040,9 @@
    "cond": "used"
   },
   {
-   "vin": "3C3CFFKRXHT586395",
-   "stock": "MA26267A",
-   "name": "2017 FIAT",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1C6JJTAG5LL212790",
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
-   "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "3GKALMEV8LL190388",
-   "stock": "MU25162A",
-   "name": "2020 GMC TERRAIN",
    "year": "2020",
    "cond": "used"
   },
@@ -1306,13 +1292,6 @@
    "cond": "used"
   },
   {
-   "vin": "WDDSJ4EB6JN532712",
-   "stock": "P8184",
-   "name": "2018 Mercedes CLA CLA",
-   "year": "2018",
-   "cond": "used"
-  },
-  {
    "vin": "JTHB51FFXJ5002871",
    "stock": "P8185",
    "name": "2018 Lexus LS",
@@ -1387,13 +1366,6 @@
    "stock": "SD26091C",
    "name": "2023 Ford EXPLORER SUV",
    "year": "2023",
-   "cond": "used"
-  },
-  {
-   "vin": "3N1AB7AP6KY205823",
-   "stock": "SD26200A",
-   "name": "2019 Nissan SENTRA SEDAN",
-   "year": "2019",
    "cond": "used"
   },
   {
