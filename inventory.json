@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-01T16:49:51+00:00",
+ "updated": "2026-09-02T16:46:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 196,
+ "count": 195,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -307,13 +307,6 @@
   {
    "vin": "1FTFW3L80TKE22032",
    "stock": "FT26169",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L82TKE27202",
-   "stock": "FT26175",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -1012,6 +1005,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTEW1CP1HFB17629",
+   "stock": "FT26317A",
+   "name": "2017 Ford F-150 TRUCK RED 99P",
+   "year": "2017",
+   "cond": "used"
+  },
+  {
    "vin": "1FTFW1ED8NFA60459",
    "stock": "FT26328A",
    "name": "2022 Ford F-150 BLACK 3.5L V6",
@@ -1324,13 +1324,6 @@
    "stock": "RA26184C",
    "name": "2014 GMC SIERRA",
    "year": "2014",
-   "cond": "used"
-  },
-  {
-   "vin": "3GNAXLEX1KS632323",
-   "stock": "RA26191A",
-   "name": "2019 Chevrolet EQUINOX RED",
-   "year": "2019",
    "cond": "used"
   },
   {
