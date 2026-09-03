@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-02T16:46:46+00:00",
+ "updated": "2026-09-03T16:36:33+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 195,
  "vehicles": [
@@ -564,13 +564,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8J30TRB26561",
-   "stock": "MA26261",
-   "name": "2026 Ford MAVERICK H XLT AWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTTW8H37TRB29673",
    "stock": "MA26266",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
@@ -609,13 +602,6 @@
    "vin": "3FMTK3R76TMA26978",
    "stock": "ME26321",
    "name": "2026 Ford MUSTANG MA PREMIUM RWD STA",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FA6P8TH0T5129438",
-   "stock": "MU26273",
-   "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
    "year": "2026",
    "cond": "new"
   },
@@ -1005,17 +991,17 @@
    "cond": "used"
   },
   {
-   "vin": "1FTEW1CP1HFB17629",
-   "stock": "FT26317A",
-   "name": "2017 Ford F-150 TRUCK RED 99P",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1FTFW1ED8NFA60459",
    "stock": "FT26328A",
    "name": "2022 Ford F-150 BLACK 3.5L V6",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW5LD9SFB53190",
+   "stock": "FT26329A",
+   "name": "2025 Ford F-150",
+   "year": "2025",
    "cond": "used"
   },
   {
@@ -1040,6 +1026,13 @@
    "cond": "used"
   },
   {
+   "vin": "5TDGZRAH8MS531611",
+   "stock": "MA26261A",
+   "name": "2021 Toyo HIGHLANDER SUV SILVER",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "1C6JJTAG5LL212790",
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
@@ -1051,6 +1044,13 @@
    "stock": "MU26046A",
    "name": "2025 KIA K4",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "JTKJF5C79GJ022441",
+   "stock": "MU26273A",
+   "name": "2016 Scio TC COUPE",
+   "year": "2016",
    "cond": "used"
   },
   {
@@ -1285,10 +1285,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMJU1M88SEA28807",
-   "stock": "P8183",
-   "name": "2025 Ford EXPEDITION PLATINUM 4X4 BL",
-   "year": "2025",
+   "vin": "1GNSKPKD7NR124756",
+   "stock": "P8183A",
+   "name": "2022 Chevrolet TAHOE SUV",
+   "year": "2022",
    "cond": "used"
   },
   {
