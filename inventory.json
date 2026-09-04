@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-03T16:36:33+00:00",
+ "updated": "2026-09-04T16:32:06+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 195,
+ "count": 200,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -35,13 +35,6 @@
    "vin": "1FMDE7BH0TLB15808",
    "stock": "BR26239",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE4DP4TLB34899",
-   "stock": "BR26243",
-   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
    "year": "2026",
    "cond": "new"
   },
@@ -130,6 +123,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE4DP6TLB58475",
+   "stock": "BR26336",
+   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9BN7TRE35890",
    "stock": "BS26120",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
@@ -182,6 +182,13 @@
    "vin": "3FMCR9BN0TRF26452",
    "stock": "BS26314",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SH",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9CN2TRF34986",
+   "stock": "BS26331",
+   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -245,6 +252,13 @@
    "vin": "1FMUK8JH5VGA14727",
    "stock": "ER27001",
    "name": "2027 Ford EXPLORER TREMOR 4WD AVALAN",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7DH5VGA42341",
+   "stock": "ER27008",
+   "name": "2027 Ford EXPLORER ACTIVE RWD AVALAN",
    "year": "2027",
    "cond": "new"
   },
@@ -336,13 +350,6 @@
    "vin": "1FTFW3L50TFB35868",
    "stock": "FT26220",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L87TFB10178",
-   "stock": "FT26237",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -529,6 +536,34 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW6LD7TFC33322",
+   "stock": "FT26330",
+   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP0TKF22128",
+   "stock": "FT26333",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW3K88TKF28855",
+   "stock": "FT26334",
+   "name": "2026 Ford F-150 XLT 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP9TKF38280",
+   "stock": "FT26335",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -609,6 +644,13 @@
    "vin": "1FA6P8TH4T5133833",
    "stock": "MU26326",
    "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8GJ0T5552484",
+   "stock": "MU26332",
+   "name": "2026 Ford MUSTANG DARK HORSE SC COUP",
    "year": "2026",
    "cond": "new"
   },
@@ -816,10 +858,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FA6P8CF0K5103578",
-   "stock": "BR26238A",
-   "name": "2019 Ford MUSTANG",
-   "year": "2019",
+   "vin": "1FMCU0DG5AKD45292",
+   "stock": "BR26238D",
+   "name": "2010 Ford ESCAPE SUV",
+   "year": "2010",
    "cond": "used"
   },
   {
@@ -876,13 +918,6 @@
    "stock": "EN26186A",
    "name": "2021 Ford EXPEDITION SUV",
    "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "1GNSCBKC3JR108166",
-   "stock": "EN26206A",
-   "name": "2018 Chevrolet TAHOE",
-   "year": "2018",
    "cond": "used"
   },
   {
@@ -988,6 +1023,13 @@
    "stock": "FT26272A",
    "name": "2025 Ford F-150 TRUCK",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1CP1HFB17629",
+   "stock": "FT26317A",
+   "name": "2017 Ford F-150 TRUCK RED 99P",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -1191,13 +1233,6 @@
    "stock": "P8166",
    "name": "2024 Lincoln CORSAIR PREMIERE FWD WHITE",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "2GKALMEK2H6343672",
-   "stock": "P8167A",
-   "name": "2017 GMC TERRAIN SUV",
-   "year": "2017",
    "cond": "used"
   },
   {
