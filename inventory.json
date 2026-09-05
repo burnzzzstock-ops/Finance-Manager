@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-04T16:32:06+00:00",
+ "updated": "2026-09-05T15:27:10+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 200,
+ "count": 204,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -14,13 +14,6 @@
    "vin": "1FMEE9BPXTLA96885",
    "stock": "BR26174",
    "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE9BH4TLB05637",
-   "stock": "BR26199",
-   "name": "2026 Ford BADLANDS 4",
    "year": "2026",
    "cond": "new"
   },
@@ -55,13 +48,6 @@
   {
    "vin": "1FMEE7BH8TLB31680",
    "stock": "BR26277",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE7BHXTLB32202",
-   "stock": "BR26278",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
@@ -126,6 +112,13 @@
    "vin": "1FMEE4DP6TLB58475",
    "stock": "BR26336",
    "name": "2026 Ford BRONCO HERITAGE EDITION 4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE8BP6TLB43307",
+   "stock": "BR26337",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
   },
@@ -858,6 +851,13 @@
    "cond": "used"
   },
   {
+   "vin": "MAJ3S2GE5KC308356",
+   "stock": "BR26199A",
+   "name": "2019 Ford ECOSPORT SUV 99E",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
    "vin": "1FMCU0DG5AKD45292",
    "stock": "BR26238D",
    "name": "2010 Ford ESCAPE SUV",
@@ -869,6 +869,20 @@
    "stock": "BR26257A",
    "name": "2023 Ford BRONCO SUV GREY",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FDXE4FN2RDD24045",
+   "stock": "BR26278A",
+   "name": "2024 Ford E-450 CUTA CHASSIS",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "4T1G11AK6NU037678",
+   "stock": "BR26278B",
+   "name": "2022 Toyo CAMRY SEDAN",
+   "year": "2022",
    "cond": "used"
   },
   {
@@ -1345,6 +1359,20 @@
    "stock": "P8187",
    "name": "2025 KIA K5 GT-LINE GT-LINE AUTO AWD",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU0GN8RUB56548",
+   "stock": "P8188",
+   "name": "2024 Ford ESCAPE ACTIVE FWD GRAY 99N",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU0GNXRUB44238",
+   "stock": "P8189",
+   "name": "2024 Ford ESCAPE ACTIVE FWD SILVER 9",
+   "year": "2024",
    "cond": "used"
   },
   {
