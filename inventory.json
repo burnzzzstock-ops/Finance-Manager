@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-05T15:27:10+00:00",
+ "updated": "2026-09-06T15:38:51+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 204,
+ "count": 203,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -1162,13 +1162,6 @@
    "vin": "1FTFW5L53SFB54103",
    "stock": "P8139",
    "name": "2025 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "5N1AL1ESXSC335517",
-   "stock": "P8144",
-   "name": "2025 Infiniti QX60 PURE AWD BLACK",
    "year": "2025",
    "cond": "used"
   },
