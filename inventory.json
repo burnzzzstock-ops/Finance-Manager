@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06T15:38:51+00:00",
+ "updated": "2026-09-09T16:49:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 203,
  "vehicles": [
@@ -571,13 +571,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FTTW8H35TRB28196",
-   "stock": "MA26252",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -859,7 +852,7 @@
   },
   {
    "vin": "1FMCU0DG5AKD45292",
-   "stock": "BR26238D",
+   "stock": "BR26238B",
    "name": "2010 Ford ESCAPE SUV",
    "year": "2010",
    "cond": "used"
@@ -1079,6 +1072,13 @@
    "stock": "MA26214A",
    "name": "2024 JEEP WRANGLER SUV",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5TDZARAH1PS517456",
+   "stock": "MA26252A",
+   "name": "2023 Toyo HIGHLANDER SUV",
+   "year": "2023",
    "cond": "used"
   },
   {
