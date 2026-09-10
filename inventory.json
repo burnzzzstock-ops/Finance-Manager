@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T16:49:34+00:00",
+ "updated": "2026-09-10T16:35:53+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 203,
  "vehicles": [
@@ -231,13 +231,6 @@
    "vin": "1FMUK7DHXTGB33442",
    "stock": "ER26121",
    "name": "2026 Ford EXPLORER ACTIVE W/200A PKG",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMUK7HH6TGC14836",
-   "stock": "ER26211",
-   "name": "2026 Ford EXPLORER PLATINUM RWD SPAC",
    "year": "2026",
    "cond": "new"
   },
@@ -574,13 +567,6 @@
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8A36TRB31960",
-   "stock": "MA26260",
-   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -939,6 +925,13 @@
    "stock": "ER26209B",
    "name": "2026 Ford EXPLORER SUV",
    "year": "2026",
+   "cond": "used"
+  },
+  {
+   "vin": "3FMCR9BN0SRF16938",
+   "stock": "ER26211A",
+   "name": "2025 Ford BRONCO SPO BIG BEND 4X4 AZ",
+   "year": "2025",
    "cond": "used"
   },
   {
@@ -1366,6 +1359,13 @@
    "stock": "P8189",
    "name": "2024 Ford ESCAPE ACTIVE FWD SILVER 9",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1H88SEA57749",
+   "stock": "P8190",
+   "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
+   "year": "2025",
    "cond": "used"
   },
   {
