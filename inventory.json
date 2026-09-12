@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-10T16:35:53+00:00",
+ "updated": "2026-09-12T15:44:40+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 203,
+ "count": 205,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -1365,6 +1365,20 @@
    "vin": "1FMJU1H88SEA57749",
    "stock": "P8190",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1N4BL4CVXRN391758",
+   "stock": "P8191",
+   "name": "2024 Nissan ALTIMA 2.5 SR SEDAN RED",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1N4BL4DW7SN351103",
+   "stock": "P8192",
+   "name": "2025 Nissan ALTIMA 4S VA SEDAN GRAY",
    "year": "2025",
    "cond": "used"
   },
