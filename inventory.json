@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-12T15:44:40+00:00",
+ "updated": "2026-09-13T16:33:38+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 205,
+ "count": 204,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -872,13 +872,6 @@
    "cond": "used"
   },
   {
-   "vin": "3FMCR9C63PRD07966",
-   "stock": "BS25179A",
-   "name": "2023 Ford BRONCO SPO SUV",
-   "year": "2023",
-   "cond": "used"
-  },
-  {
    "vin": "SALWR2EF1GA109363",
    "stock": "BS26179A",
    "name": "2016 Land RANGE ROVE",
@@ -1243,10 +1236,10 @@
    "cond": "used"
   },
   {
-   "vin": "1GNERGRS7SJ155352",
-   "stock": "P8169",
-   "name": "2025 Chevrolet TRAVERSE FWD 4DR LT W/1LT",
-   "year": "2025",
+   "vin": "5N1DR3DKXNC271024",
+   "stock": "P8169A",
+   "name": "2022 Nissan PATHFINDER SUV BLACK",
+   "year": "2022",
    "cond": "used"
   },
   {
