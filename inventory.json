@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-13T16:33:38+00:00",
+ "updated": "2026-09-15T17:12:26+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 204,
+ "count": 216,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -118,6 +118,20 @@
   {
    "vin": "1FMEE8BP6TLB43307",
    "stock": "BR26337",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE8BH4TLB56601",
+   "stock": "BR26344",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMDE8BH5TLB57168",
+   "stock": "BR26346",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
@@ -249,6 +263,27 @@
    "cond": "new"
   },
   {
+   "vin": "1FMUK7KH9VGA35685",
+   "stock": "ER27011",
+   "name": "2027 Ford EXPLORER ST-LINE RWD MARSH",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK7HCXVGA45419",
+   "stock": "ER27012",
+   "name": "2027 Ford EXPLORER PLATINUM RWD STAR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7DH5VGA32814",
+   "stock": "ER27013",
+   "name": "2027 Ford EXPLORER ACTIVE RWD VAPOR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FTFW5L82TFA06052",
    "stock": "FT26050",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -364,13 +399,6 @@
    "vin": "1FTEW3K8XTKE99732",
    "stock": "FT26281",
    "name": "2026 Ford F-150 XLT 2WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L52TFA75883",
-   "stock": "FT26282",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -550,6 +578,55 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP1TKF11882",
+   "stock": "FT26339",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW2LD0TFC34644",
+   "stock": "FT26340",
+   "name": "2026 Ford F150 4X4 H SUPERCREW STX",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L88TFC30409",
+   "stock": "FT26341",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW4L81TFC22386",
+   "stock": "FT26342",
+   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW1K88TKF49189",
+   "stock": "FT26343",
+   "name": "2026 Ford F150 4X2 SUPERCREW XL - 14",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L83TFC19323",
+   "stock": "FT26345",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L50TFC41723",
+   "stock": "FT26347",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -580,13 +657,6 @@
   {
    "vin": "3FTTW8H30TRB29708",
    "stock": "MA26270",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H36TRB43466",
-   "stock": "MA26279",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
@@ -623,13 +693,6 @@
    "vin": "1FA6P8GJ0T5552484",
    "stock": "MU26332",
    "name": "2026 Ford MUSTANG DARK HORSE SC COUP",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4KH1TLE07219",
-   "stock": "RA26080",
-   "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
    "year": "2026",
    "cond": "new"
   },
@@ -770,6 +833,20 @@
    "vin": "1FT7W2AM1VEC35740",
    "stock": "SD27007",
    "name": "2027 Ford SUPER DUTY XL 2WD CREW CAB",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM3VEC34947",
+   "stock": "SD27009",
+   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM6VEC54884",
+   "stock": "SD27010",
+   "name": "2027 Ford SUPER DUTY PLATINUM 4WD CR",
    "year": "2027",
    "cond": "new"
   },
@@ -935,10 +1012,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMSK7DH6PGA11562",
-   "stock": "ER26241A",
-   "name": "2023 Ford EXPLORER SUV",
-   "year": "2023",
+   "vin": "3GNAXKEVXNL147055",
+   "stock": "ER26241B",
+   "name": "2022 Chevrolet EQUINOX SUV RED",
+   "year": "2022",
    "cond": "used"
   },
   {
@@ -1380,6 +1457,13 @@
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
    "year": "2002",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMCU0G61LUB38490",
+   "stock": "RA26080A",
+   "name": "2020 Ford ESCAPE",
+   "year": "2020",
    "cond": "used"
   },
   {
