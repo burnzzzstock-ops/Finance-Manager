@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-15T17:12:26+00:00",
+ "updated": "2026-09-16T17:13:01+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 216,
+ "count": 215,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -361,13 +361,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW1RJ6TFB27587",
-   "stock": "FT26219",
-   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L50TFB35868",
    "stock": "FT26220",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -644,13 +637,6 @@
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H37TRB29673",
-   "stock": "MA26266",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -991,10 +977,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMUK7DH8TGB09270",
-   "stock": "ER26209B",
-   "name": "2026 Ford EXPLORER SUV",
-   "year": "2026",
+   "vin": "5TDKZRFH6KS567393",
+   "stock": "ER26209D",
+   "name": "2019 Toyo HIGHLANDER MIDNIGHT BLACK",
+   "year": "2019",
    "cond": "used"
   },
   {
@@ -1072,6 +1058,13 @@
    "stock": "FT26162A",
    "name": "2017 Chevrolet SILVERADO TRUCK",
    "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1C6SRFU91PN695443",
+   "stock": "FT26219A",
+   "name": "2023 RAM",
+   "year": "2023",
    "cond": "used"
   },
   {
@@ -1156,13 +1149,6 @@
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "3KPFT4DE3SE038797",
-   "stock": "MU26046A",
-   "name": "2025 KIA K4",
-   "year": "2025",
    "cond": "used"
   },
   {
@@ -1450,6 +1436,13 @@
    "stock": "P8192",
    "name": "2025 Nissan ALTIMA 4S VA SEDAN GRAY",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FADP3F25FL296427",
+   "stock": "P8193",
+   "name": "2015 Ford FOCUS 4DR SDN SE RED",
+   "year": "2015",
    "cond": "used"
   },
   {
