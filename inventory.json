@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-16T17:13:01+00:00",
+ "updated": "2026-09-17T17:12:09+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 215,
+ "count": 214,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -788,13 +788,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W3BM8VEC19639",
-   "stock": "SD27002",
-   "name": "2027 Ford SUPER DUTY PLATINUM 4WD CR",
-   "year": "2027",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W4DM0VEC13532",
    "stock": "SD27003",
    "name": "2027 Ford SUPER DUTY PLATINUM 4WD CR",
@@ -1054,13 +1047,6 @@
    "cond": "used"
   },
   {
-   "vin": "3GCUKREC9HG223096",
-   "stock": "FT26162A",
-   "name": "2017 Chevrolet SILVERADO TRUCK",
-   "year": "2017",
-   "cond": "used"
-  },
-  {
    "vin": "1C6SRFU91PN695443",
    "stock": "FT26219A",
    "name": "2023 RAM",
@@ -1313,10 +1299,10 @@
    "cond": "used"
   },
   {
-   "vin": "5XYP64GC4SG690157",
-   "stock": "P8173",
-   "name": "2025 KIA TELLURIDE S FWD WHITE",
-   "year": "2025",
+   "vin": "7SAYGDEE4PA128389",
+   "stock": "P8173A",
+   "name": "2023 Tesl MODEL Y SUV",
+   "year": "2023",
    "cond": "used"
   },
   {
@@ -1499,6 +1485,13 @@
    "stock": "SD26091C",
    "name": "2023 Ford EXPLORER SUV",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1FT8W3BM9RED05239",
+   "stock": "SD27002A",
+   "name": "2024 Ford F-350 TRUCK CARBONIZED GRA",
+   "year": "2024",
    "cond": "used"
   },
   {
