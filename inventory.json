@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-17T17:12:09+00:00",
+ "updated": "2026-09-18T16:37:57+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 214,
+ "count": 210,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -844,24 +844,10 @@
    "cond": "used"
   },
   {
-   "vin": "1GNSCHKC9GR291441",
-   "stock": "BR25345A",
-   "name": "2016 Chevrolet SUBURBAN SUV",
-   "year": "2016",
-   "cond": "used"
-  },
-  {
    "vin": "3GCUKFED3TG317054",
    "stock": "BR25352C",
    "name": "2026 Chevrolet SILVERADO 4WD CREW CAB",
    "year": "2026",
-   "cond": "used"
-  },
-  {
-   "vin": "1FMCU0GD9HUC55725",
-   "stock": "BR25352F",
-   "name": "2017 Ford ESCAPE SUV GRAY",
-   "year": "2017",
    "cond": "used"
   },
   {
@@ -971,7 +957,7 @@
   },
   {
    "vin": "5TDKZRFH6KS567393",
-   "stock": "ER26209D",
+   "stock": "ER26209C",
    "name": "2019 Toyo HIGHLANDER MIDNIGHT BLACK",
    "year": "2019",
    "cond": "used"
@@ -1135,13 +1121,6 @@
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "JTKJF5C79GJ022441",
-   "stock": "MU26273A",
-   "name": "2016 Scio TC COUPE",
-   "year": "2016",
    "cond": "used"
   },
   {
@@ -1331,13 +1310,6 @@
    "stock": "P8178",
    "name": "2025 Chevrolet SILVERADO 4WD CREW CAB",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1EP1PKF36387",
-   "stock": "P8179",
-   "name": "2023 Ford F-150 XL 4WD SUPERCREW 5.5",
-   "year": "2023",
    "cond": "used"
   },
   {
