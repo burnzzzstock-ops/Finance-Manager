@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-18T16:37:57+00:00",
+ "updated": "2026-09-19T15:59:45+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 210,
+ "count": 209,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -14,13 +14,6 @@
    "vin": "1FMEE9BPXTLA96885",
    "stock": "BR26174",
    "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE8BH7TLB05945",
-   "stock": "BR26204",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
   },
@@ -410,13 +403,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L89TKE96111",
-   "stock": "FT26287",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L88TFC02467",
    "stock": "FT26288",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -454,13 +440,6 @@
   {
    "vin": "1FTFW4L87TFB93878",
    "stock": "FT26298",
-   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW4L85TFB93989",
-   "stock": "FT26299",
    "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
@@ -879,6 +858,13 @@
    "cond": "used"
   },
   {
+   "vin": "5TDGZRAH2NS119024",
+   "stock": "BR26204A",
+   "name": "2022 Toyo HIGHLANDER SUV",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "1FMCU0DG5AKD45292",
    "stock": "BR26238B",
    "name": "2010 Ford ESCAPE SUV",
@@ -1005,10 +991,17 @@
    "cond": "used"
   },
   {
-   "vin": "1FT8W2BNXREE62927",
-   "stock": "FT26058A",
-   "name": "2024 Ford F-250 TRUCK RED",
-   "year": "2024",
+   "vin": "1C4AJWBG6FL511721",
+   "stock": "FT26058B",
+   "name": "2015 JEEP WRANGLER TRUCK",
+   "year": "2015",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTSW2A51AEB42603",
+   "stock": "FT26058C",
+   "name": "2010 Ford F-250 TRUCK",
+   "year": "2010",
    "cond": "used"
   },
   {
