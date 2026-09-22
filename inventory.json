@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-19T15:59:45+00:00",
+ "updated": "2026-09-22T17:09:53+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 209,
+ "count": 216,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -109,13 +109,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FMEE8BP6TLB43307",
-   "stock": "BR26337",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FMEE8BH4TLB56601",
    "stock": "BR26344",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
@@ -126,6 +119,20 @@
    "vin": "1FMDE8BH5TLB57168",
    "stock": "BR26346",
    "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BPXTLB56177",
+   "stock": "BR26354",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BP9TLB64190",
+   "stock": "BR26355",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
    "year": "2026",
    "cond": "new"
   },
@@ -277,15 +284,15 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L82TFA06052",
-   "stock": "FT26050",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
+   "vin": "1FMUK7HH6VGA43881",
+   "stock": "ER27015",
+   "name": "2027 Ford EXPLORER PLATINUM RWD AGAT",
+   "year": "2027",
    "cond": "new"
   },
   {
-   "vin": "1FTFW5LD4TFA32441",
-   "stock": "FT26079",
+   "vin": "1FTFW5L82TFA06052",
+   "stock": "FT26050",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
@@ -434,13 +441,6 @@
    "vin": "1FTFW3L85TFC01924",
    "stock": "FT26297",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW4L87TFB93878",
-   "stock": "FT26298",
-   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -599,6 +599,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5LD4TFC46572",
+   "stock": "FT26352",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW1RG4TFC27630",
+   "stock": "FT26353",
+   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -637,6 +651,13 @@
    "vin": "3FTTW8H36TRB65466",
    "stock": "MA26322",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8S36TRB64424",
+   "stock": "MA26356",
+   "name": "2026 Ford MAVERICK H LARIAT AWD SUPE",
    "year": "2026",
    "cond": "new"
   },
@@ -816,6 +837,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTBR1C87VKA25494",
+   "stock": "TR27014",
+   "name": "2027 Ford TRANSIT CA T-250 148\" MED",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1V2ER2CA6KC543686",
    "stock": "BR25268B",
    "name": "2019 Volkswagen ATLAS SUV",
@@ -851,10 +879,10 @@
    "cond": "used"
   },
   {
-   "vin": "MAJ3S2GE5KC308356",
-   "stock": "BR26199A",
-   "name": "2019 Ford ECOSPORT SUV 99E",
-   "year": "2019",
+   "vin": "1FMCU9G60MUA43120",
+   "stock": "BR26199C",
+   "name": "2021 Ford ESCAPE SUV SILVER",
+   "year": "2021",
    "cond": "used"
   },
   {
@@ -1008,6 +1036,13 @@
    "vin": "3MW69FF03P8D11509",
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "5TDZSKFC4PS107879",
+   "stock": "FT26079A",
+   "name": "2023 Toyo SIENNA",
    "year": "2023",
    "cond": "used"
   },
@@ -1394,6 +1429,20 @@
    "stock": "P8193",
    "name": "2015 Ford FOCUS 4DR SDN SE RED",
    "year": "2015",
+   "cond": "used"
+  },
+  {
+   "vin": "1FA6P8JZ7G5523472",
+   "stock": "P8194",
+   "name": "2016 Ford MUSTANG 2DR FASTBACK SHELB",
+   "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1EPXGFC96720",
+   "stock": "P8195",
+   "name": "2016 Ford F-150 XLT PICKUP SILVER",
+   "year": "2016",
    "cond": "used"
   },
   {
