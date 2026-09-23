@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-22T17:09:53+00:00",
+ "updated": "2026-09-23T17:22:07+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 216,
+ "count": 215,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -613,6 +613,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP2TKE86216",
+   "stock": "FT26358",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -690,13 +697,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTER4HP6TLE30025",
-   "stock": "RA26244",
-   "name": "2026 Ford RANGER XLT 4WD SUPERCREW 5",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTER4LR1TLE42771",
    "stock": "RA26286",
    "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
@@ -770,13 +770,6 @@
    "vin": "1FT8W3BM1TEE87056",
    "stock": "SD26213",
    "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FT8W2BMXTEE85042",
-   "stock": "SD26218",
-   "name": "2026 Ford SUPER DUTY TREMOR 4WD CREW",
    "year": "2026",
    "cond": "new"
   },
@@ -880,7 +873,7 @@
   },
   {
    "vin": "1FMCU9G60MUA43120",
-   "stock": "BR26199C",
+   "stock": "BR26199B",
    "name": "2021 Ford ESCAPE SUV SILVER",
    "year": "2021",
    "cond": "used"
@@ -1021,7 +1014,7 @@
   {
    "vin": "1C4AJWBG6FL511721",
    "stock": "FT26058B",
-   "name": "2015 JEEP WRANGLER TRUCK",
+   "name": "2015 JEEP WRANGLER SUV",
    "year": "2015",
    "cond": "used"
   },
