@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-23T17:22:07+00:00",
+ "updated": "2026-09-24T17:27:12+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 215,
  "vehicles": [
@@ -942,10 +942,10 @@
    "cond": "used"
   },
   {
-   "vin": "1GNS5CRD9SR177489",
-   "stock": "EN26115A",
-   "name": "2025 Chevrolet SUBURBAN SUV WHITE",
-   "year": "2025",
+   "vin": "2T2ZZMCA9HC058629",
+   "stock": "EN26115C",
+   "name": "2017 Lexus RX",
+   "year": "2017",
    "cond": "used"
   },
   {
