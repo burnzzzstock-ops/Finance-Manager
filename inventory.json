@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-24T17:27:12+00:00",
+ "updated": "2026-09-25T17:26:00+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 215,
+ "count": 219,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -291,6 +291,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMUK7KH1VGA39391",
+   "stock": "ER27017",
+   "name": "2027 Ford EXPLORER ST-LINE RWD STAR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FTFW5L82TFA06052",
    "stock": "FT26050",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
@@ -410,6 +417,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5L89TKE96111",
+   "stock": "FT26287",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTFW3L88TFC02467",
    "stock": "FT26288",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -475,13 +489,6 @@
   {
    "vin": "1FTEX1K88TKF10440",
    "stock": "FT26311",
-   "name": "2026 Ford F150 4X2 SUPERCAB XL",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEX1K88TKF10454",
-   "stock": "FT26315",
    "name": "2026 Ford F150 4X2 SUPERCAB XL",
    "year": "2026",
    "cond": "new"
@@ -620,6 +627,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW1KPXTKF54515",
+   "stock": "FT26360",
+   "name": "2026 Ford F-150 XL 2WD SUPERCREW 5.5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -690,6 +704,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FAGP8UH1T5134599",
+   "stock": "MU26359",
+   "name": "2026 Ford MUSTANG ECOBOOST CONVERTIB",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTER4KH5TLE13962",
    "stock": "RA26111",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
@@ -700,6 +721,13 @@
    "vin": "1FTER4LR1TLE42771",
    "stock": "RA26286",
    "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4GH2TLE65493",
+   "stock": "RA26361",
+   "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
    "year": "2026",
    "cond": "new"
   },
@@ -837,6 +865,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTBR1CG0VKA11931",
+   "stock": "TR27016",
+   "name": "2027 Ford TRANSIT CA T-250 148\" MED",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1V2ER2CA6KC543686",
    "stock": "BR25268B",
    "name": "2019 Volkswagen ATLAS SUV",
@@ -910,13 +945,6 @@
    "vin": "4T1G11AK6NU037678",
    "stock": "BR26278B",
    "name": "2022 Toyo CAMRY SEDAN",
-   "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "KNDETCA29N7293748",
-   "stock": "BS25105A",
-   "name": "2022 KIA SELTOS SUV BLACK",
    "year": "2022",
    "cond": "used"
   },
