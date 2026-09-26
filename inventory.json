@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-25T17:26:00+00:00",
+ "updated": "2026-09-26T16:35:31+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 219,
+ "count": 217,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -35,13 +35,6 @@
    "vin": "1FMEE4DP3TLB37471",
    "stock": "BR26263",
    "name": "2026 Ford BRONCO HERITAGE EDITION 4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE7BH8TLB31680",
-   "stock": "BR26277",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -133,13 +126,6 @@
    "vin": "1FMEE9BP9TLB64190",
    "stock": "BR26355",
    "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN7TRE35890",
-   "stock": "BS26120",
-   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
    "year": "2026",
    "cond": "new"
   },
@@ -403,23 +389,9 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6L85TFB93275",
-   "stock": "FT26283",
-   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW5K81TFB99968",
    "stock": "FT26285",
    "name": "2026 Ford F150 4X2 SUPERCREW LARIAT-",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L89TKE96111",
-   "stock": "FT26287",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -816,13 +788,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT7W2AM9VEC30009",
-   "stock": "SD27005",
-   "name": "2027 Ford SUPER DUTY XL 2WD CREW CAB",
-   "year": "2027",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BM6VEC44078",
    "stock": "SD27006",
    "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
@@ -946,6 +911,13 @@
    "stock": "BR26278B",
    "name": "2022 Toyo CAMRY SEDAN",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "KNDJ23AU6L7069269",
+   "stock": "BS26120A",
+   "name": "2020 KIA SOUL SPARKLING SILVER",
+   "year": "2020",
    "cond": "used"
   },
   {
@@ -1107,6 +1079,13 @@
    "stock": "FT26272A",
    "name": "2025 Ford F-150 TRUCK",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "3GTUUGEDXRG121637",
+   "stock": "FT26283A",
+   "name": "2024 GMC SIERRA",
+   "year": "2024",
    "cond": "used"
   },
   {
@@ -1464,6 +1443,13 @@
    "stock": "P8195",
    "name": "2016 Ford F-150 XLT PICKUP SILVER",
    "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "WDDUG8DB9JA395207",
+   "stock": "P8196",
+   "name": "2018 Mercedes S-CLASS S",
+   "year": "2018",
    "cond": "used"
   },
   {
