@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-27T17:10:03+00:00",
+ "updated": "2026-09-29T18:12:05+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 217,
+ "count": 218,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -301,13 +301,6 @@
    "vin": "1FTFW5LD4TFA78934",
    "stock": "FT26119",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEW2LP1TFA26200",
-   "stock": "FT26125",
-   "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -1450,6 +1443,20 @@
    "stock": "P8196",
    "name": "2018 Mercedes S-CLASS S",
    "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "3GCPYCEF0LG181428",
+   "stock": "P8197A",
+   "name": "2020 Chevrolet SILVERADO",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJU1H89SEA15056",
+   "stock": "P8198",
+   "name": "2025 Ford EXPEDITION ACTIVE 4X2 GRAY",
+   "year": "2025",
    "cond": "used"
   },
   {
