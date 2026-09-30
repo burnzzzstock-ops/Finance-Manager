@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-29T18:12:05+00:00",
+ "updated": "2026-09-30T18:04:08+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 218,
+ "count": 217,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -1033,13 +1033,6 @@
    "cond": "used"
   },
   {
-   "vin": "1GCUDGE88PZ307077",
-   "stock": "FT26114B",
-   "name": "2023 Chevrolet SILVERADO TRUCK",
-   "year": "2023",
-   "cond": "used"
-  },
-  {
    "vin": "3C6UR5CL3MG629786",
    "stock": "FT26202A",
    "name": "2021 RAM",
@@ -1411,10 +1404,10 @@
    "cond": "used"
   },
   {
-   "vin": "1N4BL4DW7SN351103",
-   "stock": "P8192",
-   "name": "2025 Nissan ALTIMA 4S VA SEDAN GRAY",
-   "year": "2025",
+   "vin": "KMHTC6AE5GU295015",
+   "stock": "P8192A",
+   "name": "2016 Hyundai VELOSTER HATCHBACK RED",
+   "year": "2016",
    "cond": "used"
   },
   {
