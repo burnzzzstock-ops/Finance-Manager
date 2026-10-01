@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T18:04:08+00:00",
+ "updated": "2026-10-01T18:31:45+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 217,
  "vehicles": [
@@ -284,13 +284,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L82TFA06052",
-   "stock": "FT26050",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3LD7TFA46239",
    "stock": "FT26090",
    "name": "2026 Ford F-150 HYBR XLT 4WD SUPERCR",
@@ -322,13 +315,6 @@
    "vin": "1FTFW5L87TFB09080",
    "stock": "FT26164",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L80TKE22032",
-   "stock": "FT26169",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -991,6 +977,13 @@
    "cond": "used"
   },
   {
+   "vin": "1FTFW3LD9RFB55956",
+   "stock": "FT26050A",
+   "name": "2024 Ford F-150 TRUCK OXFORD WHITE 9",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
    "vin": "3FA6P0K93FR103767",
    "stock": "FT26056A",
    "name": "2015 Ford FUSION",
@@ -1030,6 +1023,13 @@
    "stock": "FT26098A",
    "name": "2024 GMC SIERRA",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "5N1DR3BD4SC268703",
+   "stock": "FT26169A",
+   "name": "2025 Nissan PATHFINDER SUV",
+   "year": "2025",
    "cond": "used"
   },
   {
