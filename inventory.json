@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T18:31:45+00:00",
+ "updated": "2026-10-02T17:58:25+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 217,
  "vehicles": [
@@ -1264,9 +1264,9 @@
    "cond": "used"
   },
   {
-   "vin": "5LMCJ1CA0RUL20163",
-   "stock": "P8166",
-   "name": "2024 Lincoln CORSAIR PREMIERE FWD WHITE",
+   "vin": "WBX47DP01RN281321",
+   "stock": "P8166A",
+   "name": "2024 BMW X3 SUV",
    "year": "2024",
    "cond": "used"
   },
