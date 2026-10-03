@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-02T17:58:25+00:00",
+ "updated": "2026-10-03T16:35:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 217,
+ "count": 224,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -158,13 +158,6 @@
    "cond": "new"
   },
   {
-   "vin": "3FMCR9BN3TRF12559",
-   "stock": "BS26305",
-   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 CA",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "3FMCR9CN3TRF14438",
    "stock": "BS26309",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
@@ -217,6 +210,13 @@
    "vin": "1FMJU1P86VEA25162",
    "stock": "EN27004",
    "name": "2027 Ford EXPEDITION KING RANCH 4X4",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1M8XVEA32488",
+   "stock": "EN27020",
+   "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
    "year": "2027",
    "cond": "new"
   },
@@ -280,6 +280,13 @@
    "vin": "1FMUK7KH1VGA39391",
    "stock": "ER27017",
    "name": "2027 Ford EXPLORER ST-LINE RWD STAR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK8HH7VGA59979",
+   "stock": "ER27019",
+   "name": "2027 Ford EXPLORER PLATINUM 4WD CARB",
    "year": "2027",
    "cond": "new"
   },
@@ -578,6 +585,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FTNF1K82TKF58471",
+   "stock": "FT26362",
+   "name": "2026 Ford F150 4X2 REGULAR CAB XL",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW7LD4TFC49712",
+   "stock": "FT26363",
+   "name": "2026 Ford F-150 HYBR PLATINUM 4WD SU",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -595,13 +616,6 @@
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H30TRB29708",
-   "stock": "MA26270",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -788,6 +802,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FT8W2BMXVEC69193",
+   "stock": "SD27018",
+   "name": "2027 Ford SUPER DUTY XL 4WD CREW CAB",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FBAX2CG8TKB14295",
    "stock": "TR26195",
    "name": "2026 Ford TRANSIT PA T-350 148\" MED",
@@ -903,6 +924,13 @@
    "vin": "3FMCR9A67MRB33513",
    "stock": "BS26242A",
    "name": "2021 Ford BRONCO SPO SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTER4FH0MLD46666",
+   "stock": "BS26305A",
+   "name": "2021 Ford RANGER SUP CARBONIZED GRAY",
    "year": "2021",
    "cond": "used"
   },
@@ -1135,6 +1163,13 @@
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
    "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "5FPYK3F77TB023890",
+   "stock": "MA26270A",
+   "name": "2026 Hond RIDGELINE",
+   "year": "2026",
    "cond": "used"
   },
   {
@@ -1449,6 +1484,20 @@
    "vin": "1FMJU1H89SEA15056",
    "stock": "P8198",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 GRAY",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1N4BL4DV9SN347688",
+   "stock": "P8199",
+   "name": "2025 Nissan ALTIMA 4DSV SEDAN WHITE",
+   "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "3N1AB8CV5SY281227",
+   "stock": "P8200",
+   "name": "2025 Nissan SENTRA SV CVT SEDAN WHITE",
    "year": "2025",
    "cond": "used"
   },
