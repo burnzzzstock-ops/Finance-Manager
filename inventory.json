@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03T16:35:34+00:00",
+ "updated": "2026-10-04T16:56:06+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 224,
  "vehicles": [
@@ -672,13 +672,6 @@
    "vin": "1FTER4KH5TLE13962",
    "stock": "RA26111",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTER4LR1TLE42771",
-   "stock": "RA26286",
-   "name": "2026 Ford RANGER RAP RAPTOR 4WD SUPE",
    "year": "2026",
    "cond": "new"
   },
@@ -1534,6 +1527,13 @@
    "stock": "RA26258A",
    "name": "2024 JEEP WRANGLER SUV GRAY",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1E57NFA89248",
+   "stock": "RA26286A",
+   "name": "2022 Ford F-150",
+   "year": "2022",
    "cond": "used"
   },
   {
