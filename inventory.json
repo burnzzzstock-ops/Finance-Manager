@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06T18:32:21+00:00",
+ "updated": "2026-10-07T19:02:04+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 224,
  "vehicles": [
@@ -571,13 +571,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW2KP2TKE86216",
-   "stock": "FT26358",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW1KPXTKF54515",
    "stock": "FT26360",
    "name": "2026 Ford F-150 XL 2WD SUPERCREW 5.5",
@@ -1114,6 +1107,13 @@
    "stock": "FT26329A",
    "name": "2025 Ford F-150",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "4JGDA5JB2FA489382",
+   "stock": "FT26358A",
+   "name": "2015 Mercedes M-CLASS",
+   "year": "2015",
    "cond": "used"
   },
   {
