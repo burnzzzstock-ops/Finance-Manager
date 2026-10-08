@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-07T19:02:04+00:00",
+ "updated": "2026-10-08T18:57:31+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 224,
+ "count": 223,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -154,13 +154,6 @@
    "vin": "3FMCR9BN5TRF13728",
    "stock": "BS26275",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9CN3TRF14438",
-   "stock": "BS26309",
-   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -1112,7 +1105,7 @@
   {
    "vin": "4JGDA5JB2FA489382",
    "stock": "FT26358A",
-   "name": "2015 Mercedes M-CLASS",
+   "name": "2015 Mercedes ML SUV WHITE",
    "year": "2015",
    "cond": "used"
   },
@@ -1278,10 +1271,10 @@
    "cond": "used"
   },
   {
-   "vin": "5LMCJ2CAXSUL01826",
-   "stock": "P8163",
-   "name": "2025 Lincoln CORSAIR RESERVE FWD WHITE",
-   "year": "2025",
+   "vin": "5N1AZ2MG9JN178728",
+   "stock": "P8163A",
+   "name": "2018 Nissan MURANO SUV WHITE",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -1532,7 +1525,7 @@
   {
    "vin": "1FTFW1E57NFA89248",
    "stock": "RA26286A",
-   "name": "2022 Ford F-150",
+   "name": "2022 Ford F-150 PK",
    "year": "2022",
    "cond": "used"
   },
