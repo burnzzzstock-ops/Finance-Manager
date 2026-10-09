@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T18:57:31+00:00",
+ "updated": "2026-10-09T18:27:39+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 223,
  "vehicles": [
@@ -154,13 +154,6 @@
    "vin": "3FMCR9BN5TRF13728",
    "stock": "BS26275",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9BN0TRF26452",
-   "stock": "BS26314",
-   "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SH",
    "year": "2026",
    "cond": "new"
   },
@@ -911,6 +904,13 @@
    "stock": "BS26305A",
    "name": "2021 Ford RANGER SUP CARBONIZED GRAY",
    "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "4A4AR3AU7FE013331",
+   "stock": "BS26314A",
+   "name": "2015 Mitsubishi OUTLANDER OCTANE BLUE META",
+   "year": "2015",
    "cond": "used"
   },
   {
