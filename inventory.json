@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09T18:27:39+00:00",
+ "updated": "2026-10-10T17:25:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 223,
  "vehicles": [
@@ -578,6 +578,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5L84TKF10318",
+   "stock": "FT26364",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -601,13 +608,6 @@
   {
    "vin": "3FTTW8H31TRB65407",
    "stock": "MA26313",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H36TRB65466",
-   "stock": "MA26322",
    "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
