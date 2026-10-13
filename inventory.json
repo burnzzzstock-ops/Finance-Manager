@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-10T17:25:34+00:00",
+ "updated": "2026-10-13T19:26:53+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 223,
+ "count": 240,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -21,13 +21,6 @@
    "vin": "1FMDE7BH0TLB15808",
    "stock": "BR26239",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE6BH0TLB01594",
-   "stock": "BR26247",
-   "name": "2026 Ford BRONCO BASE 4 DOOR 4X4 OXF",
    "year": "2026",
    "cond": "new"
   },
@@ -130,6 +123,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMDE6BH9TLB72096",
+   "stock": "BR26371",
+   "name": "2026 Ford BRONCO BASE 4 DOOR 4X4 AVA",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9CN5TRE91129",
    "stock": "BS26222",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
@@ -161,6 +161,13 @@
    "vin": "3FMCR9CN2TRF34986",
    "stock": "BS26331",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "3FMCR9DA1TRF33372",
+   "stock": "BS26366",
+   "name": "2026 Ford BRONCO SPO BADLANDS 4X4 AZ",
    "year": "2026",
    "cond": "new"
   },
@@ -202,6 +209,13 @@
   {
    "vin": "1FMJU1M8XVEA32488",
    "stock": "EN27020",
+   "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1MG0VEA37349",
+   "stock": "EN27022",
    "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
    "year": "2027",
    "cond": "new"
@@ -487,13 +501,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW2KP9TKF38280",
-   "stock": "FT26335",
-   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW2KP1TKF11882",
    "stock": "FT26339",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
@@ -585,6 +592,90 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW2LD4TFC51527",
+   "stock": "FT26365",
+   "name": "2026 Ford F150 4X4 H SUPERCREW STX",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L88TKF40339",
+   "stock": "FT26367",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L85TFC08853",
+   "stock": "FT26368",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW2LD3TFC47985",
+   "stock": "FT26369",
+   "name": "2026 Ford F150 4X4 H SUPERCREW STX",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW6LD6TFC50287",
+   "stock": "FT26370",
+   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP8TFC57225",
+   "stock": "FT26373",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP4TFC57352",
+   "stock": "FT26374",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5LD3TFC62410",
+   "stock": "FT26375",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW1RJ2TFB85583",
+   "stock": "FT26376",
+   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP8TFC57239",
+   "stock": "FT26377",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2KP1TFC58507",
+   "stock": "FT26378",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEX1KP4TKF57164",
+   "stock": "FT26379",
+   "name": "2026 Ford F-150 XL 2WD SUPERCAB 6.5'",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -644,6 +735,13 @@
    "vin": "1FAGP8UH1T5134599",
    "stock": "MU26359",
    "name": "2026 Ford MUSTANG ECOBOOST CONVERTIB",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8TH3T5138280",
+   "stock": "MU26372",
+   "name": "2026 Ford MUSTANG ECOBOOST FASTBACK",
    "year": "2026",
    "cond": "new"
   },
@@ -781,6 +879,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FT8W2BM0VEC78355",
+   "stock": "SD27021",
+   "name": "2027 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FBAX2CG8TKB14295",
    "stock": "TR26195",
    "name": "2026 Ford TRANSIT PA T-350 148\" MED",
@@ -855,6 +960,13 @@
    "stock": "BR26238B",
    "name": "2010 Ford ESCAPE SUV",
    "year": "2010",
+   "cond": "used"
+  },
+  {
+   "vin": "KNAG24J7XS5293579",
+   "stock": "BR26247A",
+   "name": "2025 KIA K5",
+   "year": "2025",
    "cond": "used"
   },
   {
@@ -1100,6 +1212,13 @@
    "stock": "FT26329A",
    "name": "2025 Ford F-150",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1CT8EKE83284",
+   "stock": "FT26335A",
+   "name": "2014 Ford F150 SUPER SUNSET METALLIC",
+   "year": "2014",
    "cond": "used"
   },
   {
