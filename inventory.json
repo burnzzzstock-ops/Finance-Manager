@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-13T19:26:53+00:00",
+ "updated": "2026-10-14T17:27:59+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 240,
+ "count": 233,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -294,13 +294,6 @@
    "vin": "1FTFW3LD7TFA46239",
    "stock": "FT26090",
    "name": "2026 Ford F-150 HYBR XLT 4WD SUPERCR",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5LD4TFA78934",
-   "stock": "FT26119",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -676,6 +669,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW5L80TKD42497",
+   "stock": "FT26380",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -965,7 +965,7 @@
   {
    "vin": "KNAG24J7XS5293579",
    "stock": "BR26247A",
-   "name": "2025 KIA K5",
+   "name": "2025 KIA K5 -500 2",
    "year": "2025",
    "cond": "used"
   },
@@ -988,13 +988,6 @@
    "stock": "BR26278B",
    "name": "2022 Toyo CAMRY SEDAN",
    "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "KNDJ23AU6L7069269",
-   "stock": "BS26120A",
-   "name": "2020 KIA SOUL SPARKLING SILVER",
-   "year": "2020",
    "cond": "used"
   },
   {
@@ -1054,13 +1047,6 @@
    "cond": "used"
   },
   {
-   "vin": "5TDKZRFH6KS567393",
-   "stock": "ER26209C",
-   "name": "2019 Toyo HIGHLANDER MIDNIGHT BLACK",
-   "year": "2019",
-   "cond": "used"
-  },
-  {
    "vin": "3FMCR9BN0SRF16938",
    "stock": "ER26211A",
    "name": "2025 Ford BRONCO SPO BIG BEND 4X4 AZ",
@@ -1086,13 +1072,6 @@
    "stock": "FT25314A",
    "name": "2024 AUDI SQ8",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1C5XJKF66593",
-   "stock": "FT25354B",
-   "name": "2018 Ford F-150 PLATINUM 2WD SUPERCR",
-   "year": "2018",
    "cond": "used"
   },
   {
@@ -1142,13 +1121,6 @@
    "stock": "FT26098A",
    "name": "2024 GMC SIERRA",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "5N1DR3BD4SC268703",
-   "stock": "FT26169A",
-   "name": "2025 Nissan PATHFINDER SUV",
-   "year": "2025",
    "cond": "used"
   },
   {
@@ -1215,10 +1187,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1CT8EKE83284",
-   "stock": "FT26335A",
-   "name": "2014 Ford F150 SUPER SUNSET METALLIC",
-   "year": "2014",
+   "vin": "1FMDE5BH1PLB10479",
+   "stock": "FT26335B",
+   "name": "2023 Ford BRONCO SUV AREA 51",
+   "year": "2023",
    "cond": "used"
   },
   {
@@ -1268,13 +1240,6 @@
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "5FPYK3F77TB023890",
-   "stock": "MA26270A",
-   "name": "2026 Hond RIDGELINE",
-   "year": "2026",
    "cond": "used"
   },
   {
@@ -1551,13 +1516,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FADP3F25FL296427",
-   "stock": "P8193",
-   "name": "2015 Ford FOCUS 4DR SDN SE RED",
-   "year": "2015",
-   "cond": "used"
-  },
-  {
    "vin": "1FA6P8JZ7G5523472",
    "stock": "P8194",
    "name": "2016 Ford MUSTANG 2DR FASTBACK SHELB",
@@ -1618,13 +1576,6 @@
    "stock": "RA26080A",
    "name": "2020 Ford ESCAPE",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "1GT120C83EF120833",
-   "stock": "RA26184C",
-   "name": "2014 GMC SIERRA",
-   "year": "2014",
    "cond": "used"
   },
   {
