@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14T17:27:59+00:00",
+ "updated": "2026-10-15T17:15:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 233,
  "vehicles": [
@@ -466,13 +466,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW3L51TKE82875",
-   "stock": "FT26327",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW6LD7TFC33322",
    "stock": "FT26330",
    "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
@@ -574,13 +567,6 @@
    "vin": "1FTFW7LD4TFC49712",
    "stock": "FT26363",
    "name": "2026 Ford F-150 HYBR PLATINUM 4WD SU",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5L84TKF10318",
-   "stock": "FT26364",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -965,7 +951,7 @@
   {
    "vin": "KNAG24J7XS5293579",
    "stock": "BR26247A",
-   "name": "2025 KIA K5 -500 2",
+   "name": "2025 KIA K5 -500 3",
    "year": "2025",
    "cond": "used"
   },
@@ -1198,6 +1184,20 @@
    "stock": "FT26358A",
    "name": "2015 Mercedes ML SUV WHITE",
    "year": "2015",
+   "cond": "used"
+  },
+  {
+   "vin": "3TMCZ5AN8NM512488",
+   "stock": "FT26364A",
+   "name": "2022 Toyo TACOMA 4WD",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "3FMCR9C60RRE34144",
+   "stock": "FT26381A",
+   "name": "2024 Ford BRONCO SPO SUV BLACK",
+   "year": "2024",
    "cond": "used"
   },
   {
