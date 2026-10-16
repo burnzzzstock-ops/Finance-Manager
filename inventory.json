@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-15T17:15:34+00:00",
+ "updated": "2026-10-16T16:51:30+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 233,
+ "count": 231,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -767,13 +767,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W3BM1TEE18853",
-   "stock": "SD26123",
-   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BM0TEE42491",
    "stock": "SD26135",
    "name": "2026 Ford SUPER DUTY PLATINUM 4WD CR",
@@ -946,13 +939,6 @@
    "stock": "BR26238B",
    "name": "2010 Ford ESCAPE SUV",
    "year": "2010",
-   "cond": "used"
-  },
-  {
-   "vin": "KNAG24J7XS5293579",
-   "stock": "BR26247A",
-   "name": "2025 KIA K5 -500 3",
-   "year": "2025",
    "cond": "used"
   },
   {
