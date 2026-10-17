@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-16T16:51:30+00:00",
+ "updated": "2026-10-17T15:49:07+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 231,
+ "count": 230,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -200,13 +200,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FMJU1P86VEA25162",
-   "stock": "EN27004",
-   "name": "2027 Ford EXPEDITION KING RANCH 4X4",
-   "year": "2027",
-   "cond": "new"
-  },
-  {
    "vin": "1FMJU1M8XVEA32488",
    "stock": "EN27020",
    "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
@@ -398,13 +391,6 @@
   {
    "vin": "1FTFW3L85TFC01924",
    "stock": "FT26297",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L83TFC00545",
-   "stock": "FT26300",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -1012,6 +998,13 @@
    "cond": "used"
   },
   {
+   "vin": "5LMYJ8XY7MNL00629",
+   "stock": "EN27004A",
+   "name": "2021 Lincoln AVIATOR SUV",
+   "year": "2021",
+   "cond": "used"
+  },
+  {
    "vin": "5LMCJ2CA3PUL22203",
    "stock": "ER25008A",
    "name": "2023 Lincoln CORSAIR SUV",
@@ -1040,10 +1033,10 @@
    "cond": "used"
   },
   {
-   "vin": "WA1AWBF16RD012250",
-   "stock": "FT25314A",
-   "name": "2024 AUDI SQ8",
-   "year": "2024",
+   "vin": "1GT4UZEY5SF115377",
+   "stock": "FT25314B",
+   "name": "2025 GMC SIERRA",
+   "year": "2025",
    "cond": "used"
   },
   {
@@ -1226,6 +1219,20 @@
    "stock": "MA26267B",
    "name": "2020 JEEP GLADIATOR TRUCK",
    "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "5TFWC5DB1RX041591",
+   "stock": "MA26382A",
+   "name": "2024 Toyo TUNDRA HYB TRUCK ORANGE",
+   "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4BJWDG4GL205586",
+   "stock": "MA26382B",
+   "name": "2016 JEEP WRANGLER U",
+   "year": "2016",
    "cond": "used"
   },
   {
@@ -1558,10 +1565,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMCU0G61LUB38490",
-   "stock": "RA26080A",
-   "name": "2020 Ford ESCAPE",
-   "year": "2020",
+   "vin": "3KPA24AD8ME408203",
+   "stock": "RA26080B",
+   "name": "2021 KIA RIO",
+   "year": "2021",
    "cond": "used"
   },
   {
@@ -1576,20 +1583,6 @@
    "stock": "RA26258A",
    "name": "2024 JEEP WRANGLER SUV GRAY",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW1E57NFA89248",
-   "stock": "RA26286A",
-   "name": "2022 Ford F-150 PK",
-   "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW1ED1PFA91703",
-   "stock": "SD26048B",
-   "name": "2023 Ford F-150 LIMITED 4WD SUPERCRE",
-   "year": "2023",
    "cond": "used"
   },
   {
