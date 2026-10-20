@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-17T15:49:07+00:00",
+ "updated": "2026-10-20T17:25:33+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 230,
+ "count": 233,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -130,6 +130,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE9BP4TLB76845",
+   "stock": "BR26384",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9CN5TRE91129",
    "stock": "BS26222",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
@@ -209,6 +216,13 @@
   {
    "vin": "1FMJU1MG0VEA37349",
    "stock": "EN27022",
+   "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJK1M85VEA34204",
+   "stock": "EN27023",
    "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
    "year": "2027",
    "cond": "new"
@@ -413,13 +427,6 @@
    "vin": "1FTFW3L52TKE48444",
    "stock": "FT26310",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTEX1K88TKF10440",
-   "stock": "FT26311",
-   "name": "2026 Ford F150 4X2 SUPERCAB XL",
    "year": "2026",
    "cond": "new"
   },
@@ -648,6 +655,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP6TKF54601",
+   "stock": "FT26385",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -714,6 +728,20 @@
    "vin": "1FA6P8TH3T5138280",
    "stock": "MU26372",
    "name": "2026 Ford MUSTANG ECOBOOST FASTBACK",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8CF9T5416436",
+   "stock": "MU26386",
+   "name": "2026 Ford MUSTANG GT PREMIUM FASTBAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8GJ3T5553869",
+   "stock": "MU26387",
+   "name": "2026 Ford MUSTANG DARK HORSE SC COUP",
    "year": "2026",
    "cond": "new"
   },
@@ -868,6 +896,13 @@
    "vin": "1FTBR1CG0VKA11931",
    "stock": "TR27016",
    "name": "2027 Ford TRANSIT CA T-250 148\" MED",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FBAX2Y86VKA42422",
+   "stock": "TR27024",
+   "name": "2027 Ford TRANSIT PA T-350 148\" LOW",
    "year": "2027",
    "cond": "new"
   },
@@ -1096,10 +1131,10 @@
    "cond": "used"
   },
   {
-   "vin": "1C6SRFU91PN695443",
-   "stock": "FT26219A",
-   "name": "2023 RAM",
-   "year": "2023",
+   "vin": "1FT8W2BT2REF71381",
+   "stock": "FT26219B",
+   "name": "2024 Ford F-250 TRUCK",
+   "year": "2024",
    "cond": "used"
   },
   {
@@ -1243,13 +1278,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW5LD4RFB77617",
-   "stock": "P8109",
-   "name": "2024 Ford F-150 HYBR LARIAT 4WD SUPE",
-   "year": "2024",
-   "cond": "used"
-  },
-  {
    "vin": "5TDGZRBH5LS517937",
    "stock": "P8116B",
    "name": "2020 Toyo HIGHLANDER SUV",
@@ -1320,10 +1348,10 @@
    "cond": "used"
   },
   {
-   "vin": "KNDPUCAG3P7074529",
-   "stock": "P8155A",
-   "name": "2023 KIA SPORTAGE H SUV",
-   "year": "2023",
+   "vin": "MAJ3P1TEXJC183905",
+   "stock": "P8155B",
+   "name": "2018 Ford ECOSPORT",
+   "year": "2018",
    "cond": "used"
   },
   {
@@ -1422,13 +1450,6 @@
    "stock": "P8178",
    "name": "2025 Chevrolet SILVERADO 4WD CREW CAB",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "1C4RJJBG0P8891004",
-   "stock": "P8180",
-   "name": "2023 JEEP GRAND CHER SUV LIMITED 4X2",
-   "year": "2023",
    "cond": "used"
   },
   {
