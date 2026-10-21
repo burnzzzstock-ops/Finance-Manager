@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-20T17:25:33+00:00",
+ "updated": "2026-10-21T17:32:42+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 233,
+ "count": 229,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -501,13 +501,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW4L81TFC22386",
-   "stock": "FT26342",
-   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW1K88TKF49189",
    "stock": "FT26343",
    "name": "2026 Ford F150 4X2 SUPERCREW XL - 14",
@@ -707,13 +700,6 @@
    "vin": "1FA6P8TH4T5133833",
    "stock": "MU26326",
    "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FA6P8GJ0T5552484",
-   "stock": "MU26332",
-   "name": "2026 Ford MUSTANG DARK HORSE SC COUP",
    "year": "2026",
    "cond": "new"
   },
@@ -1035,7 +1021,7 @@
   {
    "vin": "5LMYJ8XY7MNL00629",
    "stock": "EN27004A",
-   "name": "2021 Lincoln AVIATOR SUV",
+   "name": "2021 Lincoln AVIATOR SUV WHITE",
    "year": "2021",
    "cond": "used"
   },
@@ -1299,13 +1285,6 @@
    "cond": "used"
   },
   {
-   "vin": "5TDGZRAH4NS097172",
-   "stock": "P8131A",
-   "name": "2022 Toyo HIGHLANDER SUV WHITE",
-   "year": "2022",
-   "cond": "used"
-  },
-  {
    "vin": "5LMJJ2LG7SEL00638",
    "stock": "P8133",
    "name": "2025 Lincoln NAVIGATOR RESERVE 4X4 WHIT",
@@ -1502,13 +1481,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FMCU0GNXRUB44238",
-   "stock": "P8189",
-   "name": "2024 Ford ESCAPE ACTIVE FWD SILVER 9",
-   "year": "2024",
-   "cond": "used"
-  },
-  {
    "vin": "1FMJU1H88SEA57749",
    "stock": "P8190",
    "name": "2025 Ford EXPEDITION ACTIVE 4X2 DARK",
@@ -1530,10 +1502,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FA6P8JZ7G5523472",
-   "stock": "P8194",
-   "name": "2016 Ford MUSTANG 2DR FASTBACK SHELB",
-   "year": "2016",
+   "vin": "3FTTW8H30TRB44564",
+   "stock": "P8194B",
+   "name": "2026 Ford MAVERICK TRUCK VELOCITY BL",
+   "year": "2026",
    "cond": "used"
   },
   {
@@ -1588,7 +1560,7 @@
   {
    "vin": "3KPA24AD8ME408203",
    "stock": "RA26080B",
-   "name": "2021 KIA RIO",
+   "name": "2021 KIA RIO SILVER",
    "year": "2021",
    "cond": "used"
   },
