@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T17:32:42+00:00",
+ "updated": "2026-10-22T17:29:08+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 229,
  "vehicles": [
@@ -823,13 +823,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BM6VEC44078",
-   "stock": "SD27006",
-   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2027",
-   "cond": "new"
-  },
-  {
    "vin": "1FT7W2AM1VEC35740",
    "stock": "SD27007",
    "name": "2027 Ford SUPER DUTY XL 2WD CREW CAB",
@@ -1023,6 +1016,13 @@
    "stock": "EN27004A",
    "name": "2021 Lincoln AVIATOR SUV WHITE",
    "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "1GKS2HKD7PR139571",
+   "stock": "EN27025A",
+   "name": "2023 GMC YUKON XL SUV",
+   "year": "2023",
    "cond": "used"
   },
   {
@@ -1252,7 +1252,7 @@
   {
    "vin": "1C4BJWDG4GL205586",
    "stock": "MA26382B",
-   "name": "2016 JEEP WRANGLER U",
+   "name": "2016 JEEP WRANGLER U SUV GRAY",
    "year": "2016",
    "cond": "used"
   },
@@ -1320,16 +1320,16 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW1E85PKE60007",
-   "stock": "P8154",
-   "name": "2023 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2023",
+   "vin": "1FTFW1E82MKE80968",
+   "stock": "P8154A",
+   "name": "2021 Ford F-150 TRUCK WHITE",
+   "year": "2021",
    "cond": "used"
   },
   {
    "vin": "MAJ3P1TEXJC183905",
    "stock": "P8155B",
-   "name": "2018 Ford ECOSPORT",
+   "name": "2018 Ford ECOSPORT SUV",
    "year": "2018",
    "cond": "used"
   },
@@ -1503,7 +1503,7 @@
   },
   {
    "vin": "3FTTW8H30TRB44564",
-   "stock": "P8194B",
+   "stock": "P8194A",
    "name": "2026 Ford MAVERICK TRUCK VELOCITY BL",
    "year": "2026",
    "cond": "used"
