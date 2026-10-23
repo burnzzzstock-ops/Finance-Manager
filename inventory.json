@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-22T17:29:08+00:00",
+ "updated": "2026-10-23T17:21:35+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 229,
+ "count": 225,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -410,13 +410,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW6L87TFC17740",
-   "stock": "FT26306",
-   "name": "2026 Ford F-150 KING RANCH 4WD SUPER",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW2LP4TKE81663",
    "stock": "FT26307",
    "name": "2026 Ford F-150 STX 4WD SUPERCREW 5.",
@@ -641,13 +634,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L80TKD42497",
-   "stock": "FT26380",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEW2KP6TKF54601",
    "stock": "FT26385",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
@@ -672,13 +658,6 @@
    "vin": "3FTCW8TA4TRB36425",
    "stock": "MA26255",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FTTW8H31TRB65407",
-   "stock": "MA26313",
-   "name": "2026 Ford MAVERICK H XLT FWD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -1079,13 +1058,6 @@
    "stock": "FT26058B",
    "name": "2015 JEEP WRANGLER SUV",
    "year": "2015",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTSW2A51AEB42603",
-   "stock": "FT26058C",
-   "name": "2010 Ford F-250 TRUCK",
-   "year": "2010",
    "cond": "used"
   },
   {
