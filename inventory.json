@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-23T17:21:35+00:00",
+ "updated": "2026-10-24T16:09:27+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 225,
+ "count": 224,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -1135,13 +1135,6 @@
    "stock": "FT26328A",
    "name": "2022 Ford F-150 BLACK 3.5L V6",
    "year": "2022",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTFW5LD9SFB53190",
-   "stock": "FT26329A",
-   "name": "2025 Ford F-150",
-   "year": "2025",
    "cond": "used"
   },
   {
