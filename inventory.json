@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-24T16:09:27+00:00",
+ "updated": "2026-10-25T16:41:18+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 224,
+ "count": 225,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -753,13 +753,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BM6TED98531",
-   "stock": "SD26165",
-   "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BT5TEE70150",
    "stock": "SD26197",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
@@ -1166,6 +1159,13 @@
    "cond": "used"
   },
   {
+   "vin": "3GTU9DED7KG237528",
+   "stock": "FT26391A",
+   "name": "2019 GMC SIERRA",
+   "year": "2019",
+   "cond": "used"
+  },
+  {
    "vin": "1FMEU15N0PLA95491",
    "stock": "FT80033C",
    "name": "1993 Ford BRONCO 2DR XLT WHITE",
@@ -1555,6 +1555,13 @@
    "stock": "SD26091C",
    "name": "2023 Ford EXPLORER SUV",
    "year": "2023",
+   "cond": "used"
+  },
+  {
+   "vin": "1C4RJXSJ6TW225026",
+   "stock": "SD26165A",
+   "name": "2026 JEEP WRANGLER",
+   "year": "2026",
    "cond": "used"
   },
   {
