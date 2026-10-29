@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-28T18:26:10+00:00",
+ "updated": "2026-10-29T18:36:00+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 222,
+ "count": 226,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -63,13 +63,6 @@
    "vin": "1FMDE7BH2TLB51418",
    "stock": "BR26308",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE8BP3TLB51574",
-   "stock": "BR26312",
-   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
    "year": "2026",
    "cond": "new"
   },
@@ -294,6 +287,13 @@
    "vin": "1FMUK8HH7VGA59979",
    "stock": "ER27019",
    "name": "2027 Ford EXPLORER PLATINUM 4WD CARB",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK7GC5VGA66308",
+   "stock": "ER27026",
+   "name": "2027 Ford EXPLORER ST RWD AVALANCHE",
    "year": "2027",
    "cond": "new"
   },
@@ -662,6 +662,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FTTW8A38TRB59680",
+   "stock": "MA26389",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMTK3R76TMA26978",
    "stock": "ME26321",
    "name": "2026 Ford MUSTANG MA PREMIUM RWD STA",
@@ -700,6 +707,13 @@
    "vin": "1FA6P8GJ3T5553869",
    "stock": "MU26387",
    "name": "2026 Ford MUSTANG DARK HORSE SC COUP",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FA6P8TH9T5139840",
+   "stock": "MU26390",
+   "name": "2026 Ford MUSTANG ECOBOOST PREMIUM F",
    "year": "2026",
    "cond": "new"
   },
@@ -816,6 +830,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FT8W2BM9VEC78399",
+   "stock": "SD27027",
+   "name": "2027 Ford SUPER DUTY KING RANCH 4WD",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FBAX2CG8TKB14295",
    "stock": "TR26195",
    "name": "2026 Ford TRANSIT PA T-350 148\" MED",
@@ -918,6 +939,13 @@
    "stock": "BR26278B",
    "name": "2022 Toyo CAMRY SEDAN",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1J4GA39168L626522",
+   "stock": "BR26312A",
+   "name": "2008 JEEP WRANGLER SUV",
+   "year": "2008",
    "cond": "used"
   },
   {
