@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-29T18:36:00+00:00",
+ "updated": "2026-10-30T18:08:25+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 226,
+ "count": 224,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -77,13 +77,6 @@
    "vin": "1FMDE7BH1TLB57727",
    "stock": "BR26325",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE4DP6TLB58475",
-   "stock": "BR26336",
-   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
    "year": "2026",
    "cond": "new"
   },
@@ -634,6 +627,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KP9TKF03674",
+   "stock": "FT26392",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -994,13 +994,6 @@
    "vin": "1FMJU1HTXMEA15462",
    "stock": "EN26186A",
    "name": "2021 Ford EXPEDITION SUV",
-   "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "5LMYJ8XY7MNL00629",
-   "stock": "EN27004A",
-   "name": "2021 Lincoln AVIATOR SUV WHITE",
    "year": "2021",
    "cond": "used"
   },
@@ -1467,13 +1460,6 @@
    "cond": "used"
   },
   {
-   "vin": "KMHTC6AE5GU295015",
-   "stock": "P8192A",
-   "name": "2016 Hyundai VELOSTER HATCHBACK RED",
-   "year": "2016",
-   "cond": "used"
-  },
-  {
    "vin": "3FTTW8H30TRB44564",
    "stock": "P8194A",
    "name": "2026 Ford MAVERICK TRUCK VELOCITY BL",
@@ -1567,7 +1553,7 @@
   {
    "vin": "1C4RJXSJ6TW225026",
    "stock": "SD26165A",
-   "name": "2026 JEEP WRANGLER",
+   "name": "2026 JEEP WRANGLER SUV ANVIL",
    "year": "2026",
    "cond": "used"
   },
