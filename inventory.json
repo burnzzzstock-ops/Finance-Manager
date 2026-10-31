@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-30T18:08:25+00:00",
+ "updated": "2026-10-31T17:19:24+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 224,
+ "count": 223,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -504,13 +504,6 @@
    "vin": "1FTFW3L50TFC41723",
    "stock": "FT26347",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW5LD4TFC46572",
-   "stock": "FT26352",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -1243,10 +1236,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMCU9G64NUA60696",
-   "stock": "P8125A",
-   "name": "2022 Ford ESCAPE WHITE",
-   "year": "2022",
+   "vin": "2FMPK4J96KBB67568",
+   "stock": "P8125B",
+   "name": "2019 Ford EDGE SUV BLUE",
+   "year": "2019",
    "cond": "used"
   },
   {
