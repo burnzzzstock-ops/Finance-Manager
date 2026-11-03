@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-31T17:19:24+00:00",
+ "updated": "2026-11-03T19:42:35+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 223,
+ "count": 221,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -1292,13 +1292,6 @@
    "cond": "used"
   },
   {
-   "vin": "MAJ3P1TEXJC183905",
-   "stock": "P8155B",
-   "name": "2018 Ford ECOSPORT SUV",
-   "year": "2018",
-   "cond": "used"
-  },
-  {
    "vin": "3C4NJDCB0NT148117",
    "stock": "P8156",
    "name": "2022 JEEP COMPASS HIGH ALTITUDE 4X4",
@@ -1506,13 +1499,6 @@
    "stock": "RA25139B",
    "name": "2002 Nissan XTERRA SUV SILVER",
    "year": "2002",
-   "cond": "used"
-  },
-  {
-   "vin": "3KPA24AD8ME408203",
-   "stock": "RA26080B",
-   "name": "2021 KIA RIO SILVER",
-   "year": "2021",
    "cond": "used"
   },
   {
