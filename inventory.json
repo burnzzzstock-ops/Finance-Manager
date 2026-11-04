@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-03T19:42:35+00:00",
+ "updated": "2026-11-04T19:57:41+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 221,
+ "count": 226,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -487,13 +487,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTEW1K88TKF49189",
-   "stock": "FT26343",
-   "name": "2026 Ford F150 4X2 SUPERCREW XL - 14",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L83TFC19323",
    "stock": "FT26345",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -627,6 +620,27 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW7L55VFA20211",
+   "stock": "FT27028",
+   "name": "2027 Ford F-150 4X4 4X4 PICKUP TRUCK",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW1RG5VFA19520",
+   "stock": "FT27029",
+   "name": "2027 Ford F-150 RAPTOR 4WD SUPERCREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L82VFA27681",
+   "stock": "FT27031",
+   "name": "2027 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -711,6 +725,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FA6P8CF6T5417205",
+   "stock": "MU26394",
+   "name": "2026 Ford MUSTANG GT PREMIUM FASTBAC",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTER4KH5TLE13962",
    "stock": "RA26111",
    "name": "2026 Ford RANGER LARIAT 4WD SUPERCRE",
@@ -720,6 +741,13 @@
   {
    "vin": "1FTER4GH2TLE65493",
    "stock": "RA26361",
+   "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4GH8TLE71847",
+   "stock": "RA26393",
    "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
    "year": "2026",
    "cond": "new"
@@ -830,6 +858,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FT8W2BM6VEC88128",
+   "stock": "SD27030",
+   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FBAX2CG8TKB14295",
    "stock": "TR26195",
    "name": "2026 Ford TRANSIT PA T-350 148\" MED",
@@ -900,10 +935,10 @@
    "cond": "used"
   },
   {
-   "vin": "5TDGZRAH2NS119024",
-   "stock": "BR26204A",
-   "name": "2022 Toyo HIGHLANDER SUV",
-   "year": "2022",
+   "vin": "1GKS2CKJ0LR307196",
+   "stock": "BR26204B",
+   "name": "2020 GMC YUKON WHITE",
+   "year": "2020",
    "cond": "used"
   },
   {
