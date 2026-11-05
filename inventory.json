@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-04T19:57:41+00:00",
+ "updated": "2026-11-05T20:11:28+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 226,
+ "count": 225,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -190,13 +190,6 @@
    "stock": "EN26205",
    "name": "2026 Ford EXPEDITION ACTIVE 4X2 AGAT",
    "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1M8XVEA32488",
-   "stock": "EN27020",
-   "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
-   "year": "2027",
    "cond": "new"
   },
   {
@@ -907,13 +900,6 @@
    "cond": "used"
   },
   {
-   "vin": "1FMEE4DPXSLA60581",
-   "stock": "BR26107A",
-   "name": "2025 Ford BRONCO SUV",
-   "year": "2025",
-   "cond": "used"
-  },
-  {
    "vin": "1N4AL2EPXDC199372",
    "stock": "BR26144B",
    "name": "2013 Nissan ALTIMA",
@@ -1023,6 +1009,13 @@
    "stock": "EN26186A",
    "name": "2021 Ford EXPEDITION SUV",
    "year": "2021",
+   "cond": "used"
+  },
+  {
+   "vin": "5LM5J7WC4TGL11531",
+   "stock": "EN27020A",
+   "name": "2026 Lincoln AVIATOR SUV 99C",
+   "year": "2026",
    "cond": "used"
   },
   {
