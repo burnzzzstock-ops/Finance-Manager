@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T20:11:28+00:00",
+ "updated": "2026-11-06T19:37:30+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 225,
  "vehicles": [
@@ -1474,13 +1474,6 @@
    "cond": "used"
   },
   {
-   "vin": "3FTTW8H30TRB44564",
-   "stock": "P8194A",
-   "name": "2026 Ford MAVERICK TRUCK VELOCITY BL",
-   "year": "2026",
-   "cond": "used"
-  },
-  {
    "vin": "1FTEW1EPXGFC96720",
    "stock": "P8195",
    "name": "2016 Ford F-150 XLT PICKUP SILVER",
@@ -1520,6 +1513,13 @@
    "stock": "P8200",
    "name": "2025 Nissan SENTRA SV CVT SEDAN WHITE",
    "year": "2025",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTYR1ZM8HKB09536",
+   "stock": "P8201",
+   "name": "2017 Ford TRANSIT VA T-250 130\" LOW",
+   "year": "2017",
    "cond": "used"
   },
   {
