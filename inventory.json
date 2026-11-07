@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-06T19:37:30+00:00",
+ "updated": "2026-11-07T17:49:12+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 225,
+ "count": 224,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -41,13 +41,6 @@
   {
    "vin": "1FMEE9BP7TLB43662",
    "stock": "BR26301",
-   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE9BP7TLB43600",
-   "stock": "BR26302",
    "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
    "year": "2026",
    "cond": "new"
@@ -168,13 +161,6 @@
    "vin": "1FMJU1M88TEA31501",
    "stock": "EN26092",
    "name": "2026 Ford EXPEDITION PLATINUM 4X4 GL",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMJU1M80TEA30584",
-   "stock": "EN26109",
-   "name": "2026 Ford EXPEDITION PLATINUM 4X4 ST",
    "year": "2026",
    "cond": "new"
   },
@@ -956,6 +942,13 @@
    "cond": "used"
   },
   {
+   "vin": "W1N0G8DB9NV328297",
+   "stock": "BR26302A",
+   "name": "2022 Mercedes GLC WHITE",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
    "vin": "1J4GA39168L626522",
    "stock": "BR26312A",
    "name": "2008 JEEP WRANGLER SUV",
@@ -995,6 +988,13 @@
    "stock": "EN24227A",
    "name": "2020 Ford EXPEDITION SUV STAR WHITE",
    "year": "2020",
+   "cond": "used"
+  },
+  {
+   "vin": "1GNSKRKD1NR180879",
+   "stock": "EN26109A",
+   "name": "2022 Chevrolet TAHOE SUV GRAY",
+   "year": "2022",
    "cond": "used"
   },
   {
@@ -1327,13 +1327,6 @@
    "cond": "used"
   },
   {
-   "vin": "3FADP4BJ2FM122882",
-   "stock": "P8158A",
-   "name": "2015 Ford FIESTA SEDAN WHITE 99J",
-   "year": "2015",
-   "cond": "used"
-  },
-  {
    "vin": "5LM5J7XC1SGL00550",
    "stock": "P8160",
    "name": "2025 Lincoln AVIATOR RESERVE AWD SUV BL",
@@ -1495,10 +1488,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMJU1H89SEA15056",
-   "stock": "P8198",
-   "name": "2025 Ford EXPEDITION ACTIVE 4X2 GRAY",
-   "year": "2025",
+   "vin": "5J8YD9H43PL006176",
+   "stock": "P8198A",
+   "name": "2023 Acur MDX SUV",
+   "year": "2023",
    "cond": "used"
   },
   {
