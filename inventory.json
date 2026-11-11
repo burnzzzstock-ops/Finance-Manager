@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-08T18:00:12+00:00",
+ "updated": "2026-11-11T19:47:27+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 224,
+ "count": 222,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -291,13 +291,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L87TFB09080",
-   "stock": "FT26164",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTEX1K81TKE24189",
    "stock": "FT26212",
    "name": "2026 Ford F150 4X2 SUPERCAB XL",
@@ -343,13 +336,6 @@
    "vin": "1FTEW5K81TFB99968",
    "stock": "FT26285",
    "name": "2026 Ford F150 4X2 SUPERCREW LARIAT-",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L88TFC02467",
-   "stock": "FT26288",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -595,6 +581,13 @@
    "vin": "1FTEW2KP9TKF03674",
    "stock": "FT26392",
    "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L89TKF07192",
+   "stock": "FT26395",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
   },
@@ -971,7 +964,7 @@
   },
   {
    "vin": "19XFL2H80SE017916",
-   "stock": "BS26305C",
+   "stock": "BS26305B",
    "name": "2025 Hond CIVIC HATCHBACK",
    "year": "2025",
    "cond": "used"
@@ -1464,13 +1457,6 @@
    "stock": "P8191",
    "name": "2024 Nissan ALTIMA 2.5 SR SEDAN RED",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1EPXGFC96720",
-   "stock": "P8195",
-   "name": "2016 Ford F-150 XLT PICKUP SILVER",
-   "year": "2016",
    "cond": "used"
   },
   {
