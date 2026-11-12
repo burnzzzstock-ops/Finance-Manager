@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-11T19:47:27+00:00",
+ "updated": "2026-11-12T20:16:08+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 222,
+ "count": 226,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -111,6 +111,13 @@
   {
    "vin": "1FMEE9BP4TLB76845",
    "stock": "BR26384",
+   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMEE9BP3TLB89098",
+   "stock": "BR26396",
    "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
    "year": "2026",
    "cond": "new"
@@ -592,6 +599,27 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2KPXTKF54441",
+   "stock": "FT26397",
+   "name": "2026 Ford F-150 STX 2WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L52TKF33154",
+   "stock": "FT26398",
+   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW5L87TKF64163",
+   "stock": "FT26399",
+   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "1FTFW7L55VFA20211",
    "stock": "FT27028",
    "name": "2027 Ford F-150 4X4 4X4 PICKUP TRUCK",
@@ -720,6 +748,13 @@
   {
    "vin": "1FTER4GH8TLE71847",
    "stock": "RA26393",
+   "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4GH5TLE69876",
+   "stock": "RA26400",
    "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
    "year": "2026",
    "cond": "new"
@@ -1229,17 +1264,17 @@
    "cond": "used"
   },
   {
-   "vin": "5TFWC5DB1RX041591",
-   "stock": "MA26382A",
-   "name": "2024 Toyo TUNDRA HYB TRUCK ORANGE",
-   "year": "2024",
-   "cond": "used"
-  },
-  {
    "vin": "1C4BJWDG4GL205586",
    "stock": "MA26382B",
    "name": "2016 JEEP WRANGLER U SUV GRAY",
    "year": "2016",
+   "cond": "used"
+  },
+  {
+   "vin": "5TFAZ5CN2HX042669",
+   "stock": "MA26382C",
+   "name": "2017 Toyo TACOMA BLUE",
+   "year": "2017",
    "cond": "used"
   },
   {
@@ -1492,13 +1527,6 @@
    "stock": "P8200",
    "name": "2025 Nissan SENTRA SV CVT SEDAN WHITE",
    "year": "2025",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTYR1ZM8HKB09536",
-   "stock": "P8201",
-   "name": "2017 Ford TRANSIT VA T-250 130\" LOW",
-   "year": "2017",
    "cond": "used"
   },
   {
