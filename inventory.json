@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-12T20:16:08+00:00",
+ "updated": "2026-11-13T19:56:41+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 226,
+ "count": 237,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -123,6 +123,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMEE8BH6TLB88840",
+   "stock": "BR26401",
+   "name": "2026 Ford BRONCO OUTER BANKS 4 DOOR",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9CN5TRE91129",
    "stock": "BS26222",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
@@ -165,6 +172,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FMCR9BN1VRE06436",
+   "stock": "BS27033",
+   "name": "2027 Ford BRONCO SPO BIG BEND 4X4 GL",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FMJU1M88TEA31501",
    "stock": "EN26092",
    "name": "2026 Ford EXPEDITION PLATINUM 4X4 GL",
@@ -196,6 +210,13 @@
    "vin": "1FMJK1M85VEA34204",
    "stock": "EN27023",
    "name": "2027 Ford EXPEDITION PLATINUM 4X4 ST",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMJU1H82VEA40899",
+   "stock": "EN27041",
+   "name": "2027 Ford EXPEDITION ACTIVE 4X2 GLAC",
    "year": "2027",
    "cond": "new"
   },
@@ -273,6 +294,13 @@
    "vin": "1FMWK7GC5VGA66308",
    "stock": "ER27026",
    "name": "2027 Ford EXPLORER ST RWD AVALANCHE",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMWK8JC0VGA89669",
+   "stock": "ER27039",
+   "name": "2027 Ford EXPLORER TREMOR 4WD MARSH",
    "year": "2027",
    "cond": "new"
   },
@@ -641,6 +669,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FTEW2L51VFA20592",
+   "stock": "FT27034",
+   "name": "2027 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -676,6 +711,20 @@
    "cond": "new"
   },
   {
+   "vin": "3FTTW8H31VRA13663",
+   "stock": "MA27038",
+   "name": "2027 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTTW8H34VRA13270",
+   "stock": "MA27040",
+   "name": "2027 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "3FMTK3R76TMA26978",
    "stock": "ME26321",
    "name": "2026 Ford MUSTANG MA PREMIUM RWD STA",
@@ -693,13 +742,6 @@
    "vin": "1FAGP8UH1T5134599",
    "stock": "MU26359",
    "name": "2026 Ford MUSTANG ECOBOOST CONVERTIB",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FA6P8TH3T5138280",
-   "stock": "MU26372",
-   "name": "2026 Ford MUSTANG ECOBOOST FASTBACK",
    "year": "2026",
    "cond": "new"
   },
@@ -867,6 +909,41 @@
   {
    "vin": "1FT8W2BM6VEC88128",
    "stock": "SD27030",
+   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM6VEC94236",
+   "stock": "SD27035",
+   "name": "2027 Ford SUPER DUTY PLATINUM 4WD CR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM6VED06238",
+   "stock": "SD27036",
+   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM2VEC11997",
+   "stock": "SD27037",
+   "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM5VED12211",
+   "stock": "SD27042",
+   "name": "2027 Ford SUPER DUTY XLT 4WD CREW CA",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FT8W2BM0VEC37935",
+   "stock": "SD27043",
    "name": "2027 Ford SUPER DUTY LARIAT 4WD CREW",
    "year": "2027",
    "cond": "new"
@@ -1453,10 +1530,10 @@
    "cond": "used"
   },
   {
-   "vin": "JTHB51FFXJ5002871",
-   "stock": "P8185",
-   "name": "2018 Lexus LS",
-   "year": "2018",
+   "vin": "4T1FA38P97U114541",
+   "stock": "P8185B",
+   "name": "2007 Toyo CAMRY SOLA CONVERTIBLE RED",
+   "year": "2007",
    "cond": "used"
   },
   {
@@ -1558,10 +1635,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FMSK7DH5PGA48019",
-   "stock": "SD26091C",
-   "name": "2023 Ford EXPLORER SUV",
-   "year": "2023",
+   "vin": "1FTEW1EP5JFC76723",
+   "stock": "SD26091D",
+   "name": "2018 Ford F-150 TRUCK",
+   "year": "2018",
    "cond": "used"
   },
   {
