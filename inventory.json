@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T19:56:41+00:00",
+ "updated": "2026-11-14T18:24:01+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 237,
  "vehicles": [
@@ -35,13 +35,6 @@
    "vin": "1FMDE7BHXTLA58663",
    "stock": "BR26290",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE9BP7TLB43662",
-   "stock": "BR26301",
-   "name": "2026 Ford BRONCO BADLANDS 4 DOOR ADV",
    "year": "2026",
    "cond": "new"
   },
@@ -480,13 +473,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FTFW5L88TFC30409",
-   "stock": "FT26341",
-   "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FTFW3L83TFC19323",
    "stock": "FT26345",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
@@ -644,6 +630,13 @@
    "vin": "1FTFW5L87TKF64163",
    "stock": "FT26399",
    "name": "2026 Ford F-150 LARIAT 4WD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW4L8XTFC45388",
+   "stock": "FT26402",
+   "name": "2026 Ford F-150 TREMOR 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -1044,6 +1037,13 @@
    "stock": "BR26278B",
    "name": "2022 Toyo CAMRY SEDAN",
    "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMEE9BP7RLA95816",
+   "stock": "BR26301A",
+   "name": "2024 Ford BRONCO",
+   "year": "2024",
    "cond": "used"
   },
   {
@@ -1531,7 +1531,7 @@
   },
   {
    "vin": "4T1FA38P97U114541",
-   "stock": "P8185B",
+   "stock": "P8185A",
    "name": "2007 Toyo CAMRY SOLA CONVERTIBLE RED",
    "year": "2007",
    "cond": "used"
