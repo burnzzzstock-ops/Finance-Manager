@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T18:24:01+00:00",
+ "updated": "2026-11-17T21:13:23+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 237,
  "vehicles": [
@@ -406,13 +406,6 @@
    "vin": "1FTFW3L52TKE48444",
    "stock": "FT26310",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW7L85TFC18682",
-   "stock": "FT26318",
-   "name": "2026 Ford F-150 PLATINUM 4WD SUPERCR",
    "year": "2026",
    "cond": "new"
   },
@@ -1254,6 +1247,13 @@
    "stock": "FT26317A",
    "name": "2017 Ford F-150 TRUCK RED 99P",
    "year": "2017",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTFW1ED2NFB52134",
+   "stock": "FT26318A",
+   "name": "2022 Ford F-150 TRUCK AGATE BLACK ME",
+   "year": "2022",
    "cond": "used"
   },
   {
