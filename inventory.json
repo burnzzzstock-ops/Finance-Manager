@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-17T21:13:23+00:00",
+ "updated": "2026-11-18T20:48:12+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 237,
+ "count": 238,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -123,6 +123,13 @@
    "cond": "new"
   },
   {
+   "vin": "1FMDE7BH0TLB73868",
+   "stock": "BR26404",
+   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FMCR9CN5TRE91129",
    "stock": "BS26222",
    "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
@@ -147,13 +154,6 @@
    "vin": "3FMCR9BN5TRF13728",
    "stock": "BS26275",
    "name": "2026 Ford BRONCO SPO BIG BEND 4X4 SP",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "3FMCR9CN2TRF34986",
-   "stock": "BS26331",
-   "name": "2026 Ford BRONCO SPO OUTER BANKS 4X4",
    "year": "2026",
    "cond": "new"
   },
@@ -658,6 +658,13 @@
    "vin": "1FTEW2L51VFA20592",
    "stock": "FT27034",
    "name": "2027 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTFW3L56VFA12711",
+   "stock": "FT27044",
+   "name": "2027 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2027",
    "cond": "new"
   },
