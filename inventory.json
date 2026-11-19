@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-18T20:48:12+00:00",
+ "updated": "2026-11-19T20:53:38+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 238,
+ "count": 233,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -48,13 +48,6 @@
   {
    "vin": "1FMDE7BH2TLB51418",
    "stock": "BR26308",
-   "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMDE7BH2TLB52858",
-   "stock": "BR26320",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
    "year": "2026",
    "cond": "new"
@@ -468,13 +461,6 @@
   {
    "vin": "1FTFW3L83TFC19323",
    "stock": "FT26345",
-   "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW3L50TFC41723",
-   "stock": "FT26347",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
    "year": "2026",
    "cond": "new"
@@ -1180,13 +1166,6 @@
    "cond": "used"
   },
   {
-   "vin": "1C4AJWBG6FL511721",
-   "stock": "FT26058B",
-   "name": "2015 JEEP WRANGLER SUV",
-   "year": "2015",
-   "cond": "used"
-  },
-  {
    "vin": "3MW69FF03P8D11509",
    "stock": "FT26064B",
    "name": "2023 BMW 330I SEDAN",
@@ -1247,13 +1226,6 @@
    "stock": "FT26283B",
    "name": "2024 Ford F-150 TRUCK GRAY",
    "year": "2024",
-   "cond": "used"
-  },
-  {
-   "vin": "1FTEW1CP1HFB17629",
-   "stock": "FT26317A",
-   "name": "2017 Ford F-150 TRUCK RED 99P",
-   "year": "2017",
    "cond": "used"
   },
   {
@@ -1373,13 +1345,6 @@
    "stock": "P8116B",
    "name": "2020 Toyo HIGHLANDER SUV",
    "year": "2020",
-   "cond": "used"
-  },
-  {
-   "vin": "2FMPK4J96KBB67568",
-   "stock": "P8125B",
-   "name": "2019 Ford EDGE SUV BLUE",
-   "year": "2019",
    "cond": "used"
   },
   {
