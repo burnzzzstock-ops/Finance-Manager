@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T20:53:38+00:00",
+ "updated": "2026-11-21T19:38:54+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 233,
  "vehicles": [
@@ -795,13 +795,6 @@
    "cond": "new"
   },
   {
-   "vin": "1FT8W2BT1TEE10818",
-   "stock": "SD26093",
-   "name": "2026 Ford SUPER DUTY KING RANCH 4WD",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
    "vin": "1FT8W2BT5TEE70150",
    "stock": "SD26197",
    "name": "2026 Ford SUPER DUTY LARIAT 4WD CREW",
@@ -1215,10 +1208,10 @@
    "cond": "used"
   },
   {
-   "vin": "1FTFW6LD4SFB59386",
-   "stock": "FT26272A",
-   "name": "2025 Ford F-150 TRUCK",
-   "year": "2025",
+   "vin": "1C6SRFKT3LN109009",
+   "stock": "FT26272B",
+   "name": "2020 RAM",
+   "year": "2020",
    "cond": "used"
   },
   {
@@ -1611,6 +1604,13 @@
    "stock": "SD26091D",
    "name": "2018 Ford F-150 TRUCK",
    "year": "2018",
+   "cond": "used"
+  },
+  {
+   "vin": "3C6UR5NL8PG593305",
+   "stock": "SD26093A",
+   "name": "2023 RAM",
+   "year": "2023",
    "cond": "used"
   },
   {
