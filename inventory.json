@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T19:38:54+00:00",
+ "updated": "2026-11-22T19:54:45+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 233,
  "vehicles": [
@@ -21,13 +21,6 @@
    "vin": "1FMDE7BH0TLB15808",
    "stock": "BR26239",
    "name": "2026 Ford BRONCO BIG BEND 4 DOOR 4X4",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMEE4DP3TLB37471",
-   "stock": "BR26263",
-   "name": "2026 Ford BRONCO HERITAGE EDITION 4",
    "year": "2026",
    "cond": "new"
   },
@@ -364,13 +357,6 @@
    "vin": "1FTFW3L81TKE90243",
    "stock": "FT26289",
    "name": "2026 Ford F-150 XLT 4WD SUPERCREW 5.",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW1RG4TFA92228",
-   "stock": "FT26292",
-   "name": "2026 Ford F-150 RAPTOR 4WD SUPERCREW",
    "year": "2026",
    "cond": "new"
   },
@@ -1005,6 +991,13 @@
    "cond": "used"
   },
   {
+   "vin": "W1N0G8DB6LF819143",
+   "stock": "BR26263A",
+   "name": "2020 Mercedes GLC",
+   "year": "2020",
+   "cond": "used"
+  },
+  {
    "vin": "1FDXE4FN2RDD24045",
    "stock": "BR26278A",
    "name": "2024 Ford E-450 CUTA CHASSIS",
@@ -1219,6 +1212,13 @@
    "stock": "FT26283B",
    "name": "2024 Ford F-150 TRUCK GRAY",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1CG3GFA28238",
+   "stock": "FT26292A",
+   "name": "2016 Ford F-150 TRUCK INGOT SILVER 9",
+   "year": "2016",
    "cond": "used"
   },
   {
