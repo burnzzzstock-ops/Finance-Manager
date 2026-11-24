@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T19:54:45+00:00",
+ "updated": "2026-11-24T22:40:31+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 233,
  "vehicles": [
@@ -497,13 +497,6 @@
    "vin": "1FTFW2LD3TFC47985",
    "stock": "FT26369",
    "name": "2026 Ford F150 4X4 H SUPERCREW STX",
-   "year": "2026",
-   "cond": "new"
-  },
-  {
-   "vin": "1FTFW6LD6TFC50287",
-   "stock": "FT26370",
-   "name": "2026 Ford F-150 HYBR KING RANCH 4WD",
    "year": "2026",
    "cond": "new"
   },
@@ -1257,6 +1250,13 @@
    "cond": "used"
   },
   {
+   "vin": "1GT49REY9PF124897",
+   "stock": "FT26370A",
+   "name": "2023 GMC SIERRA",
+   "year": "2023",
+   "cond": "used"
+  },
+  {
    "vin": "3FMCR9C60RRE34144",
    "stock": "FT26381A",
    "name": "2024 Ford BRONCO SPO SUV BLACK",
@@ -1348,10 +1348,10 @@
    "cond": "used"
   },
   {
-   "vin": "5LMJJ2LG7SEL00638",
-   "stock": "P8133",
-   "name": "2025 Lincoln NAVIGATOR RESERVE 4X4 WHIT",
-   "year": "2025",
+   "vin": "7SVAAABA1RX037324",
+   "stock": "P8133A",
+   "name": "2024 Toyo SEQUOIA SUV",
+   "year": "2024",
    "cond": "used"
   },
   {
