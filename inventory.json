@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-24T22:40:31+00:00",
+ "updated": "2026-11-25T21:55:34+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
- "count": 233,
+ "count": 241,
  "vehicles": [
   {
    "vin": "1FMDE7BH1TLA91793",
@@ -158,6 +158,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FMCR9BN1VRE22328",
+   "stock": "BS27050",
+   "name": "2027 Ford BRONCO SPO BIG BEND 4X4 GL",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FMJU1M88TEA31501",
    "stock": "EN26092",
    "name": "2026 Ford EXPEDITION PLATINUM 4X4 GL",
@@ -280,6 +287,13 @@
    "vin": "1FMWK8JC0VGA89669",
    "stock": "ER27039",
    "name": "2027 Ford EXPLORER TREMOR 4WD MARSH",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FMUK7HHXVGB03127",
+   "stock": "ER27048",
+   "name": "2027 Ford EXPLORER PLATINUM RWD STAR",
    "year": "2027",
    "cond": "new"
   },
@@ -634,6 +648,20 @@
    "cond": "new"
   },
   {
+   "vin": "1FTFW3L50VKD00389",
+   "stock": "FT27046",
+   "name": "2027 Ford F-150 XLT 4WD SUPERCREW 5.",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTEW2LC3VKD01038",
+   "stock": "FT27049",
+   "name": "2027 Ford F-150 STX 4WD SUPERCREW 5.",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "3FTCW8TA3TRA09939",
    "stock": "MA26015",
    "name": "2026 Ford MAVERICK LOBO STANDARD AWD",
@@ -669,6 +697,13 @@
    "cond": "new"
   },
   {
+   "vin": "3FTTW8AA6TRB57876",
+   "stock": "MA26407",
+   "name": "2026 Ford MAVERICK XL FWD SUPERCREW",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
    "vin": "3FTTW8H31VRA13663",
    "stock": "MA27038",
    "name": "2027 Ford MAVERICK H XLT FWD SUPERCR",
@@ -679,6 +714,13 @@
    "vin": "3FTTW8H34VRA13270",
    "stock": "MA27040",
    "name": "2027 Ford MAVERICK H XLT FWD SUPERCR",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
+   "vin": "3FTCW8TA9VRA08684",
+   "stock": "MA27045",
+   "name": "2027 Ford MAVERICK LOBO STANDARD AWD",
    "year": "2027",
    "cond": "new"
   },
@@ -756,6 +798,13 @@
    "vin": "1FTER4GH5TLE69876",
    "stock": "RA26400",
    "name": "2026 Ford RANGER XLT 2WD SUPERCREW 5",
+   "year": "2026",
+   "cond": "new"
+  },
+  {
+   "vin": "1FTER4BH5TLE71604",
+   "stock": "RA26406",
+   "name": "2026 Ford RANGER XL 2WD SUPERCREW 5'",
    "year": "2026",
    "cond": "new"
   },
@@ -900,6 +949,13 @@
    "cond": "new"
   },
   {
+   "vin": "2FT7W2BM1VBA21096",
+   "stock": "SD27047",
+   "name": "2027 Ford SUPER DUTY XL 4WD CREW CAB",
+   "year": "2027",
+   "cond": "new"
+  },
+  {
    "vin": "1FBAX2CG8TKB14295",
    "stock": "TR26195",
    "name": "2026 Ford TRANSIT PA T-350 148\" MED",
@@ -960,13 +1016,6 @@
    "stock": "BR26199B",
    "name": "2021 Ford ESCAPE SUV SILVER",
    "year": "2021",
-   "cond": "used"
-  },
-  {
-   "vin": "1GKS2CKJ0LR307196",
-   "stock": "BR26204B",
-   "name": "2020 GMC YUKON WHITE",
-   "year": "2020",
    "cond": "used"
   },
   {
@@ -1534,6 +1583,13 @@
    "stock": "P8191",
    "name": "2024 Nissan ALTIMA 2.5 SR SEDAN RED",
    "year": "2024",
+   "cond": "used"
+  },
+  {
+   "vin": "1FTEW1EPXGFC96720",
+   "stock": "P8195",
+   "name": "2016 Ford F-150 XLT PICKUP SILVER",
+   "year": "2016",
    "cond": "used"
   },
   {
