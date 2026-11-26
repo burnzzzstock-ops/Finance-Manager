@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T21:55:34+00:00",
+ "updated": "2026-11-26T21:48:46+00:00",
  "source": "REPORT.PDF + REPORT.PDF",
  "count": 241,
  "vehicles": [
@@ -238,13 +238,6 @@
    "vin": "1FMUK7KH9VGA35685",
    "stock": "ER27011",
    "name": "2027 Ford EXPLORER ST-LINE RWD MARSH",
-   "year": "2027",
-   "cond": "new"
-  },
-  {
-   "vin": "1FMWK7HCXVGA45419",
-   "stock": "ER27012",
-   "name": "2027 Ford EXPLORER PLATINUM RWD STAR",
    "year": "2027",
    "cond": "new"
   },
@@ -1169,6 +1162,13 @@
    "vin": "3GNAXKEVXNL147055",
    "stock": "ER26241B",
    "name": "2022 Chevrolet EQUINOX SUV RED",
+   "year": "2022",
+   "cond": "used"
+  },
+  {
+   "vin": "1FMJK1KT7NEA32543",
+   "stock": "ER27012A",
+   "name": "2022 Ford EXPEDITION SUV 99T",
    "year": "2022",
    "cond": "used"
   },
